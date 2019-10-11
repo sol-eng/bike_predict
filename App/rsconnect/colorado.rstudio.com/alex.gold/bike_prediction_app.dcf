@@ -5,8 +5,8 @@ account: alex.gold
 server: colorado.rstudio.com
 hostUrl: https://colorado.rstudio.com/rsc/__api__
 appId: 2957
-bundleId: 28797
+bundleId: 28837
 url: https://colorado.rstudio.com/rsc/bike_predict-app/
-when: 1570806209.38246
+when: 1570824962.70804
 asMultiple: FALSE
 asStatic: FALSE

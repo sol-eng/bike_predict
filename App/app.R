@@ -22,15 +22,18 @@ server <- function(input, output, session) {
     pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                    key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
 
-    stats <- pins::pin_get("alex.gold/bike_rental_stations", board = "rsconnect")
+    stats <- pins::pin_get("alex.gold/bike_station_info", board = "rsconnect")
 
     # Update station names and get id
     observe({
         updateSelectInput(session, "station", choices = stats$name)
     })
+
+    # Update only when button pushed to avoid premature title updating
+    station <- eventReactive(input$get_preds, input$station)
     station_id <- reactive({
         stats %>%
-            dplyr::filter(name == input$station) %>%
+            dplyr::filter(name == station()) %>%
             dplyr::pull(station_id)
     })
 
@@ -51,7 +54,7 @@ server <- function(input, output, session) {
     output$plot <- renderPlot({
         plot <- df() %>%
             ggplot(aes(x = times, y = pred, group = 1)) +
-            ggtitle(glue::glue("Predicted Bikes Available at {input$station}")) +
+            ggtitle(glue::glue("Predicted Bikes Available at {station()}")) +
             ggthemes::theme_clean() +
             xlab("Time") +
             ylab("Predicted Number of Bikes") +

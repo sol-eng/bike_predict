@@ -7,7 +7,7 @@ pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
 pins::board_connect("rsconnect")
 mod <- pin_get("alex.gold/bike_available_model", board = "rsconnect")
-stats <- pin_get("alex.gold/bike_rental_stations", board = "rsconnect")
+stats <- pin_get("alex.gold/bike_station_info", board = "rsconnect")
 
 
 #* @apiTitle Bike Prediction API
