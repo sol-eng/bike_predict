@@ -1,0 +1,12 @@
+name: bike_data_ingest
+title: Bike Data Ingest
+username: alex.gold
+account: alex.gold
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 2964
+bundleId: 28828
+url: https://colorado.rstudio.com/rsc/bike_data_ingest/
+when: 1570824186.07156
+asMultiple: FALSE
+asStatic: FALSE

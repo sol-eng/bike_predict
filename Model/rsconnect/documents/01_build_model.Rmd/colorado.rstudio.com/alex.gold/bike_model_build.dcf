@@ -1,0 +1,12 @@
+name: bike_model_build
+title: Bike Model Build
+username: alex.gold
+account: alex.gold
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 2958
+bundleId: 28806
+url: https://colorado.rstudio.com/rsc/content/2958/
+when: 1570815128.95071
+asMultiple: FALSE
+asStatic: FALSE

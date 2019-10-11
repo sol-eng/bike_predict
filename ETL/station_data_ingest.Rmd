@@ -1,0 +1,43 @@
+---
+title: "Get Station Data"
+author: "Alex Gold"
+date: "10/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Set up packages and connect to RStudio Connect board
+```{r}
+library(tidyverse)
+library(magrittr)
+source("helper_funcs.R")
+
+pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
+                               key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
+pins::board_connect("rsconnect")
+```
+
+# Get data from API
+```{r}
+# Get list of feeds
+feeds <- httr::GET("https://gbfs.capitalbikeshare.com/gbfs/gbfs.json") %>%
+  httr::content() %>%
+  clean_feeds()
+
+# Get station status Data and clean
+dat <- get_data("station_information", feeds)$data %>%
+  select(station_id, name, lat, lon) %>%
+  unique()
+```
+
+# Pin
+```{r}
+pins::pin(dat, 
+          "bike_station_info", 
+          "List of stations of Capitol Bikeshare", 
+          "rsconnect")
+```
+

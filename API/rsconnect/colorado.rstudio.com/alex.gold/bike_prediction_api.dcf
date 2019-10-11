@@ -1,0 +1,12 @@
+name: bike_prediction_api
+title: Bike Prediction API
+username: alex.gold
+account: alex.gold
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 2871
+bundleId: 28786
+url: https://colorado.rstudio.com/rsc/bike_predict/
+when: 1570801599.87749
+asMultiple: FALSE
+asStatic: FALSE

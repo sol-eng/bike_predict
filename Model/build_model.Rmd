@@ -1,0 +1,61 @@
+---
+title: "Build Model"
+author: "Alex"
+date: "9/20/2019"
+output: html_document
+---
+
+# Load Libraries and connect to board
+```{r}
+library(tidyverse)
+library(magrittr)
+library(ggplot2)
+
+pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
+                               key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
+pins::board_connect("rsconnect")
+```
+
+# Get data
+```{r}
+df <- pins::pin_get("alex.gold/bike_model_data", board = "rsconnect")
+```
+
+# Exploratory data analysis
+Total bikes
+```{r}
+df %>% 
+  ggplot(aes(x = n_bikes)) +
+  geom_density()
+```
+
+Bikes by hour of day
+```{r}
+df %>% 
+  ggplot(aes(x = n_bikes)) +
+  geom_density() +
+  facet_wrap("hour")
+```
+
+```{r}
+df %>%
+  group_by(hour) %>%
+  summarize(concentration = ineq::conc(n_bikes) * 10000)
+```
+
+TODO: Add cross-validation, measures of goodness-of-fit
+```{r}
+dat <- df %>% 
+  select(id, hour) %>%
+  as.matrix()
+
+xgbdat <- xgboost::xgb.DMatrix(data = dat, label = df$n_bikes)
+mod <- xgboost::xgboost(data = dat, label = df$n_bikes, nrounds = 1000)
+```
+
+```{r}
+pins::pin(mod, "bike_available_model", 
+          "Model of Capitol Citybikes Available per Station", 
+          board = "rsconnect")
+```
+
