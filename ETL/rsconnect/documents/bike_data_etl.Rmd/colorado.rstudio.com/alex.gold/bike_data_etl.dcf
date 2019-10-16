@@ -5,8 +5,8 @@ account: alex.gold
 server: colorado.rstudio.com
 hostUrl: https://colorado.rstudio.com/rsc/__api__
 appId: 2994
-bundleId: 30243
+bundleId: 30248
 url: https://colorado.rstudio.com/rsc/content/2994/
-when: 1571233661.80772
+when: 1571235111.31803
 asMultiple: FALSE
 asStatic: FALSE

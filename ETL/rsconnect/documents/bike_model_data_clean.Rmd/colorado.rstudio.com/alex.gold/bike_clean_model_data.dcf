@@ -1,0 +1,12 @@
+name: bike_clean_model_data
+title: Bike Clean Model Data
+username: alex.gold
+account: alex.gold
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 2996
+bundleId: 30252
+url: https://colorado.rstudio.com/rsc/bike_clean_model_data/
+when: 1571235466.20211
+asMultiple: FALSE
+asStatic: FALSE

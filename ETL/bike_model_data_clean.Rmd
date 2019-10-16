@@ -12,6 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # Set up packages and connect to RStudio Connect board
 ```{r}
 library(tidyverse)
+library(odbc)
 
 pins::board_register("rsconnect", 
                      server = "https://colorado.rstudio.com/rsc/",
