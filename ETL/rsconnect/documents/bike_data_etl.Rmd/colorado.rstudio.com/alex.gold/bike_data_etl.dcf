@@ -1,0 +1,12 @@
+name: bike_data_etl
+title: Bike Data ETL
+username: alex.gold
+account: alex.gold
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 2994
+bundleId: 30243
+url: https://colorado.rstudio.com/rsc/content/2994/
+when: 1571233661.80772
+asMultiple: FALSE
+asStatic: FALSE

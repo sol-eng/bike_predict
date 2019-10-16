@@ -1,0 +1,42 @@
+---
+title: "Bike Data ETL"
+author: "Alex Gold"
+date: "10/16/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(odbc)
+source("helper_funcs.R")
+con <- dbConnect(odbc::odbc(), "Content DB", timeout = 10)
+```
+
+# Download updated data
+```{r, download}
+feeds <- httr::GET("https://gbfs.capitalbikeshare.com/gbfs/gbfs.json") %>%
+  httr::content() %>%
+  clean_feeds()
+```
+
+```{r}
+# Get station status Data
+dat <- get_data("station_status", feeds)
+
+# Remove useless column
+df <- dat$data %>%
+  select(-eightd_active_station_services)
+df$time <- dat$last_updated
+
+df
+```
+
+```{r}
+dbWriteTable(con, "bike_raw_data", df, append = TRUE)
+```
+
+
