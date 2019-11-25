@@ -13,22 +13,23 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(tidyverse)
 library(magrittr)
-source("helper_funcs.R")
+library(bikeHelpR)
 
 pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
-pins::board_connect("rsconnect")
 ```
 
 # Get data from API
 ```{r}
 # Get list of feeds
-feeds <- httr::GET("https://gbfs.capitalbikeshare.com/gbfs/gbfs.json") %>%
-  httr::content() %>%
-  clean_feeds()
+feeds <- feeds_urls()
 
 # Get station status Data and clean
-dat <- get_data("station_information", feeds)$data %>%
+dat <- feeds %>% 
+  filter(name == "station_information") %>%
+  pull("url") %>%
+  get_data() %>%
+  extract2("data") %>%
   select(station_id, name, lat, lon) %>%
   unique()
 ```

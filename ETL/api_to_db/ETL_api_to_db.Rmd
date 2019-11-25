@@ -12,20 +12,22 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(tidyverse)
 library(odbc)
-source("helper_funcs.R")
+library(bikeHelpR)
+
 con <- dbConnect(odbc::odbc(), "Content DB", timeout = 10)
 ```
 
 # Download updated data
 ```{r, download}
-feeds <- httr::GET("https://gbfs.capitalbikeshare.com/gbfs/gbfs.json") %>%
-  httr::content() %>%
-  clean_feeds()
+feeds <- feeds_urls()
 ```
 
 ```{r}
 # Get station status Data
-dat <- get_data("station_status", feeds)
+dat <- feeds %>% 
+  filter(name == "station_status") %>% 
+  pull(url) %>% 
+  get_data()
 
 # Remove useless column
 df <- dat$data %>%
