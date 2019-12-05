@@ -401,6 +401,34 @@
         "Built": "R 3.6.1; ; 2019-09-09 12:13:58 UTC; unix"
       }
     },
+    "crosstalk": {
+      "Source": "RSPM",
+      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "crosstalk",
+        "Type": "Package",
+        "Title": "Inter-Widget Interactivity for HTML Widgets",
+        "Version": "1.0.0",
+        "Authors@R": "c(\n    person(\"Joe\", \"Cheng\", role = c(\"aut\", \"cre\"), email = \"joe@rstudio.com\"),\n    person(family = \"RStudio\", role = \"cph\"),\n    person(family = \"jQuery Foundation\", role = \"cph\",\n    comment = \"jQuery library and jQuery UI library\"),\n    person(family = \"jQuery contributors\", role = c(\"ctb\", \"cph\"),\n    comment = \"jQuery library; authors listed in inst/www/shared/jquery-AUTHORS.txt\"),\n    person(\"Mark\", \"Otto\", role = \"ctb\",\n    comment = \"Bootstrap library\"),\n    person(\"Jacob\", \"Thornton\", role = \"ctb\",\n    comment = \"Bootstrap library\"),\n    person(family = \"Bootstrap contributors\", role = \"ctb\",\n    comment = \"Bootstrap library\"),\n    person(family = \"Twitter, Inc\", role = \"cph\",\n    comment = \"Bootstrap library\"),\n    person(\"Brian\", \"Reavis\", role = c(\"ctb\", \"cph\"),\n    comment = \"selectize.js library\"),\n    person(\"Kristopher Michael\", \"Kowal\", role = c(\"ctb\", \"cph\"),\n    comment = \"es5-shim library\"),\n    person(family = \"es5-shim contributors\", role = c(\"ctb\", \"cph\"),\n    comment = \"es5-shim library\"),\n    person(\"Denis\", \"Ineshin\", role = c(\"ctb\", \"cph\"),\n    comment = \"ion.rangeSlider library\"),\n    person(\"Sami\", \"Samhuri\", role = c(\"ctb\", \"cph\"),\n    comment = \"Javascript strftime library\")\n    )",
+        "Description": "Provides building blocks for allowing HTML widgets to communicate\n    with each other, with Shiny or without (i.e. static .html files). Currently\n    supports linked brushing and filtering.",
+        "License": "MIT + file LICENSE",
+        "Imports": "htmltools (>= 0.3.5), jsonlite, lazyeval, R6, shiny (>= 0.11),\nggplot2",
+        "URL": "https://rstudio.github.io/crosstalk/",
+        "BugReports": "https://github.com/rstudio/crosstalk/issues",
+        "RoxygenNote": "5.0.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2016-12-20 20:01:51 UTC; jcheng",
+        "Author": "Joe Cheng [aut, cre],\n  RStudio [cph],\n  jQuery Foundation [cph] (jQuery library and jQuery UI library),\n  jQuery contributors [ctb, cph] (jQuery library; authors listed in\n    inst/www/shared/jquery-AUTHORS.txt),\n  Mark Otto [ctb] (Bootstrap library),\n  Jacob Thornton [ctb] (Bootstrap library),\n  Bootstrap contributors [ctb] (Bootstrap library),\n  Twitter, Inc [cph] (Bootstrap library),\n  Brian Reavis [ctb, cph] (selectize.js library),\n  Kristopher Michael Kowal [ctb, cph] (es5-shim library),\n  es5-shim contributors [ctb, cph] (es5-shim library),\n  Denis Ineshin [ctb, cph] (ion.rangeSlider library),\n  Sami Samhuri [ctb, cph] (Javascript strftime library)",
+        "Maintainer": "Joe Cheng <joe@rstudio.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2016-12-21 08:30:32",
+        "Built": "R 3.6.0; ; 2019-07-17 19:26:22 UTC; unix"
+      }
+    },
     "curl": {
       "Source": "RSPM",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
@@ -697,6 +725,34 @@
         "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-09 12:13:27 UTC; unix"
       }
     },
+    "gridExtra": {
+      "Source": "RSPM",
+      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "gridExtra",
+        "Authors@R": "c(person(\"Baptiste\", \"Auguie\",\n    email = \"baptiste.auguie@gmail.com\",\n    role = c(\"aut\", \"cre\")), person(\"Anton\", \"Antonov\",\n    email = \"tonytonov@gmail.com\",\n    role = c(\"ctb\")))",
+        "License": "GPL (>= 2)",
+        "Title": "Miscellaneous Functions for \"Grid\" Graphics",
+        "Type": "Package",
+        "Description": "Provides a number of user-level functions to work with \"grid\"\n    graphics, notably to arrange multiple grid-based plots on a page, and draw\n    tables.",
+        "Version": "2.3",
+        "VignetteBuilder": "knitr",
+        "Imports": "gtable, grid, grDevices, graphics, utils",
+        "Suggests": "ggplot2, egg, lattice, knitr, testthat",
+        "RoxygenNote": "6.0.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2017-09-08 22:52:09 UTC; baptiste",
+        "Author": "Baptiste Auguie [aut, cre],\n  Anton Antonov [ctb]",
+        "Maintainer": "Baptiste Auguie <baptiste.auguie@gmail.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2017-09-09 14:12:08 UTC",
+        "Built": "R 3.6.0; ; 2019-07-17 20:31:02 UTC; unix"
+      }
+    },
     "gtable": {
       "Source": "RSPM",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
@@ -760,6 +816,37 @@
         "Repository": "CRAN",
         "Date/Publication": "2019-10-04 23:00:08 UTC",
         "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:18:39 UTC; unix"
+      }
+    },
+    "htmlwidgets": {
+      "Source": "RSPM",
+      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "htmlwidgets",
+        "Type": "Package",
+        "Title": "HTML Widgets for R",
+        "Version": "1.3",
+        "Authors@R": "c(\n    person(\"Ramnath\", \"Vaidyanathan\", role = c(\"aut\", \"cph\")),\n    person(\"Yihui\", \"Xie\", role = c(\"aut\")),\n    person(\"JJ\", \"Allaire\", role = c(\"aut\")),\n    person(\"Joe\", \"Cheng\", role = c(\"aut\", \"cre\"), email = \"joe@rstudio.com\"),\n    person(\"Kenton\", \"Russell\", role = c(\"aut\", \"cph\")),\n    person(family = \"RStudio\", role = \"cph\")\n    )",
+        "Description": "A framework for creating HTML widgets that render in various\n    contexts including the R console, 'R Markdown' documents, and 'Shiny'\n    web applications.",
+        "License": "MIT + file LICENSE",
+        "VignetteBuilder": "knitr",
+        "Imports": "grDevices, htmltools (>= 0.3), jsonlite (>= 0.9.16), yaml",
+        "Suggests": "knitr (>= 1.8)",
+        "Enhances": "shiny (>= 1.1)",
+        "URL": "https://github.com/ramnathv/htmlwidgets",
+        "BugReports": "https://github.com/ramnathv/htmlwidgets/issues",
+        "RoxygenNote": "6.0.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2018-09-20 17:18:43 UTC; jcheng",
+        "Author": "Ramnath Vaidyanathan [aut, cph],\n  Yihui Xie [aut],\n  JJ Allaire [aut],\n  Joe Cheng [aut, cre],\n  Kenton Russell [aut, cph],\n  RStudio [cph]",
+        "Maintainer": "Joe Cheng <joe@rstudio.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2018-09-30 15:10:13 UTC",
+        "Built": "R 3.6.0; ; 2019-07-17 20:43:53 UTC; unix"
       }
     },
     "httpuv": {
@@ -975,6 +1062,38 @@
         "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 21:06:10 UTC; unix"
       }
     },
+    "leaflet": {
+      "Source": "RSPM",
+      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "leaflet",
+        "Type": "Package",
+        "Title": "Create Interactive Web Maps with the JavaScript 'Leaflet'\nLibrary",
+        "Version": "2.0.2",
+        "Authors@R": "c(\n      person(\"Joe\", \"Cheng\", email = \"joe@rstudio.com\", role = c(\"aut\", \"cre\")),\n      person(\"Bhaskar\", \"Karambelkar\", role = c(\"aut\")),\n      person(\"Yihui\", \"Xie\", role = c(\"aut\")),\n      person(\"Hadley\", \"Wickham\", role = c(\"ctb\")),\n      person(\"Kenton\", \"Russell\", role = c(\"ctb\")),\n      person(\"Kent\", \"Johnson\", role = c(\"ctb\")),\n      person(\"Barret\", \"Schloerke\", role = c(\"ctb\")),\n      person(\"jQuery Foundation and contributors\", role = c(\"ctb\", \"cph\"), comment = \"jQuery library\"),\n      person(\"Vladimir\", \"Agafonkin\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet library\"),\n      person(\"CloudMade\", role = c(\"cph\"), comment = \"Leaflet library\"),\n      person(\"Leaflet contributors\", role = c(\"ctb\"), comment = \"Leaflet library\"),\n      person(\"Leaflet Providers contributors\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet Providers plugin\"),\n      person(\"Brandon Copeland\", role = c(\"ctb\", \"cph\"), comment = \"leaflet-measure plugin\"),\n      person(\"Joerg Dietrich\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.Terminator plugin\"),\n      person(\"Benjamin Becquet\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.MagnifyingGlass plugin\"),\n      person(\"Norkart AS\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.MiniMap plugin\"),\n      person(\"L. Voogdt\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.awesome-markers plugin\"),\n      person(\"Daniel Montague\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.EasyButton plugin\"),\n      person(\"Kartena AB\", role = c(\"ctb\", \"cph\"), comment = \"Proj4Leaflet plugin\"),\n      person(\"Robert Kajic\", role = c(\"ctb\", \"cph\"), comment = \"leaflet-locationfilter plugin\"),\n      person(\"Mapbox\", role = c(\"ctb\", \"cph\"), comment = \"leaflet-omnivore plugin\"),\n      person(\"Michael Bostock\", role = c(\"ctb\", \"cph\"), comment = \"topojson\"),\n      person(\"RStudio\", role = c(\"cph\"))\n    )",
+        "Maintainer": "Joe Cheng <joe@rstudio.com>",
+        "Description": "Create and customize interactive maps using the 'Leaflet'\n    JavaScript library and the 'htmlwidgets' package. These maps can be used\n    directly from the R console, from 'RStudio', in Shiny applications and R Markdown\n    documents.",
+        "License": "GPL-3",
+        "URL": "http://rstudio.github.io/leaflet/",
+        "BugReports": "https://github.com/rstudio/leaflet/issues",
+        "Depends": "R (>= 3.1.0)",
+        "Imports": "base64enc, crosstalk, htmlwidgets, htmltools, magrittr,\nmarkdown, methods, png, RColorBrewer, raster, scales (>=\n1.0.0), sp, stats, viridis (>= 0.5.1)",
+        "Suggests": "knitr, maps, sf, shiny, testit (>= 0.4), rgdal, rgeos, R6,\nRJSONIO, purrr, testthat",
+        "RoxygenNote": "6.1.0",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "NeedsCompilation": "no",
+        "Packaged": "2018-08-24 20:03:55 UTC; barret",
+        "Author": "Joe Cheng [aut, cre],\n  Bhaskar Karambelkar [aut],\n  Yihui Xie [aut],\n  Hadley Wickham [ctb],\n  Kenton Russell [ctb],\n  Kent Johnson [ctb],\n  Barret Schloerke [ctb],\n  jQuery Foundation and contributors [ctb, cph] (jQuery library),\n  Vladimir Agafonkin [ctb, cph] (Leaflet library),\n  CloudMade [cph] (Leaflet library),\n  Leaflet contributors [ctb] (Leaflet library),\n  Leaflet Providers contributors [ctb, cph] (Leaflet Providers plugin),\n  Brandon Copeland [ctb, cph] (leaflet-measure plugin),\n  Joerg Dietrich [ctb, cph] (Leaflet.Terminator plugin),\n  Benjamin Becquet [ctb, cph] (Leaflet.MagnifyingGlass plugin),\n  Norkart AS [ctb, cph] (Leaflet.MiniMap plugin),\n  L. Voogdt [ctb, cph] (Leaflet.awesome-markers plugin),\n  Daniel Montague [ctb, cph] (Leaflet.EasyButton plugin),\n  Kartena AB [ctb, cph] (Proj4Leaflet plugin),\n  Robert Kajic [ctb, cph] (leaflet-locationfilter plugin),\n  Mapbox [ctb, cph] (leaflet-omnivore plugin),\n  Michael Bostock [ctb, cph] (topojson),\n  RStudio [cph]",
+        "Repository": "RSPM",
+        "Date/Publication": "2018-08-27 14:12:16 UTC",
+        "Built": "R 3.6.1; ; 2019-09-21 13:25:53 UTC; unix"
+      }
+    },
     "magrittr": {
       "Source": "RSPM",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
@@ -1000,6 +1119,38 @@
         "Date/Publication": "2014-11-22 19:15:57",
         "Encoding": "UTF-8",
         "Built": "R 3.6.1; ; 2019-09-09 12:11:46 UTC; unix"
+      }
+    },
+    "markdown": {
+      "Source": "RSPM",
+      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "markdown",
+        "Type": "Package",
+        "Title": "Render Markdown with the C Library 'Sundown'",
+        "Version": "1.0",
+        "Authors@R": "c(\n   person(\"JJ\", \"Allaire\", role = \"aut\"),\n   person(\"Jeffrey\", \"Horner\", role = \"aut\"),\n   person(\"Yihui\", \"Xie\", role = c(\"aut\", \"cre\"), email = \"xie@yihui.name\", comment = c(ORCID = \"0000-0003-0645-5666\")),\n   person(\"Henrik\", \"Bengtsson\", role = \"ctb\"),\n   person(\"Jim\", \"Hester\", role = \"ctb\"),\n   person(\"Yixuan\", \"Qiu\", role = \"ctb\"),\n   person(\"Kohske\", \"Takahashi\", role = \"ctb\"),\n   person(\"Adam\", \"November\", role = \"ctb\"),\n   person(\"Nacho\", \"Caballero\", role = \"ctb\"),\n   person(\"Jeroen\", \"Ooms\", role = \"ctb\"),\n   person(\"Thomas\", \"Leeper\", role = \"ctb\"),\n   person(\"Joe\", \"Cheng\", role = \"ctb\"),\n   person(\"Andrzej\", \"Oles\", role = \"ctb\"),\n   person(\"Vicent\", \"Marti\", role = c(\"aut\", \"cph\"), comment = \"The Sundown library\"),\n   person(\"Natacha\", \"Porte\", role = c(\"aut\", \"cph\"), comment = \"The Sundown library\"),\n   person(family = \"RStudio\", role = \"cph\")\n   )",
+        "Description": "Provides R bindings to the 'Sundown' Markdown rendering library\n    (<https://github.com/vmg/sundown>). Markdown is a plain-text formatting\n    syntax that can be converted to 'XHTML' or other formats. See\n    <http://en.wikipedia.org/wiki/Markdown> for more information about Markdown.",
+        "Depends": "R (>= 2.11.1)",
+        "Imports": "utils, mime (>= 0.3)",
+        "Suggests": "knitr, RCurl",
+        "License": "GPL-2",
+        "URL": "https://github.com/rstudio/markdown",
+        "BugReports": "https://github.com/rstudio/markdown/issues",
+        "VignetteBuilder": "knitr",
+        "RoxygenNote": "6.1.1",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "yes",
+        "Packaged": "2019-06-07 14:17:03 UTC; yihui",
+        "Author": "JJ Allaire [aut],\n  Jeffrey Horner [aut],\n  Yihui Xie [aut, cre] (<https://orcid.org/0000-0003-0645-5666>),\n  Henrik Bengtsson [ctb],\n  Jim Hester [ctb],\n  Yixuan Qiu [ctb],\n  Kohske Takahashi [ctb],\n  Adam November [ctb],\n  Nacho Caballero [ctb],\n  Jeroen Ooms [ctb],\n  Thomas Leeper [ctb],\n  Joe Cheng [ctb],\n  Andrzej Oles [ctb],\n  Vicent Marti [aut, cph] (The Sundown library),\n  Natacha Porte [aut, cph] (The Sundown library),\n  RStudio [cph]",
+        "Maintainer": "Yihui Xie <xie@yihui.name>",
+        "Repository": "RSPM",
+        "Date/Publication": "2019-06-07 19:00:15 UTC",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 21:20:36 UTC; unix"
       }
     },
     "mgcv": {
@@ -1314,6 +1465,31 @@
         "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 22:03:32 UTC; unix"
       }
     },
+    "png": {
+      "Source": "RSPM",
+      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "png",
+        "Version": "0.1-7",
+        "Title": "Read and write PNG images",
+        "Author": "Simon Urbanek <Simon.Urbanek@r-project.org>",
+        "Maintainer": "Simon Urbanek <Simon.Urbanek@r-project.org>",
+        "Depends": "R (>= 2.9.0)",
+        "Description": "This package provides an easy and simple way to read, write and display bitmap images stored in the PNG format. It can read and write both files and in-memory raw vectors.",
+        "License": "GPL-2 | GPL-3",
+        "SystemRequirements": "libpng",
+        "URL": "http://www.rforge.net/png/",
+        "Packaged": "2013-12-03 20:09:14 UTC; svnuser",
+        "NeedsCompilation": "yes",
+        "Repository": "RSPM",
+        "Date/Publication": "2013-12-03 22:25:05",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 22:04:21 UTC; unix"
+      }
+    },
     "promises": {
       "Source": "CRAN",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
@@ -1407,6 +1583,39 @@
         "Repository": "RSPM",
         "Date/Publication": "2016-03-28 23:10:10",
         "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 20:59:42 UTC; unix"
+      }
+    },
+    "raster": {
+      "Source": "RSPM",
+      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "raster",
+        "Type": "Package",
+        "Title": "Geographic Data Analysis and Modeling",
+        "Version": "2.9-23",
+        "Date": "2019-07-10",
+        "Depends": "sp (>= 1.2-0), R (>= 3.0.0)",
+        "Suggests": "rgdal (>= 0.9-1), rgeos (>= 0.3-8), ncdf4, igraph, tcltk,\nparallel, rasterVis, MASS, sf, testthat",
+        "LinkingTo": "Rcpp",
+        "Imports": "Rcpp, methods",
+        "SystemRequirements": "C++11",
+        "Description": "Reading, writing, manipulating, analyzing and modeling of gridded spatial data. The package implements basic and high-level functions. Processing of very large files is supported. There is a also support for vector data operations such as intersections. See the manual and tutorials on <https://rspatial.org/> to get started.",
+        "License": "GPL (>= 3)",
+        "URL": "https://CRAN.R-project.org/package=raster",
+        "BugReports": "https://github.com/rspatial/raster/issues/",
+        "Authors@R": "c(\n\tperson(\"Robert J.\", \"Hijmans\", role = c(\"cre\", \"aut\"),  \n\t\t\temail = \"r.hijmans@gmail.com\", \n\t\t\tcomment = c(ORCID = \"0000-0001-5872-2872\")),\n\tperson(\"Jacob\", \"van Etten\", role = \"ctb\"),\n\tperson(\"Michael\", \"Sumner\", role = \"ctb\"),\n\tperson(\"Joe\", \"Cheng\", role = \"ctb\"),\n\tperson(\"Andrew\", \"Bevan\", role = \"ctb\"),\n\tperson(\"Roger\", \"Bivand\", role = \"ctb\"),\n\tperson(\"Lorenzo\", \"Busetto\", role = \"ctb\"),\n\tperson(\"Mort\", \"Canty\", role = \"ctb\"),\n\tperson(\"David\", \"Forrest\", role = \"ctb\"),\n\tperson(\"Aniruddha\", \"Ghosh\", role = \"ctb\"),\n\tperson(\"Duncan\", \"Golicher\", role = \"ctb\"),\n\tperson(\"Josh\", \"Gray\", role = \"ctb\"),\n\tperson(\"Jonathan A.\", \"Greenberg\", role = \"ctb\"),\n\tperson(\"Paul\", \"Hiemstra\", role = \"ctb\"),\n\tperson(\"Institute for Mathematics Applied Geosciences\", role=\"cph\"),\n\tperson(\"Charles\", \"Karney\", role = \"ctb\"),\n\tperson(\"Matteo\", \"Mattiuzzi\", role = \"ctb\"),\n\tperson(\"Steven\", \"Mosher\", role = \"ctb\"),\n\tperson(\"Jakub\", \"Nowosad\", role = \"ctb\"),\n\tperson(\"Edzer\", \"Pebesma\", role = \"ctb\"),\n\tperson(\"Oscar\", \"Perpinan Lamigueiro\", role = \"ctb\"),\n\tperson(\"Etienne B.\", \"Racine\", role = \"ctb\"),\n\tperson(\"Barry\", \"Rowlingson\", role = \"ctb\"),\n\tperson(\"Ashton\", \"Shortridge\", role = \"ctb\"),\n\tperson(\"Bill\", \"Venables\", role = \"ctb\"),\n\tperson(\"Rafael\", \"Wueest\", role = \"ctb\")\n\t)",
+        "NeedsCompilation": "yes",
+        "Packaged": "2019-07-11 05:48:54 UTC; rhijm",
+        "Author": "Robert J. Hijmans [cre, aut] (<https://orcid.org/0000-0001-5872-2872>),\n  Jacob van Etten [ctb],\n  Michael Sumner [ctb],\n  Joe Cheng [ctb],\n  Andrew Bevan [ctb],\n  Roger Bivand [ctb],\n  Lorenzo Busetto [ctb],\n  Mort Canty [ctb],\n  David Forrest [ctb],\n  Aniruddha Ghosh [ctb],\n  Duncan Golicher [ctb],\n  Josh Gray [ctb],\n  Jonathan A. Greenberg [ctb],\n  Paul Hiemstra [ctb],\n  Institute for Mathematics Applied Geosciences [cph],\n  Charles Karney [ctb],\n  Matteo Mattiuzzi [ctb],\n  Steven Mosher [ctb],\n  Jakub Nowosad [ctb],\n  Edzer Pebesma [ctb],\n  Oscar Perpinan Lamigueiro [ctb],\n  Etienne B. Racine [ctb],\n  Barry Rowlingson [ctb],\n  Ashton Shortridge [ctb],\n  Bill Venables [ctb],\n  Rafael Wueest [ctb]",
+        "Maintainer": "Robert J. Hijmans <r.hijmans@gmail.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2019-07-11 13:43:08 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 21:06:32 UTC; unix"
       }
     },
     "reshape2": {
@@ -1600,6 +1809,35 @@
         "Repository": "RSPM",
         "Date/Publication": "2018-04-25 03:38:09 UTC",
         "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 19:12:50 UTC; unix"
+      }
+    },
+    "sp": {
+      "Source": "RSPM",
+      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "sp",
+        "Version": "1.3-1",
+        "Title": "Classes and Methods for Spatial Data",
+        "Authors@R": "c(person(\"Edzer\", \"Pebesma\", role = c(\"aut\", \"cre\"),\n\t\t\t\temail = \"edzer.pebesma@uni-muenster.de\"),\n\t\t\tperson(\"Roger\", \"Bivand\", role = \"aut\",\n            \temail = \"Roger.Bivand@nhh.no\"),\n\t\t\tperson(\"Barry\", \"Rowlingson\", role = \"ctb\"),\n\t\t\tperson(\"Virgilio\", \"Gomez-Rubio\", role = \"ctb\"),\n\t\t\tperson(\"Robert\", \"Hijmans\", role = \"ctb\"),\n\t\t\tperson(\"Michael\", \"Sumner\", role = \"ctb\"),\n\t\t\tperson(\"Don\", \"MacQueen\", role = \"ctb\"),\n\t\t\tperson(\"Jim\", \"Lemon\", role = \"ctb\"),\n\t\t\tperson(\"Josh\", \"O'Brien\", role = \"ctb\"),\n\t\t\tperson(\"Joseph\", \"O'Rourke\", role = \"ctb\"))",
+        "Depends": "R (>= 3.0.0), methods",
+        "Imports": "utils, stats, graphics, grDevices, lattice, grid",
+        "Suggests": "RColorBrewer, rgdal (>= 0.8-7), rgeos (>= 0.3-13), gstat,\nmaptools, deldir",
+        "Description": "Classes and methods for spatial\n  data; the classes document where the spatial location information\n  resides, for 2D or 3D data. Utility functions are provided, e.g. for\n  plotting data as maps, spatial selection, as well as methods for\n  retrieving coordinates, for subsetting, print, summary, etc.",
+        "License": "GPL (>= 2)",
+        "URL": "https://github.com/edzer/sp/ https://edzer.github.io/sp/",
+        "BugReports": "https://github.com/edzer/sp/issues",
+        "Collate": "bpy.colors.R AAA.R Class-CRS.R CRS-methods.R Class-Spatial.R\nSpatial-methods.R projected.R Class-SpatialPoints.R\nSpatialPoints-methods.R Class-SpatialPointsDataFrame.R\nSpatialPointsDataFrame-methods.R Class-SpatialMultiPoints.R\nSpatialMultiPoints-methods.R\nClass-SpatialMultiPointsDataFrame.R\nSpatialMultiPointsDataFrame-methods.R Class-GridTopology.R\nClass-SpatialGrid.R Class-SpatialGridDataFrame.R\nClass-SpatialLines.R SpatialLines-methods.R\nClass-SpatialLinesDataFrame.R SpatialLinesDataFrame-methods.R\nClass-SpatialPolygons.R Class-SpatialPolygonsDataFrame.R\nSpatialPolygons-methods.R SpatialPolygonsDataFrame-methods.R\nGridTopology-methods.R SpatialGrid-methods.R\nSpatialGridDataFrame-methods.R SpatialPolygons-internals.R\npoint.in.polygon.R SpatialPolygons-displayMethods.R zerodist.R\nimage.R stack.R bubble.R mapasp.R select.spatial.R gridded.R\nasciigrid.R spplot.R over.R spsample.R recenter.R dms.R\ngridlines.R spdists.R rbind.R flipSGDF.R chfids.R loadmeuse.R\ncompassRose.R surfaceArea.R spOptions.R subset.R disaggregate.R\nsp_spat1.R merge.R aggregate.R",
+        "NeedsCompilation": "yes",
+        "Packaged": "2018-06-05 09:56:27 UTC; edzer",
+        "Author": "Edzer Pebesma [aut, cre],\n  Roger Bivand [aut],\n  Barry Rowlingson [ctb],\n  Virgilio Gomez-Rubio [ctb],\n  Robert Hijmans [ctb],\n  Michael Sumner [ctb],\n  Don MacQueen [ctb],\n  Jim Lemon [ctb],\n  Josh O'Brien [ctb],\n  Joseph O'Rourke [ctb]",
+        "Maintainer": "Edzer Pebesma <edzer.pebesma@uni-muenster.de>",
+        "Repository": "RSPM",
+        "Date/Publication": "2018-06-05 13:58:03 UTC",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 18:02:04 UTC; unix"
       }
     },
     "stringi": {
@@ -1858,6 +2096,39 @@
         "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-09 12:13:48 UTC; unix"
       }
     },
+    "viridis": {
+      "Source": "RSPM",
+      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "viridis",
+        "Type": "Package",
+        "Title": "Default Color Maps from 'matplotlib'",
+        "Version": "0.5.1",
+        "Authors@R": "c(\n      person(\"Simon\", \"Garnier\", email = \"garnier@njit.edu\", role = c(\"aut\", \"cre\")),\n      person(\"Noam\", \"Ross\", email = \"noam.ross@gmail.com\", role = c(\"ctb\", \"cph\")),\n      person(\"Bob\", \"Rudis\", email = \"bob@rud.is\", role = c(\"ctb\", \"cph\")),\n      person(\"Marco\", \"Sciaini\", email = \"sciaini.marco@gmail.com\", role = c(\"ctb\", \"cph\")),\n      person(\"Cédric\", \"Scherer\", email = \"scherer@izw-berlin.de\", role = c(\"ctb\", \"cph\"))\n  )",
+        "Maintainer": "Simon Garnier <garnier@njit.edu>",
+        "Description": "Implementation of the 'viridis' - the default -, 'magma', 'plasma', \n    'inferno', and 'cividis' color maps for 'R'. 'viridis', 'magma', 'plasma', \n    and 'inferno' are ported from 'matplotlib' <http://matplotlib.org/>, a \n    popular plotting library for 'python'. 'cividis', was developed by Jamie R. \n    Nuñez and Sean M. Colby. These color maps are designed in such a way that \n    they will analytically be perfectly perceptually-uniform, both in regular \n    form and also when converted to black-and-white. They are also designed to \n    be perceived by readers with the most common form of color blindness (all \n    color maps in this package) and color vision deficiency ('cividis' only). ",
+        "License": "MIT + file LICENSE",
+        "LazyData": "TRUE",
+        "Encoding": "UTF-8",
+        "Depends": "R (>= 2.10), viridisLite (>= 0.3.0)",
+        "Imports": "stats, ggplot2 (>= 1.0.1), gridExtra",
+        "Suggests": "hexbin (>= 1.27.0), scales, MASS, knitr, dichromat,\ncolorspace, rasterVis, httr, mapproj, vdiffr, svglite (>=\n1.2.0), testthat, covr, rmarkdown, rgdal",
+        "VignetteBuilder": "knitr",
+        "URL": "https://github.com/sjmgarnier/viridis",
+        "BugReports": "https://github.com/sjmgarnier/viridis/issues",
+        "RoxygenNote": "6.0.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2018-03-29 14:51:56 UTC; simon",
+        "Author": "Simon Garnier [aut, cre],\n  Noam Ross [ctb, cph],\n  Bob Rudis [ctb, cph],\n  Marco Sciaini [ctb, cph],\n  Cédric Scherer [ctb, cph]",
+        "Repository": "RSPM",
+        "Date/Publication": "2018-03-29 15:48:56 UTC",
+        "Built": "R 3.6.0; ; 2019-07-17 19:27:49 UTC; unix"
+      }
+    },
     "viridisLite": {
       "Source": "RSPM",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
@@ -2040,7 +2311,7 @@
   },
   "files": {
     "app.R": {
-      "checksum": "ae09502e266afdb8ed802a1bd1a86090"
+      "checksum": "fb59222af7af04d153ba222c67ed53ed"
     },
     "packrat/desc/askpass": {
       "checksum": "f3640d9c1bebd3f5a6188eea0c23c533"
@@ -2065,6 +2336,9 @@
     },
     "packrat/desc/crayon": {
       "checksum": "79c84ced459a66a38b37c8d139c39f1b"
+    },
+    "packrat/desc/crosstalk": {
+      "checksum": "3e411295722f64b9dffe9e85bb3440e6"
     },
     "packrat/desc/curl": {
       "checksum": "c166231e2ee912afe2b72cadb0b8de31"
@@ -2093,11 +2367,17 @@
     "packrat/desc/glue": {
       "checksum": "33370222521b82b9df262a9ac0fdbd2b"
     },
+    "packrat/desc/gridExtra": {
+      "checksum": "c5967b88fcd0fd2f4111048ebdd54e7f"
+    },
     "packrat/desc/gtable": {
       "checksum": "4c3e4c7574d824ca82a88fb0ee8a963a"
     },
     "packrat/desc/htmltools": {
       "checksum": "cbf8e6803223e6ad21d922a9a4170272"
+    },
+    "packrat/desc/htmlwidgets": {
+      "checksum": "1d952d138795bf99d48e2fff18c6f53f"
     },
     "packrat/desc/httpuv": {
       "checksum": "cbe30b538be0a72d8a97dacfdcfc71dd"
@@ -2120,8 +2400,14 @@
     "packrat/desc/lazyeval": {
       "checksum": "f51c9535a9eac21082cac90c6dd81c9e"
     },
+    "packrat/desc/leaflet": {
+      "checksum": "89ac4bd5e5020e7e791f5ad69604e9dd"
+    },
     "packrat/desc/magrittr": {
       "checksum": "e18ceadd0e70056d330909f39b668d25"
+    },
+    "packrat/desc/markdown": {
+      "checksum": "d2f00b16607300e8d4ec0d7d689a03b0"
     },
     "packrat/desc/MASS": {
       "checksum": "ab544ae05df8dbf6efe93d281b355446"
@@ -2159,6 +2445,9 @@
     "packrat/desc/plyr": {
       "checksum": "4099abaf746fe3cdca655a54bf7614fe"
     },
+    "packrat/desc/png": {
+      "checksum": "c1abd3d02d4a1ec335262baa4a4c8f97"
+    },
     "packrat/desc/promises": {
       "checksum": "0d50b2cfb6c7eaabcba5c0e1650d24dc"
     },
@@ -2170,6 +2459,9 @@
     },
     "packrat/desc/rappdirs": {
       "checksum": "751fca2d11fe912b5186eb21ae6817da"
+    },
+    "packrat/desc/raster": {
+      "checksum": "b8ce138cabcf2a7817526c1e3ac7bf3b"
     },
     "packrat/desc/RColorBrewer": {
       "checksum": "49efa8ca0462dcc38ac6ec31627a326b"
@@ -2195,6 +2487,9 @@
     "packrat/desc/sourcetools": {
       "checksum": "04bb6505e036978f03bc536a9d07559b"
     },
+    "packrat/desc/sp": {
+      "checksum": "4f1bd43a53068f4567ba6e3149d1c2f6"
+    },
     "packrat/desc/stringi": {
       "checksum": "7677d3d647a6e6df31733441ccfd7d34"
     },
@@ -2219,6 +2514,9 @@
     "packrat/desc/vctrs": {
       "checksum": "d4b9c29230228aca5ee07a37abc10f68"
     },
+    "packrat/desc/viridis": {
+      "checksum": "8692982e4ddb8e4878792f84ab06e524"
+    },
     "packrat/desc/viridisLite": {
       "checksum": "46d16f07f115a5ad0b89bccaf6c1cb5f"
     },
@@ -2238,7 +2536,7 @@
       "checksum": "b6f35c64ff762d2a2c74d10460a480c6"
     },
     "packrat/packrat.lock": {
-      "checksum": "f219a9173ef9ce111491c9bf2d7657af"
+      "checksum": "a274d7fae069a2a439a612565b449844"
     }
   },
   "users": null

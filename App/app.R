@@ -3,6 +3,7 @@ library(shinydashboard)
 library(httr)
 library(ggplot2)
 library(dplyr)
+library(leaflet)
 
 # Create dashboard page UI
 ui <- dashboardPage(skin = "red",
