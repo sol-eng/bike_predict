@@ -32,8 +32,7 @@
         "Packaged": "2019-01-07 12:00:43.681885 UTC; edd",
         "Repository": "RSPM",
         "Date/Publication": "2019-01-07 19:50:25 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 3.6.1; ; 2019-09-09 12:16:09 UTC; unix"
+        "Built": "R 3.6.0; ; 2019-07-17 18:31:03 UTC; unix"
       }
     },
     "MASS": {
@@ -107,7 +106,7 @@
       }
     },
     "R6": {
-      "Source": "RSPM",
+      "Source": "CRAN",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
       "GithubRepo": null,
       "GithubUsername": null,
@@ -116,7 +115,7 @@
       "description": {
         "Package": "R6",
         "Title": "Encapsulated Classes with Reference Semantics",
-        "Version": "2.4.0",
+        "Version": "2.4.1",
         "Authors@R": "person(\"Winston\", \"Chang\", role = c(\"aut\", \"cre\"), email = \"winston@stdout.org\")",
         "Description": "Creates classes with reference semantics, similar to R's built-in\n    reference classes. Compared to reference classes, R6 classes are simpler\n    and lighter-weight, and they are not built on S4 classes so they do not\n    require the methods package. These classes allow public and private\n    members, and they support inheritance, even when the classes are defined in\n    different packages.",
         "Depends": "R (>= 3.0)",
@@ -127,13 +126,12 @@
         "BugReports": "https://github.com/r-lib/R6/issues",
         "RoxygenNote": "6.1.1",
         "NeedsCompilation": "no",
-        "Packaged": "2019-02-14 18:34:54 UTC; winston",
+        "Packaged": "2019-11-12 20:00:15 UTC; winston",
         "Author": "Winston Chang [aut, cre]",
         "Maintainer": "Winston Chang <winston@stdout.org>",
-        "Repository": "RSPM",
-        "Date/Publication": "2019-02-14 19:42:14 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 3.6.1; ; 2019-09-09 12:13:10 UTC; unix"
+        "Repository": "CRAN",
+        "Date/Publication": "2019-11-12 22:50:03 UTC",
+        "Built": "R 3.6.0; ; 2019-12-04 21:17:47 UTC; unix"
       }
     },
     "RColorBrewer": {
@@ -162,7 +160,7 @@
       }
     },
     "Rcpp": {
-      "Source": "RSPM",
+      "Source": "CRAN",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
       "GithubRepo": null,
       "GithubUsername": null,
@@ -171,8 +169,8 @@
       "description": {
         "Package": "Rcpp",
         "Title": "Seamless R and C++ Integration",
-        "Version": "1.0.1",
-        "Date": "2019-03-16",
+        "Version": "1.0.3",
+        "Date": "2019-11-08",
         "Author": "Dirk Eddelbuettel, Romain Francois, JJ Allaire, Kevin Ushey, Qiang Kou,\n Nathan Russell, Douglas Bates and John Chambers",
         "Maintainer": "Dirk Eddelbuettel <edd@debian.org>",
         "Description": "The 'Rcpp' package provides R functions as well as C++ classes which\n offer a seamless integration of R and C++. Many R data types and objects can be\n mapped back and forth to C++ equivalents which facilitates both writing of new\n code as well as easier integration of third-party libraries. Documentation\n about 'Rcpp' is provided by several vignettes included in this package, via the\n 'Rcpp Gallery' site at <http://gallery.rcpp.org>, the paper by Eddelbuettel and\n Francois (2011, <doi:10.18637/jss.v040.i08>), the book by Eddelbuettel (2013,\n <doi:10.1007/978-1-4614-6868-4>) and the paper by Eddelbuettel and Balamuta (2018,\n <doi:10.1080/00031305.2017.1375990>); see 'citation(\"Rcpp\")' for details.",
@@ -184,13 +182,12 @@
         "License": "GPL (>= 2)",
         "BugReports": "https://github.com/RcppCore/Rcpp/issues",
         "MailingList": "Please send questions and comments regarding Rcpp to\nrcpp-devel@lists.r-forge.r-project.org",
-        "RoxygenNote": "6.0.1",
+        "RoxygenNote": "6.1.1",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-03-16 15:29:08.470813 UTC; edd",
-        "Repository": "RSPM",
-        "Date/Publication": "2019-03-17 07:15:10 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-08-05 07:54:34 UTC; unix"
+        "Packaged": "2019-11-08 18:25:32.94843 UTC; edd",
+        "Repository": "CRAN",
+        "Date/Publication": "2019-11-08 23:44:12",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:18:03 UTC; unix"
       }
     },
     "askpass": {
@@ -439,7 +436,7 @@
       }
     },
     "digest": {
-      "Source": "RSPM",
+      "Source": "CRAN",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
       "GithubRepo": null,
       "GithubUsername": null,
@@ -447,24 +444,24 @@
       "GithubSha1": null,
       "description": {
         "Package": "digest",
-        "Author": "Dirk Eddelbuettel <edd@debian.org> with contributions \n by Antoine Lucas, Jarek Tuszynski, Henrik Bengtsson, Simon Urbanek,\n Mario Frasca, Bryan Lewis, Murray Stokely, Hannes Muehleisen,\n Duncan Murdoch, Jim Hester, Wush Wu, Qiang Kou, Thierry Onkelinx, \n Michel Lang, Viliam Simko, Kurt Hornik, Radford Neal, and Kendon Bell.",
-        "Version": "0.6.20",
-        "Date": "2019-07-04",
+        "Author": "Dirk Eddelbuettel <edd@debian.org> with contributions \n by Antoine Lucas, Jarek Tuszynski, Henrik Bengtsson, Simon Urbanek,\n Mario Frasca, Bryan Lewis, Murray Stokely, Hannes Muehleisen,\n Duncan Murdoch, Jim Hester, Wush Wu, Qiang Kou, Thierry Onkelinx, \n Michel Lang, Viliam Simko, Kurt Hornik, Radford Neal, Kendon Bell,\n Matthew de Queljoe, Ion Suruceanu, and Bill Denney.",
+        "Version": "0.6.23",
+        "Date": "2019-11-22",
         "Maintainer": "Dirk Eddelbuettel <edd@debian.org>",
         "Title": "Create Compact Hash Digests of R Objects",
         "Description": "Implementation of a function 'digest()' for the creation \n of hash digests of arbitrary R objects (using the 'md5', 'sha-1', 'sha-256', \n 'crc32', 'xxhash', 'murmurhash' and 'spookyhash' algorithms) permitting easy\n comparison of R language objects, as well as functions such as'hmac()' to\n create hash-based message authentication code. Please note that this package\n is not meant to be deployed for cryptographic purposes for which more\n comprehensive (and widely tested) libraries such as 'OpenSSL' should be\n used.",
         "URL": "http://dirk.eddelbuettel.com/code/digest.html",
         "BugReports": "https://github.com/eddelbuettel/digest/issues",
         "Depends": "R (>= 3.1.0)",
+        "Imports": "utils",
         "License": "GPL (>= 2)",
         "Suggests": "tinytest, knitr, rmarkdown",
         "VignetteBuilder": "knitr",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-07-04 13:26:33.39935 UTC; edd",
-        "Repository": "RSPM",
-        "Date/Publication": "2019-07-04 14:40:03 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-09 12:12:14 UTC; unix"
+        "Packaged": "2019-11-22 16:44:22.218585 UTC; edd",
+        "Repository": "CRAN",
+        "Date/Publication": "2019-11-23 09:40:07 UTC",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:17:42 UTC; unix"
       }
     },
     "dplyr": {
@@ -570,35 +567,35 @@
       "GithubRepo": "fastmap",
       "GithubUsername": "r-lib",
       "GithubRef": "master",
-      "GithubSha1": "91321f1ae71978077a5036a4d4981abd4e9898b3",
+      "GithubSha1": "6d0fafbdfe0b5c80762b0b9339e1ff8e4e006417",
       "description": {
         "Package": "fastmap",
-        "Title": "Fast implementation of a key-value store",
-        "Version": "0.0.0.9001",
-        "Authors@R": "c(\n    person(\"Winston\", \"Chang\", email = \"winston@rstudio.com\", role = c(\"aut\", \"cre\")),\n    person(given = \"RStudio\", role = c(\"cph\", \"fnd\"))\n    )",
-        "Description": "Fast implementation of a key-value store. Environments are commonly used as key-value stores, but every time a new key is used, it is added to R's global symbol table, causing a small amount of memory leakage. This can be problematic in cases where many different keys are used. Fastmap avoids this memory leak issue.",
+        "Title": "Fast Implementation of a Key-Value Store",
+        "Version": "1.0.1",
+        "Authors@R": "c(\n    person(\"Winston\", \"Chang\", email = \"winston@rstudio.com\", role = c(\"aut\", \"cre\")),\n    person(given = \"RStudio\", role = c(\"cph\", \"fnd\")),\n    person(given = \"Tessil\", role = \"cph\", comment = \"hopscotch_map library\")\n    )",
+        "Description": "Fast implementation of a key-value store. Environments are commonly\n    used as key-value stores, but every time a new key is used, it is added to\n    R's global symbol table, causing a small amount of memory leakage. This can\n    be problematic in cases where many different keys are used. Fastmap avoids\n    this memory leak issue by implementing the map using data structures in C++.",
         "License": "MIT + file LICENSE",
         "Encoding": "UTF-8",
         "LazyData": "true",
         "RoxygenNote": "6.1.1",
         "Suggests": "testthat (>= 2.1.1)",
-        "URL": "https://r-lib.github.io/fastmap/",
+        "URL": "https://r-lib.github.io/fastmap/, https://github.com/r-lib/fastmap",
         "BugReports": "https://github.com/r-lib/fastmap/issues",
         "RemoteType": "github",
         "RemoteHost": "api.github.com",
         "RemoteRepo": "fastmap",
         "RemoteUsername": "r-lib",
         "RemoteRef": "master",
-        "RemoteSha": "91321f1ae71978077a5036a4d4981abd4e9898b3",
+        "RemoteSha": "6d0fafbdfe0b5c80762b0b9339e1ff8e4e006417",
         "GithubRepo": "fastmap",
         "GithubUsername": "r-lib",
         "GithubRef": "master",
-        "GithubSHA1": "91321f1ae71978077a5036a4d4981abd4e9898b3",
+        "GithubSHA1": "6d0fafbdfe0b5c80762b0b9339e1ff8e4e006417",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-07-24 14:09:03 UTC; alex.gold",
-        "Author": "Winston Chang [aut, cre],\n  RStudio [cph, fnd]",
+        "Packaged": "2019-12-04 21:22:28 UTC; alex.gold",
+        "Author": "Winston Chang [aut, cre],\n  RStudio [cph, fnd],\n  Tessil [cph] (hopscotch_map library)",
         "Maintainer": "Winston Chang <winston@rstudio.com>",
-        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-24 14:09:04 UTC; unix"
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:22:29 UTC; unix"
       }
     },
     "ggplot2": {
@@ -733,7 +730,7 @@
       }
     },
     "htmltools": {
-      "Source": "RSPM",
+      "Source": "CRAN",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
       "GithubRepo": null,
       "GithubUsername": null,
@@ -743,29 +740,30 @@
         "Package": "htmltools",
         "Type": "Package",
         "Title": "Tools for HTML",
-        "Version": "0.3.6",
-        "Date": "2017-04-26",
+        "Version": "0.4.0",
         "Author": "RStudio, Inc.",
         "Maintainer": "Joe Cheng <joe@rstudio.com>",
         "Description": "Tools for HTML generation and output.",
         "Depends": "R (>= 2.14.1)",
-        "Imports": "utils, digest, Rcpp",
-        "Suggests": "markdown, testthat",
+        "Imports": "utils, digest, Rcpp, rlang",
+        "Suggests": "markdown, testthat, withr",
         "Enhances": "knitr",
         "License": "GPL (>= 2)",
         "URL": "https://github.com/rstudio/htmltools",
         "BugReports": "https://github.com/rstudio/htmltools/issues",
-        "RoxygenNote": "6.0.1",
+        "RoxygenNote": "6.1.1",
         "LinkingTo": "Rcpp",
+        "Encoding": "UTF-8",
+        "Collate": "'RcppExports.R' 'html_dependency.R' 'html_escape.R'\n'html_print.R' 'shim.R' 'utils.R' 'tags.R' 'template.R'",
         "NeedsCompilation": "yes",
-        "Packaged": "2017-04-27 00:04:32 UTC; jcheng",
-        "Repository": "RSPM",
-        "Date/Publication": "2017-04-28 07:41:46 UTC",
-        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 20:43:18 UTC; unix"
+        "Packaged": "2019-10-04 17:43:48 UTC; jcheng",
+        "Repository": "CRAN",
+        "Date/Publication": "2019-10-04 23:00:08 UTC",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:18:39 UTC; unix"
       }
     },
     "httpuv": {
-      "Source": "RSPM",
+      "Source": "CRAN",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
       "GithubRepo": null,
       "GithubUsername": null,
@@ -774,10 +772,11 @@
       "description": {
         "Package": "httpuv",
         "Type": "Package",
+        "Encoding": "UTF-8",
         "Title": "HTTP and WebSocket Server Library",
-        "Version": "1.5.1",
+        "Version": "1.5.2",
         "Author": "Joe Cheng, Hector Corrada Bravo [ctb], Jeroen Ooms [ctb],\n    Winston Chang [ctb]",
-        "Copyright": "RStudio, Inc.; Joyent, Inc.; Nginx Inc.; Igor Sysoev; Niels\nProvos; Internet Systems Consortium, Inc.; Alexander Chemeris",
+        "Copyright": "RStudio, Inc.; Joyent, Inc.; Nginx Inc.; Igor Sysoev; Niels\nProvos; Internet Systems Consortium, Inc.; Alexander Chemeris;\nBerkeley Software Design; Google Inc.; Sony Mobile\nCommunications AB; Alexander Peslyak; Free Software Foundation,\nInc.; X Consortium; Ben Noordhuis; StrongLoop, Inc.; Saúl\nIbarra Corretgé; Bert Belder; Fedor Indutny; libuv project;\nRefael Ackermann; Kenneth MacKay; Emergya; Diego Pettenò; xine\nproject, The Regents of the University of California, Dariusz\nDwornikowski",
         "Maintainer": "Joe Cheng <joe@rstudio.com>",
         "Description": "Provides low-level socket and protocol support for handling\n    HTTP and WebSocket requests directly from within R. It is primarily\n    intended as a building block for other packages, rather than making it\n    particularly easy to create complete web applications using httpuv alone.\n    httpuv is built on top of the libuv and http-parser C libraries, both of\n    which were developed by Joyent, Inc. (See LICENSE file for libuv and\n    http-parser license information.)",
         "License": "GPL (>= 2) | file LICENSE",
@@ -787,14 +786,13 @@
         "URL": "https://github.com/rstudio/httpuv",
         "SystemRequirements": "GNU make",
         "RoxygenNote": "6.1.1",
-        "Suggests": "testthat, callr, curl",
-        "Collate": "'RcppExports.R' 'httpuv.R' 'server.R' 'static_paths.R'\n'utils.R'",
+        "Suggests": "testthat, callr, curl, websocket",
+        "Collate": "'RcppExports.R' 'httpuv.R' 'random_port.R' 'server.R'\n'static_paths.R' 'utils.R'",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-04-05 20:06:25 UTC; winston",
-        "Repository": "RSPM",
-        "Date/Publication": "2019-04-05 22:10:03 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 20:44:15 UTC; unix"
+        "Packaged": "2019-09-11 04:12:10 UTC; jcheng",
+        "Repository": "CRAN",
+        "Date/Publication": "2019-09-11 05:40:02 UTC",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:19:32 UTC; unix"
       }
     },
     "httr": {
@@ -886,7 +884,7 @@
       }
     },
     "later": {
-      "Source": "RSPM",
+      "Source": "CRAN",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
       "GithubRepo": null,
       "GithubUsername": null,
@@ -895,25 +893,25 @@
       "description": {
         "Package": "later",
         "Type": "Package",
-        "Title": "Utilities for Delaying Function Execution",
-        "Version": "0.8.0",
+        "Title": "Utilities for Scheduling Functions to Execute Later with Event\nLoops",
+        "Version": "1.0.0",
         "Authors@R": "c(\n    person(\"Joe\", \"Cheng\", role = c(\"aut\", \"cre\"), email = \"joe@rstudio.com\"),\n    person(family = \"RStudio\", role = \"cph\"),\n    person(\"Winston\", \"Chang\", role = c(\"aut\"), email = \"winston@rstudio.com\"),\n    person(\"Marcus\", \"Geelnard\", role = c(\"ctb\", \"cph\"), comment = \"TinyCThread library, https://tinycthread.github.io/\"),\n    person(\"Evan\", \"Nemerson\", role = c(\"ctb\", \"cph\"), comment = \"TinyCThread library, https://tinycthread.github.io/\")\n    )",
-        "Description": "Executes arbitrary R or C functions some time after the current\n    time, after the R execution stack has emptied.",
+        "Description": "Executes arbitrary R or C functions some time after the current\n    time, after the R execution stack has emptied. The functions are scheduled\n    in an event loop.",
         "URL": "https://github.com/r-lib/later",
         "BugReports": "https://github.com/r-lib/later/issues",
         "License": "GPL (>= 2)",
         "Imports": "Rcpp (>= 0.12.9), rlang",
         "LinkingTo": "Rcpp, BH",
-        "RoxygenNote": "6.1.0",
+        "RoxygenNote": "6.1.1",
         "Suggests": "knitr, rmarkdown, testthat",
         "VignetteBuilder": "knitr",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-02-11 08:01:33 UTC; jcheng",
+        "Packaged": "2019-10-03 23:31:59 UTC; jcheng",
         "Author": "Joe Cheng [aut, cre],\n  RStudio [cph],\n  Winston Chang [aut],\n  Marcus Geelnard [ctb, cph] (TinyCThread library,\n    https://tinycthread.github.io/),\n  Evan Nemerson [ctb, cph] (TinyCThread library,\n    https://tinycthread.github.io/)",
         "Maintainer": "Joe Cheng <joe@rstudio.com>",
-        "Repository": "RSPM",
-        "Date/Publication": "2019-02-11 08:53:37 UTC",
-        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 21:02:59 UTC; unix"
+        "Repository": "CRAN",
+        "Date/Publication": "2019-10-04 05:00:02 UTC",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:18:52 UTC; unix"
       }
     },
     "lattice": {
@@ -1317,7 +1315,7 @@
       }
     },
     "promises": {
-      "Source": "RSPM",
+      "Source": "CRAN",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
       "GithubRepo": null,
       "GithubUsername": null,
@@ -1327,26 +1325,26 @@
         "Package": "promises",
         "Type": "Package",
         "Title": "Abstractions for Promise-Based Asynchronous Programming",
-        "Version": "1.0.1",
+        "Version": "1.1.0",
         "Authors@R": "c(\n      person(\"Joe\", \"Cheng\", email = \"joe@rstudio.com\", role = c(\"aut\", \"cre\")),\n      person(\"RStudio\", role = c(\"cph\", \"fnd\"))\n    )",
         "Description": "Provides fundamental abstractions for doing asynchronous programming\n    in R using promises. Asynchronous programming is useful for allowing a single\n    R process to orchestrate multiple tasks in the background while also attending\n    to something else. Semantics are similar to 'JavaScript' promises, but with a\n    syntax that is idiomatic R.",
         "License": "MIT + file LICENSE",
         "Imports": "R6, Rcpp, later, rlang, stats, magrittr",
         "Suggests": "testthat, future, knitr, rmarkdown",
         "LinkingTo": "later, Rcpp",
-        "RoxygenNote": "6.0.1",
+        "RoxygenNote": "6.1.1",
         "Encoding": "UTF-8",
         "LazyData": "true",
         "VignetteBuilder": "knitr",
         "URL": "https://rstudio.github.io/promises,\nhttps://github.com/rstudio/promises",
         "BugReports": "https://github.com/rstudio/promises/issues",
         "NeedsCompilation": "yes",
-        "Packaged": "2018-04-12 22:42:12 UTC; jcheng",
+        "Packaged": "2019-10-04 16:59:31 UTC; jcheng",
         "Author": "Joe Cheng [aut, cre],\n  RStudio [cph, fnd]",
         "Maintainer": "Joe Cheng <joe@rstudio.com>",
-        "Repository": "RSPM",
-        "Date/Publication": "2018-04-13 08:59:30 UTC",
-        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 22:10:23 UTC; unix"
+        "Repository": "CRAN",
+        "Date/Publication": "2019-10-04 23:00:05 UTC",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:19:18 UTC; unix"
       }
     },
     "purrr": {
@@ -1443,7 +1441,7 @@
       }
     },
     "rlang": {
-      "Source": "RSPM",
+      "Source": "CRAN",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
       "GithubRepo": null,
       "GithubUsername": null,
@@ -1451,7 +1449,7 @@
       "GithubSha1": null,
       "description": {
         "Package": "rlang",
-        "Version": "0.4.0",
+        "Version": "0.4.2",
         "Title": "Functions for Base Types and Core R and 'Tidyverse' Features",
         "Description": "A toolbox for working with base types, core R features\n  like the condition system, and core 'Tidyverse' features like tidy\n  evaluation.",
         "Authors@R": "c(\n    person(\"Lionel\", \"Henry\", ,\"lionel@rstudio.com\", c(\"aut\", \"cre\")),\n    person(\"Hadley\", \"Wickham\", ,\"hadley@rstudio.com\", \"aut\"),\n    person(\"RStudio\", role = \"cph\")\n    )",
@@ -1460,18 +1458,18 @@
         "ByteCompile": "true",
         "Biarch": "true",
         "Depends": "R (>= 3.2.0)",
-        "Suggests": "covr, crayon, magrittr, methods, pillar, rmarkdown, testthat\n(>= 2.0.0)",
+        "Suggests": "cli, covr, crayon, magrittr, methods, pillar, rmarkdown,\ntestthat (>= 2.3.0)",
         "Encoding": "UTF-8",
         "RoxygenNote": "6.1.1",
         "URL": "http://rlang.r-lib.org, https://github.com/r-lib/rlang",
         "BugReports": "https://github.com/r-lib/rlang/issues",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-06-24 21:23:11 UTC; lionel",
+        "Packaged": "2019-11-22 16:01:18 UTC; lionel",
         "Author": "Lionel Henry [aut, cre],\n  Hadley Wickham [aut],\n  RStudio [cph]",
         "Maintainer": "Lionel Henry <lionel@rstudio.com>",
-        "Repository": "RSPM",
-        "Date/Publication": "2019-06-25 07:50:03 UTC",
-        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-09 12:11:53 UTC; unix"
+        "Repository": "CRAN",
+        "Date/Publication": "2019-11-23 11:20:02 UTC",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:17:50 UTC; unix"
       }
     },
     "scales": {
@@ -1512,23 +1510,22 @@
       "GithubRepo": "shiny",
       "GithubUsername": "rstudio",
       "GithubRef": "master",
-      "GithubSha1": "1a8b36f06dd96919843a454da6e9eb26986a1659",
+      "GithubSha1": "e07c7483a79cc641d464cd7496872a28eedbe4a4",
       "description": {
         "Package": "shiny",
         "Type": "Package",
         "Title": "Web Application Framework for R",
-        "Version": "1.3.2.9001",
+        "Version": "1.4.0.9001",
         "Authors@R": "c(\n    person(\"Winston\", \"Chang\", role = c(\"aut\", \"cre\"), email = \"winston@rstudio.com\"),\n    person(\"Joe\", \"Cheng\", role = \"aut\", email = \"joe@rstudio.com\"),\n    person(\"JJ\", \"Allaire\", role = \"aut\", email = \"jj@rstudio.com\"),\n    person(\"Yihui\", \"Xie\", role = \"aut\", email = \"yihui@rstudio.com\"),\n    person(\"Jonathan\", \"McPherson\", role = \"aut\", email = \"jonathan@rstudio.com\"),\n    person(family = \"RStudio\", role = \"cph\"),\n    person(family = \"jQuery Foundation\", role = \"cph\",\n    comment = \"jQuery library and jQuery UI library\"),\n    person(family = \"jQuery contributors\", role = c(\"ctb\", \"cph\"),\n    comment = \"jQuery library; authors listed in inst/www/shared/jquery-AUTHORS.txt\"),\n    person(family = \"jQuery UI contributors\", role = c(\"ctb\", \"cph\"),\n    comment = \"jQuery UI library; authors listed in inst/www/shared/jqueryui/AUTHORS.txt\"),\n    person(\"Mark\", \"Otto\", role = \"ctb\",\n    comment = \"Bootstrap library\"),\n    person(\"Jacob\", \"Thornton\", role = \"ctb\",\n    comment = \"Bootstrap library\"),\n    person(family = \"Bootstrap contributors\", role = \"ctb\",\n    comment = \"Bootstrap library\"),\n    person(family = \"Twitter, Inc\", role = \"cph\",\n    comment = \"Bootstrap library\"),\n    person(\"Alexander\", \"Farkas\", role = c(\"ctb\", \"cph\"),\n    comment = \"html5shiv library\"),\n    person(\"Scott\", \"Jehl\", role = c(\"ctb\", \"cph\"),\n    comment = \"Respond.js library\"),\n    person(\"Stefan\", \"Petre\", role = c(\"ctb\", \"cph\"),\n    comment = \"Bootstrap-datepicker library\"),\n    person(\"Andrew\", \"Rowls\", role = c(\"ctb\", \"cph\"),\n    comment = \"Bootstrap-datepicker library\"),\n    person(\"Dave\", \"Gandy\", role = c(\"ctb\", \"cph\"),\n    comment = \"Font-Awesome font\"),\n    person(\"Brian\", \"Reavis\", role = c(\"ctb\", \"cph\"),\n    comment = \"selectize.js library\"),\n    person(\"Kristopher Michael\", \"Kowal\", role = c(\"ctb\", \"cph\"),\n    comment = \"es5-shim library\"),\n    person(family = \"es5-shim contributors\", role = c(\"ctb\", \"cph\"),\n    comment = \"es5-shim library\"),\n    person(\"Denis\", \"Ineshin\", role = c(\"ctb\", \"cph\"),\n    comment = \"ion.rangeSlider library\"),\n    person(\"Sami\", \"Samhuri\", role = c(\"ctb\", \"cph\"),\n    comment = \"Javascript strftime library\"),\n    person(family = \"SpryMedia Limited\", role = c(\"ctb\", \"cph\"),\n    comment = \"DataTables library\"),\n    person(\"John\", \"Fraser\", role = c(\"ctb\", \"cph\"),\n    comment = \"showdown.js library\"),\n    person(\"John\", \"Gruber\", role = c(\"ctb\", \"cph\"),\n    comment = \"showdown.js library\"),\n    person(\"Ivan\", \"Sagalaev\", role = c(\"ctb\", \"cph\"),\n    comment = \"highlight.js library\"),\n    person(family = \"R Core Team\", role = c(\"ctb\", \"cph\"),\n    comment = \"tar implementation from R\")\n    )",
         "Description": "Makes it incredibly easy to build interactive web\n    applications with R. Automatic \"reactive\" binding between inputs and\n    outputs and extensive prebuilt widgets make it possible to build\n    beautiful, responsive, and powerful applications with minimal effort.",
         "License": "GPL-3 | file LICENSE",
         "Depends": "R (>= 3.0.2), methods",
-        "Imports": "utils, grDevices, httpuv (>= 1.5.0), mime (>= 0.3), jsonlite\n(>= 0.9.16), xtable, digest, htmltools (>= 0.3.6), R6 (>= 2.0),\nsourcetools, later (>= 0.7.2), promises (>= 1.0.1), tools,\ncrayon, rlang (>= 0.4.0), fastmap (>= 0.0.0.9001)",
-        "Suggests": "datasets, Cairo (>= 1.5-5), testthat (>= 2.1.1), knitr (>=\n1.6), markdown, rmarkdown, ggplot2, reactlog (>= 1.0.0),\nmagrittr",
+        "Imports": "utils, grDevices, httpuv (>= 1.5.2), mime (>= 0.3), jsonlite\n(>= 0.9.16), xtable, digest, htmltools (>= 0.4.0), R6 (>= 2.0),\nsourcetools, later (>= 1.0.0), promises (>= 1.1.0), tools,\ncrayon, rlang (>= 0.4.0), fastmap (>= 1.0.0), withr",
+        "Suggests": "datasets, Cairo (>= 1.5-5), testthat (>= 2.1.1), knitr (>=\n1.6), markdown, rmarkdown, ggplot2, reactlog (>= 1.0.0),\nmagrittr, shinytest, yaml, future, dygraphs",
         "URL": "http://shiny.rstudio.com",
-        "Remotes": "r-lib/fastmap",
         "BugReports": "https://github.com/rstudio/shiny/issues",
-        "Collate": "'app.R' 'bookmark-state-local.R' 'stack.R' 'bookmark-state.R'\n'bootstrap-layout.R' 'globals.R' 'conditions.R' 'map.R'\n'utils.R' 'bootstrap.R' 'cache-context.R' 'cache-disk.R'\n'cache-memory.R' 'cache-utils.R' 'diagnose.R' 'fileupload.R'\n'font-awesome.R' 'graph.R' 'reactives.R' 'reactive-domains.R'\n'history.R' 'hooks.R' 'html-deps.R' 'htmltools.R'\n'image-interact-opts.R' 'image-interact.R' 'imageutils.R'\n'input-action.R' 'input-checkbox.R' 'input-checkboxgroup.R'\n'input-date.R' 'input-daterange.R' 'input-file.R'\n'input-numeric.R' 'input-password.R' 'input-radiobuttons.R'\n'input-select.R' 'input-slider.R' 'input-submit.R'\n'input-text.R' 'input-textarea.R' 'input-utils.R'\n'insert-tab.R' 'insert-ui.R' 'jqueryui.R' 'middleware-shiny.R'\n'middleware.R' 'modal.R' 'modules.R' 'notifications.R'\n'priorityqueue.R' 'progress.R' 'react.R' 'render-cached-plot.R'\n'render-plot.R' 'render-table.R' 'run-url.R' 'serializers.R'\n'server-input-handlers.R' 'server.R' 'shiny-options.R'\n'shiny.R' 'shinyui.R' 'shinywrappers.R' 'showcase.R'\n'snapshot.R' 'tar.R' 'test-export.R' 'timer.R' 'update-input.R'",
-        "RoxygenNote": "6.1.1",
+        "Collate": "'app.R' 'bookmark-state-local.R' 'stack.R' 'bookmark-state.R'\n'bootstrap-deprecated.R' 'bootstrap-layout.R' 'globals.R'\n'conditions.R' 'map.R' 'utils.R' 'bootstrap.R'\n'cache-context.R' 'cache-disk.R' 'cache-memory.R'\n'cache-utils.R' 'diagnose.R' 'fileupload.R' 'font-awesome.R'\n'graph.R' 'reactives.R' 'reactive-domains.R' 'history.R'\n'hooks.R' 'html-deps.R' 'htmltools.R' 'image-interact-opts.R'\n'image-interact.R' 'imageutils.R' 'input-action.R'\n'input-checkbox.R' 'input-checkboxgroup.R' 'input-date.R'\n'input-daterange.R' 'input-file.R' 'input-numeric.R'\n'input-password.R' 'input-radiobuttons.R' 'input-select.R'\n'input-slider.R' 'input-submit.R' 'input-text.R'\n'input-textarea.R' 'input-utils.R' 'insert-tab.R' 'insert-ui.R'\n'jqueryui.R' 'middleware-shiny.R' 'middleware.R' 'timer.R'\n'mock-session.R' 'modal.R' 'modules.R' 'notifications.R'\n'priorityqueue.R' 'progress.R' 'react.R' 'render-cached-plot.R'\n'render-plot.R' 'render-table.R' 'run-url.R' 'serializers.R'\n'server-input-handlers.R' 'server.R' 'shiny-options.R'\n'shiny.R' 'shinyui.R' 'shinywrappers.R' 'showcase.R'\n'snapshot.R' 'tar.R' 'test-export.R' 'test-module.R' 'test.R'\n'update-input.R'",
+        "RoxygenNote": "7.0.2",
         "Encoding": "UTF-8",
         "Roxygen": "list(markdown = TRUE)",
         "RemoteType": "github",
@@ -1536,16 +1533,16 @@
         "RemoteRepo": "shiny",
         "RemoteUsername": "rstudio",
         "RemoteRef": "master",
-        "RemoteSha": "1a8b36f06dd96919843a454da6e9eb26986a1659",
+        "RemoteSha": "e07c7483a79cc641d464cd7496872a28eedbe4a4",
         "GithubRepo": "shiny",
         "GithubUsername": "rstudio",
         "GithubRef": "master",
-        "GithubSHA1": "1a8b36f06dd96919843a454da6e9eb26986a1659",
+        "GithubSHA1": "e07c7483a79cc641d464cd7496872a28eedbe4a4",
         "NeedsCompilation": "no",
-        "Packaged": "2019-07-24 14:18:36 UTC; alex.gold",
+        "Packaged": "2019-12-04 21:22:33 UTC; alex.gold",
         "Author": "Winston Chang [aut, cre],\n  Joe Cheng [aut],\n  JJ Allaire [aut],\n  Yihui Xie [aut],\n  Jonathan McPherson [aut],\n  RStudio [cph],\n  jQuery Foundation [cph] (jQuery library and jQuery UI library),\n  jQuery contributors [ctb, cph] (jQuery library; authors listed in\n    inst/www/shared/jquery-AUTHORS.txt),\n  jQuery UI contributors [ctb, cph] (jQuery UI library; authors listed in\n    inst/www/shared/jqueryui/AUTHORS.txt),\n  Mark Otto [ctb] (Bootstrap library),\n  Jacob Thornton [ctb] (Bootstrap library),\n  Bootstrap contributors [ctb] (Bootstrap library),\n  Twitter, Inc [cph] (Bootstrap library),\n  Alexander Farkas [ctb, cph] (html5shiv library),\n  Scott Jehl [ctb, cph] (Respond.js library),\n  Stefan Petre [ctb, cph] (Bootstrap-datepicker library),\n  Andrew Rowls [ctb, cph] (Bootstrap-datepicker library),\n  Dave Gandy [ctb, cph] (Font-Awesome font),\n  Brian Reavis [ctb, cph] (selectize.js library),\n  Kristopher Michael Kowal [ctb, cph] (es5-shim library),\n  es5-shim contributors [ctb, cph] (es5-shim library),\n  Denis Ineshin [ctb, cph] (ion.rangeSlider library),\n  Sami Samhuri [ctb, cph] (Javascript strftime library),\n  SpryMedia Limited [ctb, cph] (DataTables library),\n  John Fraser [ctb, cph] (showdown.js library),\n  John Gruber [ctb, cph] (showdown.js library),\n  Ivan Sagalaev [ctb, cph] (highlight.js library),\n  R Core Team [ctb, cph] (tar implementation from R)",
         "Maintainer": "Winston Chang <winston@rstudio.com>",
-        "Built": "R 3.6.0; ; 2019-07-24 14:18:40 UTC; unix"
+        "Built": "R 3.6.0; ; 2019-12-04 21:22:37 UTC; unix"
       }
     },
     "shinydashboard": {
@@ -1732,6 +1729,39 @@
         "Repository": "RSPM",
         "Date/Publication": "2019-06-06 13:40:03 UTC",
         "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-09 12:15:11 UTC; unix"
+      }
+    },
+    "tidyr": {
+      "Source": "RSPM",
+      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "tidyr",
+        "Title": "Easily Tidy Data with 'spread()' and 'gather()' Functions",
+        "Version": "0.8.3",
+        "Authors@R": "\n    c(person(given = \"Hadley\",\n             family = \"Wickham\",\n             role = c(\"aut\", \"cre\"),\n             email = \"hadley@rstudio.com\"),\n      person(given = \"Lionel\",\n             family = \"Henry\",\n             role = \"aut\",\n             email = \"lionel@rstudio.com\"),\n      person(given = \"RStudio\",\n             role = \"cph\"))",
+        "Description": "An evolution of 'reshape2'. It's designed\n    specifically for data tidying (not general reshaping or aggregating)\n    and works well with 'dplyr' data pipelines.",
+        "License": "MIT + file LICENSE",
+        "URL": "http://tidyr.tidyverse.org, https://github.com/tidyverse/tidyr",
+        "BugReports": "https://github.com/tidyverse/tidyr/issues",
+        "Depends": "R (>= 3.1)",
+        "Imports": "dplyr (>= 0.7.0), glue, magrittr, purrr, Rcpp, rlang, stringi,\ntibble, tidyselect (>= 0.2.5), utils",
+        "Suggests": "covr, gapminder, knitr, rmarkdown, testthat",
+        "LinkingTo": "Rcpp",
+        "VignetteBuilder": "knitr",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "RoxygenNote": "6.1.1",
+        "NeedsCompilation": "yes",
+        "Packaged": "2019-02-28 16:04:27 UTC; hadley",
+        "Author": "Hadley Wickham [aut, cre],\n  Lionel Henry [aut],\n  RStudio [cph]",
+        "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2019-03-01 23:00:03 UTC",
+        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-08-05 08:22:50 UTC; unix"
       }
     },
     "tidyselect": {
@@ -2010,7 +2040,7 @@
   },
   "files": {
     "app.R": {
-      "checksum": "64ffc557e814b97f48469a1932276861"
+      "checksum": "ae09502e266afdb8ed802a1bd1a86090"
     },
     "packrat/desc/askpass": {
       "checksum": "f3640d9c1bebd3f5a6188eea0c23c533"
@@ -2025,7 +2055,7 @@
       "checksum": "435be2515fdf1fd22518433c39dec8ae"
     },
     "packrat/desc/BH": {
-      "checksum": "376c87e4ffde8eb834e58b90c94d13e4"
+      "checksum": "3b7edd866f5750b5ef52f5737ea3a12f"
     },
     "packrat/desc/cli": {
       "checksum": "36e1bc13c4ced49e4a3171fb693dd49d"
@@ -2040,7 +2070,7 @@
       "checksum": "c166231e2ee912afe2b72cadb0b8de31"
     },
     "packrat/desc/digest": {
-      "checksum": "6b633a1eb9658c96e625fdf29d706801"
+      "checksum": "9429063b07dc6e719465f182b30b28b3"
     },
     "packrat/desc/dplyr": {
       "checksum": "0654cfd2c84e841c51027d8240119875"
@@ -2052,7 +2082,7 @@
       "checksum": "f861dd2d8a7a9f3473d93b06e5c94ca2"
     },
     "packrat/desc/fastmap": {
-      "checksum": "ed824987b35f2ab6014c40f705ecefbb"
+      "checksum": "3f82a9e5f9adc0a7ba091965b3b62426"
     },
     "packrat/desc/ggplot2": {
       "checksum": "3a26920f509d82503352161c58c1169c"
@@ -2067,10 +2097,10 @@
       "checksum": "4c3e4c7574d824ca82a88fb0ee8a963a"
     },
     "packrat/desc/htmltools": {
-      "checksum": "9829f843155827ac870bdb4be1486e28"
+      "checksum": "cbf8e6803223e6ad21d922a9a4170272"
     },
     "packrat/desc/httpuv": {
-      "checksum": "7279d0b5f2520dc13da8730366c1729a"
+      "checksum": "cbe30b538be0a72d8a97dacfdcfc71dd"
     },
     "packrat/desc/httr": {
       "checksum": "e551c3c120a6d9527f056a495a33edcf"
@@ -2082,7 +2112,7 @@
       "checksum": "e34983c602bbbbc722fe4457865b41dd"
     },
     "packrat/desc/later": {
-      "checksum": "e340016189ac6cf55b72dae708928148"
+      "checksum": "4c5850c8cec481b369b27938a807e7fa"
     },
     "packrat/desc/lattice": {
       "checksum": "58aca681534f2b9674a2f8107e16c087"
@@ -2130,13 +2160,13 @@
       "checksum": "4099abaf746fe3cdca655a54bf7614fe"
     },
     "packrat/desc/promises": {
-      "checksum": "bae6afcd97fd052ab1110e4e17c59ba1"
+      "checksum": "0d50b2cfb6c7eaabcba5c0e1650d24dc"
     },
     "packrat/desc/purrr": {
       "checksum": "9e3ee32be0b07c335cb31e5277be6703"
     },
     "packrat/desc/R6": {
-      "checksum": "4b136d66cef9fa19956b36a429323501"
+      "checksum": "8e2710b1775dcadab80b901c79a9d53a"
     },
     "packrat/desc/rappdirs": {
       "checksum": "751fca2d11fe912b5186eb21ae6817da"
@@ -2145,19 +2175,19 @@
       "checksum": "49efa8ca0462dcc38ac6ec31627a326b"
     },
     "packrat/desc/Rcpp": {
-      "checksum": "75b1d7237aff23bccb503cf098411f85"
+      "checksum": "6d83881ffbab29a3681f8af90f60c199"
     },
     "packrat/desc/reshape2": {
       "checksum": "174cbe0a422af7190e1653e5e2ef4b79"
     },
     "packrat/desc/rlang": {
-      "checksum": "ef2aa8aad2224248097af0075cf8be9d"
+      "checksum": "cc0061a995bbd1698c62dd73e66affbf"
     },
     "packrat/desc/scales": {
       "checksum": "47ee055a09e59411c7bc01ffa04ae93a"
     },
     "packrat/desc/shiny": {
-      "checksum": "1c707e8e3601388362ab21c5fdcd7042"
+      "checksum": "5315352c7ad6ae92aff9e008da01e0b6"
     },
     "packrat/desc/shinydashboard": {
       "checksum": "6640ce0c83ff5eac01c93738e3e5ff7c"
@@ -2176,6 +2206,9 @@
     },
     "packrat/desc/tibble": {
       "checksum": "e175ea6e59968fbffe33bc97ed9e1989"
+    },
+    "packrat/desc/tidyr": {
+      "checksum": "c1ed351ad145a0113589507769a4e71a"
     },
     "packrat/desc/tidyselect": {
       "checksum": "29ca8fbc27eb4f2e26b1a6d9f05fada2"
@@ -2205,7 +2238,7 @@
       "checksum": "b6f35c64ff762d2a2c74d10460a480c6"
     },
     "packrat/packrat.lock": {
-      "checksum": "ada6a1207e780773c1ad57d8c316c003"
+      "checksum": "f219a9173ef9ce111491c9bf2d7657af"
     }
   },
   "users": null
