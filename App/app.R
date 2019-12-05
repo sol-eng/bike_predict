@@ -9,8 +9,16 @@ library(leaflet)
 ui <- dashboardPage(skin = "red",
                     dashboardHeader(title = "Capitol Bikeshare Availability"),
                     dashboardSidebar(disable = TRUE),
-                    dashboardBody(leafletOutput("map"),
-                                  plotOutput("plot"))
+                    dashboardBody(
+                        box(title = "Station Map",
+                            leafletOutput("map"),
+                            width = 12
+                        ),
+                        box("Click a station to populate",
+                            width = 12,
+                            plotOutput("plot")
+                        )
+                    )
 )
 
 server <- function(input, output, session) {
