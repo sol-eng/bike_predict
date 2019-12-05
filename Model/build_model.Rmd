@@ -8,49 +8,36 @@ output: html_document
 # Load Libraries and connect to board
 ```{r}
 library(tidyverse)
-library(magrittr)
-library(ggplot2)
-
-pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
-                               key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
-pins::board_connect("rsconnect")
+library(tidymodels)
 ```
 
 # Get data
 ```{r}
-df <- pins::pin_get("alex.gold/bike_model_data", board = "rsconnect")
-```
+con <- dbConnect(odbc::odbc(), "Content DB")
+df <- DBI::dbReadTable(con, "bike_model_data")
 
-# Exploratory data analysis
-Total bikes
-```{r}
-df %>% 
-  ggplot(aes(x = n_bikes)) +
-  geom_density()
-```
-
-Bikes by hour of day
-```{r}
-df %>% 
-  ggplot(aes(x = n_bikes)) +
-  geom_density() +
-  facet_wrap("hour")
-```
-
-```{r}
-df %>%
-  group_by(hour) %>%
-  summarize(concentration = ineq::conc(n_bikes) * 10000)
+train <- df %>%
+  mutate(date = as.Date(date))
+  filter(date <= max(date))
 ```
 
 TODO: Add cross-validation, measures of goodness-of-fit
 ```{r}
-dat <- df %>% 
-  select(id, hour) %>%
-  as.matrix()
+set.seed(1028)
+cv <- rsample::vfold_cv(df, repeats = 10, strata = id)
+```
 
-xgbdat <- xgboost::xgb.DMatrix(data = dat, label = df$n_bikes)
-mod <- xgboost::xgboost(data = dat, label = df$n_bikes, nrounds = 1000)
+Make recipe for model
+```{r}
+train_mat <- recipe(n_bikes ~ ., data = select(df, -date)) %>%
+  step_dummy(id, dow) %>%
+  prep(df) %>%
+  bake(df, all_predictors())
+
+
+
+
+mod <- xgboost::xgboost(data = train_mat, label = df$n_bikes, nrounds = 15)
 ```
 
 ```{r}
