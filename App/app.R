@@ -5,16 +5,11 @@ library(ggplot2)
 library(dplyr)
 
 # Create dashboard page UI
-ui <- dashboardPage(
-    dashboardHeader(title = "Capitol Bikeshare Availability"),
-    dashboardSidebar(selectInput("station", label = "Which Station",
-                                 choices = ""),
-                     sliderInput("times", "Start and End Time",
-                                 min = 0, max = 36000, c(600, 600),
-                                 step = 600),
-                     numericInput("interval", "Time Interval", 600),
-                     actionButton("get_preds", "Get Predictions")),
-    dashboardBody(plotOutput("plot"))
+ui <- dashboardPage(skin = "red",
+                    dashboardHeader(title = "Capitol Bikeshare Availability"),
+                    dashboardSidebar(disable = TRUE),
+                    dashboardBody(leafletOutput("map"),
+                                  plotOutput("plot"))
 )
 
 server <- function(input, output, session) {
@@ -24,50 +19,64 @@ server <- function(input, output, session) {
 
     stats <- pins::pin_get("alex.gold/bike_station_info", board = "rsconnect")
 
-    # Update station names and get id
-    observe({
-        updateSelectInput(session, "station", choices = stats$name)
-    })
-
-    # Update only when button pushed to avoid premature title updating
-    station <- eventReactive(input$get_preds, input$station)
-    station_id <- reactive({
-        stats %>%
-            dplyr::filter(name == station()) %>%
-            dplyr::pull(station_id)
-    })
-
     # Use API to get predictions from model
-    df <- eventReactive(input$get_preds,
-                        {
-                            httr::GET("https://colorado.rstudio.com/rsc/bike_predict/pred",
-                                      query = list(station_id = station_id(),
-                                                   min_time = input$times[1],
-                                                   max_time = input$times[2],
-                                                   interval = input$interval)) %>%
-                                httr::content() %>%
-                                dplyr::bind_rows() %>%
-                                mutate(times = as.POSIXct(times))
-                        })
+    df <- reactive({
+
+        # Fake data for now
+        # httr::GET("https://colorado.rstudio.com/rsc/bike_predict/pred",
+        #           query = list(station_id = stats$station_id)
+
+        times <- Sys.time() + seq(0, 3600, by = 600)
+        tidyr::crossing(times, station_id = stats$station_id) %>%
+            mutate(pred = sample(0:20, nrow(.), replace = TRUE)) %>%
+            left_join(stats)
+
+    })
+
+
+
+
+    output$map <- renderLeaflet({
+        df() %>%
+            leaflet() %>%
+            addProviderTiles(providers$CartoDB.Positron) %>%
+            setView(lng = median(stats$lon), lat = median(stats$lat), zoom = 14) %>%
+            addAwesomeMarkers(
+                lng = ~lon,
+                lat = ~lat,
+                icon = awesomeIcons(
+                    "bicycle",
+                    library = "fa",
+                    iconColor = "white",
+                    markerColor = "red"
+                ),
+                label = ~paste0(name)
+            )
+    })
 
     # Create plot
     output$plot <- renderPlot({
-        plot <- df() %>%
+        req(input$map_marker_click)
+
+        print(input$map_marker_click)
+        df <- df() %>%
+            filter(lat == input$map_marker_click$lat,
+                   lon == input$map_marker_click$lng)
+
+        stat_name <- unique(df$name)
+
+        df %>%
             ggplot(aes(x = times, y = pred, group = 1)) +
-            ggtitle(glue::glue("Predicted Bikes Available at {station()}")) +
+            ggtitle(glue::glue("Predicted Bikes Available at {stat_name}")) +
             ggthemes::theme_clean() +
             xlab("Time") +
             ylab("Predicted Number of Bikes") +
-            scale_x_datetime(labels = function(x) format(x, "%H:%M")) +
-            scale_y_continuous(labels = round)
-
-        if (nrow(df()) == 1) {
-            plot <- plot + geom_point()
-        } else {
-            plot <- plot + geom_line()
-        }
-        plot
+            scale_x_datetime(labels = function(x) format(x - 18000, "%H:%M")) +
+            scale_y_continuous(labels = round) +
+            geom_line()
     })
+
+
 }
 
 # Run the application

@@ -13,29 +13,27 @@ stats <- pin_get("alex.gold/bike_station_info", board = "rsconnect")
 #* @apiTitle Bike Prediction API
 
 #* Return the predicted number of bikes available at a station in 10 minutes
-#* @param station_id the id number of a station in the Capitol Bikeshare program
-#* @param min_time time to start predictions
+#* @param station_id the id number of (a) station(s) in the Capitol Bikeshare program
 #* @param max_time time to stop predictions
 #* @param interval prediction interval
 #* @get /pred
-a <- function(station_id, min_time = 600, max_time = 600, interval = 600) {
+a <- function(station_id, max_time = 86400, interval = 600) {
   # sanitize inputs
   station_id <- as.numeric(station_id)
-  min_time <- as.numeric(min_time)
+  if (!all(station_id %in% stats$station_id)) stop("That station does not exist.")
+
   max_time <- as.numeric(max_time)
   interval <- as.numeric(interval)
 
-  times <- seq(min_time, max_time, by = interval)
-  n_preds <- length(times)
-  if (!station_id %in% stats$station_id) stop("That station does not exist.")
+  times <- Sys.time() + seq(0, max_time, by = interval)
 
-  station_vec <- rep(station_id, n_preds)
-  time_vec <- Sys.time() + times
+  df <- tidyr::crossing(times, station_id)
 
-  dat <- matrix(data = c(station_vec, lubridate::hour(time_vec)),
-                nrow = n_preds, ncol = 2)
 
-  tibble::tibble(station_id = station_vec,
-                 times = time_vec,
-                 pred = predict(mod, newdata = dat) %>% round())
+  pred_df <- df %>%
+    transmute(station = as.numeric(station_id), hour = lubridate::hour(times)) %>%
+    as.matrix()
+
+  df %>%
+    mutate(pred = predict(mod, newdata = pred_df) %>% round())
 }
