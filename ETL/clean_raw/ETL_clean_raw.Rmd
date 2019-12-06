@@ -15,10 +15,13 @@ library(tidyverse)
 library(odbc)
 
 con <- dbConnect(odbc::odbc(), "Content DB", timeout = 10)
+pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
+                               key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
 ```
 
 # Connect to Database Data
 ```{r, download}
+stat <- pins::pin_get("alex.gold/bike_station_info")
 df_con <- tbl(con, "bike_raw_data")
 ```
 
@@ -38,10 +41,8 @@ df_con <- tbl(con, "bike_raw_data")
 
 # Add location data
 ```{r}
-stat <- pins::pin_get("alex.gold/bike_station_info")
-
 (df <- df %>%
-    left_join(select(stat, id = station_id, lat, lon)))
+    left_join(select(stats, id = station_id, lat, lon)))
 ```
 
 # Pin
