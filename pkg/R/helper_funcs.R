@@ -82,3 +82,23 @@ clean_data <- function(x, is_sys_info = FALSE) {
   }
   dat
 }
+
+
+bike_train_dat <- function(split_date) {
+  print(glue::glue("Using data from prior to {split_date} for training."))
+
+  tbl(con, "bike_model_data") %>%
+    filter(date < lubridate::ymd(split_date)) %>%
+    collect()
+}
+bike_test_dat <- function(split_date) {
+  print(glue::glue("Testing data is {split_date} to end."))
+
+  tbl(con, "bike_model_data") %>%
+    filter(date >= lubridate::ymd(split_date)) %>%
+    collect()
+}
+
+
+
+

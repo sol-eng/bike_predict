@@ -13,35 +13,38 @@ library(tidymodels)
 
 # Get data
 ```{r}
-con <- dbConnect(odbc::odbc(), "Content DB")
-df <- DBI::dbReadTable(con, "bike_model_data")
+con <- DBI::dbConnect(odbc::odbc(), "Content DB")
+df <- tbl(con, "bike_model_data") 
+model_params <- pins::pin_get("bike_model_params", board = "rsconnect")
 
-train <- df %>%
-  mutate(date = as.Date(date))
-  filter(date <= max(date))
-```
-
-TODO: Add cross-validation, measures of goodness-of-fit
-```{r}
-set.seed(1028)
-cv <- rsample::vfold_cv(df, repeats = 10, strata = id)
+train <- bike_train_dat(model_params$split_date)
 ```
 
 Make recipe for model
 ```{r}
-train_mat <- recipe(n_bikes ~ ., data = select(df, -date)) %>%
-  step_dummy(id, dow) %>%
-  prep(df) %>%
-  bake(df, all_predictors())
+# downsample if working interactively
+if (interactive()) {
+  train <- dplyr::sample_n(train, 5000)
+}
 
-
-
-
-mod <- xgboost::xgboost(data = train_mat, label = df$n_bikes, nrounds = 15)
+train_mat <- model_params$recipe %>%
+  bake(train)
 ```
 
+# Train and Save Model
 ```{r}
-pins::pin(mod, "bike_available_model", 
+mod <- parsnip::xgb_train(
+  train_mat %>% select(-n_bikes, -id, -date), 
+  train_mat %>% pull(n_bikes), 
+  nrounds = ifelse(interactive(), 50, 500)
+)
+
+# Save model as pin with some metadata
+list(model = mod,
+     train_date = model_params$train_date, 
+     split_date = model_params$split_date, 
+     recipe = model_params$recipe) %>%
+pins::pin("bike_model_rxgb", 
           "Model of Capitol Citybikes Available per Station", 
           board = "rsconnect")
 ```

@@ -1,0 +1,93 @@
+---
+title: "Model Quality Assessment"
+author: "Alex Gold"
+date: "12/6/2019"
+output: html_document
+---
+```{r}
+con <- DBI::dbConnect(odbc::odbc(), "Content DB")
+pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
+                               key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
+```
+
+# Load Models and Test Data
+```{r}
+mods <- list(r_xgb = pins::pin_get("bike_model_rxgb", board = "rsconnect"))
+
+test <- bike_test_dat(mods$split_date) %>%
+  bake(mods$recipe, .) 
+```
+
+# Goodness of Fit
+Get predictions
+```{r}
+results <- test %>% 
+  mutate(preds = mods$r_xgb$model %>%
+           predict(newdata = test %>%
+                     select(-n_bikes, -id, -date) %>%
+                     as.matrix())  %>%
+           round(), 
+         resid = n_bikes - preds) 
+
+DBI::dbWriteTable(con, "bike_prediction_results", results, append = TRUE)
+```
+
+```{r}
+pins::pin_get("bike_err", board = rsconnect) %>% 
+  bind_rows() %>%
+  tibble::tibble(
+    mod_date = Sys.Date(), 
+    split_date = split_date,
+    rmse = yardstick::rmse_vec(results$n_bikes, results$preds), 
+    mae = yardstick::mae_vec(results$n_bikes, results$preds), 
+    ccc = yardstick::ccc_vec(results$n_bikes, results$preds), 
+    r2 = yardstick::rsq_trad_vec(results$n_bikes, results$preds)
+  ) %>%
+  pins::pin("bike_err", "Goodness of Fit Metrics for Bike Prediction", board = "rsconnect")
+```
+
+Decile Plot
+```{r}
+tiles <- 50 
+results %>%
+  mutate(real_tile = ntile(n_bikes, tiles)) %>%
+  group_by(real_tile) %>%
+  summarize(mean_actual = mean(n_bikes), 
+            mean_pred = mean(preds)) %>%
+  ggplot(aes(x = mean_actual, y = mean_pred)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0)
+
+
+results %>%
+  select(n_bikes, preds) %>%
+  gather(key = "which", value = "value", n_bikes, preds) %>%
+  ggplot(aes(sample = value, color = which)) +
+  geom_qq()
+```
+
+Residual Plot
+```{r}
+results %>%
+  select(n_bikes, preds) %>%
+  tidyr::gather("var", "val", n_bikes, preds) %>%
+  mutate(var = ifelse(var == "n_bikes", "Actual", "Prediction")) %>%
+  ggplot(aes(x = val, color = var)) +
+  geom_density()
+
+results %>% 
+  ggplot(aes(x = resid)) +
+  geom_density() 
+
+geom_qq
+
+
+## qqnorm plot
+```
+
+```{r}
+
+```
+
+```
+
