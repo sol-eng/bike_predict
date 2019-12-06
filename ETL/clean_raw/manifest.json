@@ -4,7 +4,7 @@
   "platform": "3.6.0",
   "metadata": {
     "appmode": "rmd-static",
-    "primary_rmd": "ETL_db_to_pin.Rmd",
+    "primary_rmd": "ETL_clean_raw.Rmd",
     "primary_html": null,
     "content_category": null,
     "has_parameters": false
@@ -32,8 +32,7 @@
         "Packaged": "2019-01-07 12:00:43.681885 UTC; edd",
         "Repository": "RSPM",
         "Date/Publication": "2019-01-07 19:50:25 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 3.6.1; ; 2019-09-09 12:16:09 UTC; unix"
+        "Built": "R 3.6.0; ; 2019-07-17 18:31:03 UTC; unix"
       }
     },
     "DBI": {
@@ -140,7 +139,7 @@
       }
     },
     "R6": {
-      "Source": "RSPM",
+      "Source": "CRAN",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
       "GithubRepo": null,
       "GithubUsername": null,
@@ -149,7 +148,7 @@
       "description": {
         "Package": "R6",
         "Title": "Encapsulated Classes with Reference Semantics",
-        "Version": "2.4.0",
+        "Version": "2.4.1",
         "Authors@R": "person(\"Winston\", \"Chang\", role = c(\"aut\", \"cre\"), email = \"winston@stdout.org\")",
         "Description": "Creates classes with reference semantics, similar to R's built-in\n    reference classes. Compared to reference classes, R6 classes are simpler\n    and lighter-weight, and they are not built on S4 classes so they do not\n    require the methods package. These classes allow public and private\n    members, and they support inheritance, even when the classes are defined in\n    different packages.",
         "Depends": "R (>= 3.0)",
@@ -160,13 +159,12 @@
         "BugReports": "https://github.com/r-lib/R6/issues",
         "RoxygenNote": "6.1.1",
         "NeedsCompilation": "no",
-        "Packaged": "2019-02-14 18:34:54 UTC; winston",
+        "Packaged": "2019-11-12 20:00:15 UTC; winston",
         "Author": "Winston Chang [aut, cre]",
         "Maintainer": "Winston Chang <winston@stdout.org>",
-        "Repository": "RSPM",
-        "Date/Publication": "2019-02-14 19:42:14 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 3.6.1; ; 2019-09-09 12:13:10 UTC; unix"
+        "Repository": "CRAN",
+        "Date/Publication": "2019-11-12 22:50:03 UTC",
+        "Built": "R 3.6.0; ; 2019-12-04 21:17:47 UTC; unix"
       }
     },
     "RColorBrewer": {
@@ -195,7 +193,7 @@
       }
     },
     "Rcpp": {
-      "Source": "RSPM",
+      "Source": "CRAN",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
       "GithubRepo": null,
       "GithubUsername": null,
@@ -204,8 +202,8 @@
       "description": {
         "Package": "Rcpp",
         "Title": "Seamless R and C++ Integration",
-        "Version": "1.0.1",
-        "Date": "2019-03-16",
+        "Version": "1.0.3",
+        "Date": "2019-11-08",
         "Author": "Dirk Eddelbuettel, Romain Francois, JJ Allaire, Kevin Ushey, Qiang Kou,\n Nathan Russell, Douglas Bates and John Chambers",
         "Maintainer": "Dirk Eddelbuettel <edd@debian.org>",
         "Description": "The 'Rcpp' package provides R functions as well as C++ classes which\n offer a seamless integration of R and C++. Many R data types and objects can be\n mapped back and forth to C++ equivalents which facilitates both writing of new\n code as well as easier integration of third-party libraries. Documentation\n about 'Rcpp' is provided by several vignettes included in this package, via the\n 'Rcpp Gallery' site at <http://gallery.rcpp.org>, the paper by Eddelbuettel and\n Francois (2011, <doi:10.18637/jss.v040.i08>), the book by Eddelbuettel (2013,\n <doi:10.1007/978-1-4614-6868-4>) and the paper by Eddelbuettel and Balamuta (2018,\n <doi:10.1080/00031305.2017.1375990>); see 'citation(\"Rcpp\")' for details.",
@@ -217,13 +215,12 @@
         "License": "GPL (>= 2)",
         "BugReports": "https://github.com/RcppCore/Rcpp/issues",
         "MailingList": "Please send questions and comments regarding Rcpp to\nrcpp-devel@lists.r-forge.r-project.org",
-        "RoxygenNote": "6.0.1",
+        "RoxygenNote": "6.1.1",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-03-16 15:29:08.470813 UTC; edd",
-        "Repository": "RSPM",
-        "Date/Publication": "2019-03-17 07:15:10 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-08-05 07:54:34 UTC; unix"
+        "Packaged": "2019-11-08 18:25:32.94843 UTC; edd",
+        "Repository": "CRAN",
+        "Date/Publication": "2019-11-08 23:44:12",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:18:03 UTC; unix"
       }
     },
     "askpass": {
@@ -725,7 +722,7 @@
       }
     },
     "digest": {
-      "Source": "RSPM",
+      "Source": "CRAN",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
       "GithubRepo": null,
       "GithubUsername": null,
@@ -733,24 +730,24 @@
       "GithubSha1": null,
       "description": {
         "Package": "digest",
-        "Author": "Dirk Eddelbuettel <edd@debian.org> with contributions \n by Antoine Lucas, Jarek Tuszynski, Henrik Bengtsson, Simon Urbanek,\n Mario Frasca, Bryan Lewis, Murray Stokely, Hannes Muehleisen,\n Duncan Murdoch, Jim Hester, Wush Wu, Qiang Kou, Thierry Onkelinx, \n Michel Lang, Viliam Simko, Kurt Hornik, Radford Neal, and Kendon Bell.",
-        "Version": "0.6.20",
-        "Date": "2019-07-04",
+        "Author": "Dirk Eddelbuettel <edd@debian.org> with contributions \n by Antoine Lucas, Jarek Tuszynski, Henrik Bengtsson, Simon Urbanek,\n Mario Frasca, Bryan Lewis, Murray Stokely, Hannes Muehleisen,\n Duncan Murdoch, Jim Hester, Wush Wu, Qiang Kou, Thierry Onkelinx, \n Michel Lang, Viliam Simko, Kurt Hornik, Radford Neal, Kendon Bell,\n Matthew de Queljoe, Ion Suruceanu, and Bill Denney.",
+        "Version": "0.6.23",
+        "Date": "2019-11-22",
         "Maintainer": "Dirk Eddelbuettel <edd@debian.org>",
         "Title": "Create Compact Hash Digests of R Objects",
         "Description": "Implementation of a function 'digest()' for the creation \n of hash digests of arbitrary R objects (using the 'md5', 'sha-1', 'sha-256', \n 'crc32', 'xxhash', 'murmurhash' and 'spookyhash' algorithms) permitting easy\n comparison of R language objects, as well as functions such as'hmac()' to\n create hash-based message authentication code. Please note that this package\n is not meant to be deployed for cryptographic purposes for which more\n comprehensive (and widely tested) libraries such as 'OpenSSL' should be\n used.",
         "URL": "http://dirk.eddelbuettel.com/code/digest.html",
         "BugReports": "https://github.com/eddelbuettel/digest/issues",
         "Depends": "R (>= 3.1.0)",
+        "Imports": "utils",
         "License": "GPL (>= 2)",
         "Suggests": "tinytest, knitr, rmarkdown",
         "VignetteBuilder": "knitr",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-07-04 13:26:33.39935 UTC; edd",
-        "Repository": "RSPM",
-        "Date/Publication": "2019-07-04 14:40:03 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-09 12:12:14 UTC; unix"
+        "Packaged": "2019-11-22 16:44:22.218585 UTC; edd",
+        "Repository": "CRAN",
+        "Date/Publication": "2019-11-23 09:40:07 UTC",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:17:42 UTC; unix"
       }
     },
     "dplyr": {
@@ -1177,7 +1174,7 @@
       }
     },
     "htmltools": {
-      "Source": "RSPM",
+      "Source": "CRAN",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
       "GithubRepo": null,
       "GithubUsername": null,
@@ -1187,25 +1184,26 @@
         "Package": "htmltools",
         "Type": "Package",
         "Title": "Tools for HTML",
-        "Version": "0.3.6",
-        "Date": "2017-04-26",
+        "Version": "0.4.0",
         "Author": "RStudio, Inc.",
         "Maintainer": "Joe Cheng <joe@rstudio.com>",
         "Description": "Tools for HTML generation and output.",
         "Depends": "R (>= 2.14.1)",
-        "Imports": "utils, digest, Rcpp",
-        "Suggests": "markdown, testthat",
+        "Imports": "utils, digest, Rcpp, rlang",
+        "Suggests": "markdown, testthat, withr",
         "Enhances": "knitr",
         "License": "GPL (>= 2)",
         "URL": "https://github.com/rstudio/htmltools",
         "BugReports": "https://github.com/rstudio/htmltools/issues",
-        "RoxygenNote": "6.0.1",
+        "RoxygenNote": "6.1.1",
         "LinkingTo": "Rcpp",
+        "Encoding": "UTF-8",
+        "Collate": "'RcppExports.R' 'html_dependency.R' 'html_escape.R'\n'html_print.R' 'shim.R' 'utils.R' 'tags.R' 'template.R'",
         "NeedsCompilation": "yes",
-        "Packaged": "2017-04-27 00:04:32 UTC; jcheng",
-        "Repository": "RSPM",
-        "Date/Publication": "2017-04-28 07:41:46 UTC",
-        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 20:43:18 UTC; unix"
+        "Packaged": "2019-10-04 17:43:48 UTC; jcheng",
+        "Repository": "CRAN",
+        "Date/Publication": "2019-10-04 23:00:08 UTC",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:18:39 UTC; unix"
       }
     },
     "httr": {
@@ -2203,7 +2201,7 @@
       }
     },
     "rlang": {
-      "Source": "RSPM",
+      "Source": "CRAN",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
       "GithubRepo": null,
       "GithubUsername": null,
@@ -2211,7 +2209,7 @@
       "GithubSha1": null,
       "description": {
         "Package": "rlang",
-        "Version": "0.4.0",
+        "Version": "0.4.2",
         "Title": "Functions for Base Types and Core R and 'Tidyverse' Features",
         "Description": "A toolbox for working with base types, core R features\n  like the condition system, and core 'Tidyverse' features like tidy\n  evaluation.",
         "Authors@R": "c(\n    person(\"Lionel\", \"Henry\", ,\"lionel@rstudio.com\", c(\"aut\", \"cre\")),\n    person(\"Hadley\", \"Wickham\", ,\"hadley@rstudio.com\", \"aut\"),\n    person(\"RStudio\", role = \"cph\")\n    )",
@@ -2220,18 +2218,18 @@
         "ByteCompile": "true",
         "Biarch": "true",
         "Depends": "R (>= 3.2.0)",
-        "Suggests": "covr, crayon, magrittr, methods, pillar, rmarkdown, testthat\n(>= 2.0.0)",
+        "Suggests": "cli, covr, crayon, magrittr, methods, pillar, rmarkdown,\ntestthat (>= 2.3.0)",
         "Encoding": "UTF-8",
         "RoxygenNote": "6.1.1",
         "URL": "http://rlang.r-lib.org, https://github.com/r-lib/rlang",
         "BugReports": "https://github.com/r-lib/rlang/issues",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-06-24 21:23:11 UTC; lionel",
+        "Packaged": "2019-11-22 16:01:18 UTC; lionel",
         "Author": "Lionel Henry [aut, cre],\n  Hadley Wickham [aut],\n  RStudio [cph]",
         "Maintainer": "Lionel Henry <lionel@rstudio.com>",
-        "Repository": "RSPM",
-        "Date/Publication": "2019-06-25 07:50:03 UTC",
-        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-09 12:11:53 UTC; unix"
+        "Repository": "CRAN",
+        "Date/Publication": "2019-11-23 11:20:02 UTC",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:17:50 UTC; unix"
       }
     },
     "rmarkdown": {
@@ -2677,36 +2675,45 @@
       }
     },
     "vctrs": {
-      "Source": "RSPM",
-      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Source": "github",
+      "Repository": null,
+      "GithubRepo": "vctrs",
+      "GithubUsername": "r-lib",
+      "GithubRef": "master",
+      "GithubSha1": "311410ef8a081f4ba07b8adde5ef2f425b5583b2",
       "description": {
         "Package": "vctrs",
         "Title": "Vector Helpers",
-        "Version": "0.2.0",
+        "Version": "0.2.0.9007",
         "Authors@R": "\n    c(person(given = \"Hadley\",\n             family = \"Wickham\",\n             role = c(\"aut\", \"cre\"),\n             email = \"hadley@rstudio.com\"),\n      person(given = \"Lionel\",\n             family = \"Henry\",\n             role = \"aut\",\n             email = \"lionel@rstudio.com\"),\n      person(given = \"Davis\",\n             family = \"Vaughan\",\n             role = \"aut\",\n             email = \"davis@rstudio.com\"),\n      person(given = \"RStudio\",\n             role = \"cph\"))",
-        "Description": "Defines new notions of prototype and size that are\n    used to provide tools for consistent and well-founded type-coercion\n    and size-recycling, and are in turn connected to ideas of type- and\n    size-stability useful for analyzing function interfaces.",
+        "Description": "Defines new notions of prototype and size that are\n    used to provide tools for consistent and well-founded type-coercion\n    and size-recycling, and are in turn connected to ideas of type- and\n    size-stability useful for analysing function interfaces.",
         "License": "GPL-3",
         "URL": "https://github.com/r-lib/vctrs",
         "BugReports": "https://github.com/r-lib/vctrs/issues",
         "Depends": "R (>= 3.2)",
-        "Imports": "backports, ellipsis (>= 0.2.0), digest, glue, rlang (>=\n0.4.0), zeallot",
-        "Suggests": "bit64, covr, crayon, generics, knitr, pillar (>= 1.4.1),\npkgdown, rmarkdown, testthat, tibble",
+        "Imports": "ellipsis (>= 0.2.0), digest, glue, rlang (>= 0.4.2)",
+        "Suggests": "bit64, covr, crayon, generics, knitr, pillar (>= 1.4.1),\npkgdown, rmarkdown, testthat (>= 2.3.0), tibble, xml2, zeallot",
         "VignetteBuilder": "knitr",
         "Encoding": "UTF-8",
         "Language": "en-GB",
         "LazyData": "true",
-        "RoxygenNote": "6.1.1",
+        "Roxygen": "list(markdown = TRUE)",
+        "RoxygenNote": "7.0.1",
+        "RemoteType": "github",
+        "RemoteHost": "api.github.com",
+        "RemoteRepo": "vctrs",
+        "RemoteUsername": "r-lib",
+        "RemoteRef": "master",
+        "RemoteSha": "311410ef8a081f4ba07b8adde5ef2f425b5583b2",
+        "GithubRepo": "vctrs",
+        "GithubUsername": "r-lib",
+        "GithubRef": "master",
+        "GithubSHA1": "311410ef8a081f4ba07b8adde5ef2f425b5583b2",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-07-02 19:29:52 UTC; lionel",
+        "Packaged": "2019-12-05 17:23:20 UTC; alex.gold",
         "Author": "Hadley Wickham [aut, cre],\n  Lionel Henry [aut],\n  Davis Vaughan [aut],\n  RStudio [cph]",
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
-        "Repository": "RSPM",
-        "Date/Publication": "2019-07-05 23:00:04 UTC",
-        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-09 12:13:48 UTC; unix"
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-05 17:23:23 UTC; unix"
       }
     },
     "viridisLite": {
@@ -2893,36 +2900,6 @@
         "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 18:53:28 UTC; unix"
       }
     },
-    "zeallot": {
-      "Source": "RSPM",
-      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
-      "description": {
-        "Package": "zeallot",
-        "Type": "Package",
-        "Title": "Multiple, Unpacking, and Destructuring Assignment",
-        "Version": "0.1.0",
-        "Authors@R": "c(\n    person(given = \"Nathan\", family = \"Teetor\", email = \"nathanteetor@gmail.com\", role = c(\"aut\", \"cre\")),\n    person(given = \"Paul\", family = \"Teetor\", role = \"ctb\"))",
-        "Description": "Provides a %<-% operator to perform multiple,\n    unpacking, and destructuring assignment in R. The \n    operator unpacks the right-hand side of an assignment\n    into multiple values and assigns these values to \n    variables on the left-hand side of the assignment.",
-        "URL": "https://github.com/nteetor/zeallot",
-        "BugReports": "https://github.com/nteetor/zeallot/issues",
-        "License": "MIT + file LICENSE",
-        "Encoding": "UTF-8",
-        "RoxygenNote": "6.0.1",
-        "VignetteBuilder": "knitr",
-        "Suggests": "testthat, knitr, rmarkdown, purrr, magrittr",
-        "NeedsCompilation": "no",
-        "Packaged": "2018-01-27 17:18:33 UTC; nteetor",
-        "Author": "Nathan Teetor [aut, cre],\n  Paul Teetor [ctb]",
-        "Maintainer": "Nathan Teetor <nathanteetor@gmail.com>",
-        "Repository": "RSPM",
-        "Date/Publication": "2018-01-28 16:14:13 UTC",
-        "Built": "R 3.6.1; ; 2019-09-09 12:13:13 UTC; unix"
-      }
-    },
     "zip": {
       "Source": "RSPM",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
@@ -2953,8 +2930,8 @@
     }
   },
   "files": {
-    "ETL_db_to_pin.Rmd": {
-      "checksum": "481d0946c4624a987ffced5a30fe07df"
+    "ETL_clean_raw.Rmd": {
+      "checksum": "cff5936829ec551f6fe2169b2c3c8d4c"
     },
     "packrat/desc/askpass": {
       "checksum": "f3640d9c1bebd3f5a6188eea0c23c533"
@@ -2969,7 +2946,7 @@
       "checksum": "435be2515fdf1fd22518433c39dec8ae"
     },
     "packrat/desc/BH": {
-      "checksum": "376c87e4ffde8eb834e58b90c94d13e4"
+      "checksum": "3b7edd866f5750b5ef52f5737ea3a12f"
     },
     "packrat/desc/bit": {
       "checksum": "0789ae684b877c3ee3327e4a4a5bc7ab"
@@ -3011,7 +2988,7 @@
       "checksum": "4422c9a242485dc2289a153adcef0ff8"
     },
     "packrat/desc/digest": {
-      "checksum": "6b633a1eb9658c96e625fdf29d706801"
+      "checksum": "9429063b07dc6e719465f182b30b28b3"
     },
     "packrat/desc/dplyr": {
       "checksum": "0654cfd2c84e841c51027d8240119875"
@@ -3053,7 +3030,7 @@
       "checksum": "ae42c7e4798ca2331a97fe18f76d1e70"
     },
     "packrat/desc/htmltools": {
-      "checksum": "9829f843155827ac870bdb4be1486e28"
+      "checksum": "cbf8e6803223e6ad21d922a9a4170272"
     },
     "packrat/desc/httr": {
       "checksum": "e551c3c120a6d9527f056a495a33edcf"
@@ -3140,7 +3117,7 @@
       "checksum": "9e3ee32be0b07c335cb31e5277be6703"
     },
     "packrat/desc/R6": {
-      "checksum": "4b136d66cef9fa19956b36a429323501"
+      "checksum": "8e2710b1775dcadab80b901c79a9d53a"
     },
     "packrat/desc/rappdirs": {
       "checksum": "751fca2d11fe912b5186eb21ae6817da"
@@ -3149,7 +3126,7 @@
       "checksum": "49efa8ca0462dcc38ac6ec31627a326b"
     },
     "packrat/desc/Rcpp": {
-      "checksum": "75b1d7237aff23bccb503cf098411f85"
+      "checksum": "6d83881ffbab29a3681f8af90f60c199"
     },
     "packrat/desc/readr": {
       "checksum": "08b95b13663cd436883afa76461ae264"
@@ -3167,7 +3144,7 @@
       "checksum": "174cbe0a422af7190e1653e5e2ef4b79"
     },
     "packrat/desc/rlang": {
-      "checksum": "ef2aa8aad2224248097af0075cf8be9d"
+      "checksum": "cc0061a995bbd1698c62dd73e66affbf"
     },
     "packrat/desc/rmarkdown": {
       "checksum": "591a08e9438e49735f07562a67d1de90"
@@ -3212,7 +3189,7 @@
       "checksum": "c3ad09fc4759ebbc668775ba5e041303"
     },
     "packrat/desc/vctrs": {
-      "checksum": "d4b9c29230228aca5ee07a37abc10f68"
+      "checksum": "da1af64beaf24fd5706fca67418c1d26"
     },
     "packrat/desc/viridisLite": {
       "checksum": "46d16f07f115a5ad0b89bccaf6c1cb5f"
@@ -3232,14 +3209,11 @@
     "packrat/desc/yaml": {
       "checksum": "7ad195d4e96ffe98a04c0c2744ea7baa"
     },
-    "packrat/desc/zeallot": {
-      "checksum": "57b76c2dc763535af6ca5f8cef3129af"
-    },
     "packrat/desc/zip": {
       "checksum": "b6f35c64ff762d2a2c74d10460a480c6"
     },
     "packrat/packrat.lock": {
-      "checksum": "20784969cbcf09224971ac98605bd2c0"
+      "checksum": "44b074e141191b8f63de2913f5a3d6d0"
     }
   },
   "users": null
