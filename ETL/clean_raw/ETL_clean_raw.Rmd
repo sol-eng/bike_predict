@@ -21,7 +21,7 @@ pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
 
 # Connect to Database Data
 ```{r, download}
-stat <- pins::pin_get("alex.gold/bike_station_info")
+stats <- pins::pin_get("alex.gold/bike_station_info")
 df_con <- tbl(con, "bike_raw_data")
 ```
 
