@@ -41,8 +41,7 @@ df_con <- tbl(con, "bike_raw_data")
 
 # Add location data
 ```{r}
-(df <- df %>%
-    left_join(select(stats, id = station_id, lat, lon)))
+(df <- df %>% left_join(select(stats, id = station_id, lat, lon)))
 ```
 
 # Pin
