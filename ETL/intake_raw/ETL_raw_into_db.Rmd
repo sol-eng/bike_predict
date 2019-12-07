@@ -29,9 +29,6 @@ dat <- feeds %>%
   pull(url) %>% 
   get_data()
 
-# Remove useless column
-df <- dat$data %>%
-  select(-eightd_active_station_services)
 df$time <- dat$last_updated
 
 df
