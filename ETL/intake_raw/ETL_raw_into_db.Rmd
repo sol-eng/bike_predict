@@ -24,12 +24,14 @@ feeds <- feeds_urls()
 
 ```{r}
 # Get station status Data
-(df <- feeds %>% 
+dat <- feeds %>% 
    filter(name == "station_status") %>% 
    pull(url) %>% 
-   get_data() %>%
-   magrittr::extract2("data") %>%
-   mutate(time = dat$last_updated))
+   get_data()
+
+(df <- dat %>%
+      magrittr::extract2("data") %>%
+      mutate(time = dat$last_updated))
 ```
 
 ```{r}
