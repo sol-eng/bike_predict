@@ -42,7 +42,7 @@ tibble::tribble(
       "bike_station_data_ingest", "blob/master/ETL/station_api_to_pin/ETL_station_api_to_pin.Rmd", "bike_station_info",
       "bike_data_split", "blob/master/ETL/data_split/data_split.Rmd", "bike_model_params",
       "bike_train_rxgb", "blob/master/Model/build_rxgb/build_rxgb.Rmd", "bike_rxgb",
-      "bike_model_metrics", "blob/master/Model/model_quality_metrics/model_quality_metrics.Rmd", "bike_err_dat",
+      "bike_model_metrics_script", "blob/master/Model/model_quality_metrics/model_quality_metrics.Rmd", "bike_err_dat",
       "bike_model_performance_app", "blob/master/App/model_performance/app.R", NA,
       "bike_predict_api", "blob/master/API/plumber.R", NA,
       "bike_predict_app", "blob/master/App/client_app/app.R", NA,

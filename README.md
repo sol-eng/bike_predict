@@ -55,7 +55,7 @@ Content in this App
 <td style="text-align: left;">Retrains model based on training/test split indicated by Data Split Script, writes into pin.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_model_metrics">Model Metrics Script</a></td>
+<td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_model_metrics_script">Model Metrics Script</a></td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/Model/model_quality_metrics/model_quality_metrics.Rmd">Code</a></td>
 <td style="text-align: left;"><a href="pin_url">bike_err_dat</a></td>
 <td style="text-align: left;">Daily (8 am)</td>
