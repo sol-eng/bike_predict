@@ -19,7 +19,7 @@ The entire scheme looks like this:
 # Content in this App
 ```{r, echo = FALSE}
 rsc_url <- "https://colorado.rstudio.com/rsc"
-github_url <- "https://github.com/rstudio/bike_predict"
+github_url <- "https://github.com/rstudio/bike_predict/"
 
 tibble::tribble(
   ~name, ~refresh, ~desc,
@@ -32,20 +32,22 @@ tibble::tribble(
   "Model Performance App", NA, "Displays model performance metrics.", 
   "Model API", NA, "Serves model predictions via Plumber API.", 
   "Bike Prediction App",  NA, "Displays predictions from App.", 
-  "bikeHelpR Package", NA, "An R package of helper functions, rebuilt on new commits in internal repo on demo.rstudiopm.com.") %>%
+  "Dev Bike Prediction App", NA, "Dev version of Bike Prediction App",
+  "bikeHelpR Package", NA, "An R package of helper functions, rebuilt on new tagged commits in internal repo on demo.rstudiopm.com.") %>%
   bind_cols(
     tibble::tribble(
       ~access_url, ~code_url, ~pin_url,
       "bike_intake_raw", "blob/master/ETL/intake_raw/ETL_raw_into_db.Rmd", NA,
       "bike_clean_raw", "blob/master/ETL/clean_raw/ETL_clean_raw.Rmd", NA,
       "bike_station_data_ingest", "blob/master/ETL/station_api_to_pin/ETL_station_api_to_pin.Rmd", "bike_station_info",
-      "bike_data_split", "", "bike_model_params",
-      "bike_train_rxgb", "", "bike_rxgb",
-      "bike_model_metrics", "", "bike_err_dat",
-      "bike_model_performance_app", "", NA,
-      "bike_predict_api", "", NA,
-      "bike_predict_app", "", NA,
-      "https://demo.rstudiopm.com/client/#/repos/8/packages/bikeHelpR", "", NA 
+      "bike_data_split", "blob/master/ETL/data_split/data_split.Rmd", "bike_model_params",
+      "bike_train_rxgb", "blob/master/Model/build_rxgb/build_rxgb.Rmd", "bike_rxgb",
+      "bike_model_metrics", "blob/master/Model/model_quality_metrics/model_quality_metrics.Rmd", "bike_err_dat",
+      "bike_model_performance_app", "blob/master/App/model_performance/app.R", NA,
+      "bike_predict_api", "blob/master/API/plumber.R", NA,
+      "bike_predict_app", "blob/master/App/client_app/app.R", NA,
+      "dev_bike_predict_app", "blob/dev/App/client_app/app.R", NA,
+      "https://demo.rstudiopm.com/client/#/repos/8/packages/bikeHelpR", "blob/master/pkg", NA 
     )
   ) %>%
   dplyr::mutate(
