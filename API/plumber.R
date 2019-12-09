@@ -30,11 +30,11 @@ function(station_id, max_time = 86400, interval = 600, which = "rxgb") {
   times <- Sys.time() + seq(0, max_time, by = interval)
 
   df <- tidyr::crossing(times, station_id = as.character(station_id)) %>%
-    left_join(stats) %>%
-    select(-name)
+    dplyr::left_join(stats) %>%
+    dplyr::select(-name)
 
   pred_mat <- df %>%
-    transmute(id = station_id,
+    dplyr::transmute(id = station_id,
               hour = hour(times),
               month = month(times),
               date = date(times),

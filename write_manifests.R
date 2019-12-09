@@ -2,7 +2,7 @@
 rsconnect::writeManifest(here::here("App/client_app/"))
 rsconnect::writeManifest(here::here("App/model_performance/"))
 rsconnect::writeManifest(here::here("API/"))
-rsconnect::writeManifest(here::here("Model/build_model/"))
+rsconnect::writeManifest(here::here("Model/build_rxgb"))
 rsconnect::writeManifest(here::here("Model/model_quality_metrics/"))
 rsconnect::writeManifest(here::here("ETL/clean_raw/"))
 rsconnect::writeManifest(here::here("ETL/intake_raw/"))

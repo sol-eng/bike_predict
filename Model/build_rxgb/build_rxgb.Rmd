@@ -10,6 +10,7 @@ output: html_document
 library(tidyverse)
 library(tidymodels)
 library(bikeHelpR)
+library(xgboost)
 ```
 
 # Get data
@@ -19,7 +20,7 @@ pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
 ```
 
-```{r}
+```{r get_dat}
 df <- tbl(con, "bike_model_data") 
 model_params <- pins::pin_get("bike_model_params", board = "rsconnect")
 
@@ -38,14 +39,17 @@ train_mat <- model_params$recipe %>%
 ```
 
 # Train and Save Model
-```{r}
+```{r train_mod}
 mod <- parsnip::xgb_train(
   train_mat %>% select(-n_bikes, -id, -date), 
   train_mat %>% pull(n_bikes), 
   nrounds = ifelse(interactive(), 50, 500)
 )
+```
+
 
 # Save model as pin with some metadata
+```{r pin_mod}
 list(model = mod,
      train_date = model_params$train_date, 
      split_date = model_params$split_date, 

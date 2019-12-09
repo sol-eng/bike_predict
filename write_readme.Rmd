@@ -8,6 +8,7 @@ output: md_document
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(magrittr)
+library(dplyr)
 ```
 
 This repository contains an example of using the [pins](https://github.com/rstudio/pins) package and [RStudio Connect](https://rstudio.com/products/connect/) to create a predictive model and serve and visualize predictions from that model.
@@ -17,6 +18,9 @@ The entire scheme looks like this:
 
 # Content in this App
 ```{r, echo = FALSE}
+rsc_url <- "https://colorado.rstudio.com/rsc"
+github_url <- "https://github.com/rstudio/bike_predict"
+
 tibble::tribble(
   ~name, ~refresh, ~desc,
   "Raw Data Ingest Script", "Every 20 Minutes", "Writes data from API calls into `bike_raw_data` table in postgres.",
@@ -28,30 +32,32 @@ tibble::tribble(
   "Model Performance App", NA, "Displays model performance metrics.", 
   "Model API", NA, "Serves model predictions via Plumber API.", 
   "Bike Prediction App",  NA, "Displays predictions from App.", 
-  "bikeHelpR Package", NA, "An R package of helper functions, rebuilt on new commits in [internal repo](https://demo.rstudiopm.com/client/#/repos/8/packages/bikeHelpR) on demo.rstudiopm.com.") %>%
+  "bikeHelpR Package", NA, "An R package of helper functions, rebuilt on new commits in internal repo on demo.rstudiopm.com.") %>%
   bind_cols(
     tibble::tribble(
       ~access_url, ~code_url, ~pin_url,
       "bike_intake_raw", "blob/master/ETL/intake_raw/ETL_raw_into_db.Rmd", NA,
       "bike_clean_raw", "blob/master/ETL/clean_raw/ETL_clean_raw.Rmd", NA,
       "bike_station_data_ingest", "blob/master/ETL/station_api_to_pin/ETL_station_api_to_pin.Rmd", "bike_station_info",
-      "bike_data_split", , "bike_model_params",
-      "bike_rxgb_train", , "bike_rxgb",
-      "bike_model_metrics", , "bike_err_dat",
-      "bike_model_performance", 
-      "",
-      "",
-      "",
-      "", 
+      "bike_data_split", "", "bike_model_params",
+      "bike_train_rxgb", "", "bike_rxgb",
+      "bike_model_metrics", "", "bike_err_dat",
+      "bike_model_performance_app", "", NA,
+      "bike_predict_api", "", NA,
+      "bike_predict_app", "", NA,
       "https://demo.rstudiopm.com/client/#/repos/8/packages/bikeHelpR", "", NA 
     )
-  )
-  
-rsc_url <- "https://colorado.rstudio.com/rsc"
-github <- "https://github.com/rstudio/bike_predict"
-  
+  ) %>%
+  dplyr::mutate(
+    access_url = ifelse(stringr::str_detect(access_url, "https"), file.path(rsc_url, access_url), access_url), 
+    code_url = file.path(github_url, code_url), 
+    pin = pin_url,
+    pin_url = ifelse(is.na(pin_url), NA, file.path(rsc_url, pin_url))
+  ) %>%
   dplyr::transmute(
-    Content = glue::glue("[{name}]({url})"), 
+    Content = glue::glue("[{name}]({access_url})"), 
+    Code = glue::glue("[Code]({code_url})"), 
+    Pin = ifelse(is.na(pin_url), NA, glue::glue("[{pin}](pin_url)")),
     `Refresh Frequency` = refresh,
     `Content Description` = desc
   ) %>%
