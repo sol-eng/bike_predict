@@ -340,7 +340,7 @@
       }
     },
     "bikeHelpR": {
-      "Source": "CRAN",
+      "Source": "Internal",
       "Repository": "https://demo.rstudiopm.com/internal/latest",
       "GithubRepo": null,
       "GithubUsername": null,
@@ -350,14 +350,22 @@
         "Package": "bikeHelpR",
         "Type": "Package",
         "Title": "Package of Helper Functions for the Bike Prediction Asset",
-        "Version": "0.1.0",
-        "Authors@R": "person(\"Alex\", \"Gold\", email = \"alex.gold@rstudio.com\",\nrole = c(\"aut\", \"cre\"))",
+        "Authors@R": "person(\"Alex\", \"Gold\", email = \"alex.gold@rstudio.com\",\n                  role = c(\"aut\", \"cre\"))",
         "Description": "Helpful functions for bike prediction.",
         "License": "MIT + file LICENSE",
         "Encoding": "UTF-8",
         "LazyData": "true",
-        "Imports": "purrr,\nmagrittr,\ntibble",
-        "RoxygenNote": "6.1.1"
+        "Imports": "purrr, magrittr, tibble",
+        "RoxygenNote": "6.1.1",
+        "Repository": "RSPM",
+        "RemoteSha": "60bec4f0e0430d53c438674b0fc86edf19fc63a5",
+        "Version": "0.2.0",
+        "Date": "2019-12-09",
+        "NeedsCompilation": "no",
+        "Packaged": "2019-12-09 17:26:08 UTC; root",
+        "Author": "Alex Gold [aut, cre]",
+        "Maintainer": "Alex Gold <alex.gold@rstudio.com>",
+        "Built": "R 3.6.0; ; 2019-12-09 17:28:08 UTC; unix"
       }
     },
     "bit": {
@@ -2853,7 +2861,7 @@
   },
   "files": {
     "ETL_raw_into_db.Rmd": {
-      "checksum": "05238253a1020b25bd7d39ef512e44ca"
+      "checksum": "65dd9f6d18419b6689a391091e229cf9"
     },
     "packrat/desc/askpass": {
       "checksum": "f3640d9c1bebd3f5a6188eea0c23c533"
@@ -2871,7 +2879,7 @@
       "checksum": "3b7edd866f5750b5ef52f5737ea3a12f"
     },
     "packrat/desc/bikeHelpR": {
-      "checksum": "09bde3340b0a940b62647630a62b0255"
+      "checksum": "1e59f7d0131e8173a4e1a7b9e837ea08"
     },
     "packrat/desc/bit": {
       "checksum": "0789ae684b877c3ee3327e4a4a5bc7ab"
@@ -3129,7 +3137,7 @@
       "checksum": "7ad195d4e96ffe98a04c0c2744ea7baa"
     },
     "packrat/packrat.lock": {
-      "checksum": "943f2f3f232e40c5191562172e2d62ea"
+      "checksum": "179c39e6fc12abc4f0b42d497e2b7aa7"
     }
   },
   "users": null

@@ -232,14 +232,14 @@
         "Imports": "purrr, magrittr, tibble",
         "RoxygenNote": "6.1.1",
         "Repository": "RSPM",
-        "RemoteSha": "4964c17870345ee9f8b05046f2cf2a871ee3607d",
-        "Version": "0.1.0",
-        "Date": "2019-11-25",
+        "RemoteSha": "60bec4f0e0430d53c438674b0fc86edf19fc63a5",
+        "Version": "0.2.0",
+        "Date": "2019-12-09",
         "NeedsCompilation": "no",
-        "Packaged": "2019-11-25 17:59:28 UTC; root",
+        "Packaged": "2019-12-09 17:26:08 UTC; root",
         "Author": "Alex Gold [aut, cre]",
         "Maintainer": "Alex Gold <alex.gold@rstudio.com>",
-        "Built": "R 3.6.0; ; 2019-12-06 22:49:27 UTC; unix"
+        "Built": "R 3.6.0; ; 2019-12-09 17:28:08 UTC; unix"
       }
     },
     "bit": {
@@ -1644,7 +1644,7 @@
       "checksum": "3b7edd866f5750b5ef52f5737ea3a12f"
     },
     "packrat/desc/bikeHelpR": {
-      "checksum": "ad0c015e11a08afb4769c07d6f524ce0"
+      "checksum": "1e59f7d0131e8173a4e1a7b9e837ea08"
     },
     "packrat/desc/bit": {
       "checksum": "0789ae684b877c3ee3327e4a4a5bc7ab"
@@ -1788,7 +1788,7 @@
       "checksum": "b6f35c64ff762d2a2c74d10460a480c6"
     },
     "packrat/packrat.lock": {
-      "checksum": "b9e5d43d0c677bc4eaab3a63103f94b4"
+      "checksum": "830f22b0cc6f686913ca85e387f99a62"
     }
   },
   "users": null
