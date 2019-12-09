@@ -9,11 +9,12 @@ output: html_document
 library(dplyr)
 library(dbplyr)
 library(bikeHelpR)
+library(recipes)
 ```
 
 ```{r}
-df <- DBI::dbConnect(odbc::odbc(), "Content DB") %>%
-  tbl("bike_model_data")
+con <- DBI::dbConnect(odbc::odbc(), "Content DB")
+df <- tbl(con, "bike_model_data")
 pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
 ```
@@ -31,7 +32,7 @@ print(glue::glue(
 ```
 
 ```{r}
-train_dat <- bike_train_dat(split_date)
+train_dat <- bike_train_dat(con, split_date)
 recipe <- recipe(n_bikes ~ ., data = train_dat) %>%
   step_dummy(dow) %>%
   prep(train_dat)
