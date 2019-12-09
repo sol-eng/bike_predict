@@ -1,0 +1,38 @@
+---
+author: Alex Gold
+date: '`r format(Sys.Date())`'
+title: Write Readme
+output: md_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(magrittr)
+```
+
+This repository contains an example of using the [pins](https://github.com/rstudio/pins) package and [RStudio Connect](https://rstudio.com/products/connect/) to create a predictive model and serve and visualize predictions from that model.
+
+The entire scheme looks like this: 
+![](./system_schematic.png)
+
+# Content in this App
+```{r, echo = FALSE}
+tibble::tribble(
+  ~name, ~url, ~refresh, ~desc,
+  "Raw Data Ingest Script", "", "Every 20 Minutes", "Writes data from API calls into `bike_raw_data` table in postgres.",
+  "Clean Data Script", "", "Daily (4 am)", "Cleans `bike_raw_data` for modeling, writes into `bike_model_data`.",
+  "Clean Station Metadata Script", "", "Weekly (Sundays)", "Ingests station metadata and saves to a pin (names, lat/long).",
+  "Data Split Script", "", "Daily (5 am)", "Creates a training/test split for the data for models to use, saves to a pin.",
+  "R XGB Model Build", "", "Daily (6 am)", "Rebuilds model based on training/test split indicated by Data Split Script, writes into pin.", 
+  "Model Metrics Script", "", "Daily (8 am)", "Writes `bike_test_data` and `bike_predictions` postgres tables, writes pin of goodness-of-fit metrics.", 
+  "Model Performance App", "", NA, "Displays model performance metrics.", 
+  "Model API", "", NA, "Serves model predictions via Plumber API.", 
+  "Bike Prediction App", "", NA, "Displays predictions from App.", 
+  "bikeHelpR Package", "", NA, "An R package of helper functions, rebuilt on new commits in [internal repo](https://demo.rstudiopm.com/client/#/repos/8/packages/bikeHelpR) on demo.rstudiopm.com.") %>%
+  dplyr::transmute(
+    Content = glue::glue("[{name}]({url})"), 
+    `Refresh Frequency` = refresh,
+    `Content Description` = desc
+  ) %>%
+  knitr::kable()
+```

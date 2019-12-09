@@ -29,6 +29,7 @@ dat <- feeds %>%
    pull(url) %>% 
    get_data()
 
+
 (df <- dat %>%
       magrittr::extract2("data") %>%
       mutate(time = dat$last_updated))

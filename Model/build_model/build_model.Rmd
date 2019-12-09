@@ -1,0 +1,51 @@
+---
+title: "Build Model"
+author: "Alex"
+date: "9/20/2019"
+output: html_document
+---
+
+# Load Libraries and connect to board
+```{r}
+library(tidyverse)
+library(tidymodels)
+```
+
+# Get data
+```{r}
+con <- DBI::dbConnect(odbc::odbc(), "Content DB")
+df <- tbl(con, "bike_model_data") 
+model_params <- pins::pin_get("bike_model_params", board = "rsconnect")
+
+train <- bike_train_dat(model_params$split_date)
+```
+
+Make recipe for model
+```{r}
+# downsample if working interactively
+if (interactive()) {
+  train <- dplyr::sample_n(train, 5000)
+}
+
+train_mat <- model_params$recipe %>%
+  bake(train)
+```
+
+# Train and Save Model
+```{r}
+mod <- parsnip::xgb_train(
+  train_mat %>% select(-n_bikes, -id, -date), 
+  train_mat %>% pull(n_bikes), 
+  nrounds = ifelse(interactive(), 50, 500)
+)
+
+# Save model as pin with some metadata
+list(model = mod,
+     train_date = model_params$train_date, 
+     split_date = model_params$split_date, 
+     recipe = model_params$recipe) %>%
+pins::pin("bike_model_rxgb", 
+          "Model of Capitol Citybikes Available per Station", 
+          board = "rsconnect")
+```
+

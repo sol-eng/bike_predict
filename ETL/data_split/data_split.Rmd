@@ -1,0 +1,46 @@
+---
+title: "Create Training Data"
+author: "Alex Gold"
+date: "12/6/2019"
+output: html_document
+---
+
+```{r}
+library(dplyr)
+library(bikeHelpR)
+```
+
+```{r}
+df <- DBI::dbConnect(odbc::odbc(), "Content DB") %>%
+  tbl("bike_model_data")
+pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
+                               key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
+```
+
+```{r}
+n_days_test <- 2
+dates <- df %>% count(date) %>% pull(date) %>% as.Date()
+split_date <- dates[length(dates) - n_days_test]
+test_dates <- paste0(dates[(length(dates) - (n_days_test - 1)): length(dates)], collapse = " and ")
+
+
+print(glue::glue(
+  "Using data on or before {split_date} as training, data from {test_dates} to test."
+))
+```
+
+```{r}
+train_dat <- bike_train_dat(split_date)
+recipe <- recipe(n_bikes ~ ., data = train_dat) %>%
+  step_dummy(dow) %>%
+  prep(train_dat)
+```
+
+```{r}
+pins::pin(list(train_date = Sys.Date(), 
+               split_date = split_date, 
+               recipe = recipe), 
+          "bike_model_params", "Parameters for Creating Training Dataset", 
+          board = "rsconnect")
+```
+
