@@ -33,7 +33,7 @@ tibble::tribble(
   "Model API", NA, "Serves model predictions via Plumber API.", 
   "Bike Prediction App",  NA, "Displays predictions from App.", 
   "Dev Bike Prediction App", NA, "Dev version of Bike Prediction App",
-  "bikeHelpR Package", NA, "An R package of helper functions, rebuilt on new tagged commits in internal repo on demo.rstudiopm.com.") %>%
+  "bikeHelpR Package", "Tags", "An R package of helper functions, built in internal repo on demo.rstudiopm.com.") %>%
   bind_cols(
     tibble::tribble(
       ~access_url, ~code_url, ~pin_url,

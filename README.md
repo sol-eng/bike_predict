@@ -93,8 +93,8 @@ Content in this App
 <td style="text-align: left;"><a href="https://demo.rstudiopm.com/client/#/repos/8/packages/bikeHelpR">bikeHelpR Package</a></td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/pkg">Code</a></td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: left;">An R package of helper functions, rebuilt on new tagged commits in internal repo on demo.rstudiopm.com.</td>
+<td style="text-align: left;">Tags</td>
+<td style="text-align: left;">An R package of helper functions, built in internal repo on demo.rstudiopm.com.</td>
 </tr>
 </tbody>
 </table>
