@@ -57,7 +57,7 @@ server <- function(input, output, session) {
                     "bicycle",
                     library = "fa",
                     iconColor = "white",
-                    markerColor = "red"
+                    markerColor = "green"
                 ),
                 label = ~paste0(name)
             )
