@@ -22,7 +22,7 @@ pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
 # Load Models and Test Data
 ```{r load_mod_and_data}
 mods <- list(r_xgb = pins::pin_get("bike_model_rxgb", board = "rsconnect"))
-mod_params <- pins::pin_get("bike_model_params", board = "rsconnect")
+mod_params <<- pins::pin_get("bike_model_params", board = "rsconnect")
 test <- bike_test_dat(con, mod_params$split_date) %>%
   recipes::bake(mod_params$recipe, .) 
 ```
