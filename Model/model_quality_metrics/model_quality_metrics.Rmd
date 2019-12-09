@@ -4,6 +4,7 @@ author: "Alex Gold"
 date: "12/6/2019"
 output: html_document
 ---
+
 ```{r}
 library(magrittr)
 library(bikeHelpR)
