@@ -59,7 +59,7 @@ tibble::tribble(
   dplyr::transmute(
     Content = glue::glue("[{name}]({access_url})"), 
     Code = glue::glue("[Code]({code_url})"), 
-    Pin = ifelse(is.na(pin_url), NA, glue::glue("[{pin}](pin_url)")),
+    Pin = ifelse(is.na(pin_url), NA, glue::glue("[{pin}]({pin_url})")),
     `Refresh Frequency` = refresh,
     `Content Description` = desc
   ) %>%

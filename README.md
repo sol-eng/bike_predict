@@ -36,28 +36,28 @@ Content in this App
 <tr class="odd">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_station_data_ingest">Clean Station Metadata Script</a></td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/ETL/station_api_to_pin/ETL_station_api_to_pin.Rmd">Code</a></td>
-<td style="text-align: left;"><a href="pin_url">bike_station_info</a></td>
+<td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_station_info">bike_station_info</a></td>
 <td style="text-align: left;">Weekly (Sundays)</td>
 <td style="text-align: left;">Ingests station metadata and saves to a pin (names, lat/long).</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_data_split">Data Split Script</a></td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/ETL/data_split/data_split.Rmd">Code</a></td>
-<td style="text-align: left;"><a href="pin_url">bike_model_params</a></td>
+<td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_model_params">bike_model_params</a></td>
 <td style="text-align: left;">Daily (5 am)</td>
 <td style="text-align: left;">Creates a training/test split for the data for models to use, saves to a pin.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_train_rxgb">R XGB Model Train</a></td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/Model/build_rxgb/build_rxgb.Rmd">Code</a></td>
-<td style="text-align: left;"><a href="pin_url">bike_rxgb</a></td>
+<td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_rxgb">bike_rxgb</a></td>
 <td style="text-align: left;">Daily (6 am)</td>
 <td style="text-align: left;">Retrains model based on training/test split indicated by Data Split Script, writes into pin.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_model_metrics_script">Model Metrics Script</a></td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/Model/model_quality_metrics/model_quality_metrics.Rmd">Code</a></td>
-<td style="text-align: left;"><a href="pin_url">bike_err_dat</a></td>
+<td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_err_dat">bike_err_dat</a></td>
 <td style="text-align: left;">Daily (8 am)</td>
 <td style="text-align: left;">Writes <code>bike_test_data</code> and <code>bike_predictions</code> postgres tables, writes pin of goodness-of-fit metrics.</td>
 </tr>
