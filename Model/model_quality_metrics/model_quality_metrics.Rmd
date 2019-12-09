@@ -8,6 +8,8 @@ output: html_document
 ```{r}
 library(magrittr)
 library(bikeHelpR)
+library(dbplyr)
+library(xgboost)
 ```
 
 
