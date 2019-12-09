@@ -576,6 +576,35 @@
         "Built": "R 3.6.0; ; 2019-07-18 15:44:27 UTC; unix"
       }
     },
+    "bikeHelpR": {
+      "Source": "Internal",
+      "Repository": "https://demo.rstudiopm.com/internal/latest",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "bikeHelpR",
+        "Type": "Package",
+        "Title": "Package of Helper Functions for the Bike Prediction Asset",
+        "Authors@R": "person(\"Alex\", \"Gold\", email = \"alex.gold@rstudio.com\",\n                  role = c(\"aut\", \"cre\"))",
+        "Description": "Helpful functions for bike prediction.",
+        "License": "MIT + file LICENSE",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "Imports": "purrr, magrittr, tibble",
+        "RoxygenNote": "6.1.1",
+        "Repository": "RSPM",
+        "RemoteSha": "60bec4f0e0430d53c438674b0fc86edf19fc63a5",
+        "Version": "0.2.0",
+        "Date": "2019-12-09",
+        "NeedsCompilation": "no",
+        "Packaged": "2019-12-09 17:26:08 UTC; root",
+        "Author": "Alex Gold [aut, cre]",
+        "Maintainer": "Alex Gold <alex.gold@rstudio.com>",
+        "Built": "R 3.6.0; ; 2019-12-09 17:28:08 UTC; unix"
+      }
+    },
     "bit": {
       "Source": "RSPM",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
@@ -5286,7 +5315,7 @@
   },
   "files": {
     "build_rxgb.Rmd": {
-      "checksum": "1d823414d9454c04d96f4caf90817074"
+      "checksum": "47b3dcff67e0b7ad02699664a57bee19"
     },
     "packrat/desc/askpass": {
       "checksum": "f3640d9c1bebd3f5a6188eea0c23c533"
@@ -5305,6 +5334,9 @@
     },
     "packrat/desc/BH": {
       "checksum": "3b7edd866f5750b5ef52f5737ea3a12f"
+    },
+    "packrat/desc/bikeHelpR": {
+      "checksum": "1e59f7d0131e8173a4e1a7b9e837ea08"
     },
     "packrat/desc/bit": {
       "checksum": "0789ae684b877c3ee3327e4a4a5bc7ab"
@@ -5796,7 +5828,7 @@
       "checksum": "0fb3058fe2d5e18f47c2e6042d98384c"
     },
     "packrat/packrat.lock": {
-      "checksum": "54cef48bcfc500020d8ef5ece288fdfe"
+      "checksum": "8999a3c50555dc56d4afcfa928e2860f"
     }
   },
   "users": null

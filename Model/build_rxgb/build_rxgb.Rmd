@@ -9,22 +9,28 @@ output: html_document
 ```{r}
 library(tidyverse)
 library(tidymodels)
+library(bikeHelpR)
 ```
 
 # Get data
 ```{r}
 con <- DBI::dbConnect(odbc::odbc(), "Content DB")
+pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
+                               key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
+```
+
+```{r}
 df <- tbl(con, "bike_model_data") 
 model_params <- pins::pin_get("bike_model_params", board = "rsconnect")
 
-train <- bike_train_dat(model_params$split_date)
+train <- bike_train_dat(con, model_params$split_date)
 ```
 
 Make recipe for model
 ```{r}
 # downsample if working interactively
 if (interactive()) {
-  train <- dplyr::sample_n(train, 5000)
+  train <- dplyr::sample_frac(train, 0.5)
 }
 
 train_mat <- model_params$recipe %>%
