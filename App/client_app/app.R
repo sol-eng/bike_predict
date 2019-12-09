@@ -6,7 +6,7 @@ library(dplyr)
 library(leaflet)
 
 # Create dashboard page UI
-ui <- dashboardPage(skin = "red",
+ui <- dashboardPage(skin = "green",
                     dashboardHeader(title = "Capitol Bikeshare Availability"),
                     dashboardSidebar(disable = TRUE),
                     dashboardBody(
