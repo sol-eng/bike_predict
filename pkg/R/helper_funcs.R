@@ -98,9 +98,9 @@ clean_data <- function(x, is_sys_info = FALSE) {
 bike_train_dat <- function(con, split_date) {
   print(glue::glue("Using data on or before {split_date} for training."))
 
-  tbl(con, "bike_model_data") %>%
-    filter(date <= lubridate::ymd(split_date)) %>%
-    collect()
+  dplyr::tbl(con, "bike_model_data") %>%
+    dplyr::filter(date <= lubridate::ymd(split_date)) %>%
+    dplyr::collect()
 }
 
 
@@ -115,11 +115,11 @@ bike_train_dat <- function(con, split_date) {
 #' con <- DBI::dbConnect(odbc::odbc(), "Content DB")
 #' bike_test_dat(con, Sys.Date() - 2)
 bike_test_dat <- function(con, split_date) {
-  df <- tbl(con, "bike_model_data") %>%
-    filter(date > lubridate::ymd(split_date)) %>%
-    collect()
+  df <- dplyr::tbl(con, "bike_model_data") %>%
+    dplyr::filter(date > lubridate::ymd(split_date)) %>%
+    dplyr::collect()
 
-  dates <- df %>% count(date) %>% pull(date) %>% paste0(collapse = " and ")
+  dates <- df %>% dplyr::count(date) %>% dplyr::pull(date) %>% paste0(collapse = " and ")
 
   print(glue::glue("Using {dates} as test data."))
 
@@ -164,13 +164,13 @@ bike_mod_results <- function(mod, mod_name, test_df, pred_mat_func) {
 
   print("Writing Goodness of Fit Pin.")
   # Create OOS Goodness of Fit and pin
-  bind_cols(tibble::tibble(
+  dplyr::bind_cols(tibble::tibble(
     train_date = mod_params$train_date,
     mod = mod_name),
     oos_metrics(test_df$n_bikes, pred_df$preds),
     time = Sys.time()) %>%
     # Bind in old
-    bind_rows(pins::pin_get("bike_err", board = "rsconnect")) %>%
+    dplyr::bind_rows(pins::pin_get("bike_err", board = "rsconnect")) %>%
     # If re-running today, keep only new
     dplyr::group_by(train_date, mod) %>%
     dplyr::filter(time == max(time, na.rm = TRUE)) %>%
@@ -210,7 +210,7 @@ oos_metrics <- function(real, pred) {
 #' @export
 prep_r_xgb_mat <- function(df) {
   df %>%
-    select(-n_bikes, -id, -date) %>%
+    dplyr::select(-n_bikes, -id, -date) %>%
     as.matrix()
 }
 
@@ -225,7 +225,7 @@ bike_get_mod_preds <- function(mod, mod_name, test_df, pred_mat_func = NULL) {
   if (!is.null(pred_mat_func)) pred_mat <- pred_mat_func(pred_mat)
 
   test_df %>%
-    transmute(
+    dplyr::transmute(
       # Model metdata
       model = mod_name,
       train_date = mod$train_date,

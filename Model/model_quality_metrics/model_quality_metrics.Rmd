@@ -5,6 +5,12 @@ date: "12/6/2019"
 output: html_document
 ---
 ```{r}
+library(magrittr)
+library(bikeHelpR)
+```
+
+
+```{r}
 con <- DBI::dbConnect(odbc::odbc(), "Content DB")
 pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
