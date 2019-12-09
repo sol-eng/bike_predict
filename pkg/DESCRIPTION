@@ -11,5 +11,7 @@ LazyData: true
 Imports: 
     purrr,
     magrittr,
-    tibble
+    tibble, 
+    xgboost, 
+    yardstick
 RoxygenNote: 6.1.1
