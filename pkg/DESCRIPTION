@@ -1,7 +1,7 @@
 Package: bikeHelpR
 Type: Package
 Title: Package of Helper Functions for the Bike Prediction Asset
-Version: 0.2.1
+Version: 0.2.2
 Authors@R: person("Alex", "Gold", email = "alex.gold@rstudio.com",
                   role = c("aut", "cre"))
 Description: Helpful functions for bike prediction.

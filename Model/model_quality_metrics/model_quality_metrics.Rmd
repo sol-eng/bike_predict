@@ -10,6 +10,7 @@ library(magrittr)
 library(bikeHelpR)
 library(dbplyr)
 library(xgboost)
+library(yardstick)
 ```
 
 

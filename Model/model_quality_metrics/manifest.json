@@ -1429,6 +1429,39 @@
         "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 21:49:45 UTC; unix"
       }
     },
+    "pROC": {
+      "Source": "RSPM",
+      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "pROC",
+        "Type": "Package",
+        "Title": "Display and Analyze ROC Curves",
+        "Version": "1.15.0",
+        "Date": "2019-06-01",
+        "Encoding": "UTF-8",
+        "Depends": "R (>= 2.14)",
+        "Imports": "methods, plyr, Rcpp (>= 0.11.1)",
+        "Suggests": "microbenchmark, tcltk, MASS, logcondens, doParallel,\ntestthat, vdiffr, ggplot2",
+        "LinkingTo": "Rcpp",
+        "Authors@R": "c(person(\"Xavier\", \"Robin\", role = c(\"cre\", \"aut\"), \n                    email = \"pROC-cran@xavier.robin.name\",\n                    comment = c(ORCID = \"0000-0002-6813-3200\")),\n             person(\"Natacha\", \"Turck\", role = \"aut\"),\n             person(\"Alexandre\", \"Hainard\", role = \"aut\"),\n             person(\"Natalia\", \"Tiberti\", role = \"aut\"),\n             person(\"Frédérique\", \"Lisacek\", role = \"aut\"),\n             person(\"Jean-Charles\", \"Sanchez\", role = \"aut\"),\n             person(\"Markus\", \"Müller\", role = \"aut\"),\n             person(\"Stefan\", \"Siegert\", role = \"ctb\", \n                    comment = \"Fast DeLong code\", \n                    email = \"stefan_siegert@gmx.de\"),\n             person(\"Matthias\", \"Doering\", role = \"ctb\", \n                    comment = \"Hand & Till Multiclass\"))",
+        "Description": "Tools for visualizing, smoothing and comparing receiver operating characteristic (ROC curves). (Partial) area under the curve (AUC) can be compared with statistical tests based on U-statistics or bootstrap. Confidence intervals can be computed for (p)AUC or ROC curves.",
+        "License": "GPL (>= 3)",
+        "URL": "http://expasy.org/tools/pROC/",
+        "BugReports": "https://github.com/xrobin/pROC/issues",
+        "LazyLoad": "yes",
+        "NeedsCompilation": "yes",
+        "Packaged": "2019-06-01 07:44:22 UTC; xavier",
+        "Author": "Xavier Robin [cre, aut] (<https://orcid.org/0000-0002-6813-3200>),\n  Natacha Turck [aut],\n  Alexandre Hainard [aut],\n  Natalia Tiberti [aut],\n  Frédérique Lisacek [aut],\n  Jean-Charles Sanchez [aut],\n  Markus Müller [aut],\n  Stefan Siegert [ctb] (Fast DeLong code),\n  Matthias Doering [ctb] (Hand & Till Multiclass)",
+        "Maintainer": "Xavier Robin <pROC-cran@xavier.robin.name>",
+        "Repository": "RSPM",
+        "Date/Publication": "2019-06-01 09:00:03 UTC",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 22:07:55 UTC; unix"
+      }
+    },
     "pillar": {
       "Source": "RSPM",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
@@ -1557,6 +1590,37 @@
         "Repository": "RSPM",
         "Date/Publication": "2018-03-25 15:25:27 UTC",
         "Built": "R 3.6.1; ; 2019-09-09 12:14:55 UTC; unix"
+      }
+    },
+    "plyr": {
+      "Source": "RSPM",
+      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "plyr",
+        "Version": "1.8.4",
+        "Title": "Tools for Splitting, Applying and Combining Data",
+        "Description": "A set of tools that solves a common set of problems: you\n    need to break a big problem down into manageable pieces, operate on each\n    piece and then put all the pieces back together.  For example, you might\n    want to fit a model to each spatial location or time point in your study,\n    summarise data by panels or collapse high-dimensional arrays to simpler\n    summary statistics. The development of 'plyr' has been generously supported\n    by 'Becton Dickinson'.",
+        "Authors@R": "person(\"Hadley\", \"Wickham\", , \"hadley@rstudio.com\", c(\"aut\", \"cre\"))",
+        "URL": "http://had.co.nz/plyr, https://github.com/hadley/plyr",
+        "BugReports": "https://github.com/hadley/plyr/issues",
+        "Depends": "R (>= 3.1.0)",
+        "Imports": "Rcpp (>= 0.11.0)",
+        "LinkingTo": "Rcpp",
+        "Suggests": "abind, testthat, tcltk, foreach, doParallel, itertools,\niterators, covr",
+        "License": "MIT + file LICENSE",
+        "LazyData": "true",
+        "RoxygenNote": "5.0.1",
+        "NeedsCompilation": "yes",
+        "Packaged": "2016-06-07 19:58:36 UTC; hadley",
+        "Author": "Hadley Wickham [aut, cre]",
+        "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2016-06-08 10:40:15",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 22:03:32 UTC; unix"
       }
     },
     "prettyunits": {
@@ -2282,6 +2346,40 @@
         "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 18:53:28 UTC; unix"
       }
     },
+    "yardstick": {
+      "Source": "RSPM",
+      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "yardstick",
+        "Type": "Package",
+        "Title": "Tidy Characterizations of Model Performance",
+        "Version": "0.0.3",
+        "Authors@R": "c(\n    person(\"Max\", \"Kuhn\", , \"max@rstudio.com\", c(\"aut\", \"cre\")),\n    person(\"Davis\", \"Vaughan\", , \"davis@rstudio.com\", c(\"aut\")),\n    person(\"RStudio\", role = \"cph\"))",
+        "Maintainer": "Max Kuhn <max@rstudio.com>",
+        "Description": "Tidy tools for quantifying how well model fits to a data set such as confusion matrices, class probability curve summaries, and regression metrics (e.g., RMSE). ",
+        "URL": "https://github.com/tidymodels/yardstick",
+        "BugReports": "https://github.com/tidymodels/yardstick/issues",
+        "License": "GPL-2",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "RoxygenNote": "6.1.1",
+        "Depends": "R (>= 2.10)",
+        "Suggests": "testthat, covr, purrr, tidyr, ggplot2, knitr, kableExtra,\nrmarkdown",
+        "Imports": "dplyr, utils, pROC, rlang, tidyselect, Rcpp, generics",
+        "LinkingTo": "Rcpp",
+        "VignetteBuilder": "knitr",
+        "NeedsCompilation": "yes",
+        "Packaged": "2019-03-08 18:02:13 UTC; davis",
+        "Author": "Max Kuhn [aut, cre],\n  Davis Vaughan [aut],\n  RStudio [cph]",
+        "Repository": "RSPM",
+        "Date/Publication": "2019-03-08 19:00:03 UTC",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-18 19:10:27 UTC; unix"
+      }
+    },
     "zip": {
       "Source": "RSPM",
       "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
@@ -2313,7 +2411,7 @@
   },
   "files": {
     "model_quality_metrics.Rmd": {
-      "checksum": "0bb75eab6dd30e9c6955876cad7907ab"
+      "checksum": "235be3c693747a1663a47346aaa65bb6"
     },
     "packrat/desc/askpass": {
       "checksum": "f3640d9c1bebd3f5a6188eea0c23c533"
@@ -2456,8 +2554,14 @@
     "packrat/desc/plogr": {
       "checksum": "e0ebffbd1a153f12efd3f13eebd6ef66"
     },
+    "packrat/desc/plyr": {
+      "checksum": "4099abaf746fe3cdca655a54bf7614fe"
+    },
     "packrat/desc/prettyunits": {
       "checksum": "4d8e66f444192ee71ef39dc594c512eb"
+    },
+    "packrat/desc/pROC": {
+      "checksum": "03939fce2111f9a0c1c0720a07d9f9b0"
     },
     "packrat/desc/prodlim": {
       "checksum": "edab8ffe0be74de926416d90c524663c"
@@ -2534,11 +2638,14 @@
     "packrat/desc/yaml": {
       "checksum": "7ad195d4e96ffe98a04c0c2744ea7baa"
     },
+    "packrat/desc/yardstick": {
+      "checksum": "134f4ebe081a11081650e53ffa38f599"
+    },
     "packrat/desc/zip": {
       "checksum": "b6f35c64ff762d2a2c74d10460a480c6"
     },
     "packrat/packrat.lock": {
-      "checksum": "aedc6aa1aae28feb2f5b0be76ee7a611"
+      "checksum": "619620b364a470269ee157d501d69114"
     }
   },
   "users": null
