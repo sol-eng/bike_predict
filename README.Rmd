@@ -51,7 +51,7 @@ tibble::tribble(
     )
   ) %>%
   dplyr::mutate(
-    access_url = ifelse(stringr::str_detect(access_url, "https"), file.path(rsc_url, access_url), access_url), 
+    access_url = ifelse(stringr::str_detect(access_url, "https"), access_url, file.path(rsc_url, access_url)), 
     code_url = file.path(github_url, code_url), 
     pin = pin_url,
     pin_url = ifelse(is.na(pin_url), NA, file.path(rsc_url, pin_url))
