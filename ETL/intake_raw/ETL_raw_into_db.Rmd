@@ -25,17 +25,14 @@ feeds <- feeds_urls()
 ```{r}
 # Get station status Data
 dat <- feeds %>% 
-  filter(name == "station_status") %>% 
-  pull(url) %>% 
-  get_data()
+   filter(name == "station_status") %>% 
+   pull(url) %>% 
+   get_data()
 
-# Remove useless column
-df <- dat$data %>%
-  select(-eightd_active_station_services) 
-  
-df$time <- dat$last_updated
 
-df
+(df <- dat %>%
+      magrittr::extract2("data") %>%
+      mutate(time = dat$last_updated))
 ```
 
 ```{r}

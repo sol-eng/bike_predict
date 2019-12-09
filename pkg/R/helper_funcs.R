@@ -84,21 +84,159 @@ clean_data <- function(x, is_sys_info = FALSE) {
 }
 
 
-bike_train_dat <- function(split_date) {
-  print(glue::glue("Using data from prior to {split_date} for training."))
+#' Get Bike Training Data
+#'
+#' @param con db connection
+#' @param split_date date to split data (on or before is training, after is test)
+#'
+#' @return training dataset
+#' @export
+#'
+#' @examples
+#' con <- DBI::dbConnect(odbc::odbc(), "Content DB")
+#' bike_train_dat(con, "2019-12-05")
+bike_train_dat <- function(con, split_date) {
+  print(glue::glue("Using data on or before {split_date} for training."))
 
   tbl(con, "bike_model_data") %>%
-    filter(date < lubridate::ymd(split_date)) %>%
-    collect()
-}
-bike_test_dat <- function(split_date) {
-  print(glue::glue("Testing data is {split_date} to end."))
-
-  tbl(con, "bike_model_data") %>%
-    filter(date >= lubridate::ymd(split_date)) %>%
+    filter(date <= lubridate::ymd(split_date)) %>%
     collect()
 }
 
 
+#' Get bike test data
+#'
+#' @inheritParams bike_train_dat
+#'
+#' @return test bike data
+#' @export
+#'
+#' @examples
+#' con <- DBI::dbConnect(odbc::odbc(), "Content DB")
+#' bike_test_dat(con, Sys.Date() - 2)
+bike_test_dat <- function(con, split_date) {
+  df <- tbl(con, "bike_model_data") %>%
+    filter(date > lubridate::ymd(split_date)) %>%
+    collect()
+
+  dates <- df %>% count(date) %>% pull(date) %>% paste0(collapse = " and ")
+
+  print(glue::glue("Using {dates} as test data."))
+
+  df
+}
+
+#' Get Bike Model Results
+#'
+#' @param mod Mode, fed to predict
+#' @param mod_name model name for storage
+#' @param test_df data frame of test data
+#' @param pred_mat_func function to convert from test_df into prediction matrix for mod
+#'
+#' @return None
+#' @export
+bike_mod_results <- function(mod, mod_name, test_df, pred_mat_func) {
+  # Get predictions and write to db
+  pred_df <- bike_get_mod_preds(mod, mod_name, test_df, pred_mat_func)
+
+  print("Saving test data to db.")
+  pred_df %>%
+    dplyr::mutate(upload_time = Sys.time(),
+                  id = as.integer(id)) %>%
+    DBI::dbWriteTable(con, "bike_pred_data", ., append = TRUE)
+
+  # Keep only newest uploaded
+  id_vars <- c("model", "train_date", "id", "hour", "date") %>%
+    paste(collapse = ", ")
+  DBI::dbExecute(
+    con,
+    glue::glue(
+      "DELETE
+    FROM bike_pred_data
+    WHERE ({id_vars}, upload_time) NOT IN (
+      SELECT {id_vars}, max(upload_time) as upload_time
+      FROM bike_pred_data
+      GROUP BY {id_vars}
+    );"
+    )
+  )
+
+
+  print("Writing Goodness of Fit Pin.")
+  # Create OOS Goodness of Fit and pin
+  bind_cols(tibble::tibble(
+    train_date = mod_params$train_date,
+    mod = mod_name),
+    oos_metrics(test_df$n_bikes, pred_df$preds),
+    time = Sys.time()) %>%
+    # Bind in old
+    bind_rows(pins::pin_get("bike_err", board = "rsconnect")) %>%
+    # If re-running today, keep only new
+    dplyr::group_by(train_date, mod) %>%
+    dplyr::filter(time == max(time, na.rm = TRUE)) %>%
+    dplyr::ungroup() %>%
+    dplyr::select(-time) %>%
+    # pin back
+    pins::pin("bike_err", "Goodness of Fit Metrics for Bike Prediction", board = "rsconnect")
+
+}
+
+#' Generate metrics for a model
+#'
+#' @param real vector of real
+#' @param pred vector of predictions
+#'
+#' @return tibble of goodness-of-fit metrics
+#' @export
+#'
+#' @examples
+#' oos_metrics(1:3, 4:6)
+oos_metrics <- function(real, pred) {
+  tibble::tibble(
+    rmse = yardstick::rmse_vec(real, pred),
+    mae = yardstick::mae_vec(real, pred),
+    ccc = yardstick::ccc_vec(real, pred),
+    r2 = yardstick::rsq_trad_vec(real, pred)
+  )
+}
+
+
+
+#' Turn test df into prediction matrix for R XGBoost model
+#'
+#' @param df test data frame
+#'
+#' @return a matrix
+#' @export
+prep_r_xgb_mat <- function(df) {
+  df %>%
+    select(-n_bikes, -id, -date) %>%
+    as.matrix()
+}
+
+#' Generate model predictions from a model
+#'
+#' @inheritParams bike_mod_results
+#'
+#' @return the test dataframe with predictions and residuals rbind-ed in
+#' @export
+bike_get_mod_preds <- function(mod, mod_name, test_df, pred_mat_func = NULL) {
+  pred_mat <- test_df
+  if (!is.null(pred_mat_func)) pred_mat <- pred_mat_func(pred_mat)
+
+  test_df %>%
+    transmute(
+      # Model metdata
+      model = mod_name,
+      train_date = mod$train_date,
+      # ID pred to test data
+      id = id,
+      hour = hour,
+      date = date,
+      # Predictions
+      n_bikes,
+      preds = predict(mod$model, newdata = pred_mat) %>% round(),
+      resid = test_df$n_bikes - preds)
+}
 
 
