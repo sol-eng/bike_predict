@@ -11,7 +11,20 @@ library(magrittr)
 library(dplyr)
 ```
 
-This repository contains an example of using the [pins](https://github.com/rstudio/pins) package and [RStudio Connect](https://rstudio.com/products/connect/) to create a predictive model and serve and visualize predictions from that model.
+This repository contains an example of using [RStudio Connect](https://rstudio.com/products/connect/) along with the [pins](https://github.com/rstudio/pins) package to create an end-to-end machine learning pipeline.
+
+# Who This is For
+
+Both *data scientists* and *R admins* in machine-learning heavy contexts may find this demo interesting. One indication that someone might find this interesting is that they're using the word "production" describing their pain points.
+
+Here are a few particular customer pain points this repo can help explain:
+
+- _I am trying to productionize a machine learning model_
+- _I do XYZ with an internal package, but am not sure how to use it_
+- _I have a bunch of CSV files I'm saving ..._
+- _We do this data processing/ETL job on a schedule_
+
+
 
 The entire scheme looks like this: 
 ![](./system_schematic.png)
