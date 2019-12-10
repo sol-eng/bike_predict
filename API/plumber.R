@@ -4,6 +4,7 @@ library(tibble)
 library(xgboost)
 library(bikeHelpR)
 library(lubridate)
+library(dplyr)
 
 pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
@@ -46,5 +47,5 @@ function(station_id, max_time = 86400, interval = 600, which = "r_xgb") {
     prep_r_xgb_mat()
 
   df %>%
-    mutate(pred = predict(mods[[which]]$model, newdata = pred_mat) %>% round())
+    dplyr::mutate(pred = predict(mods[[which]]$model, newdata = pred_mat) %>% round())
 }
