@@ -98,7 +98,8 @@ server <- function(input, output, session) {
             ggplot(aes(x = val, color = var)) +
             geom_density() +
             ggtitle("Distributions of Number of Bikes") +
-            labs(color = "Series")
+            labs(color = "Series") +
+            theme_bw()
     )
 
     output$resids <- renderPlot(

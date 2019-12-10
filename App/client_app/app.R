@@ -28,25 +28,8 @@ server <- function(input, output, session) {
 
     stats <- pins::pin_get("alex.gold/bike_station_info", board = "rsconnect")
 
-    # Use API to get predictions from model
-    df <- reactive({
-
-        # Fake data for now
-        # httr::GET("https://colorado.rstudio.com/rsc/bike_predict/pred",
-        #           query = list(station_id = stats$station_id)
-
-        times <- Sys.time() + seq(0, 3600, by = 600)
-        tidyr::crossing(times, station_id = stats$station_id) %>%
-            mutate(pred = sample(0:20, nrow(.), replace = TRUE)) %>%
-            left_join(stats)
-
-    })
-
-
-
-
     output$map <- renderLeaflet({
-        df() %>%
+        stats %>%
             leaflet() %>%
             addProviderTiles(providers$CartoDB.Positron) %>%
             setView(lng = median(stats$lon), lat = median(stats$lat), zoom = 14) %>%
@@ -63,18 +46,36 @@ server <- function(input, output, session) {
             )
     })
 
-    # Create plot
-    output$plot <- renderPlot({
+
+    # Use API to get predictions from model
+    df <- reactive({
         req(input$map_marker_click)
 
-        print(input$map_marker_click)
-        df <- df() %>%
-            filter(lat == input$map_marker_click$lat,
-                   lon == input$map_marker_click$lng)
+        id <- stats %>%
+            # Somtimes clicks and ids don't line up exactly, use min dist
+            mutate(lat = lat - input$map_marker_click$lat,
+                   lon = lon - input$map_marker_click$lng,
+                   dist = lat^2 + lon^2) %>%
+            filter(dist == min(dist)) %>%
+            pull(station_id)
+        print(glue::glue("Station id: {id}"))
 
-        stat_name <- unique(df$name)
+            res <- httr::GET("https://colorado.rstudio.com/rsc/bike_predict_api/pred",
+                      query = list(station_id = id)) %>%
+                httr::content() %>%
+                purrr::map_df(tibble::as_tibble)
+    })
 
-        df %>%
+    # Create plot
+    output$plot <- renderPlot({
+        stat_name <- df() %>%
+            inner_join(stats %>% select(name, station_id)) %>%
+            pull(name) %>%
+            unique()
+
+        df() %>%
+            mutate(times = as.POSIXct(times)) %>%
+
             ggplot(aes(x = times, y = pred, group = 1)) +
             ggtitle(glue::glue("Predicted Bikes Available at {stat_name}")) +
             ggthemes::theme_clean() +
@@ -84,7 +85,6 @@ server <- function(input, output, session) {
             scale_y_continuous(labels = round) +
             geom_line()
     })
-
 
 }
 
