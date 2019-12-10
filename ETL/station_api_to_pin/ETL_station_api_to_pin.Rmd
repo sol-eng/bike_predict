@@ -1,7 +1,7 @@
 ---
 title: "Get Station Data"
 author: "Alex Gold"
-date: "10/11/2019"
+date: "`r Sys.time()`"
 output: html_document
 ---
 
