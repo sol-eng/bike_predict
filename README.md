@@ -1,12 +1,141 @@
-This repository contains an example of using the
-[pins](https://github.com/rstudio/pins) package and [RStudio
-Connect](https://rstudio.com/products/connect/) to create a predictive
-model and serve and visualize predictions from that model.
+This repository contains an example of using [RStudio
+Connect](https://rstudio.com/products/connect/) along with the
+[pins](https://github.com/rstudio/pins) package to create an end-to-end
+machine learning pipeline.
 
-The entire scheme looks like this: ![](./system_schematic.png)
+Who This is For
+===============
+
+Both *data scientists* and *R admins* in machine-learning heavy contexts
+may find this demo interesting. One indication that someone might find
+this interesting is that they’re using the word “production” describing
+their pain points.
+
+Some of the customer pain points that content in this repo can help
+address are listed below along with some of the relevant assets here.
+
+### I am trying to deploy/productionize a machine learning model
+
+People mean MANY different things by “productionize” a machine learning
+model. Very often, that just means making the output of a model
+available to another process. The most common paths to making model
+output accessible to other tools are writing to a database, writing to a
+flat file (or pin), or providing real-time predictions with a plumber
+API.
+
+This repository contains examples of all three of these patterns. The
+model metrics script outputs the test data including predictions to a
+database and outputs model performance metrics to a pin. It would be
+easy to make either of these the final consumable for another process,
+like the client shiny app. The shiny app in this repository uses a
+plumber API serving predictions.
+
+Another common problem in deploying the model is figuring out where the
+model lives. In this example, the model(s) is(are) pinned to RStudio
+Connect, and are consumed by the other assets (test data script and
+plumber API) from the pin.
+
+For relatively advanced model deployments, users may be interested in
+horseracing different models, A/B testing one model from another, or
+monitoring model performance and drift over time. Once finished, the
+model performance dashboard will be a tool to compare different models
+and also examine model performance over time.
+
+Another piece embedded in the background of deploying/productionizing a
+model is making the entire pipeline robust to (for example) someone
+accidentally pushing the deploy button when they shouldn’t. A really
+good solution to this is programmatic deployment. This entire repository
+is deployed from a github repo, using the functionality in RStudio
+Connect. One really cool problem this can solve is deploying dev
+versions of content, which can easily be accomplished using a
+long-running deployed dev branch. There’s an example of this in the Dev
+Client App.
+
+Another piece of this is making the underlying R functions more robust,
+see the next point for more on that.
+
+\#TODO – add a python model via reticulate
+
+### I have a bunch of functions I need to use, but it’s a pain
+
+Most R users know that the correct solution is to put their R functions
+into a package if they’ll be reused – or even if they just need to be
+well-documented and tested. This repository includes a package of helper
+functions that do a variety of tasks.
+
+Many R users aren’t sure how to deploy their package. Their packages
+work well locally, but everything breaks when they try to deploy. This
+is a great use case for RStudio Package Manager. RStudio Package Manager
+makes it easy to create a package that contains the code needed in an
+app, push that code up to git, and have it available via
+`install.packages` to a deployment environment (like RStudio Connect)
+that might need it.
+
+For more details, see the [RStudio Package
+Manager](https://rstudio.com/products/package-manager/) page and
+<a href="https://environments.rstudio.com" class="uri">https://environments.rstudio.com</a>.
+
+### I have a bunch of CSV files I use in my shiny app
+
+For some workflows, a CSV file really is the best choice for storing
+data. However, for many (most?) of those cases, the data would do better
+if stored somewhere centrally accessible by multiple people where the
+latest version is always available. This is particularly true if that
+data is reused across multiple projects or pieces of content.
+
+This project has two data files that are particularly pin-able – the
+station metadata file (that maps station IDs to names and locations),
+and the data frame of out-of-sample error metrics for each model. Both
+are relatively small files, reused by multiple assets, where only the
+newest version is needed – perfect candidates for a pin.
+
+There are a few other non-dataset objects that are also perfect for a
+pin: the models themselves and the test/training split. These have
+similar properties to the datasets – small, reused, and only the newest
+is needed – and are serializable by R, making them great choices for a
+pin.
+
+Some examples of objects that are likely to be a good fit for a pin:
+
+-   machine learning models
+-   plotting data that is updated on a schedule (as opposed to created
+    on demand)
+-   data splits/training data sets
+-   metadata files from some sort of machine-readable ID to
+    human-readable details
+
+### I’ve got this CRON job that does some ETL/data processing/creates a bunch of files
+
+Scheduled RMarkdown isn’t *always* the best solution here (for example,
+robust SQL pipelines in another tool definitely don’t need to be
+replaced with scheduled RMarkdown), but if the user is running R code,
+scheduled RMarkdown is way easier than anything else.
+
+What doesn’t it do
+------------------
+
+This repository shows off a really exciting set of capabilities,
+combining open-source R and Python with RStudio’s professional products.
+There are a few things it doesn’t do (yet) – but that would be really
+great to hear if people want them:
+
+-   Jobs don’t depend on another. I’ve scheduled the jobs so that each
+    will complete by the time another starts, but there are tools in R
+    (like [drake](https://github.com/ropensci/drake)) that allow you to
+    put the entire pipeline into code and make dependencies explicit.
+-   Pieces of content must be managed individually – that includes
+    uploading, permissions, environment variables, and tagging. It is
+    possible to do something more robust via programmatic deployment
+    using the RStudio Connect API, but generic git deployment doesn’t
+    support deploying all of the content in a git repo at once.
 
 Content in this App
 ===================
+
+Here’s what the system looks like ![](./system_schematic.png)
+
+Individual Content
+------------------
 
 <table>
 <thead>
@@ -98,3 +227,5 @@ Content in this App
 </tr>
 </tbody>
 </table>
+
+Last updated 2019-12-10.
