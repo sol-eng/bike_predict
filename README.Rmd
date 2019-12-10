@@ -11,7 +11,20 @@ library(magrittr)
 library(dplyr)
 ```
 
-This repository contains an example of using the [pins](https://github.com/rstudio/pins) package and [RStudio Connect](https://rstudio.com/products/connect/) to create a predictive model and serve and visualize predictions from that model.
+This repository contains an example of using [RStudio Connect](https://rstudio.com/products/connect/) along with the [pins](https://github.com/rstudio/pins) package to create an end-to-end machine learning pipeline.
+
+# Who This is For
+
+Both *data scientists* and *R admins* in machine-learning heavy contexts may find this demo interesting. One indication that someone might find this interesting is that they're using the word "production" describing their pain points.
+
+Here are a few particular customer pain points this repo can help explain:
+
+- _I am trying to productionize a machine learning model_
+- _I do XYZ with an internal package, but am not sure how to use it_
+- _I have a bunch of CSV files I'm saving ..._
+- _We do this data processing/ETL job on a schedule_
+
+
 
 The entire scheme looks like this: 
 ![](./system_schematic.png)
@@ -33,7 +46,7 @@ tibble::tribble(
   "Model API", NA, "Serves model predictions via Plumber API.", 
   "Bike Prediction App",  NA, "Displays predictions from App.", 
   "Dev Bike Prediction App", NA, "Dev version of Bike Prediction App",
-  "bikeHelpR Package", NA, "An R package of helper functions, rebuilt on new tagged commits in internal repo on demo.rstudiopm.com.") %>%
+  "bikeHelpR Package", "Tags", "An R package of helper functions, built in internal repo on demo.rstudiopm.com.") %>%
   bind_cols(
     tibble::tribble(
       ~access_url, ~code_url, ~pin_url,
@@ -42,7 +55,7 @@ tibble::tribble(
       "bike_station_data_ingest", "blob/master/ETL/station_api_to_pin/ETL_station_api_to_pin.Rmd", "bike_station_info",
       "bike_data_split", "blob/master/ETL/data_split/data_split.Rmd", "bike_model_params",
       "bike_train_rxgb", "blob/master/Model/build_rxgb/build_rxgb.Rmd", "bike_rxgb",
-      "bike_model_metrics", "blob/master/Model/model_quality_metrics/model_quality_metrics.Rmd", "bike_err_dat",
+      "bike_model_metrics_script", "blob/master/Model/model_quality_metrics/model_quality_metrics.Rmd", "bike_err_dat",
       "bike_model_performance_app", "blob/master/App/model_performance/app.R", NA,
       "bike_predict_api", "blob/master/API/plumber.R", NA,
       "bike_predict_app", "blob/master/App/client_app/app.R", NA,
@@ -51,7 +64,7 @@ tibble::tribble(
     )
   ) %>%
   dplyr::mutate(
-    access_url = ifelse(stringr::str_detect(access_url, "https"), file.path(rsc_url, access_url), access_url), 
+    access_url = ifelse(stringr::str_detect(access_url, "https"), access_url, file.path(rsc_url, access_url)), 
     code_url = file.path(github_url, code_url), 
     pin = pin_url,
     pin_url = ifelse(is.na(pin_url), NA, file.path(rsc_url, pin_url))
@@ -59,7 +72,7 @@ tibble::tribble(
   dplyr::transmute(
     Content = glue::glue("[{name}]({access_url})"), 
     Code = glue::glue("[Code]({code_url})"), 
-    Pin = ifelse(is.na(pin_url), NA, glue::glue("[{pin}](pin_url)")),
+    Pin = ifelse(is.na(pin_url), NA, glue::glue("[{pin}]({pin_url})")),
     `Refresh Frequency` = refresh,
     `Content Description` = desc
   ) %>%

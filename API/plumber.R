@@ -4,10 +4,11 @@ library(tibble)
 library(xgboost)
 library(bikeHelpR)
 library(lubridate)
+library(dplyr)
 
 pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
-mods <- list(rxgb = pins::pin_get("alex.gold/bike_model_rxgb", board = "rsconnect"))
+mods <- list(r_xgb = pins::pin_get("alex.gold/bike_model_rxgb", board = "rsconnect"))
 stats <- pins::pin_get("alex.gold/bike_station_info", board = "rsconnect")
 
 
@@ -19,7 +20,7 @@ stats <- pins::pin_get("alex.gold/bike_station_info", board = "rsconnect")
 #* @param interval prediction interval
 #* @param which which model, defaults to rxgb
 #* @get /pred
-function(station_id, max_time = 86400, interval = 600, which = "rxgb") {
+function(station_id, max_time = 86400, interval = 600, which = "r_xgb") {
   # sanitize inputs
   station_id <- as.numeric(station_id)
   if (!all(station_id %in% stats$station_id)) stop("That station does not exist.")
@@ -46,5 +47,5 @@ function(station_id, max_time = 86400, interval = 600, which = "rxgb") {
     prep_r_xgb_mat()
 
   df %>%
-    mutate(pred = predict(mods[[which]]$model, newdata = pred_mat) %>% round())
+    dplyr::mutate(pred = predict(mods[[which]]$model, newdata = pred_mat) %>% round())
 }

@@ -68,12 +68,12 @@ server <- function(input, output, session) {
             filter(mod == input$mod, train_date == input$train_date) %>%
             select(-train_date, -mod)
 
-
         stats <- glue::glue("{names(dat)}: \n\t {dat}") %>%
                 paste(collapse = "\n\t")
 
         glue::glue(
-            "Performance Metrics for {input$mod}: {stats}")
+            "Performance Metrics for {input$mod}:
+                {stats}")
     })
 
     output$qq <- renderPlot(
@@ -98,7 +98,8 @@ server <- function(input, output, session) {
             ggplot(aes(x = val, color = var)) +
             geom_density() +
             ggtitle("Distributions of Number of Bikes") +
-            labs(color = "Series")
+            labs(color = "Series") +
+            theme_bw()
     )
 
     output$resids <- renderPlot(

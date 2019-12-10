@@ -1,32 +1,36 @@
 ---
 title: "Model Quality Assessment"
 author: "Alex Gold"
-date: "12/6/2019"
+date: "`r Sys.time()`"
 output: html_document
 ---
+
 ```{r}
 library(magrittr)
 library(bikeHelpR)
+library(dbplyr)
+library(xgboost)
+library(yardstick)
 ```
 
 
 ```{r}
-con <- DBI::dbConnect(odbc::odbc(), "Content DB")
+con <<- DBI::dbConnect(odbc::odbc(), "Content DB")
 pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
 ```
 
 # Load Models and Test Data
-```{r}
+```{r load_mod_and_data}
 mods <- list(r_xgb = pins::pin_get("bike_model_rxgb", board = "rsconnect"))
-mod_params <- pins::pin_get("bike_model_params", board = "rsconnect")
+mod_params <<- pins::pin_get("bike_model_params", board = "rsconnect")
 test <- bike_test_dat(con, mod_params$split_date) %>%
   recipes::bake(mod_params$recipe, .) 
 ```
 
 # Goodness of Fit
 Write predictions to database and goodness of fit metrics to pin
-```{r}
+```{r write_preds}
 purrr::imap_dfr(mods, bike_mod_results, test, prep_r_xgb_mat)
 ```
 
