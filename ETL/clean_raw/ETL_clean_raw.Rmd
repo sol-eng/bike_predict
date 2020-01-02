@@ -44,7 +44,7 @@ df_con <- tbl(con, "bike_raw_data")
 (df <- df %>% left_join(select(stats, id = station_id, lat, lon)))
 ```
 
-# Pin
+# Write back to DB
 ```{r}
 DBI::dbWriteTable(con, "bike_model_data", df, overwrite = TRUE)
 ```
