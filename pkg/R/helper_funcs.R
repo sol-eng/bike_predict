@@ -235,7 +235,7 @@ bike_get_mod_preds <- function(mod, mod_name, test_df, pred_mat_func = NULL) {
       date = date,
       # Predictions
       n_bikes,
-      preds = predict(mod$model, newdata = pred_mat) %>% round(),
+      preds = predict(mod$model, newdata = pred_mat),
       resid = test_df$n_bikes - preds)
 }
 
