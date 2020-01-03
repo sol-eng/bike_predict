@@ -6,7 +6,7 @@ library(dplyr)
 library(leaflet)
 
 # Create dashboard page UI
-ui <- dashboardPage(skin = "green",
+ui <- dashboardPage(skin = "purple",
                     dashboardHeader(title = "Capitol Bikeshare Availability"),
                     dashboardSidebar(disable = TRUE),
                     dashboardBody(
@@ -40,7 +40,7 @@ server <- function(input, output, session) {
                     "bicycle",
                     library = "fa",
                     iconColor = "white",
-                    markerColor = "green"
+                    markerColor = "purple"
                 ),
                 label = ~paste0(name)
             )
