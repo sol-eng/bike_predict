@@ -164,13 +164,18 @@ bike_mod_results <- function(mod, mod_name, test_df, pred_mat_func) {
 
   print("Writing Goodness of Fit Pin.")
   # Create OOS Goodness of Fit and pin
-  dplyr::bind_cols(tibble::tibble(
-    train_date = mod_params$train_date,
-    mod = mod_name),
-    oos_metrics(test_df$n_bikes, pred_df$preds),
-    time = Sys.time()) %>%
+  curr_time <- Sys.time()
+  dplyr::bind_cols(
+    tibble::tibble(
+      train_date = mod_params$train_date,
+      mod = mod_name,
+      time = curr_time
+    ),
+    oos_metrics(test_df$n_bikes, pred_df$preds)
+  ) %>%
     # Bind in old
     dplyr::bind_rows(pins::pin_get("bike_err", board = "rsconnect")) %>%
+    dplyr::mutate(time = ifelse(is.na(time), curr_time - 1, time)) %>%
     # If re-running today, keep only new
     dplyr::group_by(train_date, mod) %>%
     dplyr::filter(time == max(time, na.rm = TRUE)) %>%
