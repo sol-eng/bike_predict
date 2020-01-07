@@ -354,17 +354,17 @@
         "License": "MIT + file LICENSE",
         "Encoding": "UTF-8",
         "LazyData": "true",
-        "Imports": "purrr, magrittr, tibble",
+        "Imports": "purrr, magrittr, tibble, xgboost, yardstick",
         "RoxygenNote": "6.1.1",
         "Repository": "RSPM",
-        "RemoteSha": "4e7f87dbaebd1a6e3a94d3434af4ae21bd589eb8",
-        "Version": "0.2.1",
-        "Date": "2019-12-09",
+        "RemoteSha": "1c921720fcedd48befd25c87bc43296ce579576a",
+        "Version": "0.2.3",
+        "Date": "2020-01-03",
         "NeedsCompilation": "no",
-        "Packaged": "2019-12-09 22:20:30 UTC; root",
+        "Packaged": "2020-01-03 15:36:59 UTC; root",
         "Author": "Alex Gold [aut, cre]",
         "Maintainer": "Alex Gold <alex.gold@rstudio.com>",
-        "Built": "R 3.6.0; ; 2019-12-09 22:21:58 UTC; unix"
+        "Built": "R 3.6.0; ; 2020-01-07 20:17:35 UTC; unix"
       }
     },
     "bit": {
@@ -2411,7 +2411,7 @@
   },
   "files": {
     "model_quality_metrics.Rmd": {
-      "checksum": "235be3c693747a1663a47346aaa65bb6"
+      "checksum": "ac6d878fcc41691a3c3d2701dafd0eb3"
     },
     "packrat/desc/askpass": {
       "checksum": "f3640d9c1bebd3f5a6188eea0c23c533"
@@ -2426,7 +2426,7 @@
       "checksum": "3b7edd866f5750b5ef52f5737ea3a12f"
     },
     "packrat/desc/bikeHelpR": {
-      "checksum": "3830f701c7024cea40ca9d47521cdd78"
+      "checksum": "f9c229875e0d671b4c0a04fdada1d419"
     },
     "packrat/desc/bit": {
       "checksum": "0789ae684b877c3ee3327e4a4a5bc7ab"
@@ -2645,7 +2645,7 @@
       "checksum": "b6f35c64ff762d2a2c74d10460a480c6"
     },
     "packrat/packrat.lock": {
-      "checksum": "619620b364a470269ee157d501d69114"
+      "checksum": "dfa52e335c4b836e114b5cc9706bf84e"
     }
   },
   "users": null
