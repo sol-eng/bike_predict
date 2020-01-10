@@ -3,9 +3,9 @@ library(tidyverse)
 
 con <- DBI::dbConnect(odbc::odbc(), "Content DB")
 pred_df <- tbl(con, "bike_pred_data")
-err_dat <- pins::pin_get("alex.gold/bike_err", board = "rsconnect")
 pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
+err_dat <- pins::pin_get("alex.gold/bike_err", board = "rsconnect")
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
