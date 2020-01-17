@@ -21,30 +21,31 @@ pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
 
 # Connect to Database Data
 ```{r, download}
-stats <- pins::pin_get("alex.gold/bike_station_info")
-df_con <- tbl(con, "bike_raw_data")
+DBI::dbWriteTable(con, "bike_station_info", pins::pin_get("alex.gold/bike_station_info"), overwrite = TRUE)
+
+df_con <- dplyr::tbl(con, "bike_raw_data")
+stats <- dplyr::tbl(con, "bike_station_info")
 ```
 
 # Clean data
 ```{r}
-(df <- df_con %>% 
-   transmute(id = station_id, 
-             hour = hour(time), 
-             date = date(time), 
-             month = month(time),
-             n_bikes = num_bikes_available) %>%
-   collect() %>%
-   # Remove stations that no longer exist
-   filter(id %in% stats$station_id) %>%
-   mutate(dow = weekdays(date))) 
-```
-
-# Add location data
-```{r}
-(df <- df %>% left_join(select(stats, id = station_id, lat, lon)))
-```
-
-# Pin
-```{r}
-DBI::dbWriteTable(con, "bike_model_data", df, overwrite = TRUE)
+db_drop_table(con, "bike_model_data", force = TRUE)
+query <- df_con %>% 
+    group_by(
+        id = station_id, 
+        hour = hour(time), 
+        date = date(time), 
+        month = month(time), 
+        dow = TRIM(to_char(time, "Day"))
+    ) %>%
+    summarize(
+        n_bikes = mean(num_bikes_available, na.rm = TRUE)
+    ) %>%
+    inner_join(
+        select(stats, id = station_id, lat, lon)
+    ) %>%
+    dbplyr::sql_render() %>%
+    stringr::str_replace("SELECT", "CREATE TABLE bike_model_data AS SELECT")
+dbSendQuery(con, query)
+tbl(con, "bike_model_data")
 ```

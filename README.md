@@ -7,12 +7,10 @@ Who This is For
 ===============
 
 Both *data scientists* and *R admins* in machine-learning heavy contexts
-may find this demo interesting. One indication that someone might find
-this interesting is that they’re using the word “production” describing
-their pain points.
+may find this demo interesting. People who describe *production-izing*
+or *deploying* content as pain points may find this useful.
 
-Some of the customer pain points that content in this repo can help
-address are listed below along with some of the relevant assets here.
+Some particular pain points this could address:
 
 ### I am trying to deploy/productionize a machine learning model
 
@@ -53,8 +51,6 @@ Client App.
 
 Another piece of this is making the underlying R functions more robust,
 see the next point for more on that.
-
-\#TODO – add a python model via reticulate
 
 ### I have a bunch of functions I need to use, but it’s a pain
 
@@ -106,18 +102,18 @@ Some examples of objects that are likely to be a good fit for a pin:
 
 ### I’ve got this CRON job that does some ETL/data processing/creates a bunch of files
 
-Scheduled RMarkdown isn’t *always* the best solution here (for example,
+Scheduled R Markdown isn’t *always* the best solution here (for example,
 robust SQL pipelines in another tool definitely don’t need to be
 replaced with scheduled RMarkdown), but if the user is running R code,
-scheduled RMarkdown is way easier than anything else.
+scheduled R Markdown is way easier than anything else.
 
 What doesn’t it do
 ------------------
 
 This repository shows off a really exciting set of capabilities,
 combining open-source R and Python with RStudio’s professional products.
-There are a few things it doesn’t do (yet) – but that would be really
-great to hear if people want them:
+There are a few things it doesn’t do (yet) – but that I might add,
+depending on interest:
 
 -   Jobs don’t depend on another. I’ve scheduled the jobs so that each
     will complete by the time another starts, but there are tools in R
@@ -141,91 +137,91 @@ Individual Content
 <thead>
 <tr class="header">
 <th style="text-align: left;">Content</th>
+<th style="text-align: left;">Content Description</th>
 <th style="text-align: left;">Code</th>
 <th style="text-align: left;">Pin</th>
 <th style="text-align: left;">Refresh Frequency</th>
-<th style="text-align: left;">Content Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_intake_raw">Raw Data Ingest Script</a></td>
+<td style="text-align: left;">Writes data from API calls into <code>bike_raw_data</code> table in postgres.</td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/ETL/intake_raw/ETL_raw_into_db.Rmd">Code</a></td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">Every 20 Minutes</td>
-<td style="text-align: left;">Writes data from API calls into <code>bike_raw_data</code> table in postgres.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_clean_raw">Clean Data Script</a></td>
+<td style="text-align: left;">Cleans <code>bike_raw_data</code> for modeling, writes into <code>bike_model_data</code>.</td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/ETL/clean_raw/ETL_clean_raw.Rmd">Code</a></td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">Daily (4 am)</td>
-<td style="text-align: left;">Cleans <code>bike_raw_data</code> for modeling, writes into <code>bike_model_data</code>.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_station_data_ingest">Clean Station Metadata Script</a></td>
+<td style="text-align: left;">Ingests station metadata and saves to a pin (names, lat/long).</td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/ETL/station_api_to_pin/ETL_station_api_to_pin.Rmd">Code</a></td>
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_station_info">bike_station_info</a></td>
 <td style="text-align: left;">Weekly (Sundays)</td>
-<td style="text-align: left;">Ingests station metadata and saves to a pin (names, lat/long).</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_data_split">Data Split Script</a></td>
+<td style="text-align: left;">Creates a training/test split for the data for models to use, saves to a pin.</td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/ETL/data_split/data_split.Rmd">Code</a></td>
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_model_params">bike_model_params</a></td>
 <td style="text-align: left;">Daily (5 am)</td>
-<td style="text-align: left;">Creates a training/test split for the data for models to use, saves to a pin.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_train_rxgb">R XGB Model Train</a></td>
+<td style="text-align: left;">Retrains model based on training/test split indicated by Data Split Script, writes into pin.</td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/Model/build_rxgb/build_rxgb.Rmd">Code</a></td>
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_rxgb">bike_rxgb</a></td>
 <td style="text-align: left;">Daily (6 am)</td>
-<td style="text-align: left;">Retrains model based on training/test split indicated by Data Split Script, writes into pin.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_model_metrics_script">Model Metrics Script</a></td>
+<td style="text-align: left;">Writes <code>bike_test_data</code> and <code>bike_predictions</code> postgres tables, writes pin of goodness-of-fit metrics.</td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/Model/model_quality_metrics/model_quality_metrics.Rmd">Code</a></td>
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_err_dat">bike_err_dat</a></td>
 <td style="text-align: left;">Daily (8 am)</td>
-<td style="text-align: left;">Writes <code>bike_test_data</code> and <code>bike_predictions</code> postgres tables, writes pin of goodness-of-fit metrics.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_model_performance_app">Model Performance App</a></td>
+<td style="text-align: left;">Displays model performance metrics.</td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/App/model_performance/app.R">Code</a></td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: left;">Displays model performance metrics.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_predict_api">Model API</a></td>
+<td style="text-align: left;">Serves model predictions via Plumber API.</td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/API/plumber.R">Code</a></td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: left;">Serves model predictions via Plumber API.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_predict_app">Bike Prediction App</a></td>
+<td style="text-align: left;">Displays predictions from App.</td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/App/client_app/app.R">Code</a></td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: left;">Displays predictions from App.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/dev_bike_predict_app">Dev Bike Prediction App</a></td>
+<td style="text-align: left;">Dev version of Bike Prediction App</td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/dev/App/client_app/app.R">Code</a></td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: left;">Dev version of Bike Prediction App</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://demo.rstudiopm.com/client/#/repos/8/packages/bikeHelpR">bikeHelpR Package</a></td>
+<td style="text-align: left;">An R package of helper functions, built in internal repo on demo.rstudiopm.com.</td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict//blob/master/pkg">Code</a></td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">Tags</td>
-<td style="text-align: left;">An R package of helper functions, built in internal repo on demo.rstudiopm.com.</td>
 </tr>
 </tbody>
 </table>
 
-Last updated 2019-12-10.
+Last updated 2020-01-15.

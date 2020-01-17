@@ -32,7 +32,8 @@
         "Packaged": "2019-01-07 12:00:43.681885 UTC; edd",
         "Repository": "RSPM",
         "Date/Publication": "2019-01-07 19:50:25 UTC",
-        "Built": "R 3.6.0; ; 2019-07-17 18:31:03 UTC; unix"
+        "Encoding": "UTF-8",
+        "Built": "R 3.6.2; ; 2019-12-27 20:36:13 UTC; unix"
       }
     },
     "DBI": {
@@ -1047,6 +1048,38 @@
         "Repository": "RSPM",
         "Date/Publication": "2019-06-16 14:00:03 UTC",
         "Built": "R 3.6.0; ; 2019-07-17 20:23:01 UTC; unix"
+      }
+    },
+    "ggrepel": {
+      "Source": "RSPM",
+      "Repository": "https://cluster.rstudiopm.com/cran/__linux__/bionic/688",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "ggrepel",
+        "Version": "0.8.1",
+        "Authors@R": "c(\n    person(\"Kamil\", \"Slowikowski\", email = \"kslowikowski@gmail.com\", role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0002-2843-6370\")),\n    person(\"Alicia\", \"Schep\", role = \"ctb\", comment = c(ORCID = \"0000-0002-3915-0618\")),\n    person(\"Sean\", \"Hughes\", role = \"ctb\"),\n    person(\"Saulius\", \"Lukauskas\", role = \"ctb\"),\n    person(\"Jean-Olivier\", \"Irisson\", role = \"ctb\", comment = c(ORCID = \"0000-0003-4920-3880\")),\n    person(\"Zhian N\", \"Kamvar\", role = \"ctb\", comment = c(ORCID = \"0000-0003-1458-7108\")),\n    person(\"Thompson\", \"Ryan\", role = \"ctb\", comment = c(ORCID = \"0000-0002-0450-8181\")),\n    person(\"Dervieux\", \"Christophe\", role = \"ctb\", comment = c(ORCID = \"0000-0003-4474-2498\")),\n    person(\"Yutani\", \"Hiroaki\", role = \"ctb\"),\n    person(\"Pierre\", \"Gramme\", role = \"ctb\")\n    )",
+        "Title": "Automatically Position Non-Overlapping Text Labels with\n'ggplot2'",
+        "Description": "Provides text and label geoms for 'ggplot2' that help to avoid\n    overlapping text labels. Labels repel away from each other and away from the\n    data points.",
+        "Depends": "R (>= 3.0.0), ggplot2 (>= 2.2.0)",
+        "Imports": "grid, Rcpp, scales (>= 0.3.0)",
+        "Suggests": "knitr, rmarkdown, testthat, gridExtra, devtools, prettydoc",
+        "VignetteBuilder": "knitr",
+        "License": "GPL-3 | file LICENSE",
+        "URL": "http://github.com/slowkow/ggrepel",
+        "BugReports": "http://github.com/slowkow/ggrepel/issues",
+        "RoxygenNote": "6.0.1",
+        "LinkingTo": "Rcpp",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "yes",
+        "Packaged": "2019-05-07 02:07:00 UTC; slowikow",
+        "Author": "Kamil Slowikowski [aut, cre] (<https://orcid.org/0000-0002-2843-6370>),\n  Alicia Schep [ctb] (<https://orcid.org/0000-0002-3915-0618>),\n  Sean Hughes [ctb],\n  Saulius Lukauskas [ctb],\n  Jean-Olivier Irisson [ctb] (<https://orcid.org/0000-0003-4920-3880>),\n  Zhian N Kamvar [ctb] (<https://orcid.org/0000-0003-1458-7108>),\n  Thompson Ryan [ctb] (<https://orcid.org/0000-0002-0450-8181>),\n  Dervieux Christophe [ctb] (<https://orcid.org/0000-0003-4474-2498>),\n  Yutani Hiroaki [ctb],\n  Pierre Gramme [ctb]",
+        "Maintainer": "Kamil Slowikowski <kslowikowski@gmail.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2019-05-07 08:00:06 UTC",
+        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-07-17 20:24:16 UTC; unix"
       }
     },
     "glue": {
@@ -3165,7 +3198,7 @@
   },
   "files": {
     "app.R": {
-      "checksum": "bfb7f73b0284fb12a12ed37c8798450d"
+      "checksum": "23b51591c4bdbb3b8114fcbb9ad4e9c6"
     },
     "packrat/desc/askpass": {
       "checksum": "f3640d9c1bebd3f5a6188eea0c23c533"
@@ -3180,7 +3213,7 @@
       "checksum": "435be2515fdf1fd22518433c39dec8ae"
     },
     "packrat/desc/BH": {
-      "checksum": "3b7edd866f5750b5ef52f5737ea3a12f"
+      "checksum": "4d5756a32369d03b5bf44a27891505a5"
     },
     "packrat/desc/bit": {
       "checksum": "0789ae684b877c3ee3327e4a4a5bc7ab"
@@ -3250,6 +3283,9 @@
     },
     "packrat/desc/ggplot2": {
       "checksum": "3a26920f509d82503352161c58c1169c"
+    },
+    "packrat/desc/ggrepel": {
+      "checksum": "eb2973a04914e4262a27e0b0dde2a1bf"
     },
     "packrat/desc/glue": {
       "checksum": "33370222521b82b9df262a9ac0fdbd2b"
@@ -3468,7 +3504,7 @@
       "checksum": "b6f35c64ff762d2a2c74d10460a480c6"
     },
     "packrat/packrat.lock": {
-      "checksum": "ffe4556927c7ff7a050212cb940681c3"
+      "checksum": "5f1fa93753384d9d662453829515254b"
     }
   },
   "users": null
