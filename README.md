@@ -3,6 +3,8 @@ Connect](https://rstudio.com/products/connect/) along with the
 [pins](https://github.com/rstudio/pins) package to create an end-to-end
 machine learning pipeline.
 
+![](./img/arrows.png)
+
 Who This is For
 ===============
 
@@ -128,7 +130,7 @@ depending on interest:
 Content in this App
 ===================
 
-Here’s what the system looks like ![](./system_schematic.png)
+Here’s what the system looks like ![](./img/system_schematic.png)
 
 Individual Content
 ------------------
