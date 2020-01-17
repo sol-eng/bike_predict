@@ -224,4 +224,4 @@ Individual Content
 </tbody>
 </table>
 
-Last updated 2020-01-15.
+Last updated 2020-01-17.
