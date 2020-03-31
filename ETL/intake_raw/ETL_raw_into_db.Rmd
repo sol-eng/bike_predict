@@ -32,7 +32,11 @@ dat <- feeds %>%
 
 (df <- dat %>%
       magrittr::extract2("data") %>%
-      mutate(time = dat$last_updated))
+      mutate(time = dat$last_updated) %>%
+      select(is_installed, num_bikes_available, last_reported, 
+             is_renting, eightd_has_available_keys, num_docks_available, 
+             num_docks_disabled, is_returning, station_id, 
+             num_ebikes_available, num_bikes_disabled, time))
 ```
 
 ```{r}
