@@ -13,6 +13,8 @@ library(dplyr)
 
 This repository contains an example of using [RStudio Connect](https://rstudio.com/products/connect/) along with the [pins](https://github.com/rstudio/pins) package to create an end-to-end machine learning pipeline.
 
+![](./img/arrows.png)
+
 # Who This is For
 
 Both *data scientists* and *R admins* in machine-learning heavy contexts may find this demo interesting. People who describe _production-izing_ or _deploying_ content as pain points may find this useful. 
@@ -65,7 +67,7 @@ This repository shows off a really exciting set of capabilities, combining open-
 # Content in this App
 
 Here's what the system looks like 
-![](./system_schematic.png)
+![](./img/system_schematic.png)
 
 ## Individual Content
 ```{r, echo = FALSE}
