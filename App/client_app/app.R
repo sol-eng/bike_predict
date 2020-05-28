@@ -24,7 +24,7 @@ ui <- dashboardPage(skin = "red",
 server <- function(input, output, session) {
     # Get station pin
     pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
-                                   key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
+                                   key = Sys.getenv("CONNECT_API_KEY"))
 
     stats <- pins::pin_get("alex.gold/bike_station_info", board = "rsconnect")
 
