@@ -60,11 +60,15 @@ server <- function(input, output, session) {
             pull(station_id)
         print(glue::glue("Station id: {id}"))
 
-            res <- httr::GET("https://colorado.rstudio.com/rsc/bike_predict_api/pred",
-                      query = list(station_id = id),
-                      add_headers(Authorization = paste0("Key ", connectAPIKey))) %>%
-                httr::content() %>%
-                purrr::map_df(tibble::as_tibble)
+        res <- httr::GET(
+            "https://colorado.rstudio.com/rsc/bike_predict_api/pred",
+            query = list(station_id = id),
+            add_headers(
+                Authorization = paste0("Key ", Sys.getenv("CONNECT_API_KEY"))
+            )
+        ) %>%
+            httr::content() %>%
+            purrr::map_df(tibble::as_tibble)
     })
 
     # Create plot
