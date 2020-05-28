@@ -61,7 +61,8 @@ server <- function(input, output, session) {
         print(glue::glue("Station id: {id}"))
 
             res <- httr::GET("https://colorado.rstudio.com/rsc/bike_predict_api/pred",
-                      query = list(station_id = id)) %>%
+                      query = list(station_id = id),
+                      add_headers(Authorization = paste0("Key ", connectAPIKey))) %>%
                 httr::content() %>%
                 purrr::map_df(tibble::as_tibble)
     })
