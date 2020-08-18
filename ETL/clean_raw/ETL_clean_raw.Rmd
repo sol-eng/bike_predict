@@ -14,6 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(odbc)
 
+# Connect to database
 con <- dbConnect(odbc::odbc(), "Content DB", timeout = 10)
 pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
