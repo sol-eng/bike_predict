@@ -24,7 +24,14 @@ pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
 df <- tbl(con, "bike_model_data") 
 model_params <- pins::pin_get("bike_model_params", board = "rsconnect")
 
-train <- bike_train_dat(con, model_params$split_date)
+print(glue::glue("Using data between {model_params$train_start} and {model_params$split_date} for training."))
+
+train <- df %>% 
+  dplyr::filter(
+    date <= split_date, 
+    date >= start_train_date
+  ) %>% 
+  dplyr::collect()
 ```
 
 Make recipe for model
