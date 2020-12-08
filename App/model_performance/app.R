@@ -9,7 +9,7 @@ pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
 err_dat <- pins::pin_get("alex.gold/bike_err", board = "rsconnect")
 
 onStop(function() {
-    poolClose(pool)
+    poolClose(con)
 })
 
 # Define UI for application that draws a histogram
