@@ -34,4 +34,6 @@ Write predictions to database and goodness of fit metrics to pin
 purrr::imap_dfr(mods, bike_mod_results, test, prep_r_xgb_mat)
 ```
 
-
+```{r}
+dbDisconnect(con)
+```

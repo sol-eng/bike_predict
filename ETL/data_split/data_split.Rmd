@@ -70,3 +70,6 @@ pins::pin(
 )
 ```
 
+```{r}
+dbDisconnect(con)
+```

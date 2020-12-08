@@ -49,3 +49,7 @@ query <- df_con %>%
 dbSendQuery(con, query)
 tbl(con, "bike_model_data")
 ```
+
+```{r}
+dbDisconnect(con)
+```
