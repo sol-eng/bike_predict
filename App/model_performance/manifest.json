@@ -2864,7 +2864,7 @@
   },
   "files": {
     "app.R": {
-      "checksum": "f72704af77700bddace8a979821f612e"
+      "checksum": "9712405086edddf4a15e41f69f1fefb4"
     },
     "packrat/desc/askpass": {
       "checksum": "5babf9db572d334d07d512511e8aded4"
@@ -3179,7 +3179,7 @@
       "checksum": "3005a429669392195d705e05e0b25c46"
     },
     "packrat/packrat.lock": {
-      "checksum": "8fe79c65465007b500d9f848e99cced0"
+      "checksum": "d15058a729626b053205b642690c5064"
     }
   },
   "users": null
