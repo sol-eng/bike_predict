@@ -66,3 +66,6 @@ pins::pin("bike_model_rxgb",
           board = "rsconnect")
 ```
 
+```{r}
+dbDisconnect(con)
+```

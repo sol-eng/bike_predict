@@ -1,11 +1,16 @@
 library(shiny)
 library(tidyverse)
+library(pool)
 
-con <- DBI::dbConnect(odbc::odbc(), "Content DB")
+con <- dbPool(odbc::odbc(), dsn = "Content DB")
 pred_df <- tbl(con, "bike_pred_data")
 pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
 err_dat <- pins::pin_get("alex.gold/bike_err", board = "rsconnect")
+
+onStop(function() {
+    poolClose(con)
+})
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
