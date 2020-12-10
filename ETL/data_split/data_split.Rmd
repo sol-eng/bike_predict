@@ -71,5 +71,5 @@ pins::pin(
 ```
 
 ```{r}
-dbDisconnect(con)
+DBI::dbDisconnect(con)
 ```
