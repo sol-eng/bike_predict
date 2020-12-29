@@ -117,5 +117,5 @@ pins::pin(model_details,
 ```
 
 ```{r}
-dbDisconnect(con)
+DBI::dbDisconnect(con)
 ```
