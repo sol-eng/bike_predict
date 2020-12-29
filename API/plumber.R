@@ -4,6 +4,8 @@ library(tibble)
 library(xgboost)
 library(lubridate)
 library(dplyr)
+library(tidyr)
+library(tidymodels)
 
 board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
