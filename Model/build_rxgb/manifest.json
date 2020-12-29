@@ -675,7 +675,7 @@
       }
     },
     "bikeHelpR": {
-      "Source": "RSPM",
+      "Source": "Internal",
       "Repository": "https://colorado.rstudio.com/rspm/internal/latest",
       "GithubRepo": null,
       "GithubUsername": null,
