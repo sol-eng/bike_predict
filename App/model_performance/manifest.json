@@ -299,7 +299,7 @@
       }
     },
     "bikeHelpR": {
-      "Source": "RSPM",
+      "Source": "RSPMInternal",
       "Repository": "https://colorado.rstudio.com/rspm/internal/latest",
       "description": {
         "Package": "bikeHelpR",
@@ -3516,7 +3516,7 @@
       "checksum": "c10b29ff346e9d44f8ffb6762d87dda2"
     },
     "packrat/packrat.lock": {
-      "checksum": "0743da7c70f05f3c5f0eadae8c41b297"
+      "checksum": "5729803d51a538f44e710d6fa4205d37"
     }
   },
   "users": null
