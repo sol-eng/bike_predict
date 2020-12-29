@@ -1,18 +1,25 @@
 library(shiny)
 library(tidyverse)
 library(pool)
+library(bikeHelpR)
 
 con <- dbPool(odbc::odbc(), dsn = "Content DB")
-pred_df <- tbl(con, "bike_pred_data")
 pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
-err_dat <- pins::pin_get("alex.gold/bike_err", board = "rsconnect")
+
+model_details <- pins::pin_get("bike_model_rxgb", board = "rsconnect")
+
+all_days <- tbl(con, "bike_pred_data") %>%
+    collect()
+
+print("data loaded")
+print(nrow(all_days))
 
 onStop(function() {
     poolClose(con)
 })
 
-# Define UI for application that draws a histogram
+
 ui <- fluidPage(
 
     # Application title
@@ -21,14 +28,13 @@ ui <- fluidPage(
     # Sidebar with a slider input for number of bins
     sidebarLayout(
         sidebarPanel(
-            selectInput("mod", "Which model?", choices = "")
+            selectInput("data","Train or Test Results?", choices = c("Train", "Test"))
         ),
-
-        # Show a plot of the generated distribution
         mainPanel(
-            plotOutput("quality_over_time"),
-            HTML("Per Day Details"),
-            selectInput("train_date", "Model Training Date", choices = ""),
+            p("Model Details:"),
+            textOutput("dets"),
+            tableOutput("summary"),
+            tableOutput("metrics"),
             plotOutput("distrib"),
             plotOutput("resids"),
             plotOutput("qq")
@@ -36,67 +42,39 @@ ui <- fluidPage(
     )
 )
 
-# Define server logic required to draw a histogram
+
 server <- function(input, output, session) {
-
-    observe({
-        mods <- pred_df %>% count(model) %>% pull(model)
-        updateSelectInput(
-            session, "mod",
-            choices = mods,
-            selected = mods[1]
-        )
-
-        dates <- pred_df %>% count(train_date) %>% pull(train_date)
-        updateSelectInput(session,
-                          "train_date",
-                          choices = dates,
-                          selected = max(dates)
-        )
-    })
-
-    preds_selected <- reactive({
-        req(input$mod)
-        req(input$train_date)
-        showNotification(glue::glue("Collecting data for {input$mod} on {input$train_date}."))
-        dat <- pred_df %>%
-            dplyr::filter(model == !!input$mod, train_date == !!input$train_date) %>%
-            collect()
-
-        if (nrow(dat) == 0) {
-            showNotification("No results on that day.")
+    results <- reactive({
+        if (input$data == "Test") {
+            all_days %>%
+                filter(date >= model_details$split_date)
+        } else {
+            all_days %>%
+                filter(date < model_details$split_date)
         }
-        dat
     })
 
-    output$quality_over_time <- renderPlot({
-        req(input$mod)
-
-        plot_df <- err_dat %>%
-            tidyr::gather(key = "measure", value = "value", -mod, -train_date) %>%
-            dplyr::filter(mod == input$mod) %>%
-            dplyr::mutate(measure = toupper(measure))
-        last_point <- filter(plot_df, train_date == max(train_date))
-
-        ggplot(mapping = aes(x = train_date, y = value, group = 1)) +
-            geom_line(data = plot_df) +
-            theme_bw() +
-            xlab("Model Training Date") +
-            ylab("Value") +
-            ggtitle(glue::glue("Performance over time for {input$mod} model")) +
-            ggrepel::geom_label_repel(aes(label = round(value, 3)), data = last_point) +
-            geom_point(data = last_point, color = "red") +
-            facet_wrap("measure", scales = "free_y")
+    output$dets <- renderText({
+        capture.output(model_details$model)
     })
 
+    output$summary <- renderTable({
+        tibble(
+            train_date = model_details$train_date,
+            train_window_start = model_details$train_window_start,
+            split_date = model_details$split_date
+        )
+    })
 
-
+    output$metrics <- renderTable({
+            oos_metrics(results()$actual, results()$preds)
+    })
 
     output$qq <- renderPlot(
-        preds_selected() %>%
-            select(n_bikes, preds) %>%
-            gather(key = "which", value = "value", n_bikes, preds) %>%
-            mutate(which = ifelse(which == "n_bikes", "Actual", "Prediction")) %>%
+        results() %>%
+            select(actual, preds) %>%
+            gather(key = "which", value = "value", actual, preds) %>%
+            mutate(which = ifelse(which == "actual", "Actual", "Prediction")) %>%
 
             ggplot(aes(sample = value, color = which)) +
             geom_qq() +
@@ -106,11 +84,11 @@ server <- function(input, output, session) {
     )
 
     output$distrib <- renderPlot(
-        preds_selected() %>%
-            select(n_bikes, preds) %>%
-            tidyr::gather("var", "val", n_bikes, preds) %>%
+        results() %>%
+            select(actual, preds) %>%
+            tidyr::gather("var", "val", actual, preds) %>%
 
-            mutate(var = ifelse(var == "n_bikes", "Actual", "Prediction")) %>%
+            mutate(var = ifelse(var == "actual", "Actual", "Prediction")) %>%
             ggplot(aes(x = val, color = var)) +
             geom_density() +
             ggtitle("Distributions of Number of Bikes") +
@@ -119,7 +97,7 @@ server <- function(input, output, session) {
     )
 
     output$resids <- renderPlot(
-        preds_selected() %>%
+        results() %>%
             ggplot(aes(x = resid)) +
             geom_density() +
             ggtitle("Residual Density Plot") +
