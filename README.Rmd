@@ -64,10 +64,6 @@ This repository shows off a really exciting set of capabilities, combining open-
 - Jobs don't depend on another. I've scheduled the jobs so that each will complete by the time another starts, but there are tools in R (like [drake](https://github.com/ropensci/drake)) that allow you to put the entire pipeline into code and make dependencies explicit.
 - Pieces of content must be managed individually -- that includes uploading, permissions, environment variables, and tagging. It is possible to do something more robust via programmatic deployment using the RStudio Connect API, but generic git deployment doesn't support deploying all of the content in a git repo at once.
 
-# Content in this App
-
-Here's what the system looks like 
-![](./img/system_schematic.png)
 
 ## Individual Content
 ```{r, echo = FALSE}
@@ -76,12 +72,11 @@ github_url <- "https://github.com/rstudio/bike_predict/"
 
 tibble::tribble(
   ~name, ~refresh, ~desc,
-  "Raw Data Ingest Script", "Every 20 Minutes", "Writes data from API calls into `bike_raw_data` table in postgres.",
-  "Clean Data Script", "Daily (4 am)", "Cleans `bike_raw_data` for modeling, writes into `bike_model_data`.",
+  "Raw Data Ingest", "Every 20 Minutes", "Writes data from API calls into `bike_raw_data` table in postgres.",
+  "Clean Data", "Daily (4 am)", "Cleans `bike_raw_data` for modeling, writes into `bike_model_data`.",
   "Clean Station Metadata Script",  "Weekly (Sundays)", "Ingests station metadata and saves to a pin (names, lat/long).",
-  "Data Split Script", "Daily (5 am)", "Creates a training/test split for the data for models to use, saves to a pin.",
-  "R XGB Model Train", "Daily (6 am)", "Retrains model based on training/test split indicated by Data Split Script, writes into pin.", 
-  "Model Metrics Script", "Daily (8 am)", "Writes `bike_test_data` and `bike_predictions` postgres tables, writes pin of goodness-of-fit metrics.", 
+  "R XGB Model Train", "Monthly (4:30 am)", "Retrains model and writes model and details to pin.", 
+  "Model Score", "Daily (5 am)", "Writes `bike_pred_data` table",
   "Model Performance App", NA, "Displays model performance metrics.", 
   "Model API", NA, "Serves model predictions via Plumber API.", 
   "Bike Prediction App",  NA, "Displays predictions from App.", 
@@ -93,9 +88,8 @@ tibble::tribble(
       "bike_intake_raw", "blob/master/ETL/intake_raw/ETL_raw_into_db.Rmd", NA,
       "bike_clean_raw", "blob/master/ETL/clean_raw/ETL_clean_raw.Rmd", NA,
       "bike_station_data_ingest", "blob/master/ETL/station_api_to_pin/ETL_station_api_to_pin.Rmd", "bike_station_info",
-      "bike_data_split", "blob/master/ETL/data_split/data_split.Rmd", "bike_model_params",
-      "bike_train_rxgb", "blob/master/Model/build_rxgb/build_rxgb.Rmd", "bike_rxgb",
-      "bike_model_metrics_script", "blob/master/Model/model_quality_metrics/model_quality_metrics.Rmd", "bike_err_dat",
+      "bike_train_rxgb", "blob/master/Model/build_rxgb/build_rxgb.Rmd", "bike_model_rxgb",
+      "bike_model_metrics_script", "blob/master/Model/model_quality_metrics/model_quality_metrics.Rmd", NA,
       "bike_model_performance_app", "blob/master/App/model_performance/app.R", NA,
       "bike_predict_api", "blob/master/API/plumber.R", NA,
       "bike_predict_app", "blob/master/App/client_app/app.R", NA,
