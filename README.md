@@ -132,10 +132,10 @@ Individual Content
 
 <table>
 <colgroup>
-<col style="width: 24%" />
-<col style="width: 21%" />
-<col style="width: 30%" />
-<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 22%" />
+<col style="width: 29%" />
+<col style="width: 18%" />
 <col style="width: 4%" />
 </colgroup>
 <thead>
@@ -213,7 +213,7 @@ Individual Content
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rspm/client/#/repos/8/packages/bikeHelpR">bikeHelpR Package</a></td>
-<td style="text-align: left;">An R package of helper functions, built in internal repo on demo.rstudiopm.com.</td>
+<td style="text-align: left;">An R package of helper functions, built in internal repo on colorado.rstudio.com/rspm.</td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict/blob/master/pkg">Code</a></td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">Tags</td>
