@@ -68,7 +68,7 @@ This repository shows off a really exciting set of capabilities, combining open-
 ## Individual Content
 ```{r, echo = FALSE}
 rsc_url <- "https://colorado.rstudio.com/rsc"
-github_url <- "https://github.com/rstudio/bike_predict/"
+github_url <- "https://github.com/rstudio/bike_predict"
 
 tibble::tribble(
   ~name, ~refresh, ~desc,
@@ -94,7 +94,7 @@ tibble::tribble(
       "bike_predict_api", "blob/master/API/plumber.R", NA,
       "bike_predict_app", "blob/master/App/client_app/app.R", NA,
       "dev_bike_predict_app", "blob/dev/App/client_app/app.R", NA,
-      "https://demo.rstudiopm.com/client/#/repos/8/packages/bikeHelpR", "blob/master/pkg", NA 
+      "https://colorado.rstudio.com/rspm/client/#/repos/8/packages/bikeHelpR", "blob/master/pkg", NA
     )
   ) %>%
   dplyr::mutate(
