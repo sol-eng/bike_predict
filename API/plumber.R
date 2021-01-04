@@ -25,8 +25,7 @@ function(station_id, max_time = 86400, interval = 600) {
   station_id <- as.numeric(station_id)
   if (!all(station_id %in% stations$station_id)) stop("That station does not exist.")
 
-  # select model and recipe from pin
-  recipe <- model_details$recipe
+  # select model from pin
   model <- model_details$mod
 
   # create interval for prediction
@@ -49,12 +48,12 @@ function(station_id, max_time = 86400, interval = 600) {
               lat,
               lon,
               n_bikes = NA) %>%
-    bake(recipe, .) %>%
+    bake(model_details$recipe, .) %>%
     # transform to matrix for xgboost
     select(-id, -date, -n_bikes) %>%
     as.matrix()
 
-  preds <- predict(model, pred_mat)
+  preds <- predict(model, newdata = pred_mat)
 
   # return results with predictions
   df$pred = preds

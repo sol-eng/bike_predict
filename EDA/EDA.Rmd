@@ -50,7 +50,7 @@ all_data %>%
     geom_line(alpha = 0.5) + 
     theme_minimal() + 
     labs(
-        title = "Bikes available overtime at station 1"
+        title = "Bikes available over time at station 1"
     )
 ```
 
