@@ -2,14 +2,15 @@ library(plumber)
 library(pins)
 library(tibble)
 library(xgboost)
-library(bikeHelpR)
 library(lubridate)
 library(dplyr)
+library(tidyr)
+library(tidymodels)
 
-pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
+board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
                                key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
-mods <- list(r_xgb = pins::pin_get("alex.gold/bike_model_rxgb", board = "rsconnect"))
-stats <- pins::pin_get("alex.gold/bike_station_info", board = "rsconnect")
+model_details <- pin_get("bike_model_rxgb", board = "rsconnect")
+stations <- pin_get("bike_station_info", board = "rsconnect")
 
 
 #* @apiTitle Bike Prediction API
@@ -18,24 +19,28 @@ stats <- pins::pin_get("alex.gold/bike_station_info", board = "rsconnect")
 #* @param station_id the id number of (a) station(s) in the Capitol Bikeshare program
 #* @param max_time time to stop predictions
 #* @param interval prediction interval
-#* @param which which model, defaults to rxgb
 #* @get /pred
-function(station_id, max_time = 86400, interval = 600, which = "r_xgb") {
+function(station_id, max_time = 86400, interval = 600) {
   # sanitize inputs
   station_id <- as.numeric(station_id)
-  if (!all(station_id %in% stats$station_id)) stop("That station does not exist.")
+  if (!all(station_id %in% stations$station_id)) stop("That station does not exist.")
 
+  # select model from pin
+  model <- model_details$mod
+
+  # create interval for prediction
   max_time <- as.numeric(max_time)
   interval <- as.numeric(interval)
 
   times <- Sys.time() + seq(0, max_time, by = interval)
 
-  df <- tidyr::crossing(times, station_id = as.character(station_id)) %>%
-    dplyr::left_join(stats) %>%
-    dplyr::select(-name)
+  df <- crossing(times, station_id = as.character(station_id)) %>%
+    left_join(stations) %>%
+    select(-name)
 
+  # apply format and recipe model expects as input
   pred_mat <- df %>%
-    dplyr::transmute(id = station_id,
+    transmute(id = station_id,
               hour = hour(times),
               month = month(times),
               date = date(times),
@@ -43,9 +48,14 @@ function(station_id, max_time = 86400, interval = 600, which = "r_xgb") {
               lat,
               lon,
               n_bikes = NA) %>%
-    recipes::bake(mods[[which]]$recipe, .) %>%
-    prep_r_xgb_mat()
+    bake(model_details$recipe, .) %>%
+    # transform to matrix for xgboost
+    select(-id, -date, -n_bikes) %>%
+    as.matrix()
 
-  df %>%
-    dplyr::mutate(pred = predict(mods[[which]]$model, newdata = pred_mat) %>% round())
+  preds <- predict(model, newdata = pred_mat)
+
+  # return results with predictions
+  df$pred = preds
+  df
 }
