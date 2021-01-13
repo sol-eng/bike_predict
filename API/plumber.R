@@ -15,9 +15,9 @@ stats <- pins::pin_get("alex.gold/bike_station_info", board = "rsconnect")
 #* @apiTitle Bike Prediction API
 
 #* Return the predicted number of bikes available at a station in 10 minutes
-#* @param station_id the id number of (a) station(s) in the Capitol Bikeshare program
-#* @param max_time time to stop predictions
-#* @param interval prediction interval
+#* @param station_id the id number of (a) station(s) in the Capitol Bikeshare program (try e.g. 75)
+#* @param max_time time to stop predictions in seconds, defaults to 86,400 (24 hours)
+#* @param interval prediction interval in seconds, defaults to 600 (10 minutes)
 #* @param which which model, defaults to rxgb
 #* @get /pred
 function(station_id, max_time = 86400, interval = 600, which = "r_xgb") {
