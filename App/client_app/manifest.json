@@ -12,11 +12,7 @@
   "packages": {
     "BH": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "BH",
         "Type": "Package",
@@ -39,11 +35,7 @@
     },
     "MASS": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "MASS",
         "Priority": "recommended",
@@ -73,11 +65,7 @@
     },
     "Matrix": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "Matrix",
         "Version": "1.2-18",
@@ -108,12 +96,8 @@
       }
     },
     "R6": {
-      "Source": "CRAN",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Source": "RSPM",
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "R6",
         "Title": "Encapsulated Classes with Reference Semantics",
@@ -131,18 +115,15 @@
         "Packaged": "2019-11-12 20:00:15 UTC; winston",
         "Author": "Winston Chang [aut, cre]",
         "Maintainer": "Winston Chang <winston@stdout.org>",
-        "Repository": "CRAN",
+        "Repository": "RSPM",
         "Date/Publication": "2019-11-12 22:50:03 UTC",
-        "Built": "R 3.6.0; ; 2019-12-04 21:17:47 UTC; unix"
+        "Encoding": "UTF-8",
+        "Built": "R 3.6.3; ; 2020-03-06 22:24:00 UTC; unix"
       }
     },
     "RColorBrewer": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "RColorBrewer",
         "Version": "1.1-2",
@@ -163,12 +144,8 @@
       }
     },
     "Rcpp": {
-      "Source": "CRAN",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Source": "RSPM",
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "Rcpp",
         "Title": "Seamless R and C++ Integration",
@@ -188,18 +165,15 @@
         "RoxygenNote": "6.1.1",
         "NeedsCompilation": "yes",
         "Packaged": "2019-11-08 18:25:32.94843 UTC; edd",
-        "Repository": "CRAN",
+        "Repository": "RSPM",
         "Date/Publication": "2019-11-08 23:44:12",
-        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:18:03 UTC; unix"
+        "Encoding": "UTF-8",
+        "Built": "R 3.6.3; x86_64-pc-linux-gnu; 2020-03-06 22:24:01 UTC; unix"
       }
     },
     "askpass": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "askpass",
         "Type": "Package",
@@ -227,11 +201,7 @@
     },
     "assertthat": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "assertthat",
         "Title": "Easy Pre and Post Assertions",
@@ -250,16 +220,12 @@
         "Repository": "RSPM",
         "Date/Publication": "2019-03-21 14:53:46 UTC",
         "Encoding": "UTF-8",
-        "Built": "R 3.6.1; ; 2019-09-09 12:13:12 UTC; unix"
+        "Built": "R 3.6.3; ; 2020-03-06 22:24:01 UTC; unix"
       }
     },
     "base64enc": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "base64enc",
         "Version": "0.1-3",
@@ -281,11 +247,7 @@
     },
     "cli": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "cli",
         "Title": "Helpers for Developing Command Line Interfaces",
@@ -313,11 +275,7 @@
     },
     "colorspace": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "colorspace",
         "Version": "1.4-1",
@@ -346,11 +304,7 @@
     },
     "crayon": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "crayon",
         "Title": "Colored Terminal Output",
@@ -372,16 +326,12 @@
         "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
         "Repository": "RSPM",
         "Date/Publication": "2017-09-16 19:49:46 UTC",
-        "Built": "R 3.6.1; ; 2019-09-09 12:13:58 UTC; unix"
+        "Built": "R 3.6.2; ; 2019-12-27 20:35:59 UTC; unix"
       }
     },
     "crosstalk": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "crosstalk",
         "Type": "Package",
@@ -406,11 +356,7 @@
     },
     "curl": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "curl",
         "Type": "Package",
@@ -439,12 +385,8 @@
       }
     },
     "digest": {
-      "Source": "CRAN",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Source": "RSPM",
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "digest",
         "Author": "Dirk Eddelbuettel <edd@debian.org> with contributions \n by Antoine Lucas, Jarek Tuszynski, Henrik Bengtsson, Simon Urbanek,\n Mario Frasca, Bryan Lewis, Murray Stokely, Hannes Muehleisen,\n Duncan Murdoch, Jim Hester, Wush Wu, Qiang Kou, Thierry Onkelinx, \n Michel Lang, Viliam Simko, Kurt Hornik, Radford Neal, Kendon Bell,\n Matthew de Queljoe, Ion Suruceanu, and Bill Denney.",
@@ -462,18 +404,15 @@
         "VignetteBuilder": "knitr",
         "NeedsCompilation": "yes",
         "Packaged": "2019-11-22 16:44:22.218585 UTC; edd",
-        "Repository": "CRAN",
+        "Repository": "RSPM",
         "Date/Publication": "2019-11-23 09:40:07 UTC",
-        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:17:42 UTC; unix"
+        "Encoding": "UTF-8",
+        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-11-25 16:54:12 UTC; unix"
       }
     },
     "dplyr": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Type": "Package",
         "Package": "dplyr",
@@ -503,11 +442,7 @@
     },
     "ellipsis": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "ellipsis",
         "Version": "0.3.0",
@@ -534,11 +469,7 @@
     },
     "fansi": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "fansi",
         "Title": "ANSI Control Sequence Aware String Functions",
@@ -566,11 +497,7 @@
     },
     "farver": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "farver",
         "Type": "Package",
@@ -595,12 +522,8 @@
       }
     },
     "fastmap": {
-      "Source": "github",
-      "Repository": null,
-      "GithubRepo": "fastmap",
-      "GithubUsername": "r-lib",
-      "GithubRef": "master",
-      "GithubSha1": "6d0fafbdfe0b5c80762b0b9339e1ff8e4e006417",
+      "Source": "RSPM",
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "fastmap",
         "Title": "Fast Implementation of a Key-Value Store",
@@ -614,30 +537,18 @@
         "Suggests": "testthat (>= 2.1.1)",
         "URL": "https://r-lib.github.io/fastmap/, https://github.com/r-lib/fastmap",
         "BugReports": "https://github.com/r-lib/fastmap/issues",
-        "RemoteType": "github",
-        "RemoteHost": "api.github.com",
-        "RemoteRepo": "fastmap",
-        "RemoteUsername": "r-lib",
-        "RemoteRef": "master",
-        "RemoteSha": "6d0fafbdfe0b5c80762b0b9339e1ff8e4e006417",
-        "GithubRepo": "fastmap",
-        "GithubUsername": "r-lib",
-        "GithubRef": "master",
-        "GithubSHA1": "6d0fafbdfe0b5c80762b0b9339e1ff8e4e006417",
         "NeedsCompilation": "yes",
-        "Packaged": "2019-12-04 21:22:28 UTC; alex.gold",
+        "Packaged": "2019-10-07 23:14:48 UTC; winston",
         "Author": "Winston Chang [aut, cre],\n  RStudio [cph, fnd],\n  Tessil [cph] (hopscotch_map library)",
         "Maintainer": "Winston Chang <winston@rstudio.com>",
-        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:22:29 UTC; unix"
+        "Repository": "RSPM",
+        "Date/Publication": "2019-10-08 05:20:02 UTC",
+        "Built": "R 3.6.2; x86_64-pc-linux-gnu; 2019-12-27 20:35:59 UTC; unix"
       }
     },
     "ggplot2": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "ggplot2",
         "Version": "3.2.1",
@@ -667,11 +578,7 @@
     },
     "ggthemes": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "ggthemes",
         "Version": "4.2.0",
@@ -699,11 +606,7 @@
     },
     "glue": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "glue",
         "Title": "Interpreted String Literals",
@@ -727,16 +630,12 @@
         "Maintainer": "Jim Hester <james.f.hester@gmail.com>",
         "Repository": "RSPM",
         "Date/Publication": "2019-03-12 22:30:02 UTC",
-        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-09 12:13:27 UTC; unix"
+        "Built": "R 3.6.3; x86_64-pc-linux-gnu; 2020-03-06 22:24:01 UTC; unix"
       }
     },
     "gridExtra": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "gridExtra",
         "Authors@R": "c(person(\"Baptiste\", \"Auguie\",\n    email = \"baptiste.auguie@gmail.com\",\n    role = c(\"aut\", \"cre\")), person(\"Anton\", \"Antonov\",\n    email = \"tonytonov@gmail.com\",\n    role = c(\"ctb\")))",
@@ -761,11 +660,7 @@
     },
     "gtable": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "gtable",
         "Title": "Arrange 'Grobs' in Tables",
@@ -792,12 +687,8 @@
       }
     },
     "htmltools": {
-      "Source": "CRAN",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Source": "RSPM",
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "htmltools",
         "Type": "Package",
@@ -819,23 +710,19 @@
         "Collate": "'RcppExports.R' 'html_dependency.R' 'html_escape.R'\n'html_print.R' 'shim.R' 'utils.R' 'tags.R' 'template.R'",
         "NeedsCompilation": "yes",
         "Packaged": "2019-10-04 17:43:48 UTC; jcheng",
-        "Repository": "CRAN",
+        "Repository": "RSPM",
         "Date/Publication": "2019-10-04 23:00:08 UTC",
-        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:18:39 UTC; unix"
+        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-11-11 21:14:10 UTC; unix"
       }
     },
     "htmlwidgets": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "htmlwidgets",
         "Type": "Package",
         "Title": "HTML Widgets for R",
-        "Version": "1.3",
+        "Version": "1.5.1",
         "Authors@R": "c(\n    person(\"Ramnath\", \"Vaidyanathan\", role = c(\"aut\", \"cph\")),\n    person(\"Yihui\", \"Xie\", role = c(\"aut\")),\n    person(\"JJ\", \"Allaire\", role = c(\"aut\")),\n    person(\"Joe\", \"Cheng\", role = c(\"aut\", \"cre\"), email = \"joe@rstudio.com\"),\n    person(\"Kenton\", \"Russell\", role = c(\"aut\", \"cph\")),\n    person(family = \"RStudio\", role = \"cph\")\n    )",
         "Description": "A framework for creating HTML widgets that render in various\n    contexts including the R console, 'R Markdown' documents, and 'Shiny'\n    web applications.",
         "License": "MIT + file LICENSE",
@@ -845,24 +732,20 @@
         "Enhances": "shiny (>= 1.1)",
         "URL": "https://github.com/ramnathv/htmlwidgets",
         "BugReports": "https://github.com/ramnathv/htmlwidgets/issues",
-        "RoxygenNote": "6.0.1",
+        "RoxygenNote": "6.1.1",
         "NeedsCompilation": "no",
-        "Packaged": "2018-09-20 17:18:43 UTC; jcheng",
+        "Packaged": "2019-10-07 21:55:31 UTC; jcheng",
         "Author": "Ramnath Vaidyanathan [aut, cph],\n  Yihui Xie [aut],\n  JJ Allaire [aut],\n  Joe Cheng [aut, cre],\n  Kenton Russell [aut, cph],\n  RStudio [cph]",
         "Maintainer": "Joe Cheng <joe@rstudio.com>",
         "Repository": "RSPM",
-        "Date/Publication": "2018-09-30 15:10:13 UTC",
+        "Date/Publication": "2019-10-08 08:40:02 UTC",
         "Encoding": "UTF-8",
-        "Built": "R 3.6.1; ; 2019-09-23 20:07:50 UTC; unix"
+        "Built": "R 3.6.1; ; 2019-10-10 18:36:15 UTC; unix"
       }
     },
     "httpuv": {
-      "Source": "CRAN",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Source": "RSPM",
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "httpuv",
         "Type": "Package",
@@ -884,18 +767,14 @@
         "Collate": "'RcppExports.R' 'httpuv.R' 'random_port.R' 'server.R'\n'static_paths.R' 'utils.R'",
         "NeedsCompilation": "yes",
         "Packaged": "2019-09-11 04:12:10 UTC; jcheng",
-        "Repository": "CRAN",
+        "Repository": "RSPM",
         "Date/Publication": "2019-09-11 05:40:02 UTC",
-        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:19:32 UTC; unix"
+        "Built": "R 3.6.2; x86_64-pc-linux-gnu; 2020-01-09 17:40:24 UTC; unix"
       }
     },
     "httr": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "httr",
         "Title": "Tools for Working with URLs and HTTP",
@@ -922,11 +801,7 @@
     },
     "jsonlite": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "jsonlite",
         "Version": "1.6.1",
@@ -952,11 +827,7 @@
     },
     "labeling": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "labeling",
         "Type": "Package",
@@ -981,12 +852,8 @@
       }
     },
     "later": {
-      "Source": "CRAN",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Source": "RSPM",
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "later",
         "Type": "Package",
@@ -1006,18 +873,15 @@
         "Packaged": "2019-10-03 23:31:59 UTC; jcheng",
         "Author": "Joe Cheng [aut, cre],\n  RStudio [cph],\n  Winston Chang [aut],\n  Marcus Geelnard [ctb, cph] (TinyCThread library,\n    https://tinycthread.github.io/),\n  Evan Nemerson [ctb, cph] (TinyCThread library,\n    https://tinycthread.github.io/)",
         "Maintainer": "Joe Cheng <joe@rstudio.com>",
-        "Repository": "CRAN",
+        "Repository": "RSPM",
         "Date/Publication": "2019-10-04 05:00:02 UTC",
-        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:18:52 UTC; unix"
+        "Encoding": "UTF-8",
+        "Built": "R 3.6.2; x86_64-pc-linux-gnu; 2020-01-09 17:36:18 UTC; unix"
       }
     },
     "lattice": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "lattice",
         "Version": "0.20-38",
@@ -1046,11 +910,7 @@
     },
     "lazyeval": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "lazyeval",
         "Version": "0.2.2",
@@ -1075,47 +935,68 @@
     },
     "leaflet": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "leaflet",
         "Type": "Package",
         "Title": "Create Interactive Web Maps with the JavaScript 'Leaflet'\nLibrary",
-        "Version": "2.0.2",
-        "Authors@R": "c(\n      person(\"Joe\", \"Cheng\", email = \"joe@rstudio.com\", role = c(\"aut\", \"cre\")),\n      person(\"Bhaskar\", \"Karambelkar\", role = c(\"aut\")),\n      person(\"Yihui\", \"Xie\", role = c(\"aut\")),\n      person(\"Hadley\", \"Wickham\", role = c(\"ctb\")),\n      person(\"Kenton\", \"Russell\", role = c(\"ctb\")),\n      person(\"Kent\", \"Johnson\", role = c(\"ctb\")),\n      person(\"Barret\", \"Schloerke\", role = c(\"ctb\")),\n      person(\"jQuery Foundation and contributors\", role = c(\"ctb\", \"cph\"), comment = \"jQuery library\"),\n      person(\"Vladimir\", \"Agafonkin\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet library\"),\n      person(\"CloudMade\", role = c(\"cph\"), comment = \"Leaflet library\"),\n      person(\"Leaflet contributors\", role = c(\"ctb\"), comment = \"Leaflet library\"),\n      person(\"Leaflet Providers contributors\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet Providers plugin\"),\n      person(\"Brandon Copeland\", role = c(\"ctb\", \"cph\"), comment = \"leaflet-measure plugin\"),\n      person(\"Joerg Dietrich\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.Terminator plugin\"),\n      person(\"Benjamin Becquet\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.MagnifyingGlass plugin\"),\n      person(\"Norkart AS\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.MiniMap plugin\"),\n      person(\"L. Voogdt\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.awesome-markers plugin\"),\n      person(\"Daniel Montague\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.EasyButton plugin\"),\n      person(\"Kartena AB\", role = c(\"ctb\", \"cph\"), comment = \"Proj4Leaflet plugin\"),\n      person(\"Robert Kajic\", role = c(\"ctb\", \"cph\"), comment = \"leaflet-locationfilter plugin\"),\n      person(\"Mapbox\", role = c(\"ctb\", \"cph\"), comment = \"leaflet-omnivore plugin\"),\n      person(\"Michael Bostock\", role = c(\"ctb\", \"cph\"), comment = \"topojson\"),\n      person(\"RStudio\", role = c(\"cph\"))\n    )",
-        "Maintainer": "Joe Cheng <joe@rstudio.com>",
+        "Version": "2.0.3",
+        "Authors@R": "c(\n      person(\"Joe\", \"Cheng\", email = \"joe@rstudio.com\", role = c(\"aut\", \"cre\")),\n      person(\"Bhaskar\", \"Karambelkar\", role = c(\"aut\")),\n      person(\"Yihui\", \"Xie\", role = c(\"aut\")),\n      person(\"Hadley\", \"Wickham\", role = c(\"ctb\")),\n      person(\"Kenton\", \"Russell\", role = c(\"ctb\")),\n      person(\"Kent\", \"Johnson\", role = c(\"ctb\")),\n      person(\"Barret\", \"Schloerke\", role = c(\"ctb\")),\n      person(\"jQuery Foundation and contributors\", role = c(\"ctb\", \"cph\"), comment = \"jQuery library\"),\n      person(\"Vladimir\", \"Agafonkin\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet library\"),\n      person(\"CloudMade\", role = c(\"cph\"), comment = \"Leaflet library\"),\n      person(\"Leaflet contributors\", role = c(\"ctb\"), comment = \"Leaflet library\"),\n      person(\"Brandon Copeland\", role = c(\"ctb\", \"cph\"), comment = \"leaflet-measure plugin\"),\n      person(\"Joerg Dietrich\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.Terminator plugin\"),\n      person(\"Benjamin Becquet\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.MagnifyingGlass plugin\"),\n      person(\"Norkart AS\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.MiniMap plugin\"),\n      person(\"L. Voogdt\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.awesome-markers plugin\"),\n      person(\"Daniel Montague\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet.EasyButton plugin\"),\n      person(\"Kartena AB\", role = c(\"ctb\", \"cph\"), comment = \"Proj4Leaflet plugin\"),\n      person(\"Robert Kajic\", role = c(\"ctb\", \"cph\"), comment = \"leaflet-locationfilter plugin\"),\n      person(\"Mapbox\", role = c(\"ctb\", \"cph\"), comment = \"leaflet-omnivore plugin\"),\n      person(\"Michael Bostock\", role = c(\"ctb\", \"cph\"), comment = \"topojson\"),\n      person(\"RStudio\", role = c(\"cph\"))\n    )",
         "Description": "Create and customize interactive maps using the 'Leaflet'\n    JavaScript library and the 'htmlwidgets' package. These maps can be used\n    directly from the R console, from 'RStudio', in Shiny applications and R Markdown\n    documents.",
         "License": "GPL-3",
         "URL": "http://rstudio.github.io/leaflet/",
         "BugReports": "https://github.com/rstudio/leaflet/issues",
         "Depends": "R (>= 3.1.0)",
-        "Imports": "base64enc, crosstalk, htmlwidgets, htmltools, magrittr,\nmarkdown, methods, png, RColorBrewer, raster, scales (>=\n1.0.0), sp, stats, viridis (>= 0.5.1)",
-        "Suggests": "knitr, maps, sf, shiny, testit (>= 0.4), rgdal, rgeos, R6,\nRJSONIO, purrr, testthat",
-        "RoxygenNote": "6.1.0",
+        "Imports": "base64enc, crosstalk, htmlwidgets, htmltools, magrittr,\nmarkdown, methods, png, RColorBrewer, raster, scales (>=\n1.0.0), sp, stats, viridis (>= 0.5.1), leaflet.providers (>=\n1.8.0)",
+        "Suggests": "knitr, maps, sf, shiny, rgdal, rgeos, R6, RJSONIO, purrr,\ntestthat",
+        "RoxygenNote": "6.1.1",
         "Encoding": "UTF-8",
         "LazyData": "true",
         "NeedsCompilation": "no",
-        "Packaged": "2018-08-24 20:03:55 UTC; barret",
-        "Author": "Joe Cheng [aut, cre],\n  Bhaskar Karambelkar [aut],\n  Yihui Xie [aut],\n  Hadley Wickham [ctb],\n  Kenton Russell [ctb],\n  Kent Johnson [ctb],\n  Barret Schloerke [ctb],\n  jQuery Foundation and contributors [ctb, cph] (jQuery library),\n  Vladimir Agafonkin [ctb, cph] (Leaflet library),\n  CloudMade [cph] (Leaflet library),\n  Leaflet contributors [ctb] (Leaflet library),\n  Leaflet Providers contributors [ctb, cph] (Leaflet Providers plugin),\n  Brandon Copeland [ctb, cph] (leaflet-measure plugin),\n  Joerg Dietrich [ctb, cph] (Leaflet.Terminator plugin),\n  Benjamin Becquet [ctb, cph] (Leaflet.MagnifyingGlass plugin),\n  Norkart AS [ctb, cph] (Leaflet.MiniMap plugin),\n  L. Voogdt [ctb, cph] (Leaflet.awesome-markers plugin),\n  Daniel Montague [ctb, cph] (Leaflet.EasyButton plugin),\n  Kartena AB [ctb, cph] (Proj4Leaflet plugin),\n  Robert Kajic [ctb, cph] (leaflet-locationfilter plugin),\n  Mapbox [ctb, cph] (leaflet-omnivore plugin),\n  Michael Bostock [ctb, cph] (topojson),\n  RStudio [cph]",
+        "Packaged": "2019-11-14 18:00:03 UTC; barret",
+        "Author": "Joe Cheng [aut, cre],\n  Bhaskar Karambelkar [aut],\n  Yihui Xie [aut],\n  Hadley Wickham [ctb],\n  Kenton Russell [ctb],\n  Kent Johnson [ctb],\n  Barret Schloerke [ctb],\n  jQuery Foundation and contributors [ctb, cph] (jQuery library),\n  Vladimir Agafonkin [ctb, cph] (Leaflet library),\n  CloudMade [cph] (Leaflet library),\n  Leaflet contributors [ctb] (Leaflet library),\n  Brandon Copeland [ctb, cph] (leaflet-measure plugin),\n  Joerg Dietrich [ctb, cph] (Leaflet.Terminator plugin),\n  Benjamin Becquet [ctb, cph] (Leaflet.MagnifyingGlass plugin),\n  Norkart AS [ctb, cph] (Leaflet.MiniMap plugin),\n  L. Voogdt [ctb, cph] (Leaflet.awesome-markers plugin),\n  Daniel Montague [ctb, cph] (Leaflet.EasyButton plugin),\n  Kartena AB [ctb, cph] (Proj4Leaflet plugin),\n  Robert Kajic [ctb, cph] (leaflet-locationfilter plugin),\n  Mapbox [ctb, cph] (leaflet-omnivore plugin),\n  Michael Bostock [ctb, cph] (topojson),\n  RStudio [cph]",
+        "Maintainer": "Joe Cheng <joe@rstudio.com>",
         "Repository": "RSPM",
-        "Date/Publication": "2018-08-27 14:12:16 UTC",
-        "Built": "R 3.6.1; ; 2019-09-21 13:25:53 UTC; unix"
+        "Date/Publication": "2019-11-16 05:50:05 UTC",
+        "Built": "R 3.6.1; ; 2019-11-18 12:10:30 UTC; unix"
+      }
+    },
+    "leaflet.providers": {
+      "Source": "RSPM",
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
+      "description": {
+        "Package": "leaflet.providers",
+        "Type": "Package",
+        "Title": "Leaflet Providers",
+        "Version": "1.9.0",
+        "Authors@R": "c(\n      person(\"Leslie\", \"Huang\", email = \"lesliehuang@nyu.edu\", role = c(\"aut\")),\n      person(\"Barret\", \"Schloerke\", email = \"barret@rstudio.com\", role = c(\"ctb\", \"cre\"),\n        comment = c(ORCID = \"0000-0001-9986-114X\")),\n      person(\"Leaflet Providers contributors\", role = c(\"ctb\", \"cph\"), comment = \"Leaflet Providers plugin\"),\n      person(\"RStudio\", role = c(\"cph\", \"fnd\"))\n    )",
+        "Description": "Contains third-party map tile provider information from\n    'Leaflet.js', <https://github.com/leaflet-extras/leaflet-providers>, to be\n    used with the 'leaflet' R package. Additionally, 'leaflet.providers'\n    enables users to retrieve up-to-date provider information between package\n    updates.",
+        "License": "BSD_2_clause + file LICENSE",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "Depends": "R (>= 2.10)",
+        "Suggests": "V8, jsonlite, testthat (>= 2.1.0)",
+        "Language": "en-US",
+        "RoxygenNote": "6.1.1",
+        "URL": "https://github.com/rstudio/leaflet.providers",
+        "BugReports": "https://github.com/rstudio/leaflet.providers/issues",
+        "Collate": "'providers_data.R' 'get_current_providers.R'",
+        "NeedsCompilation": "no",
+        "Packaged": "2019-11-08 22:12:22 UTC; barret",
+        "Author": "Leslie Huang [aut],\n  Barret Schloerke [ctb, cre] (<https://orcid.org/0000-0001-9986-114X>),\n  Leaflet Providers contributors [ctb, cph] (Leaflet Providers plugin),\n  RStudio [cph, fnd]",
+        "Maintainer": "Barret Schloerke <barret@rstudio.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2019-11-09 23:40:09 UTC",
+        "Built": "R 3.6.1; ; 2019-11-11 20:38:55 UTC; unix"
       }
     },
     "lifecycle": {
-      "Source": "github",
-      "Repository": null,
-      "GithubRepo": "lifecycle",
-      "GithubUsername": "r-lib",
-      "GithubRef": "master",
-      "GithubSha1": "355dcba8530bcce57c15847165ca568f9f81b43e",
+      "Source": "RSPM",
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "lifecycle",
         "Title": "Manage the Life Cycle of your Package Functions",
-        "Version": "0.2.0.9000",
+        "Version": "0.1.0",
         "Authors@R": "\n    c(\n      person(given = \"Lionel\", family = \"Henry\", role = c(\"aut\", \"cre\"), email = \"lionel@rstudio.com\"),\n      person(given = \"RStudio\", role = \"cph\")\n    )",
         "Description": "Manage the life cycle of your exported functions with\n    shared conventions, documentation badges, and non-invasive\n    deprecation warnings. The 'lifecycle' package defines four\n    development stages (experimental, maturing, stable, and\n    questioning) and three deprecation stages (soft-deprecated,\n    deprecated, and defunct). It makes it easy to insert badges\n    corresponding to these stages in your documentation. Usage of\n    deprecated functions are signalled with increasing levels of\n    non-invasive verbosity.",
         "License": "GPL-3",
@@ -1124,35 +1005,22 @@
         "Depends": "R (>= 3.2)",
         "Imports": "glue, rlang (>= 0.4.0)",
         "Suggests": "covr, crayon, knitr, rmarkdown, testthat (>= 2.1.0)",
-        "Roxygen": "list(markdown = TRUE)",
-        "RoxygenNote": "7.0.2",
-        "URL": "https://lifecycle.r-lib.org/, https://github.com/r-lib/lifecycle",
+        "RoxygenNote": "6.1.1",
+        "URL": "https://github.com/r-lib/lifecycle",
         "BugReports": "https://github.com/r-lib/lifecycle/issues",
         "VignetteBuilder": "knitr",
-        "RemoteType": "github",
-        "RemoteHost": "api.github.com",
-        "RemoteRepo": "lifecycle",
-        "RemoteUsername": "r-lib",
-        "RemoteRef": "master",
-        "RemoteSha": "355dcba8530bcce57c15847165ca568f9f81b43e",
-        "GithubRepo": "lifecycle",
-        "GithubUsername": "r-lib",
-        "GithubRef": "master",
-        "GithubSHA1": "355dcba8530bcce57c15847165ca568f9f81b43e",
         "NeedsCompilation": "no",
-        "Packaged": "2020-03-30 19:48:06 UTC; alex.gold",
+        "Packaged": "2019-07-27 07:28:35 UTC; lionel",
         "Author": "Lionel Henry [aut, cre],\n  RStudio [cph]",
         "Maintainer": "Lionel Henry <lionel@rstudio.com>",
-        "Built": "R 3.6.2; ; 2020-03-30 19:48:07 UTC; unix"
+        "Repository": "RSPM",
+        "Date/Publication": "2019-08-01 12:50:05 UTC",
+        "Built": "R 3.6.1; ; 2019-09-26 13:34:50 UTC; unix"
       }
     },
     "magrittr": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "magrittr",
         "Type": "Package",
@@ -1170,16 +1038,12 @@
         "Repository": "RSPM",
         "Date/Publication": "2014-11-22 19:15:57",
         "Encoding": "UTF-8",
-        "Built": "R 3.6.1; ; 2019-09-09 12:11:46 UTC; unix"
+        "Built": "R 3.6.3; ; 2020-03-06 22:23:59 UTC; unix"
       }
     },
     "markdown": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "markdown",
         "Type": "Package",
@@ -1207,11 +1071,7 @@
     },
     "mgcv": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "mgcv",
         "Version": "1.8-31",
@@ -1236,11 +1096,7 @@
     },
     "mime": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "mime",
         "Type": "Package",
@@ -1266,11 +1122,7 @@
     },
     "munsell": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "munsell",
         "Type": "Package",
@@ -1294,11 +1146,7 @@
     },
     "nlme": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "nlme",
         "Version": "3.1-143",
@@ -1327,11 +1175,7 @@
     },
     "openssl": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "openssl",
         "Type": "Package",
@@ -1359,11 +1203,7 @@
     },
     "pillar": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "pillar",
         "Title": "Coloured Formatting for Columns",
@@ -1390,11 +1230,7 @@
     },
     "pins": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "pins",
         "Type": "Package",
@@ -1423,11 +1259,7 @@
     },
     "pkgconfig": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "pkgconfig",
         "Title": "Private Configuration for 'R' Packages",
@@ -1451,11 +1283,7 @@
     },
     "plogr": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "plogr",
         "Title": "The 'plog' C++ Logging Library",
@@ -1476,16 +1304,12 @@
         "Maintainer": "Kirill Müller <krlmlr+r@mailbox.org>",
         "Repository": "RSPM",
         "Date/Publication": "2018-03-25 15:25:27 UTC",
-        "Built": "R 3.6.1; ; 2019-09-09 12:14:55 UTC; unix"
+        "Built": "R 3.6.1; ; 2019-09-26 13:37:57 UTC; unix"
       }
     },
     "plyr": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "plyr",
         "Title": "Tools for Splitting, Applying and Combining Data",
@@ -1513,11 +1337,7 @@
     },
     "png": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "png",
         "Version": "0.1-7",
@@ -1538,12 +1358,8 @@
       }
     },
     "promises": {
-      "Source": "CRAN",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Source": "RSPM",
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "promises",
         "Type": "Package",
@@ -1565,18 +1381,14 @@
         "Packaged": "2019-10-04 16:59:31 UTC; jcheng",
         "Author": "Joe Cheng [aut, cre],\n  RStudio [cph, fnd]",
         "Maintainer": "Joe Cheng <joe@rstudio.com>",
-        "Repository": "CRAN",
+        "Repository": "RSPM",
         "Date/Publication": "2019-10-04 23:00:05 UTC",
-        "Built": "R 3.6.0; x86_64-pc-linux-gnu; 2019-12-04 21:19:18 UTC; unix"
+        "Built": "R 3.6.2; x86_64-pc-linux-gnu; 2020-01-09 17:39:27 UTC; unix"
       }
     },
     "purrr": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "purrr",
         "Title": "Functional Programming Tools",
@@ -1603,12 +1415,8 @@
       }
     },
     "rappdirs": {
-      "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "rappdirs",
         "Type": "Package",
@@ -1627,19 +1435,14 @@
         "Packaged": "2016-03-28 19:04:15 UTC; hadley",
         "Author": "Hadley Wickham [trl, cre, cph],\n  RStudio [cph],\n  Sridhar Ratnakumar [aut],\n  Trent Mick [aut],\n  ActiveState [cph] (R/appdir.r, R/cache.r, R/data.r, R/log.r translated\n    from appdirs),\n  Eddy Petrisor [ctb],\n  Trevor Davis [trl, aut],\n  Gabor Csardi [ctb],\n  Gregory Jefferis [ctb]",
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
-        "Repository": "RSPM",
+        "Repository": "CRAN",
         "Date/Publication": "2016-03-28 23:10:10",
-        "Encoding": "UTF-8",
-        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-26 13:34:49 UTC; unix"
+        "Built": "R 3.6.2; x86_64-pc-linux-gnu; 2020-12-08 01:03:23 UTC; unix"
       }
     },
     "raster": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "raster",
         "Type": "Package",
@@ -1668,11 +1471,7 @@
     },
     "reshape2": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "reshape2",
         "Title": "Flexibly Reshape Data: A Reboot of the Reshape Package",
@@ -1699,11 +1498,7 @@
     },
     "rlang": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "rlang",
         "Version": "0.4.4",
@@ -1731,11 +1526,7 @@
     },
     "scales": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "scales",
         "Title": "Scale Functions for Visualization",
@@ -1761,53 +1552,36 @@
       }
     },
     "shiny": {
-      "Source": "github",
-      "Repository": null,
-      "GithubRepo": "shiny",
-      "GithubUsername": "rstudio",
-      "GithubRef": "master",
-      "GithubSha1": "e07c7483a79cc641d464cd7496872a28eedbe4a4",
+      "Source": "RSPM",
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "shiny",
         "Type": "Package",
         "Title": "Web Application Framework for R",
-        "Version": "1.4.0.9001",
+        "Version": "1.4.0",
         "Authors@R": "c(\n    person(\"Winston\", \"Chang\", role = c(\"aut\", \"cre\"), email = \"winston@rstudio.com\"),\n    person(\"Joe\", \"Cheng\", role = \"aut\", email = \"joe@rstudio.com\"),\n    person(\"JJ\", \"Allaire\", role = \"aut\", email = \"jj@rstudio.com\"),\n    person(\"Yihui\", \"Xie\", role = \"aut\", email = \"yihui@rstudio.com\"),\n    person(\"Jonathan\", \"McPherson\", role = \"aut\", email = \"jonathan@rstudio.com\"),\n    person(family = \"RStudio\", role = \"cph\"),\n    person(family = \"jQuery Foundation\", role = \"cph\",\n    comment = \"jQuery library and jQuery UI library\"),\n    person(family = \"jQuery contributors\", role = c(\"ctb\", \"cph\"),\n    comment = \"jQuery library; authors listed in inst/www/shared/jquery-AUTHORS.txt\"),\n    person(family = \"jQuery UI contributors\", role = c(\"ctb\", \"cph\"),\n    comment = \"jQuery UI library; authors listed in inst/www/shared/jqueryui/AUTHORS.txt\"),\n    person(\"Mark\", \"Otto\", role = \"ctb\",\n    comment = \"Bootstrap library\"),\n    person(\"Jacob\", \"Thornton\", role = \"ctb\",\n    comment = \"Bootstrap library\"),\n    person(family = \"Bootstrap contributors\", role = \"ctb\",\n    comment = \"Bootstrap library\"),\n    person(family = \"Twitter, Inc\", role = \"cph\",\n    comment = \"Bootstrap library\"),\n    person(\"Alexander\", \"Farkas\", role = c(\"ctb\", \"cph\"),\n    comment = \"html5shiv library\"),\n    person(\"Scott\", \"Jehl\", role = c(\"ctb\", \"cph\"),\n    comment = \"Respond.js library\"),\n    person(\"Stefan\", \"Petre\", role = c(\"ctb\", \"cph\"),\n    comment = \"Bootstrap-datepicker library\"),\n    person(\"Andrew\", \"Rowls\", role = c(\"ctb\", \"cph\"),\n    comment = \"Bootstrap-datepicker library\"),\n    person(\"Dave\", \"Gandy\", role = c(\"ctb\", \"cph\"),\n    comment = \"Font-Awesome font\"),\n    person(\"Brian\", \"Reavis\", role = c(\"ctb\", \"cph\"),\n    comment = \"selectize.js library\"),\n    person(\"Kristopher Michael\", \"Kowal\", role = c(\"ctb\", \"cph\"),\n    comment = \"es5-shim library\"),\n    person(family = \"es5-shim contributors\", role = c(\"ctb\", \"cph\"),\n    comment = \"es5-shim library\"),\n    person(\"Denis\", \"Ineshin\", role = c(\"ctb\", \"cph\"),\n    comment = \"ion.rangeSlider library\"),\n    person(\"Sami\", \"Samhuri\", role = c(\"ctb\", \"cph\"),\n    comment = \"Javascript strftime library\"),\n    person(family = \"SpryMedia Limited\", role = c(\"ctb\", \"cph\"),\n    comment = \"DataTables library\"),\n    person(\"John\", \"Fraser\", role = c(\"ctb\", \"cph\"),\n    comment = \"showdown.js library\"),\n    person(\"John\", \"Gruber\", role = c(\"ctb\", \"cph\"),\n    comment = \"showdown.js library\"),\n    person(\"Ivan\", \"Sagalaev\", role = c(\"ctb\", \"cph\"),\n    comment = \"highlight.js library\"),\n    person(family = \"R Core Team\", role = c(\"ctb\", \"cph\"),\n    comment = \"tar implementation from R\")\n    )",
         "Description": "Makes it incredibly easy to build interactive web\n    applications with R. Automatic \"reactive\" binding between inputs and\n    outputs and extensive prebuilt widgets make it possible to build\n    beautiful, responsive, and powerful applications with minimal effort.",
         "License": "GPL-3 | file LICENSE",
         "Depends": "R (>= 3.0.2), methods",
-        "Imports": "utils, grDevices, httpuv (>= 1.5.2), mime (>= 0.3), jsonlite\n(>= 0.9.16), xtable, digest, htmltools (>= 0.4.0), R6 (>= 2.0),\nsourcetools, later (>= 1.0.0), promises (>= 1.1.0), tools,\ncrayon, rlang (>= 0.4.0), fastmap (>= 1.0.0), withr",
-        "Suggests": "datasets, Cairo (>= 1.5-5), testthat (>= 2.1.1), knitr (>=\n1.6), markdown, rmarkdown, ggplot2, reactlog (>= 1.0.0),\nmagrittr, shinytest, yaml, future, dygraphs",
+        "Imports": "utils, grDevices, httpuv (>= 1.5.2), mime (>= 0.3), jsonlite\n(>= 0.9.16), xtable, digest, htmltools (>= 0.4.0), R6 (>= 2.0),\nsourcetools, later (>= 1.0.0), promises (>= 1.1.0), tools,\ncrayon, rlang (>= 0.4.0), fastmap (>= 1.0.0)",
+        "Suggests": "datasets, Cairo (>= 1.5-5), testthat (>= 2.1.1), knitr (>=\n1.6), markdown, rmarkdown, ggplot2, reactlog (>= 1.0.0),\nmagrittr, yaml",
         "URL": "http://shiny.rstudio.com",
         "BugReports": "https://github.com/rstudio/shiny/issues",
-        "Collate": "'app.R' 'bookmark-state-local.R' 'stack.R' 'bookmark-state.R'\n'bootstrap-deprecated.R' 'bootstrap-layout.R' 'globals.R'\n'conditions.R' 'map.R' 'utils.R' 'bootstrap.R'\n'cache-context.R' 'cache-disk.R' 'cache-memory.R'\n'cache-utils.R' 'diagnose.R' 'fileupload.R' 'font-awesome.R'\n'graph.R' 'reactives.R' 'reactive-domains.R' 'history.R'\n'hooks.R' 'html-deps.R' 'htmltools.R' 'image-interact-opts.R'\n'image-interact.R' 'imageutils.R' 'input-action.R'\n'input-checkbox.R' 'input-checkboxgroup.R' 'input-date.R'\n'input-daterange.R' 'input-file.R' 'input-numeric.R'\n'input-password.R' 'input-radiobuttons.R' 'input-select.R'\n'input-slider.R' 'input-submit.R' 'input-text.R'\n'input-textarea.R' 'input-utils.R' 'insert-tab.R' 'insert-ui.R'\n'jqueryui.R' 'middleware-shiny.R' 'middleware.R' 'timer.R'\n'mock-session.R' 'modal.R' 'modules.R' 'notifications.R'\n'priorityqueue.R' 'progress.R' 'react.R' 'render-cached-plot.R'\n'render-plot.R' 'render-table.R' 'run-url.R' 'serializers.R'\n'server-input-handlers.R' 'server.R' 'shiny-options.R'\n'shiny.R' 'shinyui.R' 'shinywrappers.R' 'showcase.R'\n'snapshot.R' 'tar.R' 'test-export.R' 'test-module.R' 'test.R'\n'update-input.R'",
-        "RoxygenNote": "7.0.2",
+        "Collate": "'app.R' 'bookmark-state-local.R' 'stack.R' 'bookmark-state.R'\n'bootstrap-deprecated.R' 'bootstrap-layout.R' 'globals.R'\n'conditions.R' 'map.R' 'utils.R' 'bootstrap.R'\n'cache-context.R' 'cache-disk.R' 'cache-memory.R'\n'cache-utils.R' 'diagnose.R' 'fileupload.R' 'font-awesome.R'\n'graph.R' 'reactives.R' 'reactive-domains.R' 'history.R'\n'hooks.R' 'html-deps.R' 'htmltools.R' 'image-interact-opts.R'\n'image-interact.R' 'imageutils.R' 'input-action.R'\n'input-checkbox.R' 'input-checkboxgroup.R' 'input-date.R'\n'input-daterange.R' 'input-file.R' 'input-numeric.R'\n'input-password.R' 'input-radiobuttons.R' 'input-select.R'\n'input-slider.R' 'input-submit.R' 'input-text.R'\n'input-textarea.R' 'input-utils.R' 'insert-tab.R' 'insert-ui.R'\n'jqueryui.R' 'middleware-shiny.R' 'middleware.R' 'modal.R'\n'modules.R' 'notifications.R' 'priorityqueue.R' 'progress.R'\n'react.R' 'render-cached-plot.R' 'render-plot.R'\n'render-table.R' 'run-url.R' 'serializers.R'\n'server-input-handlers.R' 'server.R' 'shiny-options.R'\n'shiny.R' 'shinyui.R' 'shinywrappers.R' 'showcase.R'\n'snapshot.R' 'tar.R' 'test-export.R' 'timer.R' 'update-input.R'",
+        "RoxygenNote": "6.1.1",
         "Encoding": "UTF-8",
-        "Roxygen": "list(markdown = TRUE)",
-        "RemoteType": "github",
-        "RemoteHost": "api.github.com",
-        "RemoteRepo": "shiny",
-        "RemoteUsername": "rstudio",
-        "RemoteRef": "master",
-        "RemoteSha": "e07c7483a79cc641d464cd7496872a28eedbe4a4",
-        "GithubRepo": "shiny",
-        "GithubUsername": "rstudio",
-        "GithubRef": "master",
-        "GithubSHA1": "e07c7483a79cc641d464cd7496872a28eedbe4a4",
         "NeedsCompilation": "no",
-        "Packaged": "2019-12-04 21:22:33 UTC; alex.gold",
+        "Packaged": "2019-10-08 16:21:27 UTC; winston",
         "Author": "Winston Chang [aut, cre],\n  Joe Cheng [aut],\n  JJ Allaire [aut],\n  Yihui Xie [aut],\n  Jonathan McPherson [aut],\n  RStudio [cph],\n  jQuery Foundation [cph] (jQuery library and jQuery UI library),\n  jQuery contributors [ctb, cph] (jQuery library; authors listed in\n    inst/www/shared/jquery-AUTHORS.txt),\n  jQuery UI contributors [ctb, cph] (jQuery UI library; authors listed in\n    inst/www/shared/jqueryui/AUTHORS.txt),\n  Mark Otto [ctb] (Bootstrap library),\n  Jacob Thornton [ctb] (Bootstrap library),\n  Bootstrap contributors [ctb] (Bootstrap library),\n  Twitter, Inc [cph] (Bootstrap library),\n  Alexander Farkas [ctb, cph] (html5shiv library),\n  Scott Jehl [ctb, cph] (Respond.js library),\n  Stefan Petre [ctb, cph] (Bootstrap-datepicker library),\n  Andrew Rowls [ctb, cph] (Bootstrap-datepicker library),\n  Dave Gandy [ctb, cph] (Font-Awesome font),\n  Brian Reavis [ctb, cph] (selectize.js library),\n  Kristopher Michael Kowal [ctb, cph] (es5-shim library),\n  es5-shim contributors [ctb, cph] (es5-shim library),\n  Denis Ineshin [ctb, cph] (ion.rangeSlider library),\n  Sami Samhuri [ctb, cph] (Javascript strftime library),\n  SpryMedia Limited [ctb, cph] (DataTables library),\n  John Fraser [ctb, cph] (showdown.js library),\n  John Gruber [ctb, cph] (showdown.js library),\n  Ivan Sagalaev [ctb, cph] (highlight.js library),\n  R Core Team [ctb, cph] (tar implementation from R)",
         "Maintainer": "Winston Chang <winston@rstudio.com>",
-        "Built": "R 3.6.0; ; 2019-12-04 21:22:37 UTC; unix"
+        "Repository": "RSPM",
+        "Date/Publication": "2019-10-10 12:50:02 UTC",
+        "Built": "R 3.6.2; ; 2019-12-27 20:42:36 UTC; unix"
       }
     },
     "shinydashboard": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "shinydashboard",
         "Title": "Create Dashboards with 'Shiny'",
@@ -1832,11 +1606,7 @@
     },
     "sourcetools": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "sourcetools",
         "Type": "Package",
@@ -1861,11 +1631,7 @@
     },
     "sp": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "sp",
         "Version": "1.3-2",
@@ -1891,11 +1657,7 @@
     },
     "stringi": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "stringi",
         "Version": "1.4.5",
@@ -1924,11 +1686,7 @@
     },
     "stringr": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "stringr",
         "Title": "Simple, Consistent Wrappers for Common String Operations",
@@ -1951,16 +1709,12 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "RSPM",
         "Date/Publication": "2019-02-10 03:40:03 UTC",
-        "Built": "R 3.6.1; ; 2019-09-09 12:15:59 UTC; unix"
+        "Built": "R 3.6.1; ; 2019-09-23 20:06:12 UTC; unix"
       }
     },
     "sys": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "sys",
         "Type": "Package",
@@ -1987,11 +1741,7 @@
     },
     "tibble": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "tibble",
         "Title": "Simple Data Frames",
@@ -2015,16 +1765,12 @@
         "Maintainer": "Kirill Müller <krlmlr+r@mailbox.org>",
         "Repository": "RSPM",
         "Date/Publication": "2019-06-06 13:40:03 UTC",
-        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-09 12:15:11 UTC; unix"
+        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-26 13:46:15 UTC; unix"
       }
     },
     "tidyselect": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "tidyselect",
         "Title": "Select from a Set of Strings",
@@ -2053,11 +1799,7 @@
     },
     "utf8": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "utf8",
         "Version": "1.1.4",
@@ -2078,16 +1820,12 @@
         "Maintainer": "Patrick O. Perry <patperry@gmail.com>",
         "Repository": "RSPM",
         "Date/Publication": "2018-05-24 17:09:15 UTC",
-        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-09 12:13:47 UTC; unix"
+        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-26 13:33:27 UTC; unix"
       }
     },
     "vctrs": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "vctrs",
         "Title": "Vector Helpers",
@@ -2116,11 +1854,7 @@
     },
     "viridis": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "viridis",
         "Type": "Package",
@@ -2149,11 +1883,7 @@
     },
     "viridisLite": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "viridisLite",
         "Type": "Package",
@@ -2180,11 +1910,7 @@
     },
     "withr": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Encoding": "UTF-8",
         "Package": "withr",
@@ -2213,11 +1939,7 @@
     },
     "xfun": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "xfun",
         "Type": "Package",
@@ -2245,11 +1967,7 @@
     },
     "xtable": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "xtable",
         "Version": "1.8-4",
@@ -2275,11 +1993,7 @@
     },
     "yaml": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "yaml",
         "Type": "Package",
@@ -2303,11 +2017,7 @@
     },
     "zip": {
       "Source": "RSPM",
-      "Repository": "https://demo.rstudiopm.com/all/__linux__/bionic/2603",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Repository": "https://colorado.rstudio.com/rspm/all/2603",
       "description": {
         "Package": "zip",
         "Title": "Cross-Platform 'zip' Compression",
@@ -2326,19 +2036,19 @@
         "Packaged": "2019-09-01 08:28:20 UTC; gaborcsardi",
         "Repository": "RSPM",
         "Date/Publication": "2019-09-01 08:50:02 UTC",
-        "Built": "R 3.6.1; x86_64-pc-linux-gnu; 2019-09-26 13:36:59 UTC; unix"
+        "Built": "R 3.6.2; x86_64-pc-linux-gnu; 2020-12-08 00:55:02 UTC; unix"
       }
     }
   },
   "files": {
     "app.R": {
-      "checksum": "edb9c3da055a10c0f47127d9bfeb8c56"
+      "checksum": "f226843769a774e0bc6e559e3ced6cca"
     },
     "packrat/desc/askpass": {
       "checksum": "5babf9db572d334d07d512511e8aded4"
     },
     "packrat/desc/assertthat": {
-      "checksum": "6cd9fe9c036d20beeed1f64ca60b3e91"
+      "checksum": "cf4ab5752583fa1a7a38b64977787195"
     },
     "packrat/desc/base64enc": {
       "checksum": "72f484389842ce16ebd7fbe4c11936ef"
@@ -2353,7 +2063,7 @@
       "checksum": "ca7b0eb3d7b8bafd2b6631c90ac81cea"
     },
     "packrat/desc/crayon": {
-      "checksum": "79c84ced459a66a38b37c8d139c39f1b"
+      "checksum": "c368045a6336ae2f4f9eeb74f1540c1f"
     },
     "packrat/desc/crosstalk": {
       "checksum": "08bfac49a8f0894183594098c0825c4e"
@@ -2362,7 +2072,7 @@
       "checksum": "6774ee9d83ff4ad587c7994382bb354f"
     },
     "packrat/desc/digest": {
-      "checksum": "9429063b07dc6e719465f182b30b28b3"
+      "checksum": "8f88a6c644aab3597a8208fb24219526"
     },
     "packrat/desc/dplyr": {
       "checksum": "49410d7a11cfc6186511daaa1b5188a7"
@@ -2377,7 +2087,7 @@
       "checksum": "2c639b2e674740ae768e14135df39fed"
     },
     "packrat/desc/fastmap": {
-      "checksum": "3f82a9e5f9adc0a7ba091965b3b62426"
+      "checksum": "003dc001309a4c4f63bc85b9bd1f57dd"
     },
     "packrat/desc/ggplot2": {
       "checksum": "aff9465edc6a0d8c5b935b5ddef68912"
@@ -2386,7 +2096,7 @@
       "checksum": "395b86d1709f08a230e3a6af6d61b652"
     },
     "packrat/desc/glue": {
-      "checksum": "33370222521b82b9df262a9ac0fdbd2b"
+      "checksum": "74098b88b688110d9d5f8df122615884"
     },
     "packrat/desc/gridExtra": {
       "checksum": "078ad6bbc4f1061b171bcb5217483aee"
@@ -2395,13 +2105,13 @@
       "checksum": "882395eed2b5fae577a193ce1d9525a2"
     },
     "packrat/desc/htmltools": {
-      "checksum": "cbf8e6803223e6ad21d922a9a4170272"
+      "checksum": "348adb7a46ce2c57cf12cc08658d8acf"
     },
     "packrat/desc/htmlwidgets": {
-      "checksum": "f5582d7efbb98ff6f2f00d0efc65cedf"
+      "checksum": "01825836d4e5c05253cfbf9410ff5d13"
     },
     "packrat/desc/httpuv": {
-      "checksum": "cbe30b538be0a72d8a97dacfdcfc71dd"
+      "checksum": "243c709dbe173b514c6f6b9d96ee7810"
     },
     "packrat/desc/httr": {
       "checksum": "1ef3cbfcc278d3c0435e77d9116ae339"
@@ -2413,7 +2123,7 @@
       "checksum": "3910a2fdb9867235ee1e80e8c59724a9"
     },
     "packrat/desc/later": {
-      "checksum": "4c5850c8cec481b369b27938a807e7fa"
+      "checksum": "07f10c4f26786bf626cbfa5c4486dcb7"
     },
     "packrat/desc/lattice": {
       "checksum": "ab23ee2964c9b1a7d13cca59c08062e6"
@@ -2422,13 +2132,16 @@
       "checksum": "8f68250532bafe421c42056ee807493b"
     },
     "packrat/desc/leaflet": {
-      "checksum": "89ac4bd5e5020e7e791f5ad69604e9dd"
+      "checksum": "8626aae5c568509c3c0656cdc996cd08"
+    },
+    "packrat/desc/leaflet.providers": {
+      "checksum": "6e0a71533cc5d0d14ba3b159300746e8"
     },
     "packrat/desc/lifecycle": {
-      "checksum": "3ab58c30dcde5e5daf6b72b7774ed32e"
+      "checksum": "43cb4c7d6c0dd7c99ccdf0e72a5ad7e2"
     },
     "packrat/desc/magrittr": {
-      "checksum": "e18ceadd0e70056d330909f39b668d25"
+      "checksum": "85b1af7436f9057236a5f7c33ccba572"
     },
     "packrat/desc/markdown": {
       "checksum": "f757bf21b29d15a7d71a926ff436ddd8"
@@ -2464,7 +2177,7 @@
       "checksum": "1d82067bb8c76ebb7ed1513fd287b138"
     },
     "packrat/desc/plogr": {
-      "checksum": "e0ebffbd1a153f12efd3f13eebd6ef66"
+      "checksum": "81dca0054c82811198992e454fae13f5"
     },
     "packrat/desc/plyr": {
       "checksum": "4c13fbc78588d095de6ef029e45f628c"
@@ -2473,16 +2186,16 @@
       "checksum": "8a1fd9d6ff5e56b641cd00a732dd10fd"
     },
     "packrat/desc/promises": {
-      "checksum": "0d50b2cfb6c7eaabcba5c0e1650d24dc"
+      "checksum": "d3a1852363fcab2bf730054722a03910"
     },
     "packrat/desc/purrr": {
       "checksum": "55371af35c1f7da3c8f1fccadf0e6e63"
     },
     "packrat/desc/R6": {
-      "checksum": "8e2710b1775dcadab80b901c79a9d53a"
+      "checksum": "209417d761db598ff7ed9719922eff81"
     },
     "packrat/desc/rappdirs": {
-      "checksum": "8125c08567860abb707ba64b4adf4c2b"
+      "checksum": "40d95ce0a9fb0876cdae136825a7f9a8"
     },
     "packrat/desc/raster": {
       "checksum": "22586d096396f2bee1bcdbf5694c3e09"
@@ -2491,7 +2204,7 @@
       "checksum": "c6f2b0f308fc2c4cbbd80425782002c6"
     },
     "packrat/desc/Rcpp": {
-      "checksum": "6d83881ffbab29a3681f8af90f60c199"
+      "checksum": "ed3b193a68743cd72e99cfbc526d0030"
     },
     "packrat/desc/reshape2": {
       "checksum": "796d4ad9b8dc8423219d219d92cccc00"
@@ -2503,7 +2216,7 @@
       "checksum": "d5fc068ca065980c44ad2efba37efd58"
     },
     "packrat/desc/shiny": {
-      "checksum": "5315352c7ad6ae92aff9e008da01e0b6"
+      "checksum": "71028b0db6da338537425e45f4e96ce3"
     },
     "packrat/desc/shinydashboard": {
       "checksum": "a047863dd0f5c706e471c3f6163e6c41"
@@ -2518,19 +2231,19 @@
       "checksum": "39707f046d20e0a52ead3b106ad924a9"
     },
     "packrat/desc/stringr": {
-      "checksum": "1232287a6e1db8e34484e339886c2c99"
+      "checksum": "b50ca25c58190e25272b7c7319b1b15f"
     },
     "packrat/desc/sys": {
       "checksum": "8c37dfbd49e10dc9ade1950d445cff25"
     },
     "packrat/desc/tibble": {
-      "checksum": "e175ea6e59968fbffe33bc97ed9e1989"
+      "checksum": "ae28aea379ebf3ccf4e313185ddea956"
     },
     "packrat/desc/tidyselect": {
       "checksum": "058221189cdcd21fd7d44e28deb40b43"
     },
     "packrat/desc/utf8": {
-      "checksum": "c3ad09fc4759ebbc668775ba5e041303"
+      "checksum": "7100b459223f06adfe4ee6d512d0e9bd"
     },
     "packrat/desc/vctrs": {
       "checksum": "13528fbb05129388d3e803a62e492afc"
@@ -2554,10 +2267,10 @@
       "checksum": "5983649756aad5b4c28ef8b9ad20408b"
     },
     "packrat/desc/zip": {
-      "checksum": "f182d534ddb8abee94b085fbc5bc2cc1"
+      "checksum": "3005a429669392195d705e05e0b25c46"
     },
     "packrat/packrat.lock": {
-      "checksum": "d031316c1ad8ed194bdef39115bc8567"
+      "checksum": "ecadc44dd21a39e81ed1c6ce760657e4"
     }
   },
   "users": null
