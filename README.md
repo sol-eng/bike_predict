@@ -173,7 +173,7 @@ Individual Content
 <td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_train_rxgb">R XGB Model Train</a></td>
 <td style="text-align: left;">Retrains model and writes model and details to pin.</td>
 <td style="text-align: left;"><a href="https://github.com/rstudio/bike_predict/blob/master/Model/build_rxgb/build_rxgb.Rmd">Code</a></td>
-<td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_model_rxgb">bike_model_rxgb</a></td>
+<td style="text-align: left;"><a href="https://colorado.rstudio.com/rsc/bike_rxgb/">bike_model_rxgb</a></td>
 <td style="text-align: left;">Monthly (4:30 am)</td>
 </tr>
 <tr class="odd">
