@@ -7,8 +7,10 @@ library(dplyr)
 library(tidyr)
 library(tidymodels)
 
-board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
-                               key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
+board_register_rsconnect(
+  server = "https://colorado.rstudio.com/rsc",
+  key = Sys.getenv("RSTUDIOCONNECT_API_KEY")
+)
 model_details <- pin_get("bike_model_rxgb", board = "rsconnect")
 stations <- pin_get("bike_station_info", board = "rsconnect")
 
