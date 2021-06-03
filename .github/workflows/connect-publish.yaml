@@ -1,9 +1,8 @@
-name: main
+name: connect-publish
 on:
   push:
-    branches: [main]
-
-name: connect-publish
+    branches:
+      - main
 
 jobs:
   connect-publish:
