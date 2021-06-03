@@ -14,7 +14,7 @@ jobs:
         uses: rstudio/actions/connect-publish@main
         with:
           url: https://rsc.staging.soleng.rstudioservices.com/
-          api-key: {{ secrets.CONNECT_API_KEY }}
+          api-key: ${{ secrets.CONNECT_API_KEY }}
           access-type: all
           dir: |
             ./API/:bike_predict_api
