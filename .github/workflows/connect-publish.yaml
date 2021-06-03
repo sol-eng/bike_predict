@@ -1,0 +1,21 @@
+name: main
+on:
+  push:
+    branches: [main]
+
+name: connect-publish
+
+jobs:
+  connect-publish:
+    name: connect-publish
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish Connect content
+        uses: rstudio/actions/connect-publish@main
+        with:
+          url: https://rsc.staging.soleng.rstudioservices.com/
+          api-key: {{ secrets.CONNECT_API_KEY }}
+          access-type: all
+          dir: |
+            ./API/:bike_predict_api
