@@ -18,3 +18,4 @@ jobs:
           access-type: all
           dir: |
             ./API/:bike_predict_api
+            ./App/client_app:bike_predict_app
