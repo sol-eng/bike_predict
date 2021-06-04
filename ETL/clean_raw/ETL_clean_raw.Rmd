@@ -15,8 +15,8 @@ library(tidyverse)
 library(odbc)
 
 con <- dbConnect(odbc::odbc(), "Content DB", timeout = 10)
-pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc",
-                               key = Sys.getenv("RSTUDIOCONNECT_API_KEY"))
+pins::board_register_rsconnect(server = Sys.getenv("CONNECT_SERVER"),
+                               key = Sys.getenv("CONNECT_API_KEY"))
 ```
 
 # Connect to Database Data

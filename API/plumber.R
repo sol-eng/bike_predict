@@ -8,8 +8,8 @@ library(tidyr)
 library(tidymodels)
 
 board_register_rsconnect(
-  server = "https://colorado.rstudio.com/rsc",
-  key = Sys.getenv("RSTUDIOCONNECT_API_KEY")
+  server = Sys.getenv("CONNECT_SERVER"),
+  key = Sys.getenv("CONNECT_API_KEY")
 )
 model_details <- pin_get("bike_model_rxgb", board = "rsconnect")
 stations <- pin_get("bike_station_info", board = "rsconnect")

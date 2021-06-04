@@ -16,9 +16,10 @@ library(tidyverse)
 library(blastula)
 library(ggplot2)
 library(httr)
-pins::board_register_rsconnect(server = "https://colorado.rstudio.com/rsc/", 
-                               account = Sys.getenv("CONNECT_ACCOUNT"),
-                               key = Sys.getenv("CONNECT_API_KEY"))
+pins::board_register_rsconnect(
+  server = Sys.getenv("CONNECT_SERVER"), 
+  key = Sys.getenv("CONNECT_API_KEY")
+)
 stations <- pins::pin_get("alex.gold/bike_station_info", board = "rsconnect")
 
 ```
@@ -29,10 +30,10 @@ The forecast for bike availability at `r params$station`
 
 id <-  stations$station_id[which(stations$name == params$station)]
 res <- httr::GET("https://colorado.rstudio.com/rsc/bike_predict_api/pred",
-                    query = list(station_id = id)) %>%
-              httr::content() %>%
-              purrr::map_df(tibble::as_tibble) %>% 
-              mutate(times = as.POSIXct(times))
+                 query = list(station_id = id)) %>%
+  httr::content() %>%
+  purrr::map_df(tibble::as_tibble) %>% 
+  mutate(times = as.POSIXct(times))
 
 p <- ggplot(res, aes(times, pred)) + 
   geom_line() + 
