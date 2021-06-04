@@ -23,7 +23,7 @@ jobs:
             ./Email/:bike_predict_email
             ./ETL/clean_raw/:bike_predict_clean_raw
             ./ETL/intake_raw/:bike_predict_intake_raw
-            ./ETL/station_api_to_pin/:bike_prediction_pin_stations
+            ./ETL/station_api_to_pin/:bike_predict_pin_stations
             ./Model/build_rxgb/:bike_predict_build_xgb
             ./Model/model_quality_metrics/:bike_predict_model_quality
 
