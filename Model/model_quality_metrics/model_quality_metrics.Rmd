@@ -68,13 +68,14 @@ results <- all_days %>%
 ```{r write_scores}
 db_drop_table(con, "bike_pred_data", force = TRUE)
 
-drv <- dbDriver("PostgreSQL")
-con2 <- RPostgreSQL::dbConnect(drv, 
+con2 <- DBI::dbConnect(
+  RPostgres::Postgres(), 
   host = "soleng-content-rds1.cloiraotshw4.us-east-1.rds.amazonaws.com",
   dbname = "rds",
   user = Sys.getenv("CONTENT_DB_USER"),
-  password = Sys.getenv("CONTENT_DB_PWD")
+  password = Sys.getenv("CONTENT_DB_PASS")
 )
+  
 RPostgreSQL::dbWriteTable(con2, "bike_pred_data",results)
 
 ```
