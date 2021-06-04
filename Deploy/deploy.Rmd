@@ -61,15 +61,20 @@ resp <- df %>%
 
 # Set Env Vars
 ```{r}
-df %>% 
-  filter(stringr::str_detect(name, "model_quality")) %>%
-  pull(item) %>%
+mq <- df %>% 
+  filter(stringr::str_detect(name, "model_quality")) 
+
+if (nrow(mq) == 1) {
+  mq %>%
+    pull(item) %>%
   magrittr::extract2(1) %>%
   connectapi::get_environment() %>%
   connectapi::set_environment_new(
     CONTENT_DB_USER = Sys.getenv("CONTENT_DB_USER"), 
     CONTENT_DB_PASS = Sys.getenv("CONTENT_DB_PASS")
   )
+}
+
 ```
 
 # Set Tags

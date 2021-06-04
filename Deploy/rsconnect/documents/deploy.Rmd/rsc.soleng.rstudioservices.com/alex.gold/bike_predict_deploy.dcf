@@ -1,0 +1,12 @@
+name: bike_predict_deploy
+title: bike_predict_deploy
+username: alex.gold
+account: alex.gold
+server: rsc.soleng.rstudioservices.com
+hostUrl: https://rsc.soleng.rstudioservices.com/__api__
+appId: 8
+bundleId: 8
+url: https://rsc.soleng.rstudioservices.com/content/91aab056-706b-4f65-9ff1-7c507100f4af/
+when: 1622841184.76225
+asMultiple: FALSE
+asStatic: FALSE
