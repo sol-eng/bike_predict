@@ -32,7 +32,7 @@ jobs:
             ./Model/build_rxgb/:bike_predict_build_xgb
             ./Model/model_quality_metrics/:bike_predict_model_quality
       - name: Install renv
-        run: Rscript -e 'install.packages(c("renv"))'
+        run: Rscript -e 'install.packages(c("renv"), repos = "https://packagemanager.rstudio.com/all/3317395")'
       - name: Restore renv
         run: Rscript -e 'renv::restore(lockfile = "./Deploy/renv.lock")'
       - name: Run deploy Script
