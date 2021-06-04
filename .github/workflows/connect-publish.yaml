@@ -31,9 +31,9 @@ jobs:
             ./ETL/station_api_to_pin/:bike_predict_pin_stations
             ./Model/build_rxgb/:bike_predict_build_xgb
             ./Model/model_quality_metrics/:bike_predict_model_quality
-        - name: Install renv
-          run: Rscript -e 'install.packages(c("renv"))'
-        - name: Restore renv
-          run: Rscript -e 'renv::restore(lockfile = "./Deploy/renv.lock")'
-        - name: Run deploy Script
-          run: Rscript -e 'rmarkdown::render("./Deploy/deploy.Rmd")'
+      - name: Install renv
+        run: Rscript -e 'install.packages(c("renv"))'
+      - name: Restore renv
+        run: Rscript -e 'renv::restore(lockfile = "./Deploy/renv.lock")'
+      - name: Run deploy Script
+        run: Rscript -e 'rmarkdown::render("./Deploy/deploy.Rmd")'
