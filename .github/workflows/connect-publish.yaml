@@ -22,17 +22,17 @@ jobs:
           api-key: ${{ secrets.CONNECT_API_KEY }}
           access-type: all
           dir: |
+            ./ETL/intake_raw/:bike_predict_intake_raw
+            ./ETL/clean_raw/:bike_predict_clean_raw
+            ./ETL/station_api_to_pin/:bike_predict_pin_stations
+            ./Model/build_rxgb/:bike_predict_build_xgb
+            ./Model/model_quality_metrics/:bike_predict_model_quality
             ./API/:bike_predict_api
             ./App/client_app:bike_predict_app
             ./App/model_performance:bike_predict_model_performance
             ./Email/:bike_predict_email
-            ./ETL/clean_raw/:bike_predict_clean_raw
-            ./ETL/intake_raw/:bike_predict_intake_raw
-            ./ETL/station_api_to_pin/:bike_predict_pin_stations
-            ./Model/build_rxgb/:bike_predict_build_xgb
-            ./Model/model_quality_metrics/:bike_predict_model_quality
       - name: Install renv
-        run: Rscript -e 'install.packages(c("renv"), repos = "https://packagemanager.rstudio.com/all/3317395")'
+        run: Rscript -e 'install.packages("renv", repos = "https://packagemanager.rstudio.com/all/3317395")'
       - name: Restore renv
         run: Rscript -e 'renv::restore(lockfile = "./Deploy/renv.lock")'
       - name: Run deploy Script
