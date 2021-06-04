@@ -13,7 +13,7 @@ jobs:
       - name: Publish Connect content
         uses: rstudio/actions/connect-publish@main
         with:
-          url: https://rsc.staging.soleng.rstudioservices.com/
+          url: https://rsc.soleng.rstudioservices.com/
           api-key: ${{ secrets.CONNECT_API_KEY }}
           access-type: all
           dir: |

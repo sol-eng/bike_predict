@@ -1,0 +1,109 @@
+---
+title: "Deploy"
+author: "Alex Gold"
+date: "6/3/2021"
+output: html_document
+---
+
+```{r setup}
+library(connectapi)
+library(dplyr)
+client <- connect()
+```
+
+```{r}
+#deploy_repo() #setup later, already deployed
+```
+
+# Get content on RSC
+```{r}
+content <- connectapi::get_content(client)
+
+df <- content %>% 
+  filter(stringr::str_detect(name, "bike_predict")) %>%
+  rowwise() %>%
+  mutate(item = list(connectapi::content_item(client, guid)))
+```
+
+# Set Titles
+```{r}
+titles <- tibble::tribble(
+  ~name,                        ~new_title, 
+  "bike_predict_model_quality", "Bike Prediction Model Quality",
+  "bike_predict_build_xgb", "Bike Prediction Train Model",
+  "bike_predict_pin_stations", "Bike Prediction Make Station Pin",
+  "bike_predict_intake_raw", "Bike Prediction ETL 1: Intake Raw",
+  "bike_predict_clean_raw", "Bike Prediction ETL 2: Clean Raw",
+  "bike_predict_email", "Bike Prediction Send Email",
+  "bike_predict_model_performance", "Bike Prediction Model Performance App",
+  "bike_predict_app", "Bike Prediction App",
+  "bike_predict_api", "Bike Prediction API"
+)
+
+update_title <- function(guid, new_title, client) {
+  httr::PATCH(
+    glue::glue("{client$server}/__api__/v1/content/{guid}"), 
+    body = glue::glue('{{"title": "{new_title}"}}'), 
+    encode = "raw", 
+    httr::add_headers(Authorization = paste("Key", client$api_key))
+  )
+}
+
+update_title <- function(item, new_title) {
+  item$update(title = new_title)
+}
+
+resp <- df %>% 
+  inner_join(titles, by = "name") %>%
+  select(item, new_title) %>%
+  purrr::pmap(update_title)
+```
+
+# Set Env Vars
+```{r}
+df %>% 
+  filter(stringr::str_detect(name, "model_quality")) %>%
+  pull(item) %>%
+  magrittr::extract2(1) %>%
+  connectapi::get_environment() %>%
+  connectapi::set_environment_new(
+    CONTENT_DB_USER = Sys.getenv("CONTENT_DB_USER"), 
+    CONTENT_DB_PASS = Sys.getenv("CONTENT_DB_PASS")
+  )
+```
+
+# Set Tags
+```{r}
+tags <- connectapi::get_tags(client)
+purrr::map(
+  df$item, 
+  function(item) {
+    # Something weird happens checking if set correctly, but they're set
+    tryCatch(
+      connectapi::set_content_tags(
+        content = item, 
+        tag = tags$`Demo Content`$Bikes
+      ), 
+      # Current erroring checking whether they're set correctly
+      error = function(e) print(e)
+    )
+  }
+)
+
+```
+
+# Set Images
+```{r}
+purrr::pmap(
+  df %>% select(item, name), 
+  function(item, name) {
+    connectapi::set_image_url(
+      item, 
+      glue::glue(
+        "https://raw.githubusercontent.com/sol-eng/bike_predict/master/img/{name}.png"
+      )
+    )
+  }
+)
+```
+
