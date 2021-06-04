@@ -7,16 +7,11 @@ on:
 jobs:
   connect-publish:
     name: connect-publish
-    runs-on: macOS-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
       - name: Publish Connect content
         uses: rstudio/actions/connect-publish@main
-        env:
-          CONNECT_API_KEY: ${{ secrets.CONNECT_API_KEY }}
-          CONNECT_SERVER: https://rsc.soleng.rstudioservices.com/
-          CONTENT_DB_USER: ${{ secrets.CONTENT_DB_USER }}
-          CONTENT_DB_PASS: ${{ secrets.CONTENT_DB_PASS }}
         with:
           url: https://rsc.soleng.rstudioservices.com/
           api-key: ${{ secrets.CONNECT_API_KEY }}
@@ -37,3 +32,8 @@ jobs:
         run: Rscript -e 'renv::restore(lockfile = "./Deploy/renv.lock")'
       - name: Run deploy Script
         run: Rscript -e 'rmarkdown::render("./Deploy/deploy.Rmd")'
+        env:
+          CONNECT_API_KEY: ${{ secrets.CONNECT_API_KEY }}
+          CONNECT_SERVER: https://rsc.soleng.rstudioservices.com/
+          CONTENT_DB_USER: ${{ secrets.CONTENT_DB_USER }}
+          CONTENT_DB_PASS: ${{ secrets.CONTENT_DB_PASS }}
