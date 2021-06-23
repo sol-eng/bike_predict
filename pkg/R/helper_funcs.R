@@ -78,7 +78,7 @@ clean_data <- function(x, is_sys_info = FALSE) {
   if (is_sys_info) {
     dat$data <- x$data %>% as.list() %>% tibble::as_tibble()
   } else {
-    dat$data <- x$data[[1]] %>% map_df(tibble::as.tibble)
+    dat$data <- tibble::enframe(x$data[[1]], name = NULL) %>% tidyr::unnest_wider(value)
   }
   dat
 }
