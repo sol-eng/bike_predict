@@ -1355,8 +1355,11 @@
     }
   },
   "files": {
+    "arrows.png": {
+      "checksum": "6919639929eee7172e22d343e8c1c264"
+    },
     "intro.Rmd": {
-      "checksum": "c9c455260298514ff986198a6179309d"
+      "checksum": "b7f6132c0eb2e76ab1ff761f346b1fc1"
     }
   },
   "users": null

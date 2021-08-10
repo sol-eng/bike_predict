@@ -4,7 +4,7 @@ output:
     theme:
       version: 4
 resource_files:
-- ../img/arrows.png
+- arrows.png
 ---
 
 
@@ -77,7 +77,7 @@ This project illustrates using RStudio Connect to deploy a data science project 
 
 - Encapsulate re-usable logic in an R package, and distribute with Package Manager
 
-![](../img/arrows.png)
+![](arrows.png)
 
 Explore the deployed items below:
 
