@@ -44,11 +44,27 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(connectwidgets)
 library(dplyr)
 library(stringr)
+library(metathis)
 
 client <- connect()
 all_content <- client %>% content()
 bikeshare <- all_content %>% by_tags(tagnames = "Pins Demo: Bikes")
 ```
+
+```{r}
+meta() %>% 
+  meta_description(description = "ETL, model serving, and app deployment--powered by RStudio Connect.") %>% 
+  meta_viewport() %>% 
+  meta_social(
+    title = "End-to-end data science with RStudio Connect",
+    url = paste0(Sys.getenv("CONNECT_SERVER"), "/bike-share"),
+    image = paste0(Sys.getenv("CONNECT_SERVER"), "/bike-share", "/arrows.png"),
+    image_alt = "Diagram of flow from scheduled jobs to apps",
+    twitter_card_type = "summary",
+    og_type = "article"
+  )
+```
+
 
 <div class="main">
 

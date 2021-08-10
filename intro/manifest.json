@@ -773,6 +773,31 @@
         "Built": "R 4.1.0; x86_64-apple-darwin17.0; 2021-06-28 13:22:08 UTC; unix"
       }
     },
+    "metathis": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "metathis",
+        "Title": "HTML Metadata Tags for 'R Markdown' and 'Shiny'",
+        "Version": "1.1.1",
+        "Authors@R": "\n    person(given = \"Garrick\",\n           family = \"Aden-Buie\",\n           role = c(\"aut\", \"cre\"),\n           email = \"garrick@adenbuie.com\",\n           comment = c(ORCID = \"0000-0002-7111-0077\"))",
+        "Description": "Create meta tags for 'R Markdown' HTML documents and 'Shiny'\n    apps for customized social media cards, for accessibility, and quality\n    search engine indexing. 'metathis' currently supports HTML documents\n    created with 'rmarkdown', 'shiny', 'xaringan', 'pagedown', 'bookdown',\n    and 'flexdashboard'.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://pkg.garrickadenbuie.com/metathis/,\nhttps://github.com/gadenbuie/metathis",
+        "BugReports": "https://github.com/gadenbuie/metathis/issues",
+        "Imports": "htmltools, knitr, magrittr, purrr",
+        "Suggests": "rmarkdown, shiny, testthat (>= 2.1.0)",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.1.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2021-06-28 16:06:53 UTC; garrick",
+        "Author": "Garrick Aden-Buie [aut, cre] (<https://orcid.org/0000-0002-7111-0077>)",
+        "Maintainer": "Garrick Aden-Buie <garrick@adenbuie.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2021-06-29 06:40:02 UTC",
+        "Built": "R 4.1.0; ; 2021-07-01 12:08:36 UTC; unix"
+      }
+    },
     "mime": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -1358,8 +1383,11 @@
     "arrows.png": {
       "checksum": "6919639929eee7172e22d343e8c1c264"
     },
+    "intro.html": {
+      "checksum": "6ac0d8450b74e3118f2bd98707ee630c"
+    },
     "intro.Rmd": {
-      "checksum": "b7f6132c0eb2e76ab1ff761f346b1fc1"
+      "checksum": "b72b6b7ff1d504d81e6216a411a767bd"
     }
   },
   "users": null
