@@ -1384,13 +1384,10 @@
       "checksum": "6919639929eee7172e22d343e8c1c264"
     },
     "index.html": {
-      "checksum": "06c803e4905d4b1ec81ff33ba6248a80"
+      "checksum": "602f7556ca195d7e05621720f8daa3c7"
     },
     "index.Rmd": {
-      "checksum": "64d0d1bd26600f29aa8fdd18c02b76a3"
-    },
-    "intro.html": {
-      "checksum": "6ac0d8450b74e3118f2bd98707ee630c"
+      "checksum": "a8590677b56fde214d85aa97ea3304a1"
     }
   },
   "users": null

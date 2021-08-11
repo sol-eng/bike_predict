@@ -2,10 +2,11 @@
 title: "End-to-End Data Science with RStudio Connect: Bike Share"
 output:
   html_document:
+    mathjax: null
     theme:
       version: 4
 resource_files:
-- arrows.png
+  - "arrows.png"
 ---
 
 
