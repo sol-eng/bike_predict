@@ -5,6 +5,9 @@ output:
     mathjax: null
     theme:
       version: 4
+rmd_output_metadata:
+  rsc_output_files:
+    - "arrows.png"
 resource_files:
   - "arrows.png"
 ---
