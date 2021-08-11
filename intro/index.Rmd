@@ -1,4 +1,5 @@
 ---
+title: "End-to-End Data Science with RStudio Connect: Bike Share"
 output:
   html_document:
     theme:
@@ -28,6 +29,10 @@ resource_files:
   background-size: cover;
   height: 50vh;
   /* filter: brightness(75%) */
+}
+
+#header {
+  display: none
 }
 ```
 

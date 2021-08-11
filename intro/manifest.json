@@ -4,7 +4,7 @@
   "platform": "4.1.0",
   "metadata": {
     "appmode": "rmd-static",
-    "primary_rmd": "intro.Rmd",
+    "primary_rmd": "index.Rmd",
     "primary_html": null,
     "content_category": null,
     "has_parameters": false
@@ -1383,11 +1383,14 @@
     "arrows.png": {
       "checksum": "6919639929eee7172e22d343e8c1c264"
     },
+    "index.html": {
+      "checksum": "06c803e4905d4b1ec81ff33ba6248a80"
+    },
+    "index.Rmd": {
+      "checksum": "64d0d1bd26600f29aa8fdd18c02b76a3"
+    },
     "intro.html": {
       "checksum": "6ac0d8450b74e3118f2bd98707ee630c"
-    },
-    "intro.Rmd": {
-      "checksum": "b72b6b7ff1d504d81e6216a411a767bd"
     }
   },
   "users": null
