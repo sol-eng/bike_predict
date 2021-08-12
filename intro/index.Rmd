@@ -12,6 +12,7 @@ resource_files:
   - "arrows.png"
 ---
 
+`r gitlink::ribbon_css("https://github.com/sol-eng/bike_predict", text="View on GitHub")`
 
 ```{css, echo=FALSE}
 .main-container {
