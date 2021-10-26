@@ -5,10 +5,9 @@ library(lubridate)
 library(bikeHelpR)
 
 con <- dbPool(odbc::odbc(), dsn = "Content DB")
-pins::board_register_rsconnect(server = Sys.getenv("CONNECT_SERVER"),
-                               key = Sys.getenv("CONNECT_API_KEY"))
+rsc <- pins::board_rsconnect(auth = "envvar")
 
-model_details <- pins::pin_get("bike_model_rxgb", board = "rsconnect")
+model_details <- pins::pin_read(rsc, "model_details")
 
 start_date <- today() - dmonths(2)
 
@@ -16,12 +15,9 @@ all_days <- tbl(con, "bike_pred_data") %>%
     filter(date > start_date) %>%
     collect()
 
-
-
 onStop(function() {
     poolClose(con)
 })
-
 
 ui <- fluidPage(
 

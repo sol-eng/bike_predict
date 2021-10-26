@@ -174,7 +174,7 @@ bike_mod_results <- function(mod, mod_name, test_df, pred_mat_func) {
     oos_metrics(test_df$n_bikes, pred_df$preds)
   ) %>%
     # Bind in old
-    dplyr::bind_rows(pins::pin_get("bike_err", board = "rsconnect")) %>%
+    dplyr::bind_rows(pins::pin_read(board = pins::board_rsconnect(auth = "envvar") , "bike_err")) %>%
     dplyr::mutate(time = ifelse(is.na(time), curr_time - 1, time)) %>%
     # If re-running today, keep only new
     dplyr::group_by(train_date, mod) %>%
@@ -182,7 +182,7 @@ bike_mod_results <- function(mod, mod_name, test_df, pred_mat_func) {
     dplyr::ungroup() %>%
     dplyr::select(-time) %>%
     # pin back
-    pins::pin("bike_err", "Goodness of Fit Metrics for Bike Prediction", board = "rsconnect")
+    pins::pin_write(rsc, x = ., name = "bike_err", title =  "Goodness of Fit Metrics for Bike Prediction", type = "rds")
 
 }
 

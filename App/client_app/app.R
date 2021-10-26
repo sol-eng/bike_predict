@@ -23,10 +23,9 @@ ui <- dashboardPage(skin = "red",
 
 server <- function(input, output, session) {
     # Get station pin
-    pins::board_register_rsconnect(server = Sys.getenv("CONNECT_SERVER"),
-                                   key = Sys.getenv("CONNECT_API_KEY"))
+    rsc <- pins::board_rsconnect(auth = "envvar")
 
-    stats <- pins::pin_get("alex.gold/bike_station_info", board = "rsconnect")
+    stats <- pins::pin_read(rsc, "alex.gold/bike_station_info")
 
     output$map <- renderLeaflet({
         stats %>%

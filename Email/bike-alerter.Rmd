@@ -6,7 +6,7 @@ params:
       label: "Station Name"
       value: "Eads St & 15th St S"
       input: select
-      choices: !r pins::pin("https://colorado.rstudio.com/rsc/bike_station_info/", name = "stations"); pins::pin_get("stations")$name
+      choices: !expr pins::pin_read(pins::board_rsconnect(auth="envvar"), "alex.gold/bike_station_info")$name
   alert: 5
 ---
 
@@ -16,10 +16,7 @@ library(tidyverse)
 library(blastula)
 library(ggplot2)
 library(httr)
-pins::board_register_rsconnect(
-  server = Sys.getenv("CONNECT_SERVER"), 
-  key = Sys.getenv("CONNECT_API_KEY")
-)
+rsc <- pins::board_rsconnect(auth = "envvar")
 stations <- pins::pin_get("alex.gold/bike_station_info", board = "rsconnect")
 
 ```

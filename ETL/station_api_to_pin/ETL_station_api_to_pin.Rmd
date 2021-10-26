@@ -15,8 +15,7 @@ library(tidyverse)
 library(magrittr)
 library(bikeHelpR)
 
-pins::board_register_rsconnect(server = Sys.getenv("CONNECT_SERVER"),
-                               key = Sys.getenv("CONNECT_API_KEY"))
+rsc <- pins::board_rsconnect(auth = "envvar")
 ```
 
 # Get data from API
@@ -26,9 +25,9 @@ feeds <- feeds_urls()
 
 # Get station status Data and clean
 dat <- feeds %>% 
-  filter(name == "station_information") %>%
+  filter(name == "station_information") %>% 
   pull("url") %>%
-  get_data() %>%
+  get_data() 
   extract2("data") %>%
   select(station_id, name, lat, lon) %>%
   unique()
@@ -36,9 +35,12 @@ dat <- feeds %>%
 
 # Pin
 ```{r}
-pins::pin(dat, 
-          "bike_station_info", 
-          "List of stations of Capitol Bikeshare", 
-          "rsconnect")
+pins::pin_write(
+  board = rsc,
+  x =  dat,
+  name = "alex.gold/bike_station_info",
+  type = "rds",
+  title = "List of stations of Capitol Bikeshare", 
+  )
 ```
 

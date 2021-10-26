@@ -15,13 +15,12 @@ library(tidyverse)
 library(odbc)
 
 con <- dbConnect(odbc::odbc(), "Content DB", timeout = 10)
-pins::board_register_rsconnect(server = Sys.getenv("CONNECT_SERVER"),
-                               key = Sys.getenv("CONNECT_API_KEY"))
+rsc <- pins::board_rsconnect(auth = "envvar")
 ```
 
 # Connect to Database Data
 ```{r, download}
-DBI::dbWriteTable(con, "bike_station_info", pins::pin_get("alex.gold/bike_station_info"), overwrite = TRUE)
+DBI::dbWriteTable(con, "bike_station_info", pins::pin_read(rsc, "alex.gold/bike_station_info"), overwrite = TRUE)
 
 df_con <- dplyr::tbl(con, "bike_raw_data")
 stats <- dplyr::tbl(con, "bike_station_info")

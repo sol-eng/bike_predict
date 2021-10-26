@@ -17,8 +17,7 @@ library(xgboost)
 # Get data
 ```{r}
 con <- DBI::dbConnect(odbc::odbc(), "Content DB")
-pins::board_register_rsconnect(server = Sys.getenv("CONNECT_SERVER"),
-                               key = Sys.getenv("CONNECT_API_KEY"))
+rsc <- pins::board_rsconnect(auth = "envvar")
 ```
 
 
@@ -110,10 +109,13 @@ model_details <- list(
      recipe = recipe
 )
 
-pins::pin(model_details, 
-          "bike_model_rxgb", 
-          "Model of Capitol Citybikes Available per Station", 
-          board = "rsconnect")
+pins::pin_write(board = rsc,
+  x = model_details, 
+  name = "bike_model_rxgb", 
+  description = "Model of Capitol Citybikes Available per Station",
+  type = "rds", 
+  access_type = "all"
+  )
 ```
 
 ```{r}

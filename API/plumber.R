@@ -7,12 +7,9 @@ library(dplyr)
 library(tidyr)
 library(tidymodels)
 
-board_register_rsconnect(
-  server = Sys.getenv("CONNECT_SERVER"),
-  key = Sys.getenv("CONNECT_API_KEY")
-)
-model_details <- pin_get("bike_model_rxgb", board = "rsconnect")
-stations <- pin_get("bike_station_info", board = "rsconnect")
+rsc <- board_rsconnect(auth = "envvar")
+model_details <- pin_read(rsc, "alex.gold/bike_model_rxgb")
+stations <- pin_read(rsc, "alex.gold/bike_station_info")
 
 
 #* @apiTitle Bike Prediction API
