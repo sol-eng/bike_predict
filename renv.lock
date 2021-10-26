@@ -73,13 +73,6 @@
       "Repository": "CRAN",
       "Hash": "e031418365a7f7a766181ab5a41a5716"
     },
-    "RPostgreSQL": {
-      "Package": "RPostgreSQL",
-      "Version": "0.7-2",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "3f45c57a2df28eecc5fec1344ea7660c"
-    },
     "Rcpp": {
       "Package": "Rcpp",
       "Version": "1.0.7",
@@ -243,12 +236,48 @@
       "Repository": "RSPM",
       "Hash": "0f22be39ec1d141fd03683c06f3a6e67"
     },
+    "config": {
+      "Package": "config",
+      "Version": "0.3.1",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "rstudio",
+      "RemoteRepo": "config",
+      "RemoteRef": "master",
+      "RemoteSha": "78cfe324aef029ab914a97e66bd3c5685a66b3ae",
+      "Hash": "d0ac9c86773190510dc211382469042b"
+    },
     "conflicted": {
       "Package": "conflicted",
       "Version": "1.0.4",
       "Source": "Repository",
       "Repository": "RSPM",
       "Hash": "43c5107cc96f47043a56736768ecc59d"
+    },
+    "connectapi": {
+      "Package": "connectapi",
+      "Version": "0.1.0.9030",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "rstudio",
+      "RemoteRepo": "connectapi",
+      "RemoteRef": "main",
+      "RemoteSha": "52bbab50977b389a0a2099e378d41d802126a0f9",
+      "Hash": "c19580fcc8a750f650a9317375533af5"
+    },
+    "connectwidgets": {
+      "Package": "connectwidgets",
+      "Version": "0.1.1",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "rstudio",
+      "RemoteRepo": "connectwidgets",
+      "RemoteRef": "main",
+      "RemoteSha": "ea415784cb240de3e3ceea5fdfaa3929e1345099",
+      "Hash": "c6fdb37df686f5361e6ff7d9f3599520"
     },
     "cpp11": {
       "Package": "cpp11",
@@ -445,6 +474,18 @@
       "Source": "Repository",
       "Repository": "RSPM",
       "Hash": "617fb2c300f68e8b1ba21043fba88fd7"
+    },
+    "gitlink": {
+      "Package": "gitlink",
+      "Version": "0.1.3.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "colearendt",
+      "RemoteRepo": "gitlink",
+      "RemoteRef": "master",
+      "RemoteSha": "bf5f9ab2018934ba841f8b9809bf01d7938c88e8",
+      "Hash": "0e2447b8fed564e7b5fa60378cf840eb"
     },
     "globals": {
       "Package": "globals",
@@ -712,6 +753,13 @@
       "Repository": "RSPM",
       "Hash": "a0bc51650201a56d00a4798523cc91b3"
     },
+    "metathis": {
+      "Package": "metathis",
+      "Version": "1.1.1",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "4298036cc76c4164741fdd2ab5b6f57b"
+    },
     "mgcv": {
       "Package": "mgcv",
       "Version": "1.8-38",
@@ -935,6 +983,20 @@
       "Source": "Repository",
       "Repository": "RSPM",
       "Hash": "c5df27b2de56767e7cfbc74a962ef61c"
+    },
+    "reactR": {
+      "Package": "reactR",
+      "Version": "0.4.4",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "75389c8091eb14ee21c6bc87a88b3809"
+    },
+    "reactable": {
+      "Package": "reactable",
+      "Version": "0.2.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "ac1afe50d1c77470a72971a07fd146b1"
     },
     "readr": {
       "Package": "readr",
