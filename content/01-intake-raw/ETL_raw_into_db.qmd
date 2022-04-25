@@ -18,6 +18,7 @@ con <- dbConnect(odbc::odbc(), "Content DB", timeout = 10)
 ```
 
 # Download updated data
+
 ```{r, download}
 feeds <- feeds_urls()
 ```
@@ -40,11 +41,9 @@ dat <- feeds %>%
 ```
 
 ```{r}
-#dbWriteTable(con, "bike_raw_data", df, append = TRUE)
+# dbWriteTable(con, "bike_raw_data", df, append = TRUE)
 ```
 
 ```{r}
 dbDisconnect(con)
 ```
-
-
