@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Set up packages and connect to RStudio Connect board
+
 ```{r}
 library(tidyverse)
 library(magrittr)
@@ -20,6 +21,7 @@ library(bikeHelpR)
 ```
 
 # Get data from API
+
 ```{r}
 # Get list of feeds
 feeds <- feeds_urls()
@@ -35,6 +37,7 @@ dat <- feeds %>%
 ```
 
 # Pin
+
 ```{r}
 #pins::pin(dat, 
 #          "bike_station_info", 

@@ -1,105 +1,219 @@
 ---
-title: "Build Model- Quarto Version"
-author: "Gagandeep Singh"
+title: "Build Model"
 date: "`r Sys.time()`"
 output: html_document
 ---
 
-# Load Libraries and connect to board
 ```{r}
-library(tidyverse)
-library(tidymodels)
-library(lubridate)
+library(dplyr)
+library(glue)
+library(recipes)
+library(parsnip)
+library(workflows)
+library(vetiver)
+
+# Internally developed packages
 library(bikeHelpR)
-library(xgboost)
 ```
 
 # Get data
+
+Connect to the database:
+
 ```{r}
 con <- DBI::dbConnect(odbc::odbc(), "Content DB")
-pins::board_register_rsconnect(server = Sys.getenv("CONNECT_SERVER"),
-                               key = Sys.getenv("CONNECT_API_KEY"))
 ```
 
-
-# Perform Training Split
+Split the data into a train/test split:
 
 ```{r}
 all_days <- tbl(con, "bike_model_data")
-n_days_test <- 2
-months_train <- 6
 
-dates <- all_days %>% 
-  count(date) %>%
+# Get a vector that contains all of the dates.
+dates <- all_days %>%
+  distinct(date) %>%
+  collect() %>%
   arrange(desc(date)) %>%
-  head(n_days_test + 1) %>%
   pull(date) %>%
   as.Date()
 
-split_date <- dates[n_days_test + 1]
-start_train_date <- split_date - dmonths(months_train)
+# Split the data into test and train.
+n_days_test <- 2
+n_days_to_train <- 10
+train_end_date <- dates[n_days_test + 1]
+train_start_date <- train_end_date - n_days_to_train
 
-test_dates <- dates[1:n_days_test]
-test_dates_str <- paste(test_dates, collapse = " and ")
-
-print(glue::glue(
-  "Using data on or before {min(test_dates)} as training, data from {test_dates_str} to test."
-))
-
-train_dat <- all_days %>% 
-  dplyr::filter(
-    date <= split_date, 
-    date >= start_train_date
-  ) %>% 
-  dplyr::collect()
-
-recipe <- recipe(n_bikes ~ ., data = train_dat) %>%
-  step_dummy(dow) %>%
-  prep(train_dat, retain = FALSE)
-```
-
-
-Make recipe for model:
-
-```{r}
-# downsample if working interactively
-if (interactive()) {
-  train_dat <- dplyr::sample_frac(train_dat, 0.5)
-}
-
-train_mat <- recipe %>%
-  bake(train_dat)
-```
-
-# Train and Save Model
-
-```{r train_mod}
-mod <- parsnip::xgb_train(
-  train_mat %>% select(-n_bikes, -id, -date), 
-  train_mat %>% pull(n_bikes), 
-  nrounds = ifelse(interactive(), 50, 500)
-)
-```
-# Brief model evaluation
-
-```{r eval_mod}
-test_date_start <- min(test_dates)
-test_dat <- all_days %>% 
-  filter(date >= test_date_start) %>% 
+# Training data split.
+train_data <- all_days %>%
+  filter(
+    date >= train_start_date,
+    date <= train_end_date
+  ) %>%
+  distinct() %>%
   collect()
 
-preds <- bake(recipe, test_dat) %>%
-  select(-n_bikes, -id, -date) %>% 
-  as.matrix() %>% 
-  predict(mod, .)
+print(glue::glue(
+  "The model will be trained on data from {start} to {end} ",
+  "({num_obs} observations). ",
+  start = min(train_data$date),
+  end = max(train_data$date),
+  num_obs = scales::comma(nrow(train_data)),
+))
 
-results <- test_dat %>% 
-  mutate(preds = preds)
+# Test data split.
+test_data <- all_days %>%
+  filter(date > train_end_date) %>%
+  distinct() %>%
+  collect()
+
+print(glue::glue(
+  "The model will be tested on data from {start} to {end} ",
+  "({num_obs} observations). ",
+  start = min(test_data$date),
+  end = max(test_data$date),
+  num_obs = scales::comma(nrow(test_data)),
+))
+```
+
+# Train the model
+
+## Data preprocessing
+
+Define a recipe to clean the data.
+
+```{r}
+# Define a recipe to clean the data.
+recipe_spec <- 
+  recipe(n_bikes ~ ., data = train_data) %>% 
+  # step_select(id, hour, month, dow, lat, lon) %>%
+  step_dummy(dow) %>%
+  step_integer(id, date)
+
+recipe_spec_prepped <- prep(recipe_spec, train_data)
+
+# Preview the cleaned training data.
+bake(recipe_spec_prepped, head(train_data))
+```
+
+## Fit model
+
+Fit an XGBoost model:
+
+```{r}
+# XGB workflow
+xgb_model_spec <- boost_tree(engine = "xgboost", mode = "regression")
+
+xgb_workflow <- 
+  workflow() %>%
+  add_recipe(recipe_spec) %>%
+  add_model(xgb_model_spec)
+
+xgb_fit <- fit(xgb_workflow, data = train_data)
+```
+
+# Model evaluation
+
+```{r evaluate_model}
+predictions <- predict(xgb_fit, test_data)
+
+results <- test_data %>%
+  mutate(preds = predictions$.pred)
+
 
 oos_metrics(results$n_bikes, results$preds)
 ```
 
-# Save model as pin with some metadata
+# Deploy the model using `vetiver`
+
+Create a vetiver model object.
+
+```{r create_vetiver_model}
+model_name <- "bike_predict_xgboost_r"
+
+v <- vetiver_model(
+  xgb_fit, 
+  model_name, 
+  save_ptype = train_data %>%
+    head(1)
+)
+
+v
+```
+
+Save the model as a *pin* to RStudio Connect:
+
+```{r pin_model}
+board <- pins::board_rsconnect(
+  server = Sys.getenv("CONNECT_SERVER"),
+  key = Sys.getenv("CONNECT_API_KEY"),
+  versioned = TRUE
+)
+
+# Write the model to the board.
+board %>%
+ vetiver_pin_write(v)
+```
+
+Check out how many models have been written to the board:
+
+```{r}
+pin_name <- glue("sam.edwardes/{model_name}")
+
+print(glue("Connect to pin named: {pin_name}"))
+
+board %>% 
+  pins::pin_versions(pin_name)
+```
+
+Convert the model into a plumber API. The function `vetiver_write_plumber` will generate the plumber code for you and write it to *plumber.R*.
+
+```{r deploy_model}
+# Write the model to `plumber.R`.
+vetiver_write_plumber(board, pin_name)
+```
+
+Then, deploy the plumber API to RStudio Connect.
+
+```{r}
+app_title <- "Bike Predict XGBoost Prediction API (R)"
+
+rsconnect::deployAPI(
+  ".",
+  appFiles = c("plumber.R"),
+  appTitle = app_title
+)
+```
+
+Get the unique identifier of the app so that we can call the API.
+
+```{r}
+client <- connectwidgets::connect(
+  server  = Sys.getenv("CONNECT_SERVER"),
+  api_key = Sys.getenv("CONNECT_API_KEY")
+)
+
+content_guid <- client %>%
+  connectwidgets::content() %>%
+  connectwidgets::by_owner("sam.edwardes") %>%
+  filter(title == app_title) %>%
+  pull(guid)
+
+print(content_guid)
+```
+
+Called the deployed API to verify that it is working.
+
+```{r}
+url <- glue("{Sys.getenv('CONNECT_SERVER')}/content/{content_guid}/predict")
+endpoint <- vetiver_endpoint(url)
+endpoint
+```
+
+```{r}
+predict(endpoint, head(test_data, 2))
+```
+
+**OLD**
 
 ```{r pin_mod}
 model_details <- list(
