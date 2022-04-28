@@ -85,7 +85,6 @@ Define a recipe to clean the data.
 # Define a recipe to clean the data.
 recipe_spec <- 
   recipe(n_bikes ~ ., data = train_data) %>% 
-  # step_select(id, hour, month, dow, lat, lon) %>%
   step_dummy(dow) %>%
   step_integer(id, date)
 
@@ -100,25 +99,25 @@ bake(recipe_spec_prepped, head(train_data))
 Fit an XGBoost model:
 
 ```{r}
-# XGB workflow
-xgb_model_spec <- boost_tree(engine = "xgboost", mode = "regression")
+# workflow
+model_spec <- rand_forest(mode = "regression")
 
-xgb_workflow <- 
+model_workflow <- 
   workflow() %>%
   add_recipe(recipe_spec) %>%
-  add_model(xgb_model_spec)
+  add_model(model_spec)
 
-xgb_fit <- fit(xgb_workflow, data = train_data)
+model_fit <- fit(model_workflow, data = train_data)
+model_fit
 ```
 
 # Model evaluation
 
 ```{r evaluate_model}
-predictions <- predict(xgb_fit, test_data)
+predictions <- predict(model_fit, test_data)
 
 results <- test_data %>%
   mutate(preds = predictions$.pred)
-
 
 oos_metrics(results$n_bikes, results$preds)
 ```
@@ -128,10 +127,10 @@ oos_metrics(results$n_bikes, results$preds)
 Create a vetiver model object.
 
 ```{r create_vetiver_model}
-model_name <- "bike_predict_xgboost_r"
+model_name <- "bike_predict_model_r"
 
 v <- vetiver_model(
-  xgb_fit, 
+  model_fit, 
   model_name, 
   save_ptype = train_data %>%
     head(1)
