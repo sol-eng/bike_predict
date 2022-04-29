@@ -13,7 +13,7 @@ if (FALSE) {
     library(workflows)
 }
 b <- board_rsconnect("envvar", server = "https://colorado.rstudio.com/rsc")
-v <- vetiver_pin_read(b, "sam.edwardes/bike_predict_model_r", version = "55840")
+v <- vetiver_pin_read(b, "sam.edwardes/bike_predict_model_r", version = "55845")
 
 #* @plumber
 function(pr) {
