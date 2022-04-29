@@ -177,10 +177,6 @@ board %>%
 Convert the model into a plumber API. The function `vetiver_write_plumber` will generate the plumber code for you and write it to *plumber.R*.
 
 ```{r deploy_model}
-if (!dir.exists("./api")) {
-  dir.create("./api")
-}
-
 # Write the model to `api/plumber.R`.
 vetiver_write_plumber(board, pin_name, file = "api/plumber.R")
 
@@ -204,12 +200,6 @@ Then, deploy the plumber API to RStudio Connect.
 app_name <- "bike-predict-api-r"
 app_title <- "Bike Predict API (R)"
 
-# rsconnect::deployAPI(
-#   ".",
-#   appFiles = c("plumber.R"),
-#   appTitle = app_title
-# )
-
 # Establish a connectionn to RStudio connect.
 client <- connectapi::connect(
   server = Sys.getenv("CONNECT_SERVER"),
@@ -228,12 +218,32 @@ content <-
     title = app_title
   )
 
+# Make the app visible to the world!
+content$update(access_type = "all")
+
+client %>% 
+  connectapi::get_groups(page_size = 500, limit = 500) %>%
+  filter("sol" %in% tolower(name))
+
+# Define the contents collaborators
+collaborators <- c(
+  # "d03a6b7a-c818-4e40-8ef9-84ca567f9671", # Sam Edwardes
+  "69db516b-ba3e-442a-84d9-f916fc92a2ca", # Gagan Singh
+  "99a43fac-2edd-4c31-8cba-a001c507da2e"  # Xu Fei
+  
+)
+for (c in collaborators) {
+  content %>%
+    connectapi::acl_add_collaborator(c)
+}
+
 # Update content settings.
 content %>%
   connectapi::set_vanity_url("bike-predict-api-r") %>%
-  connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R)
+  connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R) %>%
+  connectapi::set_image_path("../../../img/bike_share_connect_image.drawio.png") %>%
+  connectapi::add
 ```
-
 
 Called the deployed API to verify that it is working.
 
@@ -244,7 +254,8 @@ endpoint
 ```
 
 ```{r}
-predict(endpoint, head(test_data, 2))
+predict(endpoint, head(test_data, 2)) %>%
+  bind_cols(head(test_data, 2))
 ```
 
 ```{r}

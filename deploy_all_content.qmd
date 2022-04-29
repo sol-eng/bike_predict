@@ -1,0 +1,14 @@
+---
+title: "Deploy all content"
+date: "`r Sys.time()`"
+output: html_document
+---
+
+```{r}
+library(connectapi)
+```
+
+The purpose of this document is to deploy all `bike_predict` related content to RStudio Connect. It should be run from RStudio Workbench (or your local development environment). This document itself is not meant to be published.
+
+## 01-etl
+
