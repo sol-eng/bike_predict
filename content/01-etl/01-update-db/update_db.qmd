@@ -1,0 +1,63 @@
+---
+title: "ETL Step 1 - Update the database"
+date: "`r Sys.time()`"
+output: html_document
+---
+
+Update the database with the latest bike data.
+
+```{r libraries}
+library(dplyr)
+library(odbc)
+
+# Internally developed packages
+library(bikeHelpR)
+
+# The following packages are not directly called, but are requirements. They
+# need to be here so that `rsconnect::writeManifest` is able to capture them
+# as a dependency.
+library(dbplyr)
+library(purrr)
+library(magrittr)
+```
+
+```{r feeds}
+feeds <- feeds_urls()
+glimpse(feeds)
+```
+
+```{r data}
+data <- feeds %>% 
+   filter(name == "station_status") %>% 
+   pull(url) %>% 
+   get_data()
+
+print(glimpse(data))
+```
+
+```{r dataframe}
+df <- data %>%
+    magrittr::extract2("data") %>%
+    dplyr::mutate(time = data$last_updated) %>%
+    dplyr::select(
+      is_installed, 
+      num_bikes_available, 
+      last_reported, 
+      is_renting, 
+      eightd_has_available_keys, 
+      num_docks_available, 
+      num_docks_disabled, 
+      is_returning, 
+      station_id, num_ebikes_available, 
+      num_bikes_disabled, 
+      time
+    )
+
+glimpse(df)
+```
+
+```{r write_to_db}
+con <- dbConnect(odbc(), "Content DB", timeout = 10)
+# dbWriteTable(con, "bike_raw_data", df, append = TRUE)
+dbDisconnect(con)
+```

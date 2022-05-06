@@ -8,12 +8,12 @@ library(vetiver)
 # Packages needed to generate model predictions
 if (FALSE) {
     library(parsnip)
-    library(ranger)
     library(recipes)
     library(workflows)
+    library(xgboost)
 }
 b <- board_rsconnect("envvar", server = "https://colorado.rstudio.com/rsc")
-v <- vetiver_pin_read(b, "sam.edwardes/bike_predict_model_r", version = "55851")
+v <- vetiver_pin_read(b, "sam.edwardes/bike_predict_model_r", version = "56045")
 
 #* @plumber
 function(pr) {

@@ -1,0 +1,60 @@
+---
+title: "Clean Analysis Dataset"
+date: "`r Sys.time()`"
+output: html_document
+---
+
+
+```{r libraries}
+library(dplyr)
+library(lubridate)
+```
+
+# Connect to database and board
+
+```{r connections}
+con <- odbc::dbConnect(odbc::odbc(), "Content DB", timeout = 10)
+
+pins::board_register_rsconnect(
+  server = Sys.getenv("CONNECT_SERVER"),
+  key = Sys.getenv("CONNECT_API_KEY")
+)
+```
+
+```{r, get_data_from_db}
+df_con <- tbl(con, "bike_raw_data")
+stats <- tbl(con, "bike_station_info")
+```
+
+# Clean data
+
+```{r clean_data}
+if (odbc::dbExistsTable(con, "bike_model_data")) {
+  odbc::dbRemoveTable(con, "bike_model_data")
+}
+
+query <- df_con %>% 
+    group_by(
+        id = station_id, 
+        hour = hour(time), 
+        date = date(time), 
+        month = month(time), 
+        dow = TRIM(to_char(time, "Day"))
+    ) %>%
+    summarize(
+        n_bikes = mean(num_bikes_available, na.rm = TRUE),
+        .groups = "drop"
+    ) %>%
+    inner_join(
+        select(stats, id = station_id, lat, lon)
+    ) %>%
+    dbplyr::sql_render() %>%
+    stringr::str_replace("SELECT", "CREATE TABLE bike_model_data AS SELECT")
+
+odbc::dbSendQuery(con, query)
+tbl(con, "bike_model_data")
+```
+
+```{r}
+dbDisconnect(con)
+```

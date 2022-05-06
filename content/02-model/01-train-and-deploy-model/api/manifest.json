@@ -172,34 +172,6 @@
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-07-08 20:43:18 UTC; unix"
       }
     },
-    "RcppEigen": {
-      "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
-      "description": {
-        "Package": "RcppEigen",
-        "Type": "Package",
-        "Title": "'Rcpp' Integration for the 'Eigen' Templated Linear Algebra\nLibrary",
-        "Version": "0.3.3.9.1",
-        "Date": "2020-12-17",
-        "Author": "Douglas Bates, Dirk Eddelbuettel, Romain Francois, and Yixuan Qiu;\n the authors of Eigen for the included version of Eigen",
-        "Maintainer": "Dirk Eddelbuettel <edd@debian.org>",
-        "Copyright": "See the file COPYRIGHTS for various Eigen copyright details",
-        "Description": "R and 'Eigen' integration using 'Rcpp'.\n 'Eigen' is a C++ template library for linear algebra: matrices, vectors,\n numerical solvers and related algorithms.  It supports dense and sparse\n matrices on integer, floating point and complex numbers, decompositions of\n such matrices, and solutions of linear systems. Its performance on many\n algorithms is comparable with some of the best implementations based on\n 'Lapack' and level-3 'BLAS'. The 'RcppEigen' package includes the header\n files from the 'Eigen' C++ template library (currently version 3.3.4). Thus\n users do not need to install 'Eigen' itself in order to use 'RcppEigen'.\n Since version 3.1.1, 'Eigen' is licensed under the Mozilla Public License\n (version 2); earlier version were licensed under the GNU LGPL version 3 or\n later. 'RcppEigen' (the 'Rcpp' bindings/bridge to 'Eigen') is licensed under\n the GNU GPL version 2 or later, as is the rest of 'Rcpp'.",
-        "License": "GPL (>= 2) | file LICENSE",
-        "LazyLoad": "yes",
-        "LinkingTo": "Rcpp",
-        "Imports": "Matrix (>= 1.1-0), Rcpp (>= 0.11.0), stats, utils",
-        "Suggests": "inline, tinytest, pkgKitten, microbenchmark",
-        "URL": "http://dirk.eddelbuettel.com/code/rcpp.eigen.html",
-        "BugReports": "https://github.com/RcppCore/RcppEigen/issues",
-        "NeedsCompilation": "yes",
-        "Packaged": "2020-12-17 13:25:48 UTC; edd",
-        "Repository": "RSPM",
-        "Date/Publication": "2020-12-17 16:20:07 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-07-08 22:46:19 UTC; unix"
-      }
-    },
     "SQUAREM": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -637,6 +609,34 @@
         "Repository": "RSPM",
         "Date/Publication": "2021-06-23 07:00:06 UTC",
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-06-24 10:48:39 UTC; unix"
+      }
+    },
+    "data.table": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "data.table",
+        "Version": "1.14.2",
+        "Title": "Extension of `data.frame`",
+        "Authors@R": "c(\n  person(\"Matt\",\"Dowle\",           role=c(\"aut\",\"cre\"), email=\"mattjdowle@gmail.com\"),\n  person(\"Arun\",\"Srinivasan\",      role=\"aut\",          email=\"asrini@pm.me\"),\n  person(\"Jan\",\"Gorecki\",          role=\"ctb\"),\n  person(\"Michael\",\"Chirico\",      role=\"ctb\"),\n  person(\"Pasha\",\"Stetsenko\",      role=\"ctb\"),\n  person(\"Tom\",\"Short\",            role=\"ctb\"),\n  person(\"Steve\",\"Lianoglou\",      role=\"ctb\"),\n  person(\"Eduard\",\"Antonyan\",      role=\"ctb\"),\n  person(\"Markus\",\"Bonsch\",        role=\"ctb\"),\n  person(\"Hugh\",\"Parsonage\",       role=\"ctb\"),\n  person(\"Scott\",\"Ritchie\",        role=\"ctb\"),\n  person(\"Kun\",\"Ren\",              role=\"ctb\"),\n  person(\"Xianying\",\"Tan\",         role=\"ctb\"),\n  person(\"Rick\",\"Saporta\",         role=\"ctb\"),\n  person(\"Otto\",\"Seiskari\",        role=\"ctb\"),\n  person(\"Xianghui\",\"Dong\",        role=\"ctb\"),\n  person(\"Michel\",\"Lang\",          role=\"ctb\"),\n  person(\"Watal\",\"Iwasaki\",        role=\"ctb\"),\n  person(\"Seth\",\"Wenchel\",         role=\"ctb\"),\n  person(\"Karl\",\"Broman\",          role=\"ctb\"),\n  person(\"Tobias\",\"Schmidt\",       role=\"ctb\"),\n  person(\"David\",\"Arenburg\",       role=\"ctb\"),\n  person(\"Ethan\",\"Smith\",          role=\"ctb\"),\n  person(\"Francois\",\"Cocquemas\",   role=\"ctb\"),\n  person(\"Matthieu\",\"Gomez\",       role=\"ctb\"),\n  person(\"Philippe\",\"Chataignon\",  role=\"ctb\"),\n  person(\"Nello\",\"Blaser\",         role=\"ctb\"),\n  person(\"Dmitry\",\"Selivanov\",     role=\"ctb\"),\n  person(\"Andrey\",\"Riabushenko\",   role=\"ctb\"),\n  person(\"Cheng\",\"Lee\",            role=\"ctb\"),\n  person(\"Declan\",\"Groves\",        role=\"ctb\"),\n  person(\"Daniel\",\"Possenriede\",   role=\"ctb\"),\n  person(\"Felipe\",\"Parages\",       role=\"ctb\"),\n  person(\"Denes\",\"Toth\",           role=\"ctb\"),\n  person(\"Mus\",\"Yaramaz-David\",    role=\"ctb\"),\n  person(\"Ayappan\",\"Perumal\",      role=\"ctb\"),\n  person(\"James\",\"Sams\",           role=\"ctb\"),\n  person(\"Martin\",\"Morgan\",        role=\"ctb\"),\n  person(\"Michael\",\"Quinn\",        role=\"ctb\"),\n  person(\"@javrucebo\",\"\",          role=\"ctb\"),\n  person(\"@marc-outins\",\"\",        role=\"ctb\"),\n  person(\"Roy\",\"Storey\",           role=\"ctb\"),\n  person(\"Manish\",\"Saraswat\",      role=\"ctb\"),\n  person(\"Morgan\",\"Jacob\",         role=\"ctb\"),\n  person(\"Michael\",\"Schubmehl\",    role=\"ctb\"),\n  person(\"Davis\",\"Vaughan\",        role=\"ctb\"),\n  person(\"Toby\",\"Hocking\",         role=\"ctb\"),\n  person(\"Leonardo\",\"Silvestri\",   role=\"ctb\"),\n  person(\"Tyson\",\"Barrett\",        role=\"ctb\"),\n  person(\"Jim\",\"Hester\",           role=\"ctb\"),\n  person(\"Anthony\",\"Damico\",       role=\"ctb\"),\n  person(\"Sebastian\",\"Freundt\",    role=\"ctb\"),\n  person(\"David\",\"Simons\",         role=\"ctb\"),\n  person(\"Elliott\",\"Sales de Andrade\", role=\"ctb\"),\n  person(\"Cole\",\"Miller\",          role=\"ctb\"),\n  person(\"Jens Peder\",\"Meldgaard\", role=\"ctb\"),\n  person(\"Vaclav\",\"Tlapak\",        role=\"ctb\"),\n  person(\"Kevin\",\"Ushey\",          role=\"ctb\"),\n  person(\"Dirk\",\"Eddelbuettel\",    role=\"ctb\"),\n  person(\"Ben\",\"Schwen\",           role=\"ctb\"))",
+        "Depends": "R (>= 3.1.0)",
+        "Imports": "methods",
+        "Suggests": "bit64 (>= 4.0.0), bit (>= 4.0.4), curl, R.utils, xts,\nnanotime, zoo (>= 1.8-1), yaml, knitr, rmarkdown",
+        "SystemRequirements": "zlib",
+        "Description": "Fast aggregation of large data (e.g. 100GB in RAM), fast ordered joins, fast add/modify/delete of columns by group using no copies at all, list columns, friendly and fast character-separated-value read/write. Offers a natural and flexible syntax, for faster development.",
+        "License": "MPL-2.0 | file LICENSE",
+        "URL": "https://r-datatable.com, https://Rdatatable.gitlab.io/data.table,\nhttps://github.com/Rdatatable/data.table",
+        "BugReports": "https://github.com/Rdatatable/data.table/issues",
+        "VignetteBuilder": "knitr",
+        "ByteCompile": "TRUE",
+        "NeedsCompilation": "yes",
+        "Packaged": "2021-09-23 03:10:37 UTC; mdowle",
+        "Author": "Matt Dowle [aut, cre],\n  Arun Srinivasan [aut],\n  Jan Gorecki [ctb],\n  Michael Chirico [ctb],\n  Pasha Stetsenko [ctb],\n  Tom Short [ctb],\n  Steve Lianoglou [ctb],\n  Eduard Antonyan [ctb],\n  Markus Bonsch [ctb],\n  Hugh Parsonage [ctb],\n  Scott Ritchie [ctb],\n  Kun Ren [ctb],\n  Xianying Tan [ctb],\n  Rick Saporta [ctb],\n  Otto Seiskari [ctb],\n  Xianghui Dong [ctb],\n  Michel Lang [ctb],\n  Watal Iwasaki [ctb],\n  Seth Wenchel [ctb],\n  Karl Broman [ctb],\n  Tobias Schmidt [ctb],\n  David Arenburg [ctb],\n  Ethan Smith [ctb],\n  Francois Cocquemas [ctb],\n  Matthieu Gomez [ctb],\n  Philippe Chataignon [ctb],\n  Nello Blaser [ctb],\n  Dmitry Selivanov [ctb],\n  Andrey Riabushenko [ctb],\n  Cheng Lee [ctb],\n  Declan Groves [ctb],\n  Daniel Possenriede [ctb],\n  Felipe Parages [ctb],\n  Denes Toth [ctb],\n  Mus Yaramaz-David [ctb],\n  Ayappan Perumal [ctb],\n  James Sams [ctb],\n  Martin Morgan [ctb],\n  Michael Quinn [ctb],\n  @javrucebo [ctb],\n  @marc-outins [ctb],\n  Roy Storey [ctb],\n  Manish Saraswat [ctb],\n  Morgan Jacob [ctb],\n  Michael Schubmehl [ctb],\n  Davis Vaughan [ctb],\n  Toby Hocking [ctb],\n  Leonardo Silvestri [ctb],\n  Tyson Barrett [ctb],\n  Jim Hester [ctb],\n  Anthony Damico [ctb],\n  Sebastian Freundt [ctb],\n  David Simons [ctb],\n  Elliott Sales de Andrade [ctb],\n  Cole Miller [ctb],\n  Jens Peder Meldgaard [ctb],\n  Vaclav Tlapak [ctb],\n  Kevin Ushey [ctb],\n  Dirk Eddelbuettel [ctb],\n  Ben Schwen [ctb]",
+        "Maintainer": "Matt Dowle <mattjdowle@gmail.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2021-09-27 16:30:02 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-09-28 15:43:00 UTC; unix"
       }
     },
     "desc": {
@@ -2158,34 +2158,6 @@
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-11-09 00:27:44 UTC; unix"
       }
     },
-    "ranger": {
-      "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
-      "description": {
-        "Package": "ranger",
-        "Type": "Package",
-        "Title": "A Fast Implementation of Random Forests",
-        "Version": "0.13.1",
-        "Date": "2021-07-14",
-        "Author": "Marvin N. Wright [aut, cre], Stefan Wager [ctb], Philipp Probst [ctb]",
-        "Maintainer": "Marvin N. Wright <cran@wrig.de>",
-        "Description": "A fast implementation of Random Forests, particularly suited for high\n          dimensional data. Ensembles of classification, regression, survival and\n          probability prediction trees are supported. Data from genome-wide association\n          studies can be analyzed efficiently. In addition to data frames, datasets of\n          class 'gwaa.data' (R package 'GenABEL') and 'dgCMatrix' (R package 'Matrix') \n          can be directly analyzed.",
-        "License": "GPL-3",
-        "Imports": "Rcpp (>= 0.11.2), Matrix",
-        "LinkingTo": "Rcpp, RcppEigen",
-        "Depends": "R (>= 3.1)",
-        "Suggests": "covr, survival, testthat",
-        "Encoding": "UTF-8",
-        "RoxygenNote": "7.1.1",
-        "URL": "https://github.com/imbs-hl/ranger",
-        "BugReports": "https://github.com/imbs-hl/ranger/issues",
-        "NeedsCompilation": "yes",
-        "Packaged": "2021-07-14 10:10:00 UTC; wright",
-        "Repository": "RSPM",
-        "Date/Publication": "2021-07-14 11:20:02 UTC",
-        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-07-15 10:54:39 UTC; unix"
-      }
-    },
     "rapidoc": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -3033,6 +3005,36 @@
         "Built": "R 4.1.0; ; 2022-03-21 10:48:10 UTC; unix"
       }
     },
+    "xgboost": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "xgboost",
+        "Type": "Package",
+        "Title": "Extreme Gradient Boosting",
+        "Version": "1.4.1.1",
+        "Date": "2021-04-22",
+        "Authors@R": "c(\n  person(\"Tianqi\", \"Chen\", role = c(\"aut\"),\n         email = \"tianqi.tchen@gmail.com\"),\n  person(\"Tong\", \"He\", role = c(\"aut\", \"cre\"),\n         email = \"hetong007@gmail.com\"),\n  person(\"Michael\", \"Benesty\", role = c(\"aut\"),\n         email = \"michael@benesty.fr\"),\n  person(\"Vadim\", \"Khotilovich\", role = c(\"aut\"),\n         email = \"khotilovich@gmail.com\"),\n  person(\"Yuan\", \"Tang\", role = c(\"aut\"),\n         email = \"terrytangyuan@gmail.com\",\n         comment = c(ORCID = \"0000-0001-5243-233X\")),\n  person(\"Hyunsu\", \"Cho\", role = c(\"aut\"),\n         email = \"chohyu01@cs.washington.edu\"),\n  person(\"Kailong\", \"Chen\", role = c(\"aut\")),\n  person(\"Rory\", \"Mitchell\", role = c(\"aut\")),\n  person(\"Ignacio\", \"Cano\", role = c(\"aut\")),\n  person(\"Tianyi\", \"Zhou\", role = c(\"aut\")),\n  person(\"Mu\", \"Li\", role = c(\"aut\")),\n  person(\"Junyuan\", \"Xie\", role = c(\"aut\")),\n  person(\"Min\", \"Lin\", role = c(\"aut\")),\n  person(\"Yifeng\", \"Geng\", role = c(\"aut\")),\n  person(\"Yutian\", \"Li\", role = c(\"aut\")),\n  person(\"XGBoost contributors\", role = c(\"cph\"),\n         comment = \"base XGBoost implementation\")\n  )",
+        "Description": "Extreme Gradient Boosting, which is an efficient implementation\n    of the gradient boosting framework from Chen & Guestrin (2016) <doi:10.1145/2939672.2939785>.\n    This package is its R interface. The package includes efficient linear\n    model solver and tree learning algorithms. The package can automatically\n    do parallel computation on a single machine which could be more than 10\n    times faster than existing gradient boosting packages. It supports\n    various objective functions, including regression, classification and ranking.\n    The package is made to be extensible, so that users are also allowed to define\n    their own objectives easily.",
+        "License": "Apache License (== 2.0) | file LICENSE",
+        "URL": "https://github.com/dmlc/xgboost",
+        "BugReports": "https://github.com/dmlc/xgboost/issues",
+        "NeedsCompilation": "yes",
+        "VignetteBuilder": "knitr",
+        "Suggests": "knitr, rmarkdown, ggplot2 (>= 1.0.1), DiagrammeR (>= 0.9.0),\nCkmeans.1d.dp (>= 3.3.1), vcd (>= 1.3), testthat, lintr, igraph\n(>= 1.0.1), float, crayon, titanic",
+        "Depends": "R (>= 3.3.0)",
+        "Imports": "Matrix (>= 1.1-0), methods, data.table (>= 1.9.6), magrittr\n(>= 1.5), jsonlite (>= 1.0),",
+        "RoxygenNote": "7.1.1",
+        "SystemRequirements": "GNU make, C++14",
+        "Packaged": "2021-04-22 06:09:47 UTC; ubuntu",
+        "Author": "Tianqi Chen [aut],\n  Tong He [aut, cre],\n  Michael Benesty [aut],\n  Vadim Khotilovich [aut],\n  Yuan Tang [aut] (<https://orcid.org/0000-0001-5243-233X>),\n  Hyunsu Cho [aut],\n  Kailong Chen [aut],\n  Rory Mitchell [aut],\n  Ignacio Cano [aut],\n  Tianyi Zhou [aut],\n  Mu Li [aut],\n  Junyuan Xie [aut],\n  Min Lin [aut],\n  Yifeng Geng [aut],\n  Yutian Li [aut],\n  XGBoost contributors [cph] (base XGBoost implementation)",
+        "Maintainer": "Tong He <hetong007@gmail.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2021-04-22 09:20:02 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-05-19 01:10:08 UTC; unix"
+      }
+    },
     "yaml": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -3084,7 +3086,7 @@
   },
   "files": {
     "plumber.R": {
-      "checksum": "2025951033130c4d9e53047413e935ae"
+      "checksum": "55bb1cebfa686d3b2c2eb08c19077a5b"
     }
   },
   "users": null
