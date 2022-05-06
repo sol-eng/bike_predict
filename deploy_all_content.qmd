@@ -104,6 +104,7 @@ content_get_data_from_db %>%
 ### 1.2 Clean the data
 
 ```{r}
+# Deploy the content.
 content_tidy_data <- deploy_content_to_connect(
   client = client,
   app_name = "bike-predict-r-tidy-data",
@@ -113,7 +114,12 @@ content_tidy_data <- deploy_content_to_connect(
   vanity_url = "bike-predict-r-tidy-data"
 )
 
-content_tidy_data %>% browse_dashboard()
+# Print the URL.
+print(content_tidy_data$get_url())
+
+# Open the content in your browser.
+content_tidy_data %>% 
+  browse_dashboard()
 ```
 
 ### 1.3 Clean the data

@@ -6,7 +6,7 @@ output: html_document
 
 This notebook tidies the raw *raw_data_table* from the *Content DB* database. The tidy data is written back to the *Content DB* database to the *bike_model_data* table.
 
-```{r setup}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
 
 library(dplyr)
@@ -16,8 +16,6 @@ library(lubridate)
 # need to be here so that `rsconnect::writeManifest` is able to capture them
 # as a dependency.
 library(dbplyr)
-library(purrr)
-library(magrittr)
 ```
 
 ## Get data from database
@@ -26,8 +24,8 @@ Connect to *Content DB* and get the *required tables*.
 
 ```{r, get_data_from_db}
 con <- odbc::dbConnect(odbc::odbc(), "Content DB", timeout = 10)
-df_con <- tbl(con, "bike_raw_data")
-stats <- tbl(con, "bike_station_info")
+bike_raw_data <- tbl(con, "bike_raw_data")
+bike_station_info <- tbl(con, "bike_station_info")
 ```
 
 ## Tidy the data
@@ -39,7 +37,7 @@ if (odbc::dbExistsTable(con, "bike_model_data")) {
   odbc::dbRemoveTable(con, "bike_model_data")
 }
 
-query <- df_con %>% 
+query <- bike_raw_data %>% 
     group_by(
         id = station_id, 
         hour = hour(time), 
@@ -52,7 +50,7 @@ query <- df_con %>%
         .groups = "drop"
     ) %>%
     inner_join(
-        select(stats, id = station_id, lat, lon)
+        select(bike_station_info, id = station_id, lat, lon)
     ) %>%
     dbplyr::sql_render() %>%
     stringr::str_replace("SELECT", "CREATE TABLE bike_model_data AS SELECT")
@@ -62,5 +60,5 @@ tbl(con, "bike_model_data")
 ```
 
 ```{r}
-dbDisconnect(con)
+odbc::dbDisconnect(con)
 ```
