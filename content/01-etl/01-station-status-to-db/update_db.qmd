@@ -1,5 +1,5 @@
 ---
-title: "ETL Step 1 - Update the database"
+title: "ETL Step 1 - Update the Database"
 date: "`r Sys.time()`"
 output: html_document
 ---

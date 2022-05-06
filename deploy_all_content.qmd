@@ -88,7 +88,7 @@ content_get_data_from_db <- deploy_content_to_connect(
   client = client,
   app_name = "bike-predict-r-update-db",
   app_title = "Bike Predict (R) - ETL Step 01 - Update the Database",
-  app_directory_location = "./content/01-etl/01-update-db/",
+  app_directory_location = "./content/01-etl/01-station-status-to-db/",
   app_files = "update_db.qmd",
   vanity_url = "bike-predict-r-update-db"
 )
@@ -101,15 +101,36 @@ content_get_data_from_db %>%
   browse_dashboard()
 ```
 
-### 1.2 Clean the data
+### 1.2 Write station data to pin
+
+```{r}
+# Deploy the content.
+content_get_data_from_db <- deploy_content_to_connect(
+  client = client,
+  app_name = "bike-predict-r-pin-station-info",
+  app_title = "Bike Predict (R) - ETL Step 02 - Write station data to pin",
+  app_directory_location = "./content/01-etl/02-station-info-to-pin/",
+  app_files = "write_to_pin.qmd",
+  vanity_url = "bike-predict-r-station-info-to-pin"
+)
+
+# Print the URL.
+print(content_get_data_from_db$get_url())
+
+# Open the content in your browser.
+content_get_data_from_db %>% 
+  browse_dashboard()
+```
+
+### 1.3 Tidy the data
 
 ```{r}
 # Deploy the content.
 content_tidy_data <- deploy_content_to_connect(
   client = client,
   app_name = "bike-predict-r-tidy-data",
-  app_title = "Bike Predict (R) - ETL Step 02 - Tidy the data",
-  app_directory_location = "./content/01-etl/02-tidy-data/",
+  app_title = "Bike Predict (R) - ETL Step 03 - Tidy the data",
+  app_directory_location = "./content/01-etl/03-tidy-data/",
   app_files = "tidy_data.qmd",
   vanity_url = "bike-predict-r-tidy-data"
 )
@@ -122,20 +143,7 @@ content_tidy_data %>%
   browse_dashboard()
 ```
 
-### 1.3 Clean the data
 
-```{r}
-content_tidy_data <- deploy_content_to_connect(
-  client = client,
-  app_name = "bike-predict-r-tidy-data",
-  app_title = "Bike Predict (R) - ETL Step 02 - Tidy the data",
-  app_directory_location = "./content/01-etl/02-tidy-data/",
-  app_files = "tidy_data.qmd",
-  vanity_url = "bike-predict-r-tidy-data"
-)
-
-content_tidy_data %>% browse_dashboard()
-```
 
 ## 02 Model
 

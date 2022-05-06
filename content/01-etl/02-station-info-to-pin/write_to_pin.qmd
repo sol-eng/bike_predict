@@ -1,5 +1,5 @@
 ---
-title: "ETL Step 3 - Write station data to pin"
+title: "ETL Step 2 - Write station data to pin"
 date: "`r Sys.time()`"
 output: html_document
 ---

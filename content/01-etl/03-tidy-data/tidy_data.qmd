@@ -1,5 +1,5 @@
 ---
-title: "ETL Step 2 - Tidy data"
+title: "ETL Step 3 - Tidy data"
 date: "`r Sys.time()`"
 output: html_document
 ---
@@ -20,13 +20,26 @@ library(dbplyr)
 
 ## Get data from database
 
-Connect to *Content DB* and get the *required tables*.
+Connect to *Content DB* to get the *bike_raw_data* table.
 
 ```{r, get_data_from_db}
 con <- odbc::dbConnect(odbc::odbc(), "Content DB", timeout = 10)
 bike_raw_data <- tbl(con, "bike_raw_data")
-bike_station_info <- tbl(con, "bike_station_info")
+
+glimpse(bike_raw_data)
 ```
+
+Connect to RStudio Connect to get the *bike_station_info* from the pin.
+
+```{r}
+board <- pins::board_rsconnect("envvar", server = "https://colorado.rstudio.com/rsc")
+
+bike_station_info <- board %>%
+  pins::pin_read("sam.edwardes/bike-predict-r-station-info-pinned")
+
+glimpse(bike_station_info)
+```
+
 
 ## Tidy the data
 
