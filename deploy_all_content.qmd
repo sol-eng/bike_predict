@@ -150,6 +150,7 @@ content_tidy_data %>%
 ### 2.1 Train and deploy the model
 
 ```{r}
+# Deploy the content.
 content_train_model <- deploy_content_to_connect(
   client = client,
   app_name = "bike-predict-r-train-and-deploy-model",
@@ -159,7 +160,12 @@ content_train_model <- deploy_content_to_connect(
   vanity_url = "bike-predict-r-train-and-deploy-model"
 )
 
-content_train_model %>% browse_dashboard()
+# Print the URL.
+print(content_train_model$get_url())
+
+# Open the content in your browser.
+content_train_model %>% 
+  browse_dashboard()
 ```
 
 ```{r}

@@ -63,7 +63,7 @@ board |>
   pins::pin_write(
     station_info,
     name = "bike-predict-r-station-info-pinned",
-    title = "Bike Predict (R) - Station Data",
+    title = "Bike Predict (R) - ETL - Station Info Pin",
     versioned = TRUE,
     description = glue("Bike station data from endpoint {station_information_url}")
   )
@@ -101,6 +101,7 @@ content <-client %>%
   
   # Update content settings.
   content %>%
-    connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R) %>%
-    connectapi::set_image_path("../../../img/bike_share_connect_image.drawio.png")
+    connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$ETL) %>%
+    connectapi::set_image_path("../../../img/bike_share_connect_image.drawio.png") %>%
+    connectapi::set_vanity_url("bike-predict-r-station-info-data-pin")
 ```

@@ -34,12 +34,29 @@ Connect to RStudio Connect to get the *bike_station_info* from the pin.
 ```{r}
 board <- pins::board_rsconnect("envvar", server = "https://colorado.rstudio.com/rsc")
 
-bike_station_info <- board %>%
+bike_station_info_pin <- board %>%
   pins::pin_read("sam.edwardes/bike-predict-r-station-info-pinned")
 
-glimpse(bike_station_info)
+glimpse(bike_station_info_pin)
 ```
 
+Write the station info to *Content DB* so that it can perform a join between *bike_station_info* and *bike_raw_data*.
+
+```{r}
+if (odbc::dbExistsTable(con, "bike_station_info")) {
+  odbc::dbRemoveTable(con, "bike_station_info")
+}
+
+odbc::dbWriteTable(
+  con, 
+  "bike_station_info", 
+  bike_station_info_pin,
+  overwrite = TRUE
+)
+
+bike_station_info <- tbl(con, "bike_station_info")
+glimpse(bike_station_info)
+```
 
 ## Tidy the data
 

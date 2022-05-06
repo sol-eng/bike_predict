@@ -4,7 +4,7 @@
   "platform": "4.1.2",
   "metadata": {
     "appmode": "rmd-static",
-    "primary_rmd": "report.qmd",
+    "primary_rmd": "train_and_deploy_model.qmd",
     "primary_html": null,
     "content_category": null,
     "has_parameters": false
@@ -4423,8 +4423,8 @@
     }
   },
   "files": {
-    "report.qmd": {
-      "checksum": "14002f0106d49da54490d9e2ff5b771c"
+    "train_and_deploy_model.qmd": {
+      "checksum": "7bcb59e6cb715c03f40dc6c45b6c4218"
     }
   },
   "users": null
