@@ -4,14 +4,13 @@ date: "`r Sys.time()`"
 output: html_document
 ---
 
-Update the database with the latest bike data.
+This notebook uses the [bikeHelpR](https://packagemanager.rstudio.com/client/#/repos/1/packages/bikeHelpR) package to update a database with the latest bike share data. The package pulls data from <https://capitalbikeshare.com> which provides an API to access bike share data. The raw data is written to the *Content DB* database to the *bike_raw_data* table.
 
-```{r libraries}
+```{r setup}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
 library(dplyr)
 library(odbc)
-
-# Internally developed packages
-library(bikeHelpR)
 
 # The following packages are not directly called, but are requirements. They
 # need to be here so that `rsconnect::writeManifest` is able to capture them
@@ -21,43 +20,46 @@ library(purrr)
 library(magrittr)
 ```
 
-```{r feeds}
-feeds <- feeds_urls()
-glimpse(feeds)
-```
+## Get data from API
+
+Use the the `bikeHelpR` package to get the latest data from <https://capitalbikeshare.com>.
 
 ```{r data}
-data <- feeds %>% 
-   filter(name == "station_status") %>% 
-   pull(url) %>% 
-   get_data()
+feeds_data <- 
+  bikeHelpR::feeds_urls() %>% 
+  filter(name == "station_status") %>% 
+  pull(url) %>% 
+  bikeHelpR::get_data() 
 
-print(glimpse(data))
+station_status <- 
+  feeds_data %>%
+  magrittr::extract2("data") %>%
+  dplyr::mutate(time = feeds_data$last_updated) %>%
+  dplyr::select(
+    is_installed, 
+    num_bikes_available, 
+    last_reported, 
+    is_renting, 
+    eightd_has_available_keys, 
+    num_docks_available, 
+    num_docks_disabled, 
+    is_returning, 
+    station_id, num_ebikes_available, 
+    num_bikes_disabled, 
+    time
+  )
+
+glimpse(station_status)
 ```
 
-```{r dataframe}
-df <- data %>%
-    magrittr::extract2("data") %>%
-    dplyr::mutate(time = data$last_updated) %>%
-    dplyr::select(
-      is_installed, 
-      num_bikes_available, 
-      last_reported, 
-      is_renting, 
-      eightd_has_available_keys, 
-      num_docks_available, 
-      num_docks_disabled, 
-      is_returning, 
-      station_id, num_ebikes_available, 
-      num_bikes_disabled, 
-      time
-    )
+## Update database
 
-glimpse(df)
-```
+Write the new data from the API to the database. This code will only execute when run non-interactively. This is helpful so that duplicate rows are not added to the database when working on chnages to this report.
 
 ```{r write_to_db}
-con <- dbConnect(odbc(), "Content DB", timeout = 10)
-# dbWriteTable(con, "bike_raw_data", df, append = TRUE)
-dbDisconnect(con)
+if (interactive()) {
+  con <- dbConnect(odbc(), "Content DB", timeout = 10)
+  dbWriteTable(con, "bike_raw_data", station_status, append = TRUE)
+  dbDisconnect(con)
+}
 ```

@@ -4,13 +4,21 @@ date: "`r Sys.time()`"
 output: html_document
 ---
 
-```{r}
+```{r setup}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
 library(connectapi)
-```
 
-The purpose of this document is to deploy all `bike_predict` related content to RStudio Connect. It should be run from RStudio Workbench (or your local development environment). This document itself is not meant to be published.
-
-```{r}
+#' Deploy content to Connect
+#'
+#' @param client Connect `client` from `connectapi::connect()`.
+#' @param app_name The name of the app.
+#' @param app_title The title of the app.
+#' @param app_directory_location The location of the app directory.
+#' @param app_files The app files to include.
+#' @param vanity_url The vanity URL to assign to the content.
+#'
+#' @return connectapi::Content R6 class.
 deploy_content_to_connect <- function(
     client, 
     app_name, 
@@ -19,14 +27,11 @@ deploy_content_to_connect <- function(
     app_files,
     vanity_url
   ) {
-  # Wrate a manfifest file.
+  # Write a manifest file.
   rsconnect::writeManifest(
     appDir = app_directory_location, 
     appFiles = app_files
   )
-  
-  tags <- client %>%
-    get_tags()
   
   # Deploy the content.
   content <- 
@@ -50,18 +55,20 @@ deploy_content_to_connect <- function(
     content %>%
       content_add_user(c, role = "owner")
   }
+  # Get tags.
+  tags <- client %>%
+    get_tags()
   
   # Update content settings.
   content %>%
-    set_vanity_url(vanity_url) %>%
+    set_vanity_url(vanity_url, force = TRUE) %>%
     set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R) %>%
     set_image_path("./img/bike_share_connect_image.drawio.png")
   
   content
 }
-```
 
-```{r}
+
 # Establish a connection to RStudio connect.
 client <- connect(
   server = Sys.getenv("CONNECT_SERVER"),
@@ -69,11 +76,14 @@ client <- connect(
 )
 ```
 
+The purpose of this document is to deploy all `bike_predict` related content to RStudio Connect. It should be run from RStudio Workbench (or your local development environment). This document itself is not meant to be published.
+
 ## 01 ETL
 
 ### 1.1 Update the database
 
 ```{r}
+# Deploy the content.
 content_get_data_from_db <- deploy_content_to_connect(
   client = client,
   app_name = "bike-predict-r-update-db",
@@ -83,7 +93,12 @@ content_get_data_from_db <- deploy_content_to_connect(
   vanity_url = "bike-predict-r-update-db"
 )
 
-content_get_data_from_db %>% browse_dashboard()
+# Print the URL.
+print(content_get_data_from_db$get_url())
+
+# Open the content in your browser.
+content_get_data_from_db %>% 
+  browse_dashboard()
 ```
 
 ### 1.2 Clean the data

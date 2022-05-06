@@ -1,32 +1,38 @@
 ---
-title: "Clean Analysis Dataset"
+title: "ETL Step 2 - Tidy data"
 date: "`r Sys.time()`"
 output: html_document
 ---
 
+This notebook tidies the raw *raw_data_table* from the *Content DB* database. The tidy data is written back to the *Content DB* database to the *bike_model_data* table.
 
-```{r libraries}
+```{r setup}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
 library(dplyr)
 library(lubridate)
+
+# The following packages are not directly called, but are requirements. They
+# need to be here so that `rsconnect::writeManifest` is able to capture them
+# as a dependency.
+library(dbplyr)
+library(purrr)
+library(magrittr)
 ```
 
-# Connect to database and board
+## Get data from database
 
-```{r connections}
-con <- odbc::dbConnect(odbc::odbc(), "Content DB", timeout = 10)
-
-pins::board_register_rsconnect(
-  server = Sys.getenv("CONNECT_SERVER"),
-  key = Sys.getenv("CONNECT_API_KEY")
-)
-```
+Connect to *Content DB* and get the *required tables*.
 
 ```{r, get_data_from_db}
+con <- odbc::dbConnect(odbc::odbc(), "Content DB", timeout = 10)
 df_con <- tbl(con, "bike_raw_data")
 stats <- tbl(con, "bike_station_info")
 ```
 
-# Clean data
+## Tidy the data
+
+Apply the data tidying steps. All of the tidying steps are performed in SQL. The results are written back to *Content DB* to the *bike_model_data* table.
 
 ```{r clean_data}
 if (odbc::dbExistsTable(con, "bike_model_data")) {
