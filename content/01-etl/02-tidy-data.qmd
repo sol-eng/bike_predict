@@ -1,5 +1,5 @@
 ---
-title: "ETL Step 3 - Tidy data"
+title: "ETL Step 2 - Tidy data"
 date: "`r Sys.time()`"
 output: html_document
 ---

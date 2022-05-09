@@ -52,16 +52,7 @@ dates <- all_days %>%
 
 # Split the data into test and train.
 n_days_test <- 2
-
-if (interactive()) {
-  # If the code is being run interactively only train a few days so that it runs
-  # quicker.
-  n_days_to_train <- 10
-} else {
-  # When the code is not being run interactivly train on more data. This will
-  # take longer but result in a better model.
-  n_days_to_train <- 30 * 6
-}
+n_days_to_train <- 30 * 6
 
 train_end_date <- dates[n_days_test + 1]
 train_start_date <- train_end_date - n_days_to_train
@@ -156,6 +147,7 @@ Create a `vetiver` model object.
 
 ```{r create_vetiver_model}
 model_name <- "bike_predict_model_r"
+pin_name <- glue("sam.edwardes/{model_name}")
 
 v <- vetiver_model(
   model_fit, 
@@ -183,10 +175,7 @@ board <- pins::board_rsconnect(
 
 # Write the model to the board.
 board %>%
- vetiver_pin_write(
-   v,
-   title = "Bike Predict (R) - Model - Random Forest Model Pin",
- )
+ vetiver_pin_write(vetiver_model = v)
 ```
 
 Update the pin permissions and metadata on Connect:
@@ -199,42 +188,33 @@ client <- connectapi::connect(
 )
 
 # Get the content
-content <-client %>%
-  connectapi::content_item("a8b9ad3e-f847-4a6c-aadb-01684873b8e5")
+content <- client %>%
+  connectapi::content_item("0273207f-0f1f-44cb-845e-408f9dae2dd6")
+
+content$update(title = "Bike Predict (R) - Model - Pinned Model")
 
 # Make the app visible to the world!
-  content$update(access_type = "all")
+content$update(access_type = "all")
+
+# Define the contents collaborators
+collaborators <- c(
+  "69db516b-ba3e-442a-84d9-f916fc92a2ca", # Gagan Singh
+  "99a43fac-2edd-4c31-8cba-a001c507da2e"  # Xu Fei
   
-  # Define the contents collaborators
-  collaborators <- c(
-    "69db516b-ba3e-442a-84d9-f916fc92a2ca", # Gagan Singh
-    "99a43fac-2edd-4c31-8cba-a001c507da2e"  # Xu Fei
-    
-  )
-  for (c in collaborators) {
-    content %>%
-      connectapi::content_add_user(c, role = "owner")
-  }
-  # Get tags.
-  tags <- client %>%
-    connectapi::get_tags()
+)
+for (c in collaborators) {
+  content %>%
+    connectapi::content_add_user(c, role = "owner")
+}
+# Get tags.
+tags <- client %>%
+  connectapi::get_tags()
   
   # Update content settings.
-  content %>%
-    connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model) %>%
-    connectapi::set_image_path("../../../img/bike_share_connect_image.drawio.png") %>%
-    connectapi::set_vanity_url("bike-predict-r-station-info-data-pin")
-```
-
-
-Check out the version history of the model:
-
-```{r inspect_history_of_model_pins}
-pin_name <- glue("sam.edwardes/{model_name}")
-print(glue("Connect to pin named: {pin_name}"))
-
-board %>% 
-  pins::pin_versions(pin_name)
+content %>%
+  connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model) %>%
+  connectapi::set_image_path("../../img/bike_share_connect_image.drawio.png") %>%
+  connectapi::set_vanity_url("bike-predict-r-station-info-data-pin")
 ```
 
 ### `plumber`
@@ -243,6 +223,7 @@ Convert the model into a plumber API. The function `vetiver_write_plumber` will 
 
 ```{r write_model_to_plumber}
 # Write the model to `api/plumber.R`.
+dir.create("api")
 vetiver_write_plumber(board, pin_name, file = "api/plumber.R")
 
 # Write a manifest.json file for the api
@@ -300,8 +281,14 @@ for (c in collaborators) {
 # Update content settings.
 content %>%
   connectapi::set_vanity_url("bike-predict-r-api") %>%
-  connectapi::set_image_path("../../../img/bike_share_connect_image.drawio.png") %>%
+  connectapi::set_image_path("../../img/bike_share_connect_image.drawio.png") %>%
   connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model)
+```
+
+Delete the API directory so that it is not checked into version control.
+
+```{r delete_api_dir}
+unlink("api", recursive = TRUE)
 ```
 
 ```{r close_db_connection}

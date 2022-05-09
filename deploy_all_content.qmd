@@ -170,13 +170,29 @@ content_train_model <- deploy_content_to_connect(
   client = client,
   app_name = "bike-predict-r-train-and-deploy-model",
   app_title = "Bike Predict (R) - Model - Train and Deploy Model",
-  app_directory_location = "./content/02-model/01-train-and-deploy-model",
-  app_files = "train_and_deploy_model.qmd",
+  app_directory_location = "./content/02-model",
+  app_files = "01-train-and-deploy-model.qmd",
   vanity_url = "bike-predict-r-train-and-deploy-model"
 )
 
+# Set tags.
+content_train_model %>%
+  set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model)
+
+# Set a schedule.
+content_train_model %>%
+  get_variant_default() %>%
+  get_variant_schedule() %>%
+  set_schedule_day(
+    start_time = lubridate::as_datetime(glue(
+      as.character(lubridate::today()),
+      " 05:30:00 UTC"
+    ))
+  )
+
 # Print the URL.
 print(content_train_model$get_url())
+print(glue("https://colorado.rstudio.com/rsc{get_vanity_url(content_train_model)}"))
 
 # Open the content in your browser.
 content_train_model %>% 
