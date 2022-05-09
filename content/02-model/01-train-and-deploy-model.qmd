@@ -52,7 +52,7 @@ dates <- all_days %>%
 
 # Split the data into test and train.
 n_days_test <- 2
-n_days_to_train <- 30 * 6
+n_days_to_train <- 10
 
 train_end_date <- dates[n_days_test + 1]
 train_start_date <- train_end_date - n_days_to_train
@@ -115,7 +115,7 @@ Fit a random forest model:
 
 ```{r fit_model}
 model_spec <- 
-  rand_forest(trees = 200) %>%
+  rand_forest() %>%
   set_mode("regression") %>%
   set_engine("ranger")
 
@@ -155,7 +155,11 @@ v <- vetiver_model(
   versioned = TRUE,
   save_ptype = train_data %>%
     head(1) %>%
-    select(-n_bikes)
+    select(-n_bikes),
+  metadata = list(
+    train_dates = c(min(train_data$date), max(train_data$date)),
+    test_dates = c(min(test_data$date), max(test_data$date))
+  )
 )
 
 v
@@ -213,7 +217,7 @@ tags <- client %>%
   # Update content settings.
 content %>%
   connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model) %>%
-  connectapi::set_image_path("../../img/bike_share_connect_image.drawio.png") %>%
+  connectapi::set_image_url("https://i.imgur.com/ITQOzRw.png") %>%
   connectapi::set_vanity_url("bike-predict-r-station-info-data-pin")
 ```
 
@@ -281,7 +285,7 @@ for (c in collaborators) {
 # Update content settings.
 content %>%
   connectapi::set_vanity_url("bike-predict-r-api") %>%
-  connectapi::set_image_path("../../img/bike_share_connect_image.drawio.png") %>%
+  connectapi::set_image_url("https://i.imgur.com/ITQOzRw.png") %>%
   connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model)
 ```
 

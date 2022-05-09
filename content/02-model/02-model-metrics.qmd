@@ -1,0 +1,149 @@
+---
+title: "Model Step 2 - Model Metrics"
+date: "`r Sys.time()`"
+output: html_document
+---
+
+This report runs after the new data has been cleansed. The report pulls the cleaned data and loads the latest trained model, and then scores the data with the new model, over-writing any previous model scores.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
+library(dplyr)
+library(vetiver)
+library(glue)
+library(ggplot2)
+
+# Internally developed packages
+library(bikeHelpR)
+
+# The following packages are not directly called, but are requirements. They
+# need to be here so that `rsconnect::writeManifest` is able to capture them
+# as a dependency.
+library(dbplyr)
+```
+
+## Data
+
+Connect to the database.
+
+```{r}
+con <- odbc::dbConnect(odbc::odbc(), "Content DB", timeout = 10)
+bike_model_data <- tbl(con, "bike_model_data")
+glimpse(bike_model_data)
+```
+
+## Predictions
+
+Get the model object from the pin to access the model object metadata.
+
+```{r}
+board <- pins::board_rsconnect(
+  server = Sys.getenv("CONNECT_SERVER"),
+  key = Sys.getenv("CONNECT_API_KEY"),
+)
+
+model <- vetiver_pin_read(board, "sam.edwardes/bike_predict_model_r")
+```
+
+Divide the data into three categories:
+
+1. train - data that was used to train the model.
+2. test - the data that was used to test the model during training.
+3. latest - all new observations since the last model training.
+
+```{r create_test_data}
+train_start_date <- lubridate::as_date(model$metadata$user$train_dates[1])
+train_end_date <- lubridate::as_date(model$metadata$user$train_dates[2])
+test_end_date <- lubridate::as_date(model$metadata$user$test_dates[2])
+
+data <- bike_model_data %>%
+  filter(date >=train_start_date) %>%
+  collect() %>%
+  mutate(
+    data_type = case_when(
+      date <= train_end_date ~ "train",
+      date <= test_end_date ~ "test",
+      TRUE ~ "latest"
+    )
+  )
+
+glimpse(data)
+```
+
+Make predictions by calling the models API endpoint.
+
+```{r predict}
+url <- "https://colorado.rstudio.com/rsc/bike-predict-r-api/predict"
+endpoint <- vetiver_endpoint(url)
+
+prediction_results <-
+  predict(endpoint, select(data, -n_bikes)) %>%
+  bind_cols(data) %>%
+  select(everything(), n_bikes, prediction = .pred) %>%
+  mutate(
+    residuals = n_bikes - prediction,
+    upload_time = Sys.time(),
+    model = "Random Forest"
+  )
+
+glimpse(prediction_results)
+```
+
+## Summarize model accuracy 
+
+We summarize the model results based on three windows: the model's original training window (stored alongside the model in the `model_details` pin), the new "test" data that has arrived after the training window, the latest data from the last time this report ran.
+
+```{r current_metrics}
+current_metrics <- prediction_results %>%
+  group_by(data_type) %>%
+  tidyr::nest() %>%
+  mutate(
+    oos_metrics = purrr::map(data, ~ bikeHelpR::oos_metrics(.x$n_bikes, .x$prediction))
+  ) %>%
+  select(data_type, oos_metrics) %>%
+  tidyr::unnest_wider(oos_metrics) %>%
+  mutate(date = lubridate::today())
+
+current_metrics
+```
+
+Add the prediction results to the database.
+
+```{r send_metrics_to_db}
+all_time_metrics <- tbl(con, "bike_predict_metrics") %>%
+  collect() %>%
+  bind_rows(current_metrics) %>%
+  distinct(date, data_type, .keep_all = TRUE)
+
+odbc::dbWriteTable(
+  con, 
+  "bike_predict_metrics", 
+  all_time_metrics, 
+  overwrite = TRUE
+)
+
+glimpse(all_time_metrics)
+```
+
+Plot the model performance over time.
+
+```{r all_time_metrics_plot}
+fig <- all_time_metrics %>%
+  tidyr::pivot_longer(cols = c(-data_type, -date), names_to = "metric") %>%
+  ggplot(aes(x = date, y = value, color = data_type)) +
+  geom_line() +
+  geom_point() +
+  facet_wrap(~ metric) +
+  labs(
+    title = "Model performance over time",
+    x = "Date",
+    y = "Value"
+  )
+
+plotly::ggplotly(fig)
+```
+
+```{r disconnect_db}
+odbc::dbDisconnect(con)
+```
