@@ -28,12 +28,15 @@ deploy_content_to_connect <- function(
     app_title, 
     app_directory_location, 
     app_files,
-    vanity_url
+    app_primary_doc = NULL,
+    vanity_url = NULL,
+    delete_manifest = TRUE
   ) {
   # Write a manifest file.
   rsconnect::writeManifest(
     appDir = app_directory_location, 
-    appFiles = app_files
+    appFiles = app_files,
+    appPrimaryDoc = app_primary_doc
   )
   
   # Deploy the content.
@@ -67,6 +70,11 @@ deploy_content_to_connect <- function(
     set_vanity_url(vanity_url, force = TRUE) %>%
     set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R) %>%
     set_image_path("./img/bike_share_connect_image.drawio.png")
+  
+  # Delete the manfifest.json
+  if (delete_manifest == TRUE) {
+    unlink(file.path(app_directory_location, "manifest.json"))
+  }
   
   content
 }
@@ -199,7 +207,7 @@ content_train_model %>%
   browse_dashboard()
 ```
 
-# 2.2 Model Metrics
+### 2.2 Model Metrics
 
 ```{r}
 # Deploy the content.
@@ -236,3 +244,32 @@ content %>%
   browse_dashboard()
 ```
 
+## App
+
+### 3.1 Client App
+
+```{r}
+# Deploy the content.
+content <- deploy_content_to_connect(
+  client = client,
+  app_name = "bike-predict-r-client-app",
+  app_title = "Bike Predict (R) - App - Client App",
+  app_directory_location = "./content/03-app",
+  app_files = "01-client-app.R",
+  app_primary_doc = "01-client-app.R",
+  vanity_url = "bike-predict-r-client-app"
+)
+
+# Set tags.
+content %>%
+  set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$App)
+
+
+# Print the URL.
+print(content$get_url())
+print(glue("https://colorado.rstudio.com/rsc{get_vanity_url(content)}"))
+
+# Open the content in your browser.
+content %>% 
+  browse_dashboard()
+```
