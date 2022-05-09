@@ -1,6 +1,6 @@
 ## Pipeline
 
-The diagram below describes the bike predict dataflow.
+The diagram below describes the bike predict data flow.
 
 ![](./img/workflow.drawio.png)
 
