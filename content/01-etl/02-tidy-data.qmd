@@ -20,39 +20,13 @@ library(dbplyr)
 
 ## Get data from database
 
-Connect to *Content DB* to get the *bike_raw_data* table.
+Connect to *Content DB* to get the *bike_raw_data* and *bike_station_info* table.
 
 ```{r, get_data_from_db}
 con <- odbc::dbConnect(odbc::odbc(), "Content DB", timeout = 10)
+
 bike_raw_data <- tbl(con, "bike_raw_data")
-
 glimpse(bike_raw_data)
-```
-
-Connect to RStudio Connect to get the *bike_station_info* from the pin.
-
-```{r}
-board <- pins::board_rsconnect("envvar", server = "https://colorado.rstudio.com/rsc")
-
-bike_station_info_pin <- board %>%
-  pins::pin_read("sam.edwardes/bike-predict-r-station-info-pinned")
-
-glimpse(bike_station_info_pin)
-```
-
-Write the station info to *Content DB* so that it can perform a join between *bike_station_info* and *bike_raw_data*.
-
-```{r}
-if (odbc::dbExistsTable(con, "bike_station_info")) {
-  odbc::dbRemoveTable(con, "bike_station_info")
-}
-
-odbc::dbWriteTable(
-  con, 
-  "bike_station_info", 
-  bike_station_info_pin,
-  overwrite = TRUE
-)
 
 bike_station_info <- tbl(con, "bike_station_info")
 glimpse(bike_station_info)
@@ -67,6 +41,7 @@ if (odbc::dbExistsTable(con, "bike_model_data")) {
   odbc::dbRemoveTable(con, "bike_model_data")
 }
 
+# Build a SQL query to tidy the data.
 query <- bike_raw_data %>% 
     group_by(
         id = station_id, 
@@ -85,10 +60,14 @@ query <- bike_raw_data %>%
     dbplyr::sql_render() %>%
     stringr::str_replace("SELECT", "CREATE TABLE bike_model_data AS SELECT")
 
+# Execute the SQL query.
 odbc::dbSendQuery(con, query)
+
+# Preview the table.
 tbl(con, "bike_model_data")
 ```
 
-```{r}
+```{r close_connection}
 odbc::dbDisconnect(con)
+print("Complete 🎉")
 ```

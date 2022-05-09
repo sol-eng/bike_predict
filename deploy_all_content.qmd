@@ -7,7 +7,10 @@ output: html_document
 ```{r setup}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
 
+library(dplyr)
 library(connectapi)
+library(glue)
+
 
 #' Deploy content to Connect
 #'
@@ -74,76 +77,88 @@ client <- connect(
   server = Sys.getenv("CONNECT_SERVER"),
   api_key = Sys.getenv("CONNECT_API_KEY")
 )
+
+tags <- client %>%
+    get_tags()
 ```
 
 The purpose of this document is to deploy all `bike_predict` related content to RStudio Connect. It should be run from RStudio Workbench (or your local development environment). This document itself is not meant to be published.
 
 ## 01 ETL
 
-### 1.1 Update the database
+### 1.1 Raw Data Refresh
 
 ```{r}
 # Deploy the content.
-content_get_data_from_db <- deploy_content_to_connect(
+content_etl_01 <- deploy_content_to_connect(
   client = client,
-  app_name = "bike-predict-r-update-db",
-  app_title = "Bike Predict (R) - ETL Step 01 - Update the Database",
-  app_directory_location = "./content/01-etl/01-station-status-to-db/",
-  app_files = "update_db.qmd",
-  vanity_url = "bike-predict-r-update-db"
+  app_name = "bike-predict-r-raw-data-refresh",
+  app_title = "Bike Predict (R) - ETL Step 01 - Raw Data Refresh",
+  app_directory_location = "./content/01-etl/",
+  app_files = "01-raw-data-refresh.qmd",
+  vanity_url = "bike-predict-r-raw-data-refresh"
 )
 
+# Set tags.
+content_etl_01 %>%
+  set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$ETL)
+
+# Set a schedule.
+content_etl_01 %>%
+  get_variant_default() %>%
+  get_variant_schedule() %>%
+  set_schedule_day(
+    start_time = lubridate::as_datetime(glue(
+      as.character(lubridate::today()),
+      " 05:00:00 UTC"
+    ))
+  )
+
 # Print the URL.
-print(content_get_data_from_db$get_url())
+print(content_etl_01$get_url())
+print(glue("https://colorado.rstudio.com/rsc{get_vanity_url(content_etl_01)}"))
 
 # Open the content in your browser.
-content_get_data_from_db %>% 
+content_etl_01 %>% 
   browse_dashboard()
 ```
 
-### 1.2 Write station data to pin
+### 1.2 Tidy the data
 
 ```{r}
 # Deploy the content.
-content_get_data_from_db <- deploy_content_to_connect(
-  client = client,
-  app_name = "bike-predict-r-pin-station-info",
-  app_title = "Bike Predict (R) - ETL Step 02 - Write station data to pin",
-  app_directory_location = "./content/01-etl/02-station-info-to-pin/",
-  app_files = "write_to_pin.qmd",
-  vanity_url = "bike-predict-r-station-info-to-pin"
-)
-
-# Print the URL.
-print(content_get_data_from_db$get_url())
-
-# Open the content in your browser.
-content_get_data_from_db %>% 
-  browse_dashboard()
-```
-
-### 1.3 Tidy the data
-
-```{r}
-# Deploy the content.
-content_tidy_data <- deploy_content_to_connect(
+content_01_02 <- deploy_content_to_connect(
   client = client,
   app_name = "bike-predict-r-tidy-data",
-  app_title = "Bike Predict (R) - ETL Step 03 - Tidy the data",
-  app_directory_location = "./content/01-etl/03-tidy-data/",
-  app_files = "tidy_data.qmd",
+  app_title = "Bike Predict (R) - ETL Step 02 - Tidy the data",
+  app_directory_location = "./content/01-etl/",
+  app_files = "02-tidy-data.qmd",
   vanity_url = "bike-predict-r-tidy-data"
 )
 
+# Set tags.
+content_01_02 %>%
+  set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$ETL)
+
+# Set a schedule.
+content_01_02 %>%
+  get_variant_default() %>%
+  get_variant_schedule() %>%
+  set_schedule_day(
+    start_time = lubridate::as_datetime(glue(
+      as.character(lubridate::today()),
+      " 05:15:00 UTC"
+    ))
+  )
+
 # Print the URL.
-print(content_tidy_data$get_url())
+print(content_01_02$get_url())
+print(glue("https://colorado.rstudio.com/rsc{get_vanity_url(content_01_02)}"))
 
 # Open the content in your browser.
-content_tidy_data %>% 
+content_01_02 %>% 
   browse_dashboard()
 ```
-
-
 
 ## 02 Model
 
