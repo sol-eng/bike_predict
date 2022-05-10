@@ -1,22 +1,25 @@
-print("Loading libraries")
 library(shiny)
 library(shinydashboard)
-library(httr)
 library(ggplot2)
 library(dplyr)
 library(vetiver)
 library(glue)
 library(leaflet)
 library(lubridate)
-print("---- Loading libraries complete")
+
+
 # ////////////////////////////////////////////////////////////////////////////
 # Setup
 # ////////////////////////////////////////////////////////////////////////////
-con <- odbc::dbConnect(odbc::odbc(), "Content DB", timeout = 10)
-bike_station_info <- collect(tbl(con, "bike_station_info"))
-print("---- bike station info start")
-print(bike_station_info)
-print("---- bike station info end")
+board <- pins::board_rsconnect(
+  server = Sys.getenv("CONNECT_SERVER"),
+  key = Sys.getenv("CONNECT_API_KEY"),
+)
+
+bike_station_info <- pins::pin_read(
+  board,
+  "sam.edwardes/bike-predict-r-station-info-pin"
+)
 
 
 # ////////////////////////////////////////////////////////////////////////////

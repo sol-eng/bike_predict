@@ -218,7 +218,7 @@ tags <- client %>%
 content %>%
   connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model) %>%
   connectapi::set_image_url("https://i.imgur.com/ITQOzRw.png") %>%
-  connectapi::set_vanity_url("bike-predict-r-station-info-data-pin")
+  connectapi::set_vanity_url("bike-predict-r-pinned-model", force = TRUE)
 ```
 
 ### `plumber`

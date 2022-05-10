@@ -97,3 +97,62 @@ dbWriteTable(con, "bike_station_info", station_info, overwrite = TRUE)
 dbDisconnect(con)
 print("Raw data updated 🎉")
 ```
+
+## Update the pin
+
+Station info will also be written to a pin. This pin will be accessed by the shiny app so that it can easily get the bike station info without connecting to the database.
+
+```{r pin_station_info}
+board <- pins::board_rsconnect(
+  server = Sys.getenv("CONNECT_SERVER"),
+  key = Sys.getenv("CONNECT_API_KEY"),
+  versioned = TRUE
+)
+
+# Write the model to the board.
+pins::pin_write(
+  board,
+  x = station_info,
+  name = "bike-predict-r-station-info-pin",
+  title = "Bike Predict (R) - ELT - Pinned Station Info",
+  description = "Bike station info from https://capitalbikeshare.com."
+)
+
+print("Pin 🎉")
+```
+Update the pin permissions and metadata on Connect:
+
+```{r pin_metadata}
+# Set content permissions
+client <- connectapi::connect(
+  server = Sys.getenv("CONNECT_SERVER"),
+  api_key = Sys.getenv("CONNECT_API_KEY")
+)
+
+# Get the content
+content <- client %>%
+  connectapi::content_item("00036e13-9a3c-44c6-84eb-253de91b10c2")
+
+# Make the app visible to the world!
+content$update(access_type = "all")
+
+# Define the contents collaborators
+collaborators <- c(
+  "69db516b-ba3e-442a-84d9-f916fc92a2ca", # Gagan Singh
+  "99a43fac-2edd-4c31-8cba-a001c507da2e"  # Xu Fei
+  
+)
+for (c in collaborators) {
+  content %>%
+    connectapi::content_add_user(c, role = "owner")
+}
+# Get tags.
+tags <- client %>%
+  connectapi::get_tags()
+  
+  # Update content settings.
+content %>%
+  connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$ETL) %>%
+  connectapi::set_image_url("https://i.imgur.com/ITQOzRw.png") %>%
+  connectapi::set_vanity_url("bike-predict-r-station-info-data-pin", force = TRUE)
+```
