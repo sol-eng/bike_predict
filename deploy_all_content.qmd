@@ -254,7 +254,7 @@ content <- deploy_content_to_connect(
   client = client,
   app_name = "bike-predict-r-client-app",
   app_title = "Bike Predict (R) - App - Client App",
-  app_directory_location = "./content/03-app",
+  app_directory_location = "./content/03-app/01-client-app",
   app_files = "app.R",
   vanity_url = "bike-predict-r-client-app"
 )
