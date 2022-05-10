@@ -256,8 +256,7 @@ content <- deploy_content_to_connect(
   app_title = "Bike Predict (R) - App - Client App",
   app_directory_location = "./content/03-app",
   app_files = "app.R",
-  vanity_url = "bike-predict-r-client-app",
-  delete_manifest = FALSE
+  vanity_url = "bike-predict-r-client-app"
 )
 
 # Set tags.
