@@ -174,7 +174,7 @@ content_01_02 %>%
 
 ```{r}
 # Deploy the content.
-content_train_model <- deploy_content_to_connect(
+content <- deploy_content_to_connect(
   client = client,
   app_name = "bike-predict-r-train-and-deploy-model",
   app_title = "Bike Predict (R) - Model Step 01 - Train and Deploy Model",
@@ -184,11 +184,11 @@ content_train_model <- deploy_content_to_connect(
 )
 
 # Set tags.
-content_train_model %>%
+content %>%
   set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model)
 
 # Set a schedule.
-content_train_model %>%
+content %>%
   get_variant_default() %>%
   get_variant_schedule() %>%
   set_schedule_day(
@@ -199,11 +199,11 @@ content_train_model %>%
   )
 
 # Print the URL.
-print(content_train_model$get_url())
-print(glue("https://colorado.rstudio.com/rsc{get_vanity_url(content_train_model)}"))
+print(content$get_url())
+print(glue("https://colorado.rstudio.com/rsc{get_vanity_url(content)}"))
 
 # Open the content in your browser.
-content_train_model %>% 
+content %>% 
   browse_dashboard()
 ```
 
@@ -255,9 +255,9 @@ content <- deploy_content_to_connect(
   app_name = "bike-predict-r-client-app",
   app_title = "Bike Predict (R) - App - Client App",
   app_directory_location = "./content/03-app",
-  app_files = "01-client-app.R",
-  app_primary_doc = "01-client-app.R",
-  vanity_url = "bike-predict-r-client-app"
+  app_files = "app.R",
+  vanity_url = "bike-predict-r-client-app",
+  delete_manifest = FALSE
 )
 
 # Set tags.
