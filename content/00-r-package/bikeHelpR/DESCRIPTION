@@ -11,7 +11,11 @@ LazyData: true
 Imports: 
     purrr,
     magrittr,
-    tibble, 
-    xgboost, 
-    yardstick
+    tibble,
+    xgboost,
+    yardstick,
+    httr, 
+    dplyr, 
+    DBI, 
+    pins
 RoxygenNote: 6.1.1
