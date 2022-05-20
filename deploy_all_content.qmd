@@ -136,7 +136,7 @@ content <- deploy_content_to_connect(
   vanity_url = "bike-predict-r-raw-data-refresh",
   tag = tags$`Projects and Presentations`$`Bike Predict`$R$ETL,
   schedule_timestamp = "05:15:00 EST",
-  sleep_seconds = 60 * 2
+  sleep_seconds = 60 * 5
 )
 
 # Print the URL.
@@ -160,7 +160,7 @@ content <- deploy_content_to_connect(
   vanity_url = "bike-predict-r-tidy-data",
   tag = tags$`Projects and Presentations`$`Bike Predict`$R$ETL,
   schedule_timestamp = "05:15:00 EST",
-  sleep_seconds = 60 * 3
+  sleep_seconds = 60 * 5
 )
 
 # Print the URL.

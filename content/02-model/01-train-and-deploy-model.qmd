@@ -239,7 +239,7 @@ rsconnect::writeManifest("api")
 
 Here is what the plumber file looks like:
 
-```{r preview_plumber_file, results='asis', collapse=FALSE}
+```{r preview_plumber_file, results='asis', collapse=FALSE, echo=FALSE}
 plumber_file_txt <-
   readLines("api/plumber.R") %>%
   paste(collapse = "\n")
