@@ -1,6 +1,6 @@
 ---
 title: "ETL Step 2 - Tidy data"
-date: "`r Sys.time()`"
+date: "`r lubridate::now(tzone = 'EST')` EST"
 output: html_document
 ---
 

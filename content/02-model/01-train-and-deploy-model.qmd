@@ -1,6 +1,6 @@
 ---
 title: "Model Step 1 - Train and Deploy Model"
-date: "`r Sys.time()`"
+date: "`r lubridate::now(tzone = 'EST')` EST"
 output: html_document
 ---
 
@@ -10,7 +10,7 @@ This notebook trains a model to predict the number of bikes at a given bike dock
 - deployed as a plumber API to Rstudio Connect using vetiver.
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, collapse = TRUE) 
 
 library(dplyr)
 library(glue)
@@ -149,6 +149,22 @@ Create a `vetiver` model object.
 model_name <- "bike_predict_model_r"
 pin_name <- glue("sam.edwardes/{model_name}")
 
+# Get the train and test data ranges. This will be passed into the pin metadata
+# so that other scripts can access this information.
+date_metadata <- list(
+  train_dates = c(
+    as.character(min(train_data$date)), 
+    as.character(max(train_data$date))
+  ),
+  test_dates = c(
+    as.character(min(test_data$date)), 
+    as.character(max(test_data$date))
+  )
+)
+
+print(date_metadata)
+
+# Create the vetiver model.
 v <- vetiver_model(
   model_fit, 
   model_name,
@@ -156,10 +172,7 @@ v <- vetiver_model(
   save_ptype = train_data %>%
     head(1) %>%
     select(-n_bikes),
-  metadata = list(
-    train_dates = c(min(train_data$date), max(train_data$date)),
-    test_dates = c(min(test_data$date), max(test_data$date))
-  )
+  metadata = date_metadata
 )
 
 v
@@ -226,10 +239,19 @@ rsconnect::writeManifest("api")
 
 Here is what the plumber file looks like:
 
-```{r preview_plumber_file}
-readLines("api/plumber.R") %>%
-  paste(collapse = "\n") %>%
-  cat()
+```{r preview_plumber_file, results='asis', collapse=FALSE}
+plumber_file_txt <-
+  readLines("api/plumber.R") %>%
+  paste(collapse = "\n")
+
+cat(
+  paste(
+    "```r",
+    plumber_file_txt,
+    "```",
+    sep = "\n"
+  )
+)
 ```
 
 ### RStudio Connect

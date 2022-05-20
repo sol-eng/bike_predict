@@ -1,13 +1,13 @@
 ---
 title: "Model Step 2 - Model Metrics"
-date: "`r Sys.time()`"
+date: "`r lubridate::now(tzone = 'EST')` EST"
 output: html_document
 ---
 
 This report runs after the new data has been cleansed. The report pulls the cleaned data and loads the latest trained model, and then scores the data with the new model, over-writing any previous model scores.
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, collapse = TRUE) 
 
 library(dplyr)
 library(vetiver)
@@ -53,12 +53,15 @@ Divide the data into three categories:
 3. latest - all new observations since the last model training.
 
 ```{r create_test_data}
+print(model$metadata$user$train_dates)
+print(model$metadata$user$test_dates)
+
 train_start_date <- lubridate::as_date(model$metadata$user$train_dates[1])
 train_end_date <- lubridate::as_date(model$metadata$user$train_dates[2])
 test_end_date <- lubridate::as_date(model$metadata$user$test_dates[2])
 
 data <- bike_model_data %>%
-  filter(date >=train_start_date) %>%
+  filter(date >= train_start_date) %>%
   collect() %>%
   mutate(
     data_type = case_when(

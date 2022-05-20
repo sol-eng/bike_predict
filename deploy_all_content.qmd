@@ -11,6 +11,38 @@ library(dplyr)
 library(connectapi)
 library(glue)
 
+# ==============================================================================
+# Helper functions
+# ==============================================================================
+
+#' Set a schedule
+#'
+#' @param content connectapi::Content R6 class.
+#' @param time_stamp The time including the timezone. For example "05:30:00 EST"
+#'
+#' @return connectapi::Content R6 class.
+set_content_schedule <- function(content, time_stamp = NULL) {
+  if (is.null(time_stamp)) {
+    print("No time stamp provided, not setting a schedule.")
+    return(content)
+  } else {
+    print(glue("Setting a daily schedule at {time_stamp}"))
+    content %>%
+      get_variant_default() %>%
+      get_variant_schedule() %>%
+      set_schedule_day(
+        start_time = lubridate::as_datetime(
+          glue(
+            as.character(lubridate::today()),
+            time_stamp,
+            .sep = " "
+          )
+        )
+      )
+    return(content)
+  }
+}
+
 
 #' Deploy content to Connect
 #'
@@ -28,10 +60,14 @@ deploy_content_to_connect <- function(
     app_title, 
     app_directory_location, 
     app_files,
+    tag,
+    schedule_timestamp = NULL,
     app_primary_doc = NULL,
     vanity_url = NULL,
-    delete_manifest = TRUE
-  ) {
+    delete_manifest = TRUE,
+    sleep_seconds = 1
+) {
+  
   # Write a manifest file.
   rsconnect::writeManifest(
     appDir = app_directory_location, 
@@ -51,24 +87,28 @@ deploy_content_to_connect <- function(
   # Make the app visible to the world!
   content$update(access_type = "all")
   
-  # Get tags.
-  tags <- client %>%
-    get_tags()
-  
   # Update content settings.
   content %>%
     set_vanity_url(vanity_url, force = TRUE) %>%
-    set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R) %>%
-    set_image_path("./img/bike_share_connect_image.drawio.png")
+    set_content_tags(tag) %>%
+    set_image_path("./img/bike_share_connect_image.drawio.png") %>%
+    set_content_schedule(schedule_timestamp)
   
-  # Delete the manfifest.json
+  # Delete the manifest.json
   if (delete_manifest == TRUE) {
     unlink(file.path(app_directory_location, "manifest.json"))
   }
   
+  # Sleep so that the content has time to finish deploying
+  print(glue("Sleeping for {sleep_seconds}..."))
+  Sys.sleep(sleep_seconds)
+  
   content
 }
 
+# ==============================================================================
+# RStudio Connect setup
+# ==============================================================================
 
 # Establish a connection to RStudio connect.
 client <- connect(
@@ -76,8 +116,7 @@ client <- connect(
   api_key = Sys.getenv("CONNECT_API_KEY")
 )
 
-tags <- client %>%
-    get_tags()
+tags <- get_tags(client)
 ```
 
 The purpose of this document is to deploy all `bike_predict` related content to RStudio Connect. It should be run from RStudio Workbench (or your local development environment). This document itself is not meant to be published.
@@ -88,73 +127,48 @@ The purpose of this document is to deploy all `bike_predict` related content to 
 
 ```{r}
 # Deploy the content.
-content_etl_01 <- deploy_content_to_connect(
+content <- deploy_content_to_connect(
   client = client,
   app_name = "bike-predict-r-raw-data-refresh",
   app_title = "Bike Predict (R) - ETL Step 01 - Raw Data Refresh",
   app_directory_location = "./content/01-etl/",
   app_files = "01-raw-data-refresh.qmd",
-  vanity_url = "bike-predict-r-raw-data-refresh"
+  vanity_url = "bike-predict-r-raw-data-refresh",
+  tag = tags$`Projects and Presentations`$`Bike Predict`$R$ETL,
+  schedule_timestamp = "05:15:00 EST",
+  sleep_seconds = 60 * 2
 )
 
-# Set tags.
-content_etl_01 %>%
-  set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$ETL)
-
-# Set a schedule.
-content_etl_01 %>%
-  get_variant_default() %>%
-  get_variant_schedule() %>%
-  set_schedule_day(
-    start_time = lubridate::as_datetime(glue(
-      as.character(lubridate::today()),
-      " 05:00:00 UTC"
-    ))
-  )
-
 # Print the URL.
-print(content_etl_01$get_url())
-print(glue("https://colorado.rstudio.com/rsc{get_vanity_url(content_etl_01)}"))
+print(content$get_url())
+print(glue("https://colorado.rstudio.com/rsc{get_vanity_url(content)}"))
 
 # Open the content in your browser.
-content_etl_01 %>% 
-  browse_dashboard()
+browse_dashboard(content)
 ```
 
 ### 1.2 Tidy the data
 
 ```{r}
 # Deploy the content.
-content_01_02 <- deploy_content_to_connect(
+content <- deploy_content_to_connect(
   client = client,
   app_name = "bike-predict-r-tidy-data",
   app_title = "Bike Predict (R) - ETL Step 02 - Tidy the data",
   app_directory_location = "./content/01-etl/",
   app_files = "02-tidy-data.qmd",
-  vanity_url = "bike-predict-r-tidy-data"
+  vanity_url = "bike-predict-r-tidy-data",
+  tag = tags$`Projects and Presentations`$`Bike Predict`$R$ETL,
+  schedule_timestamp = "05:15:00 EST",
+  sleep_seconds = 60 * 3
 )
 
-# Set tags.
-content_01_02 %>%
-  set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$ETL)
-
-# Set a schedule.
-content_01_02 %>%
-  get_variant_default() %>%
-  get_variant_schedule() %>%
-  set_schedule_day(
-    start_time = lubridate::as_datetime(glue(
-      as.character(lubridate::today()),
-      " 05:15:00 UTC"
-    ))
-  )
-
 # Print the URL.
-print(content_01_02$get_url())
-print(glue("https://colorado.rstudio.com/rsc{get_vanity_url(content_01_02)}"))
+print(content$get_url())
+print(glue("https://colorado.rstudio.com/rsc{get_vanity_url(content)}"))
 
 # Open the content in your browser.
-content_01_02 %>% 
+content %>% 
   browse_dashboard()
 ```
 
@@ -170,31 +184,18 @@ content <- deploy_content_to_connect(
   app_title = "Bike Predict (R) - Model Step 01 - Train and Deploy Model",
   app_directory_location = "./content/02-model",
   app_files = "01-train-and-deploy-model.qmd",
-  vanity_url = "bike-predict-r-train-and-deploy-model"
+  vanity_url = "bike-predict-r-train-and-deploy-model",
+  tag = tags$`Projects and Presentations`$`Bike Predict`$R$Model,
+  schedule_timestamp = "05:30:00 EST",
+  sleep_seconds = 60 * 5
 )
-
-# Set tags.
-content %>%
-  set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model)
-
-# Set a schedule.
-content %>%
-  get_variant_default() %>%
-  get_variant_schedule() %>%
-  set_schedule_day(
-    start_time = lubridate::as_datetime(glue(
-      as.character(lubridate::today()),
-      " 05:30:00 UTC"
-    ))
-  )
 
 # Print the URL.
 print(content$get_url())
 print(glue("https://colorado.rstudio.com/rsc{get_vanity_url(content)}"))
 
 # Open the content in your browser.
-content %>% 
-  browse_dashboard()
+browse_dashboard(content)
 ```
 
 ### 2.2 Model Metrics
@@ -207,31 +208,18 @@ content <- deploy_content_to_connect(
   app_title = "Bike Predict (R) - Model Step 02 - Model Metrics",
   app_directory_location = "./content/02-model",
   app_files = "02-model-metrics.qmd",
-  vanity_url = "bike-predict-r-model-metrics"
+  vanity_url = "bike-predict-r-model-metrics",
+  tag = tags$`Projects and Presentations`$`Bike Predict`$R$Model,
+  schedule_timestamp = "06:00:00 EST",
+  sleep_seconds = 1
 )
-
-# Set tags.
-content %>%
-  set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model)
-
-# Set a schedule.
-content %>%
-  get_variant_default() %>%
-  get_variant_schedule() %>%
-  set_schedule_day(
-    start_time = lubridate::as_datetime(glue(
-      as.character(lubridate::today()),
-      " 05:30:00 UTC"
-    ))
-  )
 
 # Print the URL.
 print(content$get_url())
 print(glue("https://colorado.rstudio.com/rsc{get_vanity_url(content)}"))
 
 # Open the content in your browser.
-content %>% 
-  browse_dashboard()
+browse_dashboard(content)
 ```
 
 ## App
@@ -246,19 +234,16 @@ content <- deploy_content_to_connect(
   app_title = "Bike Predict (R) - App - Client App",
   app_directory_location = "./content/03-app/01-client-app",
   app_files = "app.R",
-  vanity_url = "bike-predict-r-client-app"
+  vanity_url = "bike-predict-r-client-app",
+  tag = tags$`Projects and Presentations`$`Bike Predict`$R$App,
+  schedule_timestamp = NULL,
+  sleep_seconds = 1
 )
-
-# Set tags.
-content %>%
-  set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$App)
-
 
 # Print the URL.
 print(content$get_url())
 print(glue("https://colorado.rstudio.com/rsc{get_vanity_url(content)}"))
 
 # Open the content in your browser.
-content %>% 
-  browse_dashboard()
+browse_dashboard(content)
 ```
