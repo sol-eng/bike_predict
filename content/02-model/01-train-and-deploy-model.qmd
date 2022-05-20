@@ -191,7 +191,7 @@ client <- connectapi::connect(
   api_key = Sys.getenv("CONNECT_API_KEY")
 )
 
-# Get the content
+# Get the content.
 content <- client %>%
   connectapi::content_item("0273207f-0f1f-44cb-845e-408f9dae2dd6")
 
@@ -200,16 +200,6 @@ content$update(title = "Bike Predict (R) - Model - Pinned Model")
 # Make the app visible to the world!
 content$update(access_type = "all")
 
-# Define the contents collaborators
-collaborators <- c(
-  "69db516b-ba3e-442a-84d9-f916fc92a2ca", # Gagan Singh
-  "99a43fac-2edd-4c31-8cba-a001c507da2e"  # Xu Fei
-  
-)
-for (c in collaborators) {
-  content %>%
-    connectapi::content_add_user(c, role = "owner")
-}
 # Get tags.
 tags <- client %>%
   connectapi::get_tags()
@@ -270,17 +260,6 @@ content <-
 
 # Make the app visible to the world!
 content$update(access_type = "all")
-
-# Define the contents collaborators
-collaborators <- c(
-  "69db516b-ba3e-442a-84d9-f916fc92a2ca", # Gagan Singh
-  "99a43fac-2edd-4c31-8cba-a001c507da2e"  # Xu Fei
-  
-)
-for (c in collaborators) {
-  content %>%
-    connectapi::acl_add_collaborator(c)
-}
 
 # Update content settings.
 content %>%

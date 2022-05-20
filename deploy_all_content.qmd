@@ -51,16 +51,6 @@ deploy_content_to_connect <- function(
   # Make the app visible to the world!
   content$update(access_type = "all")
   
-  # Define the contents collaborators
-  collaborators <- c(
-    "69db516b-ba3e-442a-84d9-f916fc92a2ca", # Gagan Singh
-    "99a43fac-2edd-4c31-8cba-a001c507da2e"  # Xu Fei
-    
-  )
-  for (c in collaborators) {
-    content %>%
-      content_add_user(c, role = "owner")
-  }
   # Get tags.
   tags <- client %>%
     get_tags()
