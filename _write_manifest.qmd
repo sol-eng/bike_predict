@@ -73,7 +73,7 @@ print("Complete 🎉")
 ```{r}
 writeManifest(
   appDir = "content/03-app/02-connect-widgets-app", 
-  appFiles = "document.qmd"
+  appFiles = c("document.qmd", "arrows.png")
 )
 print("Complete 🎉")
 ```
