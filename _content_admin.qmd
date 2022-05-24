@@ -19,7 +19,6 @@ client <- connect(
 )
 
 tags <- get_tags(client)$`Projects and Presentations`$`Bike Predict`
-branch_to_deploy <- "vetiver"
 repo_url <- "https://github.com/sol-eng/bike_predict"
 ```
 
@@ -29,7 +28,7 @@ repo_url <- "https://github.com/sol-eng/bike_predict"
 ### 1.1 Raw Data Refresh
 
 ```{r}
-guid <- ""
+guid <- "e1e47cc0-5c31-41bd-a1f4-5729b2ece52e"
 content <- content_item(client, guid)
 
 # Configure content settings
@@ -42,7 +41,7 @@ set_image_path(content, "./img/bike_share_connect_image.drawio.png")
 ### 1.2 Tidy data
 
 ```{r}
-guid <- ""
+guid <- "dccc4f8a-faaf-4700-a74b-076a8d976992"
 content <- content_item(client, guid)
 
 # Configure content settings
@@ -57,7 +56,7 @@ set_image_path(content, "./img/bike_share_connect_image.drawio.png")
 ### 2.1 Train and Deploy Model
 
 ```{r}
-guid <- ""
+guid <- "b05369ac-19a7-4dd9-9d9d-95b94906778d"
 content <- content_item(client, guid)
 
 # Configure content settings
@@ -70,7 +69,7 @@ set_image_path(content, "./img/bike_share_connect_image.drawio.png")
 ### 2.2 Model Metrics
 
 ```{r}
-guid <- ""
+guid <- "0a8562f1-7c92-498f-9987-4481a2ac949c"
 content <- content_item(client, guid)
 
 # Configure content settings
@@ -85,7 +84,7 @@ set_image_path(content, "./img/bike_share_connect_image.drawio.png")
 ### 3.1 Client App
 
 ```{r}
-guid <- ""
+guid <- "0477855b-caeb-43e8-b3d9-28e0965e6230"
 content <- content_item(client, guid)
 
 # Configure content settings

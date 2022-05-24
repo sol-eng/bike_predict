@@ -107,7 +107,7 @@ pins::pin_write(
   board,
   x = station_info,
   name = "bike-predict-r-station-info-pin",
-  title = "Bike Predict (R) - ELT - Pinned Station Info",
+  title = "Bike Predict - ETL - Pinned Station Info",
   description = "Bike station info from https://capitalbikeshare.com."
 )
 
