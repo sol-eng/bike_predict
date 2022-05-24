@@ -93,9 +93,9 @@ This project illustrates using RStudio Connect to deploy a data science project 
 
 - Serving intermediate datasets and model objects for use in apps, APIs, and other jobs
 
-### APIs
+### APIs / Vetiver
 
-- Serving model predictions via HTTP requests
+- Serving model predictions via HTTP requests deployed using vetiver
 
 ### Development and Production Apps
   
@@ -104,7 +104,7 @@ This project illustrates using RStudio Connect to deploy a data science project 
 
 ### Private Packages
 
-- Encapsulate re-usable logic in an R package, and distribute with Package Manager
+- Encapsulate re-usable logic in an R package, and distribute with Package Manager (see <https://github.com/sol-eng/bikeHelpR>)
 
 ![](arrows.png)
 
@@ -117,7 +117,8 @@ Explore the deployed items below:
 ```{r}
 bikeshare %>% 
   by_tag("ETL") %>%
-  rsc_grid()
+  filter(str_detect(title, "Step 1|Step 2")) %>%
+  rsc_card()
 ```
 
 ### Modeling
@@ -125,7 +126,25 @@ bikeshare %>%
 ```{r}
 bikeshare %>% 
   by_tag("Model") %>%
-  rsc_grid()
+  filter(str_detect(title, "Step 1|Step 2")) %>%
+  rsc_card()
+```
+
+## Pins
+
+```{r}
+bikeshare %>%
+  filter(str_detect(title, "Pinned")) %>%
+  rsc_card()
+```
+
+## APIs
+
+```{r}
+bikeshare %>%
+  by_tag("Model") %>%
+  filter(str_detect(title, "API")) %>%
+  rsc_card()
 ```
 
 ## Apps

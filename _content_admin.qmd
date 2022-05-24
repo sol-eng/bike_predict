@@ -94,3 +94,15 @@ set_content_tags(content, tags$R$App)
 set_image_path(content, "./img/bike_share_connect_image.drawio.png")
 ```
 
+### 3.2 Connect Widgets App
+
+```{r}
+guid <- "7964dd93-fc83-4d52-8d34-d0840d25996f"
+content <- content_item(client, guid)
+
+# Configure content settings
+content$update(access_type = "all")
+set_vanity_url(content, "bike-predict-r-dashboard", force = TRUE)
+set_content_tags(content, tags$R$App)
+set_image_path(content, "./img/bike_share_connect_image.drawio.png")
+```
