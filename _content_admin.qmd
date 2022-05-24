@@ -1,0 +1,97 @@
+---
+title: "Content Admin"
+date: "`r Sys.time()`"
+output: html_document
+---
+
+This purpose of this script is to programatically manage the deployed content on Rstudio Connect.
+
+```{r setup}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
+library(rsconnect)
+library(connectapi)
+
+# Establish a connection to RStudio connect.
+client <- connect(
+  server = Sys.getenv("CONNECT_SERVER"),
+  api_key = Sys.getenv("CONNECT_API_KEY")
+)
+
+tags <- get_tags(client)$`Projects and Presentations`$`Bike Predict`
+branch_to_deploy <- "vetiver"
+repo_url <- "https://github.com/sol-eng/bike_predict"
+```
+
+
+## 1 ETL
+
+### 1.1 Raw Data Refresh
+
+```{r}
+guid <- ""
+content <- content_item(client, guid)
+
+# Configure content settings
+content$update(access_type = "all")
+set_vanity_url(content, "bike-predict-r-raw-data-refresh", force = TRUE)
+set_content_tags(content, tags$R$ETL)
+set_image_path(content, "./img/bike_share_connect_image.drawio.png")
+```
+
+### 1.2 Tidy data
+
+```{r}
+guid <- ""
+content <- content_item(client, guid)
+
+# Configure content settings
+content$update(access_type = "all")
+set_vanity_url(content, "bike-predict-r-tidy-data", force = TRUE)
+set_content_tags(content, tags$R$ETL)
+set_image_path(content, "./img/bike_share_connect_image.drawio.png")
+```
+
+## 2 Model
+
+### 2.1 Train and Deploy Model
+
+```{r}
+guid <- ""
+content <- content_item(client, guid)
+
+# Configure content settings
+content$update(access_type = "all")
+set_vanity_url(content, "bike-predict-r-train-and-deploy-model", force = TRUE)
+set_content_tags(content, tags$R$Model)
+set_image_path(content, "./img/bike_share_connect_image.drawio.png")
+```
+
+### 2.2 Model Metrics
+
+```{r}
+guid <- ""
+content <- content_item(client, guid)
+
+# Configure content settings
+content$update(access_type = "all")
+set_vanity_url(content, "bike-predict-r-model-metrics", force = TRUE)
+set_content_tags(content, tags$R$Model)
+set_image_path(content, "./img/bike_share_connect_image.drawio.png")
+```
+
+## 3 App
+
+### 3.1 Client App
+
+```{r}
+guid <- ""
+content <- content_item(client, guid)
+
+# Configure content settings
+content$update(access_type = "all")
+set_vanity_url(content, "bike-predict-r-client-app", force = TRUE)
+set_content_tags(content, tags$R$App)
+set_image_path(content, "./img/bike_share_connect_image.drawio.png")
+```
+

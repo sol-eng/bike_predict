@@ -1,4 +1,5 @@
 .Rhistory
-.Rprofile
 .Rproj.user
 .Renviron
+tmp/*
+renv/library/*

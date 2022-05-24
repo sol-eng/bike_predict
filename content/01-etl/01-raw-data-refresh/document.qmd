@@ -1,0 +1,141 @@
+---
+title: "ETL Step 1 - Raw Data Refresh"
+date: "`r lubridate::now(tzone = 'EST')` EST"
+output: html_document
+---
+
+This notebook uses the [bikeHelpR](https://packagemanager.rstudio.com/client/#/repos/1/packages/bikeHelpR) package to update a database with the latest bike share data. The package pulls data from <https://capitalbikeshare.com> which provides an API to access bike share data. The raw data is written to the *Content DB* database to the *bike_raw_data* table.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
+library(dplyr)
+library(dbplyr)
+library(odbc)
+```
+
+## Get data from API
+
+Use the the `bikeHelpR` package to get the latest data from <https://capitalbikeshare.com>.
+
+### Station status
+
+```{r station_status_data}
+feeds_station_status <- 
+  bikeHelpR::feeds_urls() %>% 
+  filter(name == "station_status") %>% 
+  pull(url) %>% 
+  bikeHelpR::get_data() 
+
+station_status <- 
+  feeds_station_status %>%
+  magrittr::extract2("data") %>%
+  dplyr::mutate(time = feeds_station_status$last_updated) %>%
+  dplyr::select(
+    is_installed, 
+    num_bikes_available, 
+    last_reported, 
+    is_renting, 
+    eightd_has_available_keys, 
+    num_docks_available, 
+    num_docks_disabled, 
+    is_returning, 
+    station_id, num_ebikes_available, 
+    num_bikes_disabled, 
+    time
+  )
+
+glimpse(station_status)
+```
+
+### Station info
+
+```{r station_info_data}
+# The station information endpoint.
+station_information_url <- 
+  bikeHelpR::feeds_urls() %>% 
+  filter(name == "station_information") %>% 
+  pull(url)
+
+# Call the endpoint to obtain the JSON data.
+request <- httr2::request(station_information_url)
+response <- httr2::req_perform(request)
+json_data <- httr2::resp_body_json(response)
+
+# Convert the JSON data into a tibble.
+station_info <- 
+  json_data$data %>%
+  as_tibble() %>%
+  tidyr::unnest_wider(stations) %>%
+  select(station_id, name, lat, lon) %>%
+  distinct() %>%
+  mutate(
+    last_updated = as.POSIXct(
+      json_data$last_updated,
+      origin = "1970-01-01 00:00:00 UTC"
+    )
+  )
+
+glimpse(station_info)
+```
+
+## Update database
+
+Write the new data from the API to the database.
+
+```{r write_to_db}
+con <- dbConnect(odbc(), "Content DB", timeout = 10)
+dbWriteTable(con, "bike_raw_data", station_status, append = TRUE)
+dbWriteTable(con, "bike_station_info", station_info, overwrite = TRUE)
+dbDisconnect(con)
+print("Raw data updated 🎉")
+```
+
+## Update the pin
+
+Station info will also be written to a pin. This pin will be accessed by the shiny app so that it can easily get the bike station info without connecting to the database.
+
+```{r pin_station_info}
+board <- pins::board_rsconnect(
+  server = Sys.getenv("CONNECT_SERVER"),
+  key = Sys.getenv("CONNECT_API_KEY"),
+  versioned = TRUE
+)
+
+# Write the model to the board.
+pins::pin_write(
+  board,
+  x = station_info,
+  name = "bike-predict-r-station-info-pin",
+  title = "Bike Predict (R) - ELT - Pinned Station Info",
+  description = "Bike station info from https://capitalbikeshare.com."
+)
+
+print("Pin 🎉")
+```
+Update the pin permissions and metadata on Connect:
+
+```{r pin_metadata}
+# Set content permissions
+client <- connectapi::connect(
+  server = Sys.getenv("CONNECT_SERVER"),
+  api_key = Sys.getenv("CONNECT_API_KEY")
+)
+
+# Get the content
+content <- client %>%
+  connectapi::content_item("00036e13-9a3c-44c6-84eb-253de91b10c2")
+
+# Make the app visible to the world!
+content$update(access_type = "all")
+
+# Get tags.
+tags <- client %>%
+  connectapi::get_tags()
+  
+  # Update content settings.
+content %>%
+  connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$ETL) %>%
+  connectapi::set_image_url("https://i.imgur.com/ITQOzRw.png") %>%
+  connectapi::set_vanity_url("bike-predict-r-station-info-data-pin", force = TRUE)
+```

@@ -1,0 +1,296 @@
+---
+title: "Model Step 1 - Train and Deploy Model"
+date: "`r lubridate::now(tzone = 'EST')` EST"
+output: html_document
+---
+
+This notebook trains a model to predict the number of bikes at a given bike docking station. The model is trained using the *bike_model_data* table from *Content DB*. The trained model is then:
+
+- pinned to RStudio Connect
+- deployed as a plumber API to Rstudio Connect using vetiver.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, collapse = TRUE) 
+
+library(dplyr)
+library(dbplyr)
+library(glue)
+library(recipes)
+library(parsnip)
+library(workflows)
+library(vetiver)
+
+# Internally developed packages
+library(bikeHelpR)
+
+# The following packages are not directly called, but are requirements. They
+# need to be here so that `rsconnect::writeManifest` is able to capture them
+# as a dependency.
+library(ranger)
+
+```
+
+## Get data
+
+Connect to the database:
+
+```{r connect_to_db}
+con <- DBI::dbConnect(odbc::odbc(), "Content DB")
+```
+
+Split the data into a train/test split:
+
+```{r train_test_split_data}
+all_days <- tbl(con, "bike_model_data")
+
+# Get a vector that contains all of the dates.
+dates <- all_days %>%
+  distinct(date) %>%
+  collect() %>%
+  arrange(desc(date)) %>%
+  pull(date) %>%
+  as.Date()
+
+# Split the data into test and train.
+n_days_test <- 2
+n_days_to_train <- 10
+
+train_end_date <- dates[n_days_test + 1]
+train_start_date <- train_end_date - n_days_to_train
+
+# Training data split.
+train_data <- all_days %>%
+  filter(
+    date >= train_start_date,
+    date <= train_end_date
+  ) %>%
+  distinct() %>%
+  collect()
+
+print(glue::glue(
+  "The model will be trained on data from {start} to {end} ",
+  "({num_obs} observations). ",
+  start = min(train_data$date),
+  end = max(train_data$date),
+  num_obs = scales::comma(nrow(train_data)),
+))
+
+# Test data split.
+test_data <- all_days %>%
+  filter(date > train_end_date) %>%
+  distinct() %>%
+  collect()
+
+print(glue::glue(
+  "The model will be tested on data from {start} to {end} ",
+  "({num_obs} observations). ",
+  start = min(test_data$date),
+  end = max(test_data$date),
+  num_obs = scales::comma(nrow(test_data)),
+))
+```
+
+## Train the model
+
+### Data preprocessing
+
+Define a recipe to clean the data.
+
+```{r define_recipe}
+# Define a recipe to clean the data.
+recipe_spec <- 
+  recipe(n_bikes ~ ., data = train_data) %>% 
+  step_dummy(dow) %>%
+  step_integer(id, date)
+
+# Preview the cleaned training data.
+recipe_spec %>% 
+  prep(train_data) %>% 
+  bake(head(train_data)) %>%
+  glimpse()
+```
+
+### Fit model
+
+Fit a random forest model:
+
+```{r fit_model}
+model_spec <- 
+  rand_forest() %>%
+  set_mode("regression") %>%
+  set_engine("ranger")
+
+model_workflow <- 
+  workflow() %>%
+  add_recipe(recipe_spec) %>%
+  add_model(model_spec)
+
+model_fit <- fit(model_workflow, data = train_data)
+model_fit
+```
+
+## Model evaluation
+
+```{r evaluate_model}
+predictions <- predict(model_fit, test_data)
+
+results <- test_data %>%
+  mutate(preds = predictions$.pred)
+
+oos_metrics(results$n_bikes, results$preds)
+```
+
+## Model deployment
+
+### `vetiver`
+
+Create a `vetiver` model object.
+
+```{r create_vetiver_model}
+model_name <- "bike_predict_model_r"
+pin_name <- glue("sam.edwardes/{model_name}")
+
+# Get the train and test data ranges. This will be passed into the pin metadata
+# so that other scripts can access this information.
+date_metadata <- list(
+  train_dates = c(
+    as.character(min(train_data$date)), 
+    as.character(max(train_data$date))
+  ),
+  test_dates = c(
+    as.character(min(test_data$date)), 
+    as.character(max(test_data$date))
+  )
+)
+
+print(date_metadata)
+
+# Create the vetiver model.
+v <- vetiver_model(
+  model_fit, 
+  model_name,
+  versioned = TRUE,
+  save_ptype = train_data %>%
+    head(1) %>%
+    select(-n_bikes),
+  metadata = date_metadata
+)
+
+v
+```
+
+### `pins`
+
+Save the model as a *pin* to RStudio Connect:
+
+```{r pin_model}
+# Use RStudio Connect as a board.
+board <- pins::board_rsconnect(
+  server = Sys.getenv("CONNECT_SERVER"),
+  key = Sys.getenv("CONNECT_API_KEY"),
+  versioned = TRUE
+)
+
+# Write the model to the board.
+board %>%
+ vetiver_pin_write(vetiver_model = v)
+```
+
+Update the pin permissions and metadata on Connect:
+
+```{r pin_metadata}
+# Set content permissions
+client <- connectapi::connect(
+  server = Sys.getenv("CONNECT_SERVER"),
+  api_key = Sys.getenv("CONNECT_API_KEY")
+)
+
+# Get the content.
+content <- client %>%
+  connectapi::content_item("0273207f-0f1f-44cb-845e-408f9dae2dd6")
+
+content$update(title = "Bike Predict (R) - Model - Pinned Model")
+
+# Make the app visible to the world!
+content$update(access_type = "all")
+
+# Get tags.
+tags <- client %>%
+  connectapi::get_tags()
+  
+  # Update content settings.
+content %>%
+  connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model) %>%
+  connectapi::set_image_url("https://i.imgur.com/ITQOzRw.png") %>%
+  connectapi::set_vanity_url("bike-predict-r-pinned-model", force = TRUE)
+```
+
+### `plumber`
+
+Convert the model into a plumber API. The function `vetiver_write_plumber` will generate the plumber code for you and write it to *plumber.R*.
+
+```{r write_model_to_plumber}
+# Write the model to `api/plumber.R`.
+dir.create("api")
+vetiver_write_plumber(board, pin_name, file = "api/plumber.R")
+
+# Write a manifest.json file for the api
+rsconnect::writeManifest("api")
+```
+
+Here is what the plumber file looks like:
+
+```{r preview_plumber_file, results='asis', collapse=FALSE, echo=FALSE}
+plumber_file_txt <-
+  readLines("api/plumber.R") %>%
+  paste(collapse = "\n")
+
+cat(
+  paste(
+    "```r",
+    plumber_file_txt,
+    "```",
+    sep = "\n"
+  )
+)
+```
+
+### RStudio Connect
+
+Then, deploy the plumber API to RStudio Connect.
+
+```{r deploy_model_api_to_connect}
+app_name <- "bike-predict-r-api"
+app_title <- "Bike Predict (R) - Model - API"
+
+# Establish a connection to RStudio connect.
+client <- connectapi::connect(
+  server = Sys.getenv("CONNECT_SERVER"),
+  api_key = Sys.getenv("CONNECT_API_KEY")
+)
+
+tags <- client %>%
+  connectapi::get_tags()
+
+# Deploy the content.
+content <- 
+  client %>%
+  connectapi::deploy(
+    connectapi::bundle_dir("api"),
+    name = app_name,
+    title = app_title
+  )
+
+# Make the app visible to the world!
+content$update(access_type = "all")
+
+# Update content settings.
+content %>%
+  connectapi::set_vanity_url("bike-predict-r-api") %>%
+  connectapi::set_image_url("https://i.imgur.com/ITQOzRw.png") %>%
+  connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model)
+```
+
+```{r close_db_connection}
+DBI::dbDisconnect(con)
+```

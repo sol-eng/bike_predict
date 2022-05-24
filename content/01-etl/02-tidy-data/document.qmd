@@ -1,0 +1,69 @@
+---
+title: "ETL Step 2 - Tidy data"
+date: "`r lubridate::now(tzone = 'EST')` EST"
+output: html_document
+---
+
+This notebook tidies the raw *raw_data_table* from the *Content DB* database. The tidy data is written back to the *Content DB* database to the *bike_model_data* table.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
+library(dplyr)
+library(dbplyr)
+library(lubridate)
+```
+
+## Get data from database
+
+Connect to *Content DB* to get the *bike_raw_data* and *bike_station_info* table.
+
+```{r, get_data_from_db}
+con <- odbc::dbConnect(odbc::odbc(), "Content DB", timeout = 10)
+
+bike_raw_data <- tbl(con, "bike_raw_data")
+glimpse(bike_raw_data)
+
+bike_station_info <- tbl(con, "bike_station_info")
+glimpse(bike_station_info)
+```
+
+## Tidy the data
+
+Apply the data tidying steps. All of the tidying steps are performed in SQL. The results are written back to *Content DB* to the *bike_model_data* table.
+
+```{r clean_data}
+if (odbc::dbExistsTable(con, "bike_model_data")) {
+  odbc::dbRemoveTable(con, "bike_model_data")
+}
+
+# Build a SQL query to tidy the data.
+query <- bike_raw_data %>% 
+    group_by(
+        id = station_id, 
+        hour = hour(time), 
+        date = date(time), 
+        month = month(time), 
+        dow = TRIM(to_char(time, "Day"))
+    ) %>%
+    summarize(
+        n_bikes = mean(num_bikes_available, na.rm = TRUE),
+        .groups = "drop"
+    ) %>%
+    inner_join(
+        select(bike_station_info, id = station_id, lat, lon)
+    ) %>%
+    dbplyr::sql_render() %>%
+    stringr::str_replace("SELECT", "CREATE TABLE bike_model_data AS SELECT")
+
+# Execute the SQL query.
+odbc::dbSendQuery(con, query)
+
+# Preview the table.
+tbl(con, "bike_model_data")
+```
+
+```{r close_connection}
+odbc::dbDisconnect(con)
+print("Complete 🎉")
+```
