@@ -21,6 +21,7 @@ writeManifest(
   appDir = "content/01-etl/01-raw-data-refresh", 
   appFiles = "document.qmd"
 )
+print("Complete 🎉")
 ```
 
 ### 1.2 Tidy data
@@ -30,6 +31,7 @@ writeManifest(
   appDir = "content/01-etl/02-tidy-data", 
   appFiles = "document.qmd"
 )
+print("Complete 🎉")
 ```
 
 ## 2 Model
@@ -41,6 +43,7 @@ writeManifest(
   appDir = "content/02-model/01-train-and-deploy-model", 
   appFiles = "document.qmd"
 )
+print("Complete 🎉")
 ```
 
 ### 2.2 Model Metrics
@@ -50,6 +53,7 @@ writeManifest(
   appDir = "content/02-model/02-model-metrics", 
   appFiles = "document.qmd"
 )
+print("Complete 🎉")
 ```
 
 ## 3 App
@@ -61,5 +65,6 @@ writeManifest(
   appDir = "content/03-app/01-client-app", 
   appFiles = "app.R"
 )
+print("Complete 🎉")
 ```
 

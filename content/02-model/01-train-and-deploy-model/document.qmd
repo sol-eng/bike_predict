@@ -26,7 +26,7 @@ library(bikeHelpR)
 # The following packages are not directly called, but are requirements. They
 # need to be here so that `rsconnect::writeManifest` is able to capture them
 # as a dependency.
-library(range)
+library(ranger)
 
 ```
 
