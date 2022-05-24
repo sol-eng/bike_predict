@@ -290,12 +290,6 @@ content %>%
   connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model)
 ```
 
-Delete the API directory so that it is not checked into version control.
-
-```{r delete_api_dir}
-unlink("api", recursive = TRUE)
-```
-
 ```{r close_db_connection}
 DBI::dbDisconnect(con)
 ```
