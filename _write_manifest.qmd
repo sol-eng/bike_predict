@@ -1,0 +1,65 @@
+---
+title: "Write manifest.json files"
+date: "`r Sys.time()`"
+output: html_document
+---
+
+This purpose of this script is write a manifest.json file for each item of content.
+
+```{r setup}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
+library(rsconnect)
+```
+
+## 1 ETL
+
+### 1.1 Raw Data Refresh
+
+```{r}
+writeManifest(
+  appDir = "content/01-etl/01-raw-data-refresh", 
+  appFiles = "document.qmd"
+)
+```
+
+### 1.2 Tidy data
+
+```{r}
+writeManifest(
+  appDir = "content/01-etl/02-tidy-data", 
+  appFiles = "document.qmd"
+)
+```
+
+## 2 Model
+
+### 2.1 Train and Deploy Model
+
+```{r}
+writeManifest(
+  appDir = "content/02-model/01-train-and-deploy-model", 
+  appFiles = "document.qmd"
+)
+```
+
+### 2.2 Model Metrics
+
+```{r}
+writeManifest(
+  appDir = "content/02-model/02-model-metrics", 
+  appFiles = "document.qmd"
+)
+```
+
+## 3 App
+
+### 3.1 Client App
+
+```{r}
+writeManifest(
+  appDir = "content/03-app/01-client-app", 
+  appFiles = "app.R"
+)
+```
+

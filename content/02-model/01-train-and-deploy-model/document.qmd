@@ -13,6 +13,7 @@ This notebook trains a model to predict the number of bikes at a given bike dock
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, collapse = TRUE) 
 
 library(dplyr)
+library(dbplyr)
 library(glue)
 library(recipes)
 library(parsnip)
@@ -25,8 +26,8 @@ library(bikeHelpR)
 # The following packages are not directly called, but are requirements. They
 # need to be here so that `rsconnect::writeManifest` is able to capture them
 # as a dependency.
-library(dbplyr)
-library(ranger)
+library(range)
+
 ```
 
 ## Get data

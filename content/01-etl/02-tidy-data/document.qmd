@@ -10,12 +10,8 @@ This notebook tidies the raw *raw_data_table* from the *Content DB* database. Th
 knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
 
 library(dplyr)
-library(lubridate)
-
-# The following packages are not directly called, but are requirements. They
-# need to be here so that `rsconnect::writeManifest` is able to capture them
-# as a dependency.
 library(dbplyr)
+library(lubridate)
 ```
 
 ## Get data from database

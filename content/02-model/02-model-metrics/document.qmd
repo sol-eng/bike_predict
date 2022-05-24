@@ -10,17 +10,13 @@ This report runs after the new data has been cleansed. The report pulls the clea
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, collapse = TRUE) 
 
 library(dplyr)
+library(dbplyr)
 library(vetiver)
 library(glue)
 library(ggplot2)
 
 # Internally developed packages
 library(bikeHelpR)
-
-# The following packages are not directly called, but are requirements. They
-# need to be here so that `rsconnect::writeManifest` is able to capture them
-# as a dependency.
-library(dbplyr)
 ```
 
 ## Data
