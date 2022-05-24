@@ -209,7 +209,7 @@ client <- connectapi::connect(
 content <- client %>%
   connectapi::content_item("0273207f-0f1f-44cb-845e-408f9dae2dd6")
 
-content$update(title = "Bike Predict (R) - Model - Pinned Model")
+content$update(title = "Bike Predict - Model - Pinned Model")
 
 # Make the app visible to the world!
 content$update(access_type = "all")
@@ -261,7 +261,7 @@ Then, deploy the plumber API to RStudio Connect.
 
 ```{r deploy_model_api_to_connect}
 app_name <- "bike-predict-r-api"
-app_title <- "Bike Predict (R) - Model - API"
+app_title <- "Bike Predict - Model - API"
 
 # Establish a connection to RStudio connect.
 client <- connectapi::connect(
