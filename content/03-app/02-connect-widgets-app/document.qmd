@@ -118,6 +118,7 @@ Explore the deployed items below:
 bikeshare %>% 
   by_tag("ETL") %>%
   filter(str_detect(title, "Step 1|Step 2")) %>%
+  arrange(title) %>%
   rsc_card()
 ```
 
@@ -127,6 +128,7 @@ bikeshare %>%
 bikeshare %>% 
   by_tag("Model") %>%
   filter(str_detect(title, "Step 1|Step 2")) %>%
+  arrange(title) %>%
   rsc_card()
 ```
 
