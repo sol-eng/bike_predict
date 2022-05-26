@@ -77,3 +77,13 @@ writeManifest(
 )
 print("Complete 🎉")
 ```
+
+### 3.2 Client App Dev
+
+```{r}
+writeManifest(
+  appDir = "content/03-app/03-client-app-dev", 
+  appFiles = c("app.R")
+)
+print("Complete 🎉")
+```

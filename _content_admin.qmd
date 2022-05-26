@@ -106,3 +106,16 @@ set_vanity_url(content, "bike-predict-r-dashboard", force = TRUE)
 set_content_tags(content, tags$R$App)
 set_image_path(content, "./img/bike_share_connect_image.drawio.png")
 ```
+
+### 3.3 Client App Dev
+
+```{r}
+guid <- ""
+content <- content_item(client, guid)
+
+# Configure content settings
+content$update(access_type = "all")
+set_vanity_url(content, "bike-predict-r-client-app-dev", force = TRUE)
+set_content_tags(content, tags$R$App)
+set_image_path(content, "./img/bike_share_connect_image.drawio.png")
+```
