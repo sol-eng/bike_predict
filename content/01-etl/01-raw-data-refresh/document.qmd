@@ -113,29 +113,3 @@ pins::pin_write(
 
 print("Pin 🎉")
 ```
-Update the pin permissions and metadata on Connect:
-
-```{r pin_metadata}
-# Set content permissions
-client <- connectapi::connect(
-  server = Sys.getenv("CONNECT_SERVER"),
-  api_key = Sys.getenv("CONNECT_API_KEY")
-)
-
-# Get the content
-content <- client %>%
-  connectapi::content_item("00036e13-9a3c-44c6-84eb-253de91b10c2")
-
-# Make the app visible to the world!
-content$update(access_type = "all")
-
-# Get tags.
-tags <- client %>%
-  connectapi::get_tags()
-  
-  # Update content settings.
-content %>%
-  connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$ETL) %>%
-  connectapi::set_image_url("https://i.imgur.com/ITQOzRw.png") %>%
-  connectapi::set_vanity_url("bike-predict-r-station-info-data-pin", force = TRUE)
-```

@@ -68,3 +68,22 @@ writeManifest(
 print("Complete 🎉")
 ```
 
+### 3.2 Connect Widgets Dashboard
+
+```{r}
+writeManifest(
+  appDir = "content/03-app/02-connect-widgets-app", 
+  appFiles = c("document.qmd", "arrows.png")
+)
+print("Complete 🎉")
+```
+
+### 3.2 Client App Dev
+
+```{r}
+writeManifest(
+  appDir = "content/03-app/03-client-app-dev", 
+  appFiles = c("app.R")
+)
+print("Complete 🎉")
+```

@@ -35,7 +35,18 @@ content <- content_item(client, guid)
 content$update(access_type = "all")
 set_vanity_url(content, "bike-predict-r-raw-data-refresh", force = TRUE)
 set_content_tags(content, tags$R$ETL)
-set_image_path(content, "./img/bike_share_connect_image.drawio.png")
+set_image_path(content, "./content/01-etl/01-raw-data-refresh/icon.drawio.png")
+```
+
+```{r}
+# Pinned station info
+guid <- "00036e13-9a3c-44c6-84eb-253de91b10c2"
+content <- content_item(client, guid)
+
+# Configure content settings
+content$update(access_type = "all")
+set_content_tags(content, tags$R$ETL)
+set_image_path(content, "./img/icon-pins-data.drawio.png")
 ```
 
 ### 1.2 Tidy data
@@ -48,7 +59,7 @@ content <- content_item(client, guid)
 content$update(access_type = "all")
 set_vanity_url(content, "bike-predict-r-tidy-data", force = TRUE)
 set_content_tags(content, tags$R$ETL)
-set_image_path(content, "./img/bike_share_connect_image.drawio.png")
+set_image_path(content, "./content/01-etl/02-tidy-data/icon.drawio.png")
 ```
 
 ## 2 Model
@@ -63,7 +74,29 @@ content <- content_item(client, guid)
 content$update(access_type = "all")
 set_vanity_url(content, "bike-predict-r-train-and-deploy-model", force = TRUE)
 set_content_tags(content, tags$R$Model)
-set_image_path(content, "./img/bike_share_connect_image.drawio.png")
+set_image_path(content, "./content/02-model/01-train-and-deploy-model/icon.drawio.png")
+```
+
+```{r}
+# Pinned model
+guid <- "0273207f-0f1f-44cb-845e-408f9dae2dd6"
+content <- content_item(client, guid)
+
+# Configure content settings
+content$update(access_type = "all")
+set_content_tags(content, tags$R$Model)
+set_image_path(content, "./img/icon-pins-model.drawio.png")
+```
+
+```{r}
+# Deployed API
+guid <- "69186bcd-5a1d-4607-a68b-da78ee6cdf2a"
+content <- content_item(client, guid)
+
+# Configure content settings
+content$update(access_type = "all")
+set_content_tags(content, tags$R$Model)
+set_image_path(content, "./img/icon-plumber.drawio.png")
 ```
 
 ### 2.2 Model Metrics
@@ -76,7 +109,7 @@ content <- content_item(client, guid)
 content$update(access_type = "all")
 set_vanity_url(content, "bike-predict-r-model-metrics", force = TRUE)
 set_content_tags(content, tags$R$Model)
-set_image_path(content, "./img/bike_share_connect_image.drawio.png")
+set_image_path(content, "./content/02-model/02-model-metrics/icon.drawio.png")
 ```
 
 ## 3 App
@@ -91,6 +124,31 @@ content <- content_item(client, guid)
 content$update(access_type = "all")
 set_vanity_url(content, "bike-predict-r-client-app", force = TRUE)
 set_content_tags(content, tags$R$App)
-set_image_path(content, "./img/bike_share_connect_image.drawio.png")
+set_image_path(content, "./content/03-app/01-client-app/icon.drawio.png")
 ```
 
+### 3.2 Connect Widgets App
+
+```{r}
+guid <- "7964dd93-fc83-4d52-8d34-d0840d25996f"
+content <- content_item(client, guid)
+
+# Configure content settings
+content$update(access_type = "all")
+set_vanity_url(content, "bike-predict-r-dashboard", force = TRUE)
+set_content_tags(content, tags$R$App)
+set_image_path(content, "./content/03-app/02-connect-widgets-app/icon.drawio.png")
+```
+
+### 3.3 Client App Dev
+
+```{r}
+guid <- "8dfbe6d2-bea7-4554-a509-2c7e4e1baa19"
+content <- content_item(client, guid)
+
+# Configure content settings
+content$update(access_type = "all")
+set_vanity_url(content, "bike-predict-r-client-app-dev", force = TRUE)
+set_content_tags(content, tags$R$App)
+set_image_path(content, "./content/03-app/03-client-app-dev/icon.drawio.png")
+```

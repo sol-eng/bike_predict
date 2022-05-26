@@ -318,6 +318,32 @@
         "yaml"
       ]
     },
+    "connectwidgets": {
+      "Package": "connectwidgets",
+      "Version": "0.1.1",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "0b1b8f02ebf68c9ec88cc7f642b7d31b",
+      "Requirements": [
+        "R6",
+        "bslib",
+        "crosstalk",
+        "digest",
+        "dplyr",
+        "glue",
+        "htmltools",
+        "htmlwidgets",
+        "httr",
+        "jsonlite",
+        "magrittr",
+        "purrr",
+        "reactR",
+        "reactable",
+        "rlang",
+        "sass",
+        "tibble"
+      ]
+    },
     "cpp11": {
       "Package": "cpp11",
       "Version": "0.4.2",
@@ -596,6 +622,17 @@
       "Repository": "RSPM",
       "Hash": "f3aefccc1cc50de6338146b62f115de8",
       "Requirements": []
+    },
+    "gitlink": {
+      "Package": "gitlink",
+      "Version": "0.1.3",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "6b8a849d2441ea1dfed821484bcebce1",
+      "Requirements": [
+        "htmltools",
+        "rlang"
+      ]
     },
     "globals": {
       "Package": "globals",
@@ -949,6 +986,19 @@
       "Requirements": [
         "mime",
         "xfun"
+      ]
+    },
+    "metathis": {
+      "Package": "metathis",
+      "Version": "1.1.1",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "4298036cc76c4164741fdd2ab5b6f57b",
+      "Requirements": [
+        "htmltools",
+        "knitr",
+        "magrittr",
+        "purrr"
       ]
     },
     "mgcv": {
@@ -1318,6 +1368,30 @@
         "Rcpp",
         "sp",
         "terra"
+      ]
+    },
+    "reactR": {
+      "Package": "reactR",
+      "Version": "0.4.4",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "75389c8091eb14ee21c6bc87a88b3809",
+      "Requirements": [
+        "htmltools"
+      ]
+    },
+    "reactable": {
+      "Package": "reactable",
+      "Version": "0.2.3",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "ac1afe50d1c77470a72971a07fd146b1",
+      "Requirements": [
+        "digest",
+        "htmltools",
+        "htmlwidgets",
+        "jsonlite",
+        "reactR"
       ]
     },
     "readr": {
