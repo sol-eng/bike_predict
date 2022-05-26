@@ -196,35 +196,6 @@ board %>%
  vetiver_pin_write(vetiver_model = v)
 ```
 
-Update the pin permissions and metadata on Connect:
-
-```{r pin_metadata}
-# Set content permissions
-client <- connectapi::connect(
-  server = Sys.getenv("CONNECT_SERVER"),
-  api_key = Sys.getenv("CONNECT_API_KEY")
-)
-
-# Get the content.
-content <- client %>%
-  connectapi::content_item("0273207f-0f1f-44cb-845e-408f9dae2dd6")
-
-content$update(title = "Bike Predict - Model - Pinned Model")
-
-# Make the app visible to the world!
-content$update(access_type = "all")
-
-# Get tags.
-tags <- client %>%
-  connectapi::get_tags()
-  
-  # Update content settings.
-content %>%
-  connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model) %>%
-  connectapi::set_image_url("https://i.imgur.com/ITQOzRw.png") %>%
-  connectapi::set_vanity_url("bike-predict-r-pinned-model", force = TRUE)
-```
-
 ### `plumber`
 
 Convert the model into a plumber API. The function `vetiver_write_plumber` will generate the plumber code for you and write it to *plumber.R*.
@@ -269,9 +240,6 @@ client <- connectapi::connect(
   api_key = Sys.getenv("CONNECT_API_KEY")
 )
 
-tags <- client %>%
-  connectapi::get_tags()
-
 # Deploy the content.
 content <- 
   client %>%
@@ -280,15 +248,6 @@ content <-
     name = app_name,
     title = app_title
   )
-
-# Make the app visible to the world!
-content$update(access_type = "all")
-
-# Update content settings.
-content %>%
-  connectapi::set_vanity_url("bike-predict-r-api") %>%
-  connectapi::set_image_url("https://i.imgur.com/ITQOzRw.png") %>%
-  connectapi::set_content_tags(tags$`Projects and Presentations`$`Bike Predict`$R$Model)
 ```
 
 ```{r close_db_connection}

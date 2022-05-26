@@ -46,7 +46,7 @@ content <- content_item(client, guid)
 # Configure content settings
 content$update(access_type = "all")
 set_content_tags(content, tags$R$ETL)
-set_image_path(content, "./img/pins-data-icon.drawio.png")
+set_image_path(content, "./img/icon-pins-data.drawio.png")
 ```
 
 ### 1.2 Tidy data
@@ -85,7 +85,7 @@ content <- content_item(client, guid)
 # Configure content settings
 content$update(access_type = "all")
 set_content_tags(content, tags$R$Model)
-set_image_path(content, "./img/pins-model-icon.drawio.png")
+set_image_path(content, "./img/icon-pins-model.drawio.png")
 ```
 
 ```{r}
@@ -96,7 +96,7 @@ content <- content_item(client, guid)
 # Configure content settings
 content$update(access_type = "all")
 set_content_tags(content, tags$R$Model)
-set_image_path(content, "./img/plumber-icon.drawio.png")
+set_image_path(content, "./img/icon-plumber.drawio.png")
 ```
 
 ### 2.2 Model Metrics
@@ -150,5 +150,5 @@ content <- content_item(client, guid)
 content$update(access_type = "all")
 set_vanity_url(content, "bike-predict-r-client-app-dev", force = TRUE)
 set_content_tags(content, tags$R$App)
-set_image_path(content, "./content/03-app/01-client-app-dev/icon.drawio.png")
+set_image_path(content, "./content/03-app/03-client-app-dev/icon.drawio.png")
 ```
