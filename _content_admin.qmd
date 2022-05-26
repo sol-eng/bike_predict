@@ -130,7 +130,7 @@ set_image_path(content, "./content/03-app/01-client-app/icon.drawio.png")
 ### 3.2 Connect Widgets App
 
 ```{r}
-guid <- "7964dd93-fc83-4d52-8d34-d0840d25996f"
+guid <- "32149a35-2d30-457b-95fc-6398e6d8b064"
 content <- content_item(client, guid)
 
 # Configure content settings
@@ -143,7 +143,7 @@ set_image_path(content, "./content/03-app/02-connect-widgets-app/icon.drawio.png
 ### 3.3 Client App Dev
 
 ```{r}
-guid <- "8dfbe6d2-bea7-4554-a509-2c7e4e1baa19"
+guid <- "bdc0b532-6b42-4341-8310-73da49eafe09"
 content <- content_item(client, guid)
 
 # Configure content settings
