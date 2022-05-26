@@ -2,7 +2,7 @@
 
 This repository contains an example of using [RStudio Connect](https://rstudio.com/products/connect/), [pins](https://github.com/rstudio/pins), and [vetiver](https://vetiver.tidymodels.org) to create an end-to-end machine learning pipeline.
 
-![](img/arrows.png)
+![](img/arrows.drawio.png)
 
 ## Who This is For
 
