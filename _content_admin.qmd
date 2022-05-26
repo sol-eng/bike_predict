@@ -110,7 +110,7 @@ set_image_path(content, "./img/bike_share_connect_image.drawio.png")
 ### 3.3 Client App Dev
 
 ```{r}
-guid <- ""
+guid <- "8dfbe6d2-bea7-4554-a509-2c7e4e1baa19"
 content <- content_item(client, guid)
 
 # Configure content settings
