@@ -3,11 +3,15 @@
   "locale": "en_US",
   "platform": "4.1.2",
   "metadata": {
-    "appmode": "rmd-static",
+    "appmode": "quarto-static",
     "primary_rmd": "document.qmd",
     "primary_html": null,
     "content_category": null,
     "has_parameters": false
+  },
+  "quarto": {
+    "version": "0.9.80",
+    "engines": ["knitr"]
   },
   "packages": {
     "DBI": {
@@ -3424,34 +3428,42 @@
       }
     },
     "rsconnect": {
-      "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
+      "Source": "github",
+      "Repository": null,
+      "GithubRepo": "rsconnect",
+      "GithubUsername": "rstudio",
+      "GithubRef": "main",
+      "GithubSha1": "691d51881f02d4d9a10ce986d8fb43afec0a2661",
       "description": {
         "Package": "rsconnect",
         "Type": "Package",
-        "Title": "Deployment Interface for R Markdown Documents and Shiny\nApplications",
-        "Version": "0.8.25",
+        "Title": "Deployment Interface for R Markdown Documents and Shiny Applications",
+        "Version": "0.8.26",
         "Authors@R": "c(\n    person(\"Aron\", \"Atkins\", role = c(\"aut\", \"cre\"), email = \"aron@rstudio.com\"),\n    person(\"Jonathan\", \"McPherson\", role = \"aut\", email = \"jonathan@rstudio.com\"),\n    person(\"JJ\", \"Allaire\", role = \"aut\"),\n    person(\"RStudio\", role = c(\"cph\", \"fnd\"))\n    )",
         "Description": "Programmatic deployment interface for 'RPubs', 'shinyapps.io', and\n    'RStudio Connect'. Supported content types include R Markdown documents,\n    Shiny applications, Plumber APIs, plots, and static web content.",
         "Depends": "R (>= 3.0.0)",
-        "Imports": "curl, digest, jsonlite, openssl, packrat (>= 0.6), rstudioapi\n(>= 0.5), tools, yaml (>= 2.1.5)",
-        "Suggests": "RCurl, callr, httpuv, knitr, plumber (>= 0.3.2), reticulate,\nrmarkdown (>= 1.1), shiny, sourcetools, testthat, xtable",
+        "Imports": "curl,\ndigest,\njsonlite,\nopenssl (>= 2.0.0),\npackrat (>= 0.6),\nrstudioapi (>= 0.5),\ntools,\nyaml (>= 2.1.5)",
+        "Suggests": "RCurl,\ncallr,\nhttpuv,\nknitr,\nplumber (>= 0.3.2),\nreticulate,\nrmarkdown (>= 1.1),\nshiny,\nsourcetools,\ntestthat,\nxtable",
         "License": "GPL-2",
         "Encoding": "UTF-8",
         "RoxygenNote": "7.1.2",
+        "Roxygen": "list(markdown = TRUE)",
         "URL": "https://github.com/rstudio/rsconnect",
         "BugReports": "https://github.com/rstudio/rsconnect/issues",
-        "NeedsCompilation": "no",
-        "Packaged": "2021-11-16 14:35:24 UTC; aron",
         "Author": "Aron Atkins [aut, cre],\n  Jonathan McPherson [aut],\n  JJ Allaire [aut],\n  RStudio [cph, fnd]",
         "Maintainer": "Aron Atkins <aron@rstudio.com>",
-        "Repository": "RSPM",
-        "Date/Publication": "2021-11-19 07:30:10 UTC",
-        "Built": "R 4.1.0; ; 2021-11-22 10:48:58 UTC; unix"
+        "Built": "R 4.1.2; ; 2022-05-27 13:20:37 UTC; unix",
+        "RemoteType": "github",
+        "RemoteHost": "api.github.com",
+        "RemoteUsername": "rstudio",
+        "RemoteRepo": "rsconnect",
+        "RemoteRef": "main",
+        "RemoteSha": "691d51881f02d4d9a10ce986d8fb43afec0a2661",
+        "GithubHost": "api.github.com",
+        "GithubRepo": "rsconnect",
+        "GithubUsername": "rstudio",
+        "GithubRef": "main",
+        "GithubSHA1": "691d51881f02d4d9a10ce986d8fb43afec0a2661"
       }
     },
     "rstudioapi": {
@@ -4437,8 +4449,14 @@
     }
   },
   "files": {
+    "api/plumber.R": {
+      "checksum": "6f6d9ee1450d2ad6c6c28d783c68ca5b"
+    },
     "document.qmd": {
-      "checksum": "24ae0eaa5ae607fe5c242921fbfe8945"
+      "checksum": "5d16282c227ad78af305f85ed50940b5"
+    },
+    "icon.drawio.png": {
+      "checksum": "1a42e99a1797cdca5967f52a5332aafa"
     }
   },
   "users": null

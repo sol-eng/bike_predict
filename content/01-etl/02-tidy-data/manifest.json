@@ -3,11 +3,15 @@
   "locale": "en_US",
   "platform": "4.1.2",
   "metadata": {
-    "appmode": "rmd-static",
+    "appmode": "quarto-static",
     "primary_rmd": "document.qmd",
     "primary_html": null,
     "content_category": null,
     "has_parameters": false
+  },
+  "quarto": {
+    "version": "0.9.80",
+    "engines": ["knitr"]
   },
   "packages": {
     "DBI": {
@@ -1385,6 +1389,9 @@
   "files": {
     "document.qmd": {
       "checksum": "3e5dd7d33eff80b980668a01886f5751"
+    },
+    "icon.drawio.png": {
+      "checksum": "9d0dd9f79a3c331425819cc7eb4f7c15"
     }
   },
   "users": null
