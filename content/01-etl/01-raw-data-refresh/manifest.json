@@ -3,11 +3,15 @@
   "locale": "en_US",
   "platform": "4.1.2",
   "metadata": {
-    "appmode": "rmd-static",
+    "appmode": "quarto-static",
     "primary_rmd": "document.qmd",
     "primary_html": null,
     "content_category": null,
     "has_parameters": false
+  },
+  "quarto": {
+    "version": "0.9.80",
+    "engines": ["knitr"]
   },
   "packages": {
     "DBI": {
@@ -461,79 +465,6 @@
         "Repository": "RSPM",
         "Date/Publication": "2022-04-25 10:00:06 UTC",
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2022-04-26 10:49:36 UTC; unix"
-      }
-    },
-    "config": {
-      "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
-      "description": {
-        "Package": "config",
-        "Type": "Package",
-        "Title": "Manage Environment Specific Configuration Values",
-        "Version": "0.3.1",
-        "Authors@R": "c(\n  person(\"JJ\", \"Allaire\", role = c(\"aut\"), email = \"jj@rstudio.com\"),\n  person(\"Andrie\", \"de Vries\", role = \"cre\", email = \"apdevries@gmail.com\"),\n  person(\"RStudio\", role = c(\"cph\", \"fnd\")))",
-        "Imports": "yaml (>= 2.1.19)",
-        "Suggests": "testthat, knitr, rmarkdown, covr, spelling",
-        "Description": "Manage configuration values across multiple environments (e.g.\n  development, test, production). Read values using a function that determines\n  the current environment and returns the appropriate value.",
-        "License": "GPL-3",
-        "URL": "https://github.com/rstudio/config",
-        "BugReports": "https://github.com/rstudio/config/issues",
-        "RoxygenNote": "7.1.1",
-        "VignetteBuilder": "knitr",
-        "Encoding": "UTF-8",
-        "Language": "en-US",
-        "NeedsCompilation": "no",
-        "Packaged": "2020-12-15 13:05:30 UTC; apdev",
-        "Author": "JJ Allaire [aut],\n  Andrie de Vries [cre],\n  RStudio [cph, fnd]",
-        "Maintainer": "Andrie de Vries <apdevries@gmail.com>",
-        "Repository": "RSPM",
-        "Date/Publication": "2020-12-17 11:00:06 UTC",
-        "Built": "R 4.1.0; ; 2021-05-19 01:09:32 UTC; unix"
-      }
-    },
-    "connectapi": {
-      "Source": "github",
-      "Repository": null,
-      "GithubRepo": "connectapi",
-      "GithubUsername": "rstudio",
-      "GithubRef": "HEAD",
-      "GithubSha1": "9ca84e01f04f42962dcf65b23e211eeecfab40eb",
-      "description": {
-        "Type": "Package",
-        "Package": "connectapi",
-        "Title": "Utilities for Interacting with the RStudio Connect Server API",
-        "Version": "0.1.0.9033",
-        "Authors@R": "\n    c(person(given = \"Sean\",\n             family = \"Lopp\",\n             role = c(\"aut\"),\n             email = \"sean@rstudio.com\"),\n      person(given = \"Cole\",\n             family = \"Arendt\",\n             role = c(\"aut\", \"cre\"),\n             email = \"cole@rstudio.com\"),\n      person(given = \"RStudio\",\n             role = c(\"cph\", \"fnd\")))",
-        "Description": "Provides a helpful R6 class for interacting with the RStudio\n    Connect Server API along with some meaningful utility functions.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://github.com/rstudio/connectapi",
-        "Imports": "config, dplyr, fs, glue, httr, lifecycle, magrittr, progress,\npurrr, R6, rlang, tibble, uuid, vctrs (>= 0.3.0), yaml, bit64,\njsonlite",
-        "Suggests": "crayon, flexdashboard, ggplot2, gridExtra, htmltools, knitr,\nlubridate, processx, rmarkdown, rprojroot, spelling, testthat,\nwebshot, rsconnect, covr, mockery, devtools",
-        "VignetteBuilder": "knitr",
-        "RdMacros": "lifecycle",
-        "Encoding": "UTF-8",
-        "Language": "en-US",
-        "RoxygenNote": "7.1.1",
-        "Roxygen": "list(markdown = TRUE)",
-        "RemoteType": "github",
-        "RemoteHost": "api.github.com",
-        "RemoteRepo": "connectapi",
-        "RemoteUsername": "rstudio",
-        "RemoteRef": "HEAD",
-        "RemoteSha": "9ca84e01f04f42962dcf65b23e211eeecfab40eb",
-        "GithubRepo": "connectapi",
-        "GithubUsername": "rstudio",
-        "GithubRef": "HEAD",
-        "GithubSHA1": "9ca84e01f04f42962dcf65b23e211eeecfab40eb",
-        "NeedsCompilation": "no",
-        "Packaged": "2022-04-29 14:58:23 UTC; sam.edwardes",
-        "Author": "Sean Lopp [aut],\n  Cole Arendt [aut, cre],\n  RStudio [cph, fnd]",
-        "Maintainer": "Cole Arendt <cole@rstudio.com>",
-        "Built": "R 4.1.2; ; 2022-04-29 14:58:24 UTC; unix"
       }
     },
     "cpp11": {
@@ -1658,63 +1589,6 @@
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2022-03-25 10:45:29 UTC; unix"
       }
     },
-    "prettyunits": {
-      "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
-      "description": {
-        "Package": "prettyunits",
-        "Title": "Pretty, Human Readable Formatting of Quantities",
-        "Version": "1.1.1",
-        "Author": "Gabor Csardi",
-        "Maintainer": "Gabor Csardi <csardi.gabor@gmail.com>",
-        "Description": "Pretty, human readable formatting of quantities.\n    Time intervals: '1337000' -> '15d 11h 23m 20s'.\n    Vague time intervals: '2674000' -> 'about a month ago'.\n    Bytes: '1337' -> '1.34 kB'.",
-        "License": "MIT + file LICENSE",
-        "LazyData": "true",
-        "URL": "https://github.com/gaborcsardi/prettyunits",
-        "BugReports": "https://github.com/gaborcsardi/prettyunits/issues",
-        "Suggests": "codetools, covr, testthat",
-        "RoxygenNote": "7.0.2",
-        "Encoding": "UTF-8",
-        "NeedsCompilation": "no",
-        "Packaged": "2020-01-24 02:16:46 UTC; gaborcsardi",
-        "Repository": "RSPM",
-        "Date/Publication": "2020-01-24 06:50:07 UTC",
-        "Built": "R 4.1.0; ; 2021-05-18 23:23:48 UTC; unix"
-      }
-    },
-    "progress": {
-      "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
-      "description": {
-        "Package": "progress",
-        "Title": "Terminal Progress Bars",
-        "Version": "1.2.2",
-        "Author": "Gábor Csárdi [aut, cre], Rich FitzJohn [aut]",
-        "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
-        "Description": "Configurable Progress bars, they may include percentage,\n    elapsed time, and/or the estimated completion time. They work in\n    terminals, in 'Emacs' 'ESS', 'RStudio', 'Windows' 'Rgui' and the\n    'macOS' 'R.app'. The package also provides a 'C++' 'API', that works\n    with or without 'Rcpp'.",
-        "License": "MIT + file LICENSE",
-        "LazyData": "true",
-        "URL": "https://github.com/r-lib/progress#readme",
-        "BugReports": "https://github.com/r-lib/progress/issues",
-        "Imports": "hms, prettyunits, R6, crayon",
-        "Suggests": "Rcpp, testthat, withr",
-        "RoxygenNote": "6.1.0",
-        "Encoding": "UTF-8",
-        "NeedsCompilation": "no",
-        "Packaged": "2019-05-15 20:28:47 UTC; gaborcsardi",
-        "Repository": "RSPM",
-        "Date/Publication": "2019-05-16 21:30:03 UTC",
-        "Built": "R 4.1.0; ; 2021-05-18 23:25:19 UTC; unix"
-      }
-    },
     "purrr": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -2144,32 +2018,6 @@
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-07-26 11:00:52 UTC; unix"
       }
     },
-    "uuid": {
-      "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
-      "description": {
-        "Package": "uuid",
-        "Version": "1.1-0",
-        "Title": "Tools for Generating and Handling of UUIDs",
-        "Author": "Simon Urbanek <Simon.Urbanek@r-project.org> (R package), Theodore Ts'o <tytso@thunk.org> (libuuid)",
-        "Maintainer": "Simon Urbanek <Simon.Urbanek@r-project.org>",
-        "Depends": "R (>= 2.9.0)",
-        "Description": "Tools for generating and handling of UUIDs (Universally Unique Identifiers).",
-        "License": "MIT + file LICENSE",
-        "URL": "https://www.rforge.net/uuid",
-        "BugReports": "https://github.com/s-u/uuid",
-        "NeedsCompilation": "yes",
-        "Packaged": "2022-04-19 04:03:46 UTC; rforge",
-        "Repository": "RSPM",
-        "Date/Publication": "2022-04-19 06:11:27 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2022-04-20 10:47:46 UTC; unix"
-      }
-    },
     "vctrs": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -2424,7 +2272,10 @@
   },
   "files": {
     "document.qmd": {
-      "checksum": "6259c95ea59f53aa4047183d141d923f"
+      "checksum": "40972f12095f27f8d0126d977f7837cf"
+    },
+    "icon.drawio.png": {
+      "checksum": "a258c468dbf226bb60362a6d8885fc59"
     }
   },
   "users": null

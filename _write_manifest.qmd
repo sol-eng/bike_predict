@@ -10,6 +10,7 @@ This purpose of this script is write a manifest.json file for each item of conte
 knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
 
 library(rsconnect)
+library(quarto)
 ```
 
 ## 1 ETL
@@ -19,8 +20,10 @@ library(rsconnect)
 ```{r}
 writeManifest(
   appDir = "content/01-etl/01-raw-data-refresh", 
-  appFiles = "document.qmd"
+  appPrimaryDoc = "document.qmd",
+  quarto = quarto_path()
 )
+
 print("Complete 🎉")
 ```
 
