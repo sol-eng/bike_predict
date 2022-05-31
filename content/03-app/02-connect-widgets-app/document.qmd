@@ -106,7 +106,7 @@ This project illustrates using RStudio Connect to deploy a data science project 
 
 - Encapsulate re-usable logic in an R package, and distribute with Package Manager (see <https://github.com/sol-eng/bikeHelpR>)
 
-![](arrows.png)
+![](https://github.com/sol-eng/bike_predict/blob/main/img/arrows.drawio.png)
 
 Explore the deployed items below:
 
