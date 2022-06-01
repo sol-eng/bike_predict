@@ -28,7 +28,7 @@ repo_url <- "https://github.com/sol-eng/bike_predict"
 ### 1.1 Raw Data Refresh
 
 ```{r}
-guid <- "e1e47cc0-5c31-41bd-a1f4-5729b2ece52e"
+guid <- "a4cea054-c92d-4764-970d-b3473239c939"
 content <- content_item(client, guid)
 
 # Configure content settings
@@ -37,6 +37,10 @@ set_vanity_url(content, "bike-predict-r-raw-data-refresh", force = TRUE)
 set_content_tags(content, tags$R$ETL)
 set_image_path(content, "./content/01-etl/01-raw-data-refresh/icon.drawio.png")
 ```
+
+#### 1.1.1 Pinned station info
+
+Running the raw 1.1 Raw Data Refresh will update the following pin:
 
 ```{r}
 # Pinned station info
@@ -52,7 +56,7 @@ set_image_path(content, "./img/icon-pins-data.drawio.png")
 ### 1.2 Tidy data
 
 ```{r}
-guid <- "dccc4f8a-faaf-4700-a74b-076a8d976992"
+guid <- "82fe2eea-0164-4823-98e3-ff15f1d31036"
 content <- content_item(client, guid)
 
 # Configure content settings
@@ -67,7 +71,7 @@ set_image_path(content, "./content/01-etl/02-tidy-data/icon.drawio.png")
 ### 2.1 Train and Deploy Model
 
 ```{r}
-guid <- "b05369ac-19a7-4dd9-9d9d-95b94906778d"
+guid <- "07b3ff23-595b-4f8b-9f28-7c393cf230ef"
 content <- content_item(client, guid)
 
 # Configure content settings
@@ -76,6 +80,10 @@ set_vanity_url(content, "bike-predict-r-train-and-deploy-model", force = TRUE)
 set_content_tags(content, tags$R$Model)
 set_image_path(content, "./content/02-model/01-train-and-deploy-model/icon.drawio.png")
 ```
+
+#### 2.1.1 Pinned Model
+
+Running the *2.1 Train and Deploy Model* script will update the following pinned model:
 
 ```{r}
 # Pinned model
@@ -87,6 +95,10 @@ content$update(access_type = "all")
 set_content_tags(content, tags$R$Model)
 set_image_path(content, "./img/icon-pins-model.drawio.png")
 ```
+
+#### 2.1.2 Deployed API
+
+Running the *2.1 Train and Deploy Model* script will deplooy the following API:
 
 ```{r}
 # Deployed API
@@ -102,7 +114,7 @@ set_image_path(content, "./img/icon-plumber.drawio.png")
 ### 2.2 Model Metrics
 
 ```{r}
-guid <- "0a8562f1-7c92-498f-9987-4481a2ac949c"
+guid <- "35a5a9c3-f8b1-414a-91cb-bdb5ad402580"
 content <- content_item(client, guid)
 
 # Configure content settings
@@ -130,7 +142,7 @@ set_image_path(content, "./content/03-app/01-client-app/icon.drawio.png")
 ### 3.2 Connect Widgets App
 
 ```{r}
-guid <- "32149a35-2d30-457b-95fc-6398e6d8b064"
+guid <- "3124a8f9-7d30-44b9-a49a-552db71b036e"
 content <- content_item(client, guid)
 
 # Configure content settings
