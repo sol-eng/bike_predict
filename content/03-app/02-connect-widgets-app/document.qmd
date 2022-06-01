@@ -1,53 +1,45 @@
 ---
-title: "End-to-End Data Science with RStudio Connect: Bike Share"
-output:
-  html_document:
-    mathjax: null
-    theme:
-      version: 4
-rmd_output_metadata:
-  rsc_output_files:
-    - "arrows.png"
-resource_files:
-  - "arrows.png"
+title: "Bike Predict - App - Connect Widgets"
+format:
+  html:
+    pagetitle: "End-to-End Data Science with RStudio Connect: Bike Share"
+    description-meta: "ETL, model serving, and app deployment--powered by RStudio Connect."
+    twitter-card: true
+    image: https://github.com/sol-eng/bike_predict/raw/main/img/arrows.drawio.png
+    image-alt: "Diagram of flow from scheduled jobs to apps"
 ---
 
+::: {.column-screen}
 `r gitlink::ribbon_css("https://github.com/sol-eng/bike_predict", text="View on GitHub")`
 
 ```{css, echo=FALSE}
-.main-container {
-    width: 100%;
-    max-width: unset;
-}
-
-.main {
-    max-width: 940px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .jumbotron {
   color: white;
   background-image: url("https://source.unsplash.com/zbUH21c9ARk/1920x1080");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50vh;
-  /* filter: brightness(75%) */
+  height: 30vh;
+  padding-top: 0px;
+  margin-top: 0px;
 }
-
-#header {
-  display: none
+.jumbotron-title {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.quarto-title {
+  display: none;
 }
 ```
 
 <div class="jumbotron jumbotron-fluid">
 <div class="container">
-<h1 class="display-3" color="#f0f0f0">Bike Share</h1>
-<p class="lead">End-to-End Data Science with RStudio Connect</p>
+<h1 class="display-3 jumbotron-title" color="#f0f0f0">Bike Share</h1>
+<p class="lead jumbotron-title">End-to-End Data Science with RStudio Connect</p>
 </div>
 </div>
 
+:::
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
@@ -63,23 +55,7 @@ bikeshare <- all_content %>%
   by_tag("R")
 ```
 
-```{r}
-meta() %>% 
-  meta_description(description = "ETL, model serving, and app deployment--powered by RStudio Connect.") %>% 
-  meta_viewport() %>% 
-  meta_social(
-    title = "End-to-end data science with RStudio Connect",
-    # automatically supplied server url contains trailing slash
-    url = paste0(Sys.getenv("CONNECT_SERVER"), "bike-share"),
-    image = paste0(Sys.getenv("CONNECT_SERVER"), "bike-share", "/arrows.png"),
-    image_alt = "Diagram of flow from scheduled jobs to apps",
-    twitter_card_type = "summary",
-    og_type = "article"
-  )
-```
-
-
-<div class="main">
+<br>
 
 This project illustrates using RStudio Connect to deploy a data science project featuring:
 
@@ -106,11 +82,13 @@ This project illustrates using RStudio Connect to deploy a data science project 
 
 - Encapsulate re-usable logic in an R package, and distribute with Package Manager (see <https://github.com/sol-eng/bikeHelpR>)
 
-![](https://github.com/sol-eng/bike_predict/blob/main/img/arrows.drawio.png)
+![](https://github.com/sol-eng/bike_predict/raw/main/img/arrows.drawio.png)
 
 Explore the deployed items below:
 
-## Scheduled Jobs {.tabset}
+## Scheduled Jobs
+
+::: {.panel-tabset}
 
 ### ETL
 
@@ -132,12 +110,14 @@ bikeshare %>%
   rsc_card()
 ```
 
+:::
+
 ## Pins
 
 ```{r}
 bikeshare %>%
   filter(str_detect(title, "Pinned")) %>%
-  rsc_card()
+  rsc_table()
 ```
 
 ## APIs
@@ -156,5 +136,3 @@ bikeshare %>%
   by_tag("App") %>%
   rsc_card()
 ```
-
-</div>
