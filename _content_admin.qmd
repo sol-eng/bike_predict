@@ -113,6 +113,8 @@ set_image_path(content, "./img/icon-plumber.drawio.png")
 
 ### 2.2 Model Metrics
 
+#### 2.2.1 Model Metrics Card
+
 ```{r}
 guid <- "35a5a9c3-f8b1-414a-91cb-bdb5ad402580"
 content <- content_item(client, guid)
@@ -123,6 +125,20 @@ set_vanity_url(content, "bike-predict-r-model-metrics", force = TRUE)
 set_content_tags(content, tags$R$Model)
 set_image_path(content, "./content/02-model/02-model-metrics/icon.drawio.png")
 ```
+
+#### 2.2.2 Model Metrics Pin
+
+```{r}
+guid <- "91d5bac2-db5f-44b6-b41b-d85138f48d8d"
+content <- content_item(client, guid)
+
+# Configure content settings
+content$update(access_type = "all")
+set_vanity_url(content, "bike-predict-r-model-metrics-pin", force = TRUE)
+set_content_tags(content, tags$R$Model)
+set_image_path(content, "./img/icon-pins-model.drawio.png")
+```
+
 
 ## 3 App
 
