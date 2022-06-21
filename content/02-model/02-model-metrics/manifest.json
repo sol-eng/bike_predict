@@ -3707,6 +3707,37 @@
         "Built": "R 4.1.0; ; 2021-05-19 01:22:04 UTC; unix"
       }
     },
+    "slider": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "slider",
+        "Title": "Sliding Window Functions",
+        "Version": "0.2.2",
+        "Authors@R": "\n    c(person(given = \"Davis\",\n             family = \"Vaughan\",\n             role = c(\"aut\", \"cre\"),\n             email = \"davis@rstudio.com\"),\n      person(given = \"RStudio\",\n             role = \"cph\"))",
+        "Description": "Provides type-stable rolling window functions over any R data\n    type. Cumulative and expanding windows are also supported. For more\n    advanced usage, an index can be used as a secondary vector that\n    defines how sliding windows are to be created.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://github.com/DavisVaughan/slider",
+        "BugReports": "https://github.com/DavisVaughan/slider/issues",
+        "Depends": "R (>= 3.3.0)",
+        "Imports": "ellipsis (>= 0.3.1), glue, rlang (>= 0.4.5), vctrs (>= 0.3.6),\nwarp",
+        "Suggests": "covr, dplyr (>= 1.0.0), knitr, lubridate, rmarkdown, testthat\n(>= 3.0.0)",
+        "LinkingTo": "vctrs (>= 0.3.6)",
+        "VignetteBuilder": "knitr",
+        "Config/testthat/edition": "3",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.1.1",
+        "SystemRequirements": "C++11",
+        "Collate": "'block.R' 'conditions.R' 'hop-common.R' 'hop-index-common.R'\n'hop-index.R' 'hop-index2.R' 'hop.R' 'hop2.R' 'names.R'\n'phop-index.R' 'phop.R' 'slide-index2.R' 'pslide-index.R'\n'slide-period2.R' 'pslide-period.R' 'slide2.R' 'pslide.R'\n'segment-tree.R' 'slide-common.R' 'slide-index-common.R'\n'slide-index.R' 'slide-period-common.R' 'slide-period.R'\n'slide.R' 'slider-package.R' 'summary-index.R'\n'summary-slide.R' 'utils.R' 'zzz.R'",
+        "NeedsCompilation": "yes",
+        "Packaged": "2021-07-01 19:27:53 UTC; davis",
+        "Author": "Davis Vaughan [aut, cre],\n  RStudio [cph]",
+        "Maintainer": "Davis Vaughan <davis@rstudio.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2021-07-01 19:50:01 UTC",
+        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-07-02 10:50:50 UTC; unix"
+      }
+    },
     "sodium": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -4351,6 +4382,33 @@
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-09-23 10:58:04 UTC; unix"
       }
     },
+    "warp": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "warp",
+        "Title": "Group Dates",
+        "Version": "0.2.0",
+        "Authors@R": "\n    c(person(given = \"Davis\",\n             family = \"Vaughan\",\n             role = c(\"aut\", \"cre\"),\n             email = \"davis@rstudio.com\"),\n      person(given = \"RStudio\",\n             role = \"cph\"))",
+        "Description": "Tooling to group dates by a variety of periods\n    including: yearly, monthly, by second, by week of the month, and more.\n    The groups are defined in such a way that they also represent the\n    distance between dates in terms of the period. This extracts valuable\n    information that can be used in further calculations that rely on a\n    specific temporal spacing between observations.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://github.com/DavisVaughan/warp",
+        "BugReports": "https://github.com/DavisVaughan/warp/issues",
+        "Depends": "R (>= 3.2)",
+        "Suggests": "covr, testthat (>= 2.1.0), knitr, rmarkdown",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "RoxygenNote": "7.1.1",
+        "VignetteBuilder": "knitr",
+        "NeedsCompilation": "yes",
+        "Packaged": "2020-10-21 17:22:54 UTC; davis",
+        "Author": "Davis Vaughan [aut, cre],\n  RStudio [cph]",
+        "Maintainer": "Davis Vaughan <davis@rstudio.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2020-10-21 18:00:02 UTC",
+        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-05-19 01:07:58 UTC; unix"
+      }
+    },
     "webshot": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -4649,7 +4707,7 @@
   },
   "files": {
     "document.qmd": {
-      "checksum": "a843d836c3fa67a492018bc82ff0b870"
+      "checksum": "e33acf4a09b49cb495c1b3bab2760f32"
     },
     "icon.drawio.png": {
       "checksum": "48c279cd6cbab0dfb95492dbb6dad50e"

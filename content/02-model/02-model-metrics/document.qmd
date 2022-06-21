@@ -116,12 +116,18 @@ test_data %>%
 ```{r include=FALSE}
 ## compute predictions for your evaluation data
 ## `handler_startup` is designed to get the R process ready to make predictions
+suppressPackageStartupMessages(handler_startup(v))
+
+# Specifically load the packages required by the model. Check 
+# `v$metadata$required_pkgs` to see the required pacakges. These packages must
+# be specicially defined so that RStudio Connect knows to install them when
+# deploying this document.
 library(parsnip)
 library(ranger)
 library(recipes)
 library(workflows)
 
-suppressPackageStartupMessages(handler_startup(v))
+
 preds <- augment(v, test_data)
 
 latest_metrics <- preds %>%
@@ -149,6 +155,10 @@ if (pin_exists(board, pin_name)) {
 The latest evaluation metrics:
 
 ```{r}
+# Explicitly define packages used for model metrics by vetiver so that Connect 
+# is able to redeploy.
+library(slider)
+
 latest_metrics %>%
   kableExtra::kable()
 ```
