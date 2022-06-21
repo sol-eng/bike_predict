@@ -46,6 +46,32 @@
         "Built": "R 4.1.0; ; 2021-12-21 10:49:25 UTC; unix"
       }
     },
+    "KernSmooth": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "KernSmooth",
+        "Priority": "recommended",
+        "Version": "2.23-20",
+        "Date": "2021-05-03",
+        "Title": "Functions for Kernel Smoothing Supporting Wand & Jones (1995)",
+        "Authors@R": "c(person(\"Matt\", \"Wand\", role = \"aut\",\n\t             email = \"Matt.Wand@uts.edu.au\"),\n\t     person(\"Cleve\", \"Moler\", role = \"ctb\",\n\t            comment = \"LINPACK routines in src/d*\"),\n             person(\"Brian\", \"Ripley\", role = c(\"trl\", \"cre\", \"ctb\"),\n                    email = \"ripley@stats.ox.ac.uk\",\n\t\t    comment = \"R port and updates\"))",
+        "Note": "Maintainers are not available to give advice on using a package\nthey did not author.",
+        "Depends": "R (>= 2.5.0), stats",
+        "Suggests": "MASS, carData",
+        "Description": "Functions for kernel smoothing (and density estimation)\n  corresponding to the book: \n  Wand, M.P. and Jones, M.C. (1995) \"Kernel Smoothing\".",
+        "License": "Unlimited",
+        "ByteCompile": "yes",
+        "NeedsCompilation": "yes",
+        "Packaged": "2021-05-03 08:46:19 UTC; ripley",
+        "Author": "Matt Wand [aut],\n  Cleve Moler [ctb] (LINPACK routines in src/d*),\n  Brian Ripley [trl, cre, ctb] (R port and updates)",
+        "Maintainer": "Brian Ripley <ripley@stats.ox.ac.uk>",
+        "Repository": "RSPM",
+        "Date/Publication": "2021-05-03 14:06:48 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-05-19 00:32:05 UTC; unix"
+      }
+    },
     "MASS": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -183,6 +209,58 @@
         "Date/Publication": "2022-03-17 08:30:10 UTC",
         "Encoding": "UTF-8",
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2022-03-18 10:47:46 UTC; unix"
+      }
+    },
+    "RcppEigen": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "RcppEigen",
+        "Type": "Package",
+        "Title": "'Rcpp' Integration for the 'Eigen' Templated Linear Algebra\nLibrary",
+        "Version": "0.3.3.9.1",
+        "Date": "2020-12-17",
+        "Author": "Douglas Bates, Dirk Eddelbuettel, Romain Francois, and Yixuan Qiu;\n the authors of Eigen for the included version of Eigen",
+        "Maintainer": "Dirk Eddelbuettel <edd@debian.org>",
+        "Copyright": "See the file COPYRIGHTS for various Eigen copyright details",
+        "Description": "R and 'Eigen' integration using 'Rcpp'.\n 'Eigen' is a C++ template library for linear algebra: matrices, vectors,\n numerical solvers and related algorithms.  It supports dense and sparse\n matrices on integer, floating point and complex numbers, decompositions of\n such matrices, and solutions of linear systems. Its performance on many\n algorithms is comparable with some of the best implementations based on\n 'Lapack' and level-3 'BLAS'. The 'RcppEigen' package includes the header\n files from the 'Eigen' C++ template library (currently version 3.3.4). Thus\n users do not need to install 'Eigen' itself in order to use 'RcppEigen'.\n Since version 3.1.1, 'Eigen' is licensed under the Mozilla Public License\n (version 2); earlier version were licensed under the GNU LGPL version 3 or\n later. 'RcppEigen' (the 'Rcpp' bindings/bridge to 'Eigen') is licensed under\n the GNU GPL version 2 or later, as is the rest of 'Rcpp'.",
+        "License": "GPL (>= 2) | file LICENSE",
+        "LazyLoad": "yes",
+        "LinkingTo": "Rcpp",
+        "Imports": "Matrix (>= 1.1-0), Rcpp (>= 0.11.0), stats, utils",
+        "Suggests": "inline, tinytest, pkgKitten, microbenchmark",
+        "URL": "http://dirk.eddelbuettel.com/code/rcpp.eigen.html",
+        "BugReports": "https://github.com/RcppCore/RcppEigen/issues",
+        "NeedsCompilation": "yes",
+        "Packaged": "2020-12-17 13:25:48 UTC; edd",
+        "Repository": "RSPM",
+        "Date/Publication": "2020-12-17 16:20:07 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-07-08 22:46:19 UTC; unix"
+      }
+    },
+    "SQUAREM": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "SQUAREM",
+        "Version": "2021.1",
+        "Date": "2021-01-12",
+        "Title": "Squared Extrapolation Methods for Accelerating EM-Like Monotone\nAlgorithms",
+        "Description": "Algorithms for accelerating the convergence of slow,\n        monotone sequences from smooth, contraction mapping such as the\n        EM algorithm. It can be used to accelerate any smooth, linearly\n        convergent acceleration scheme.  A tutorial style introduction\n        to this package is available in a vignette on the CRAN download\n        page or, when the package is loaded in an R session, with\n        vignette(\"SQUAREM\"). Refer to the J Stat Software article: <doi:10.18637/jss.v092.i07>. ",
+        "Depends": "R (>= 3.0)",
+        "Suggests": "setRNG",
+        "LazyLoad": "yes",
+        "License": "GPL (>= 2)",
+        "Author": "Ravi Varadhan",
+        "Maintainer": "Ravi Varadhan <ravi.varadhan@jhu.edu>",
+        "URL": "https://coah.jhu.edu/people/Faculty_personal_Pages/Varadhan.html",
+        "Repository": "RSPM",
+        "NeedsCompilation": "no",
+        "Packaged": "2021-01-12 23:59:02 UTC; rvaradhan",
+        "Date/Publication": "2021-01-13 06:40:10 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; ; 2021-05-19 01:07:18 UTC; unix"
       }
     },
     "arrow": {
@@ -564,6 +642,32 @@
         "Built": "R 4.1.0; ; 2021-05-18 23:25:51 UTC; unix"
       }
     },
+    "class": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "class",
+        "Priority": "recommended",
+        "Version": "7.3-19",
+        "Date": "2021-04-17",
+        "Depends": "R (>= 3.0.0), stats, utils",
+        "Imports": "MASS",
+        "Authors@R": "c(person(\"Brian\", \"Ripley\", role = c(\"aut\", \"cre\", \"cph\"),\n                    email = \"ripley@stats.ox.ac.uk\"),\n             person(\"William\", \"Venables\", role = \"cph\"))",
+        "Description": "Various functions for classification, including k-nearest\n  neighbour, Learning Vector Quantization and Self-Organizing Maps.",
+        "Title": "Functions for Classification",
+        "ByteCompile": "yes",
+        "License": "GPL-2 | GPL-3",
+        "URL": "http://www.stats.ox.ac.uk/pub/MASS4/",
+        "NeedsCompilation": "yes",
+        "Packaged": "2021-05-03 08:31:22 UTC; ripley",
+        "Author": "Brian Ripley [aut, cre, cph],\n  William Venables [cph]",
+        "Maintainer": "Brian Ripley <ripley@stats.ox.ac.uk>",
+        "Repository": "RSPM",
+        "Date/Publication": "2021-05-03 09:03:56 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-05-19 00:32:11 UTC; unix"
+      }
+    },
     "cli": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -620,6 +724,28 @@
         "Repository": "RSPM",
         "Date/Publication": "2020-10-08 14:00:05 UTC",
         "Built": "R 4.1.0; ; 2021-05-18 23:23:49 UTC; unix"
+      }
+    },
+    "codetools": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "codetools",
+        "Version": "0.2-18",
+        "Priority": "recommended",
+        "Author": "Luke Tierney <luke-tierney@uiowa.edu>",
+        "Description": "Code analysis tools for R.",
+        "Title": "Code Analysis Tools for R",
+        "Depends": "R (>= 2.1)",
+        "Maintainer": "Luke Tierney <luke-tierney@uiowa.edu>",
+        "URL": "https://gitlab.com/luke-tierney/codetools",
+        "License": "GPL",
+        "NeedsCompilation": "no",
+        "Packaged": "2020-11-02 14:45:50 UTC; luke",
+        "Repository": "RSPM",
+        "Date/Publication": "2020-11-04 17:12:32 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; ; 2021-05-19 01:07:11 UTC; unix"
       }
     },
     "colorspace": {
@@ -1205,6 +1331,62 @@
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-12-09 11:24:29 UTC; unix"
       }
     },
+    "future": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "future",
+        "Version": "1.22.1",
+        "Title": "Unified Parallel and Distributed Processing in R for Everyone",
+        "Imports": "digest, globals (>= 0.14.0), listenv (>= 0.8.0), parallel,\nparallelly (>= 1.26.1), tools, utils",
+        "Suggests": "RhpcBLASctl, R.rsp, markdown",
+        "VignetteBuilder": "R.rsp",
+        "Authors@R": "c(person(\"Henrik\", \"Bengtsson\", role=c(\"aut\", \"cre\", \"cph\"),\n                                          email = \"henrikb@braju.com\"))",
+        "Description": "The purpose of this package is to provide a lightweight and\n    unified Future API for sequential and parallel processing of R\n    expression via futures.  The simplest way to evaluate an expression\n    in parallel is to use `x %<-% { expression }` with `plan(multisession)`.\n    This package implements sequential, multicore, multisession, and\n    cluster futures.  With these, R expressions can be evaluated on the\n    local machine, in parallel a set of local machines, or distributed\n    on a mix of local and remote machines.\n    Extensions to this package implement additional backends for\n    processing futures via compute cluster schedulers, etc.\n    Because of its unified API, there is no need to modify any code in order\n    switch from sequential on the local machine to, say, distributed\n    processing on a remote compute cluster.\n    Another strength of this package is that global variables and functions\n    are automatically identified and exported as needed, making it\n    straightforward to tweak existing code to make use of futures.",
+        "License": "LGPL (>= 2.1)",
+        "LazyLoad": "TRUE",
+        "ByteCompile": "TRUE",
+        "URL": "https://future.futureverse.org,\nhttps://github.com/HenrikBengtsson/future",
+        "BugReports": "https://github.com/HenrikBengtsson/future/issues",
+        "RoxygenNote": "7.1.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2021-08-11 15:14:40 UTC; hb",
+        "Author": "Henrik Bengtsson [aut, cre, cph]",
+        "Maintainer": "Henrik Bengtsson <henrikb@braju.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2021-08-25 09:30:07 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; ; 2021-08-26 10:48:54 UTC; unix"
+      }
+    },
+    "future.apply": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "future.apply",
+        "Version": "1.8.1",
+        "Title": "Apply Function to Elements in Parallel using Futures",
+        "Depends": "R (>= 3.2.0), future (>= 1.21.0)",
+        "Imports": "globals (>= 0.14.0), parallel, utils",
+        "Suggests": "datasets, stats, tools, listenv (>= 0.8.0), R.rsp, markdown",
+        "VignetteBuilder": "R.rsp",
+        "Authors@R": "c(person(\"Henrik\", \"Bengtsson\", role=c(\"aut\", \"cre\", \"cph\"),\n                                          email = \"henrikb@braju.com\"),\n             person(\"R Core Team\", role = c(\"cph\", \"ctb\")))",
+        "Description": "Implementations of apply(), by(), eapply(), lapply(), Map(), .mapply(), mapply(), replicate(), sapply(), tapply(), and vapply() that can be resolved using any future-supported backend, e.g. parallel on the local machine or distributed on a compute cluster.  These future_*apply() functions come with the same pros and cons as the corresponding base-R *apply() functions but with the additional feature of being able to be processed via the future framework.",
+        "License": "GPL (>= 2)",
+        "LazyLoad": "TRUE",
+        "URL": "https://future.apply.futureverse.org,\nhttps://github.com/HenrikBengtsson/future.apply",
+        "BugReports": "https://github.com/HenrikBengtsson/future.apply/issues",
+        "RoxygenNote": "7.1.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2021-08-10 12:15:45 UTC; hb",
+        "Author": "Henrik Bengtsson [aut, cre, cph],\n  R Core Team [cph, ctb]",
+        "Maintainer": "Henrik Bengtsson <henrikb@braju.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2021-08-10 13:00:02 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; ; 2021-08-11 10:47:53 UTC; unix"
+      }
+    },
     "gargle": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -1374,6 +1556,33 @@
         "Built": "R 4.1.0; ; 2021-05-19 00:32:11 UTC; unix"
       }
     },
+    "globals": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "globals",
+        "Version": "0.14.0",
+        "Depends": "R (>= 3.1.2)",
+        "Imports": "codetools",
+        "Title": "Identify Global Objects in R Expressions",
+        "Authors@R": "c(\n    person(\"Henrik\", \"Bengtsson\", role=c(\"aut\", \"cre\", \"cph\"),\n           email=\"henrikb@braju.com\"),\n    person(\"Davis\",\"Vaughan\", role=\"ctb\",\n           email=\"davis@rstudio.com\"))",
+        "Description": "Identifies global (\"unknown\" or \"free\") objects in R expressions\n    by code inspection using various strategies (ordered, liberal, or\n    conservative).  The objective of this package is to make it as simple as\n    possible to identify global objects for the purpose of exporting them in\n    parallel, distributed compute environments.",
+        "License": "LGPL (>= 2.1)",
+        "LazyLoad": "TRUE",
+        "ByteCompile": "TRUE",
+        "URL": "https://github.com/HenrikBengtsson/globals",
+        "BugReports": "https://github.com/HenrikBengtsson/globals/issues",
+        "RoxygenNote": "7.1.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2020-11-22 16:11:06 UTC; hb",
+        "Author": "Henrik Bengtsson [aut, cre, cph],\n  Davis Vaughan [ctb]",
+        "Maintainer": "Henrik Bengtsson <henrikb@braju.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2020-11-22 17:00:02 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; ; 2021-05-19 01:07:38 UTC; unix"
+      }
+    },
     "glue": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -1462,6 +1671,33 @@
         "Repository": "RSPM",
         "Date/Publication": "2021-07-21 18:50:01 UTC",
         "Built": "R 4.1.0; ; 2021-07-22 10:48:14 UTC; unix"
+      }
+    },
+    "gower": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "gower",
+        "Maintainer": "Mark van der Loo <mark.vanderloo@gmail.com>",
+        "License": "GPL-3",
+        "Title": "Gower's Distance",
+        "LazyData": "no",
+        "Type": "Package",
+        "LazyLoad": "yes",
+        "Authors@R": "c( person(\"Mark\", \"van der Loo\", role=c(\"aut\",\"cre\"),email=\"mark.vanderloo@gmail.com\")\n    , person(\"David\", \"Turner\", role=\"ctb\"))",
+        "Description": "Compute Gower's distance (or similarity) coefficient between records. Compute \n    the top-n matches between records. Core algorithms are executed in parallel on systems\n    supporting OpenMP.",
+        "Version": "0.2.2",
+        "URL": "https://github.com/markvanderloo/gower",
+        "BugReports": "https://github.com/markvanderloo/gower/issues",
+        "Suggests": "tinytest (>= 0.9.3),",
+        "RoxygenNote": "7.1.0",
+        "NeedsCompilation": "yes",
+        "Packaged": "2020-06-22 19:59:43 UTC; mark",
+        "Author": "Mark van der Loo [aut, cre],\n  David Turner [ctb]",
+        "Repository": "RSPM",
+        "Date/Publication": "2020-06-23 14:00:02 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-05-19 01:06:44 UTC; unix"
       }
     },
     "gtable": {
@@ -1744,6 +1980,30 @@
         "Built": "R 4.1.0; ; 2021-05-19 00:32:06 UTC; unix"
       }
     },
+    "ipred": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "ipred",
+        "Title": "Improved Predictors",
+        "Version": "0.9-12",
+        "Date": "2021-09-15",
+        "Authors@R": "c(person(\"Andrea\", \"Peters\", role = \"aut\"),\n             person(\"Torsten\", \"Hothorn\", role = c(\"aut\", \"cre\"),\n                    email = \"Torsten.Hothorn@R-project.org\"),\n             person(\"Brian D.\", \"Ripley\", role = \"ctb\"),\n             person(\"Terry\", \"Therneau\", role = \"ctb\"), \n             person(\"Beth\", \"Atkinson\", role = \"ctb\"))",
+        "Description": "Improved predictive models by indirect classification and\n  bagging for classification, regression and survival problems \n  as well as resampling based estimators of prediction error. ",
+        "Depends": "R (>= 2.10)",
+        "Imports": "rpart (>= 3.1-8), MASS, survival, nnet, class, prodlim",
+        "Suggests": "mvtnorm, mlbench, TH.data, randomForest, party",
+        "License": "GPL (>= 2)",
+        "NeedsCompilation": "yes",
+        "Packaged": "2021-09-15 09:22:36 UTC; hothorn",
+        "Author": "Andrea Peters [aut],\n  Torsten Hothorn [aut, cre],\n  Brian D. Ripley [ctb],\n  Terry Therneau [ctb],\n  Beth Atkinson [ctb]",
+        "Maintainer": "Torsten Hothorn <Torsten.Hothorn@R-project.org>",
+        "Repository": "RSPM",
+        "Date/Publication": "2021-09-15 09:50:01 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-09-21 22:39:07 UTC; unix"
+      }
+    },
     "isoband": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -1963,6 +2223,38 @@
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-09-23 10:57:00 UTC; unix"
       }
     },
+    "lava": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "lava",
+        "Type": "Package",
+        "Title": "Latent Variable Models",
+        "Version": "1.6.10",
+        "Date": "2021-09-01",
+        "Authors@R": "c(person(\"Klaus K.\", \"Holst\", email=\"klaus@holst.it\", role=c(\"aut\", \"cre\")),\n             person(\"Brice\", \"Ozenne\", role = \"ctb\"),\n             person(\"Thomas\", \"Gerds\", role = \"ctb\"))",
+        "Author": "Klaus K. Holst [aut, cre],\n  Brice Ozenne [ctb],\n  Thomas Gerds [ctb]",
+        "Maintainer": "Klaus K. Holst <klaus@holst.it>",
+        "Description": "A general implementation of Structural Equation Models\n\twith latent variables (MLE, 2SLS, and composite likelihood\n\testimators) with both continuous, censored, and ordinal\n\toutcomes (Holst and Budtz-Joergensen (2013) <doi:10.1007/s00180-012-0344-y>).\n\tMixture latent variable models and non-linear latent variable models\n\t(Holst and Budtz-Joergensen (2019) <doi:10.1093/biostatistics/kxy082>).\n\tThe package also provides methods for graph exploration (d-separation,\n\tback-door criterion), simulation of general non-linear latent variable\n\tmodels, and estimation of influence functions for a broad range of\n\tstatistical models.",
+        "URL": "https://kkholst.github.io/lava/",
+        "Additional_repositories": "https://kkholst.github.io/r_repo/",
+        "BugReports": "https://github.com/kkholst/lava/issues",
+        "License": "GPL-3",
+        "LazyLoad": "yes",
+        "Depends": "R (>= 3.0)",
+        "Imports": "future.apply, progressr, grDevices, graphics, methods,\nnumDeriv, stats, survival, SQUAREM, utils",
+        "Suggests": "KernSmooth, Matrix, Rgraphviz, data.table, ellipse, fields,\ngeepack, gof (>= 0.9), graph, knitr, bookdown, rmarkdown,\nigraph (>= 0.6), lava.tobit (>= 0.4.7), lavaSearch2, lme4,\nmagrittr, mets (>= 1.1), nlme, optimx, polycor, quantreg, rgl,\nR.rsp (>= 0.40), testthat (>= 0.11), visNetwork, zoo",
+        "VignetteBuilder": "knitr",
+        "ByteCompile": "yes",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.1.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2021-09-01 15:58:20 UTC; klaus",
+        "Repository": "RSPM",
+        "Date/Publication": "2021-09-02 14:50:18 UTC",
+        "Built": "R 4.1.0; ; 2021-09-08 20:28:45 UTC; unix"
+      }
+    },
     "lifecycle": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -1989,6 +2281,33 @@
         "Repository": "RSPM",
         "Date/Publication": "2021-09-24 15:30:02 UTC",
         "Built": "R 4.1.0; ; 2021-09-27 11:11:02 UTC; unix"
+      }
+    },
+    "listenv": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "listenv",
+        "Version": "0.8.0",
+        "Depends": "R (>= 3.1.2)",
+        "Suggests": "R.utils, R.rsp, markdown",
+        "VignetteBuilder": "R.rsp",
+        "Title": "Environments Behaving (Almost) as Lists",
+        "Authors@R": "c(person(\"Henrik\", \"Bengtsson\", role=c(\"aut\", \"cre\", \"cph\"),\n                                          email = \"henrikb@braju.com\"))",
+        "Description": "List environments are environments that have list-like properties.  For instance, the elements of a list environment are ordered and can be accessed and iterated over using index subsetting, e.g. 'x <- listenv(a = 1, b = 2); for (i in seq_along(x)) x[[i]] <- x[[i]] ^ 2; y <- as.list(x)'.",
+        "License": "LGPL (>= 2.1)",
+        "LazyLoad": "TRUE",
+        "URL": "https://github.com/HenrikBengtsson/listenv",
+        "BugReports": "https://github.com/HenrikBengtsson/listenv/issues",
+        "RoxygenNote": "7.0.2",
+        "NeedsCompilation": "no",
+        "Packaged": "2019-12-05 19:44:24 UTC; hb",
+        "Author": "Henrik Bengtsson [aut, cre, cph]",
+        "Maintainer": "Henrik Bengtsson <henrikb@braju.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2019-12-05 21:40:02 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; ; 2021-05-19 01:10:24 UTC; unix"
       }
     },
     "lobstr": {
@@ -2213,6 +2532,56 @@
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-09-08 20:28:46 UTC; unix"
       }
     },
+    "nnet": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "nnet",
+        "Priority": "recommended",
+        "Version": "7.3-16",
+        "Date": "2021-04-17",
+        "Depends": "R (>= 3.0.0), stats, utils",
+        "Suggests": "MASS",
+        "Authors@R": "c(person(\"Brian\", \"Ripley\", role = c(\"aut\", \"cre\", \"cph\"),\n                    email = \"ripley@stats.ox.ac.uk\"),\n             person(\"William\", \"Venables\", role = \"cph\"))",
+        "Description": "Software for feed-forward neural networks with a single\n  hidden layer, and for multinomial log-linear models.",
+        "Title": "Feed-Forward Neural Networks and Multinomial Log-Linear Models",
+        "ByteCompile": "yes",
+        "License": "GPL-2 | GPL-3",
+        "URL": "http://www.stats.ox.ac.uk/pub/MASS4/",
+        "NeedsCompilation": "yes",
+        "Packaged": "2021-05-03 08:31:22 UTC; ripley",
+        "Author": "Brian Ripley [aut, cre, cph],\n  William Venables [cph]",
+        "Maintainer": "Brian Ripley <ripley@stats.ox.ac.uk>",
+        "Repository": "RSPM",
+        "Date/Publication": "2021-05-03 09:03:58 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-05-19 00:32:06 UTC; unix"
+      }
+    },
+    "numDeriv": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "numDeriv",
+        "Version": "2016.8-1.1",
+        "Title": "Accurate Numerical Derivatives",
+        "Description": "Methods for calculating (usually) accurate\n\tnumerical first and second order derivatives. Accurate calculations \n\tare done using 'Richardson''s' extrapolation or, when applicable, a\n\tcomplex step derivative is available. A simple difference \n\tmethod is also provided. Simple difference is (usually) less accurate\n\tbut is much quicker than 'Richardson''s' extrapolation and provides a \n\tuseful cross-check. \n\tMethods are provided for real scalar and vector valued functions. ",
+        "Depends": "R (>= 2.11.1)",
+        "LazyLoad": "yes",
+        "ByteCompile": "yes",
+        "License": "GPL-2",
+        "Copyright": "2006-2011, Bank of Canada. 2012-2016, Paul Gilbert",
+        "Author": "Paul Gilbert and Ravi Varadhan",
+        "Maintainer": "Paul Gilbert <pgilbert.ttv9z@ncf.ca>",
+        "URL": "http://optimizer.r-forge.r-project.org/",
+        "NeedsCompilation": "no",
+        "Packaged": "2019-06-04 11:04:44 UTC; hornik",
+        "Repository": "RSPM",
+        "Date/Publication": "2019-06-06 09:51:09 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; ; 2021-05-19 01:06:09 UTC; unix"
+      }
+    },
     "odbc": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -2298,6 +2667,63 @@
         "Repository": "RSPM",
         "Date/Publication": "2021-09-03 08:10:02 UTC",
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-09-08 20:27:57 UTC; unix"
+      }
+    },
+    "parallelly": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "parallelly",
+        "Version": "1.28.1",
+        "Title": "Enhancing the 'parallel' Package",
+        "Imports": "parallel, tools, utils",
+        "Authors@R": "c(person(\"Henrik\", \"Bengtsson\", role=c(\"aut\", \"cre\", \"cph\"),\n                                          email = \"henrikb@braju.com\"))",
+        "Description": "Utility functions that enhance the 'parallel' package and support the built-in parallel backends of the 'future' package.  For example, availableCores() gives the number of CPU cores available to your R process as given by the operating system, 'cgroups' and Linux containers, R options, and environment variables, including those set by job schedulers on high-performance compute clusters. If none is set, it will fall back to parallel::detectCores(). Another example is makeClusterPSOCK(), which is backward compatible with parallel::makePSOCKcluster() while doing a better job in setting up remote cluster workers without the need for configuring the firewall to do port-forwarding to your local computer.",
+        "License": "LGPL (>= 2.1)",
+        "LazyLoad": "TRUE",
+        "ByteCompile": "TRUE",
+        "URL": "https://parallelly.futureverse.org,\nhttps://github.com/HenrikBengtsson/parallelly",
+        "BugReports": "https://github.com/HenrikBengtsson/parallelly/issues",
+        "RoxygenNote": "7.1.2",
+        "NeedsCompilation": "no",
+        "Packaged": "2021-09-09 12:24:03 UTC; hb",
+        "Author": "Henrik Bengtsson [aut, cre, cph]",
+        "Maintainer": "Henrik Bengtsson <henrikb@braju.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2021-09-09 13:20:06 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; ; 2021-09-10 10:49:26 UTC; unix"
+      }
+    },
+    "parsnip": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "parsnip",
+        "Title": "A Common API to Modeling and Analysis Functions",
+        "Version": "0.2.1",
+        "Authors@R": "c(\n    person(\"Max\", \"Kuhn\", , \"max@rstudio.com\", role = c(\"aut\", \"cre\")),\n    person(\"Davis\", \"Vaughan\", , \"davis@rstudio.com\", role = \"aut\"),\n    person(\"Emil\", \"Hvitfeldt\", , \"emilhhvitfeldt@gmail.com\", role = \"ctb\"),\n    person(\"RStudio\", role = c(\"cph\", \"fnd\"))\n  )",
+        "Maintainer": "Max Kuhn <max@rstudio.com>",
+        "Description": "A common interface is provided to allow users to specify a\n    model without having to remember the different argument names across\n    different functions or computational engines (e.g. 'R', 'Spark',\n    'Stan', etc).",
+        "License": "MIT + file LICENSE",
+        "URL": "https://github.com/tidymodels/parsnip,\nhttps://parsnip.tidymodels.org/",
+        "BugReports": "https://github.com/tidymodels/parsnip/issues",
+        "Depends": "R (>= 2.10)",
+        "Imports": "cli, dplyr (>= 0.8.0.1), generics (>= 0.1.0.9000), ggplot2,\nglobals, glue, hardhat (>= 0.1.6.9001), lifecycle, magrittr,\nprettyunits, purrr, rlang (>= 0.3.1), stats, tibble (>= 2.1.1),\ntidyr (>= 1.0.0), utils, vctrs (>= 0.2.0), withr",
+        "Suggests": "C50, covr, dials (>= 0.0.10.9001), earth, tensorflow,\nggrepel, keras, kernlab, kknn, knitr, LiblineaR, MASS, Matrix,\nmgcv, modeldata, nlme, ranger (>= 0.12.0), remotes, rmarkdown,\nrpart, sparklyr (>= 1.0.0), survival, testthat, xgboost (>=\n1.5.0.1)",
+        "VignetteBuilder": "knitr",
+        "ByteCompile": "true",
+        "Config/Needs/website": "C50, dbarts, earth, glmnet, keras, kernlab, kknn,\nLiblineaR, mgcv, nnet, parsnip, randomForest, ranger, rpart,\nrstanarm, tidymodels/tidymodels, tidyverse/tidytemplate,\nrstudio/reticulate, xgboost",
+        "Config/rcmdcheck/ignore-inconsequential-notes": "true",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "RoxygenNote": "7.1.2",
+        "NeedsCompilation": "no",
+        "Packaged": "2022-03-16 21:50:12 UTC; maxkuhn",
+        "Author": "Max Kuhn [aut, cre],\n  Davis Vaughan [aut],\n  Emil Hvitfeldt [ctb],\n  RStudio [cph, fnd]",
+        "Repository": "RSPM",
+        "Date/Publication": "2022-03-17 11:40:02 UTC",
+        "Built": "R 4.1.0; ; 2022-03-18 10:48:09 UTC; unix"
       }
     },
     "pillar": {
@@ -2494,6 +2920,29 @@
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-05-18 23:24:03 UTC; unix"
       }
     },
+    "prodlim": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "prodlim",
+        "Title": "Product-Limit Estimation for Censored Event History Analysis",
+        "Version": "2019.11.13",
+        "Author": "Thomas A. Gerds",
+        "Description": "Fast and user friendly implementation of nonparametric estimators\n    for censored event history (survival) analysis. Kaplan-Meier and\n    Aalen-Johansen method.",
+        "Depends": "R (>= 2.9.0)",
+        "Imports": "Rcpp (>= 0.11.5), stats, grDevices, graphics, survival,\nKernSmooth, lava",
+        "LinkingTo": "Rcpp",
+        "Maintainer": "Thomas A. Gerds <tag@biostat.ku.dk>",
+        "License": "GPL (>= 2)",
+        "Packaged": "2019-11-17 12:08:13 UTC; tag",
+        "RoxygenNote": "6.1.1",
+        "NeedsCompilation": "yes",
+        "Repository": "RSPM",
+        "Date/Publication": "2019-11-17 12:40:02 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-07-08 21:42:08 UTC; unix"
+      }
+    },
     "progress": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -2517,6 +2966,33 @@
         "Repository": "RSPM",
         "Date/Publication": "2019-05-16 21:30:03 UTC",
         "Built": "R 4.1.0; ; 2021-05-18 23:25:19 UTC; unix"
+      }
+    },
+    "progressr": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "progressr",
+        "Version": "0.9.0",
+        "Title": "An Inclusive, Unifying API for Progress Updates",
+        "Description": "A minimal, unifying API for scripts and packages to report progress updates from anywhere including when using parallel processing.  The package is designed such that the developer can to focus on what progress should be reported on without having to worry about how to present it.  The end user has full control of how, where, and when to render these progress updates, e.g. in the terminal using utils::txtProgressBar() or progress::progress_bar(), in a graphical user interface using utils::winProgressBar(), tcltk::tkProgressBar() or shiny::withProgress(), via the speakers using beep::beepr(), or on a file system via the size of a file. Anyone can add additional, customized, progression handlers. The 'progressr' package uses R's condition framework for signaling progress updated. Because of this, progress can be reported from almost anywhere in R, e.g. from classical for and while loops, from map-reduce API:s like the lapply() family of functions, 'purrr', 'plyr', and 'foreach'. It will also work with parallel processing via the 'future' framework, e.g. future.apply::future_lapply(), furrr::future_map(), and 'foreach' with 'doFuture'. The package is compatible with Shiny applications.",
+        "Authors@R": "c(\n  person(\"Henrik\", \"Bengtsson\", role=c(\"aut\", \"cre\", \"cph\"),\n         email = \"henrikb@braju.com\"))",
+        "License": "GPL (>= 3)",
+        "Depends": "R (>= 3.5.0)",
+        "Imports": "digest, utils",
+        "Suggests": "graphics, tcltk, beepr, crayon, pbmcapply, progress, purrr,\nforeach, plyr, doFuture, future, future.apply, furrr,\nrstudioapi, shiny, commonmark, base64enc, tools",
+        "VignetteBuilder": "progressr",
+        "URL": "https://progressr.futureverse.org,\nhttps://github.com/HenrikBengtsson/progressr",
+        "BugReports": "https://github.com/HenrikBengtsson/progressr/issues",
+        "RoxygenNote": "7.1.2",
+        "NeedsCompilation": "no",
+        "Packaged": "2021-09-24 13:45:13 UTC; hb",
+        "Author": "Henrik Bengtsson [aut, cre, cph]",
+        "Maintainer": "Henrik Bengtsson <henrikb@braju.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2021-09-24 14:30:02 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; ; 2021-09-27 11:10:07 UTC; unix"
       }
     },
     "promises": {
@@ -2602,6 +3078,34 @@
         "Repository": "RSPM",
         "Date/Publication": "2020-04-17 12:10:07 UTC",
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-11-09 00:27:44 UTC; unix"
+      }
+    },
+    "ranger": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "ranger",
+        "Type": "Package",
+        "Title": "A Fast Implementation of Random Forests",
+        "Version": "0.13.1",
+        "Date": "2021-07-14",
+        "Author": "Marvin N. Wright [aut, cre], Stefan Wager [ctb], Philipp Probst [ctb]",
+        "Maintainer": "Marvin N. Wright <cran@wrig.de>",
+        "Description": "A fast implementation of Random Forests, particularly suited for high\n          dimensional data. Ensembles of classification, regression, survival and\n          probability prediction trees are supported. Data from genome-wide association\n          studies can be analyzed efficiently. In addition to data frames, datasets of\n          class 'gwaa.data' (R package 'GenABEL') and 'dgCMatrix' (R package 'Matrix') \n          can be directly analyzed.",
+        "License": "GPL-3",
+        "Imports": "Rcpp (>= 0.11.2), Matrix",
+        "LinkingTo": "Rcpp, RcppEigen",
+        "Depends": "R (>= 3.1)",
+        "Suggests": "covr, survival, testthat",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.1.1",
+        "URL": "https://github.com/imbs-hl/ranger",
+        "BugReports": "https://github.com/imbs-hl/ranger/issues",
+        "NeedsCompilation": "yes",
+        "Packaged": "2021-07-14 10:10:00 UTC; wright",
+        "Repository": "RSPM",
+        "Date/Publication": "2021-07-14 11:20:02 UTC",
+        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-07-15 10:54:39 UTC; unix"
       }
     },
     "rapidoc": {
@@ -2720,6 +3224,36 @@
         "Repository": "RSPM",
         "Date/Publication": "2019-03-13 16:30:02 UTC",
         "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-07-08 22:27:01 UTC; unix"
+      }
+    },
+    "recipes": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "recipes",
+        "Title": "Preprocessing and Feature Engineering Steps for Modeling",
+        "Version": "0.2.0",
+        "Authors@R": "c(\n    person(\"Max\", \"Kuhn\", , \"max@rstudio.com\", role = c(\"aut\", \"cre\")),\n    person(\"Hadley\", \"Wickham\", , \"hadley@rstudio.com\", role = \"aut\"),\n    person(\"RStudio\", role = \"cph\")\n  )",
+        "Description": "A recipe prepares your data for modeling. We provide an\n    extensible framework for pipeable sequences of feature engineering\n    steps provides preprocessing tools to be applied to data. Statistical\n    parameters for the steps can be estimated from an initial data set and\n    then applied to other data sets. The resulting processed output can\n    then be used as inputs for statistical or machine learning models.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://github.com/tidymodels/recipes,\nhttps://recipes.tidymodels.org/",
+        "BugReports": "https://github.com/tidymodels/recipes/issues",
+        "Depends": "dplyr, R (>= 3.1)",
+        "Imports": "ellipsis, generics (>= 0.1.0.9000), glue, gower, hardhat (>=\n0.1.6.9001), ipred (>= 0.9-12), lifecycle, lubridate, magrittr,\nMatrix, purrr (>= 0.2.3), rlang (>= 0.4.0), stats, tibble,\ntidyr (>= 1.0.0), tidyselect (>= 1.1.0), timeDate, utils,\nvctrs, withr",
+        "Suggests": "covr, ddalpha, dials (>= 0.0.10.9001), ggplot2, igraph,\nkernlab, knitr, modeldata, parsnip (>= 0.1.7), RANN, RcppRoll,\nrmarkdown, rpart, rsample, RSpectra, testthat (>= 3.0.0),\nworkflows, xml2",
+        "VignetteBuilder": "knitr",
+        "RdMacros": "lifecycle",
+        "Config/Needs/website": "tidyverse/tidytemplate",
+        "Config/testthat/edition": "3",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.1.2",
+        "NeedsCompilation": "no",
+        "Packaged": "2022-02-18 22:37:19 UTC; max",
+        "Author": "Max Kuhn [aut, cre],\n  Hadley Wickham [aut],\n  RStudio [cph]",
+        "Maintainer": "Max Kuhn <max@rstudio.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2022-02-18 23:20:02 UTC",
+        "Built": "R 4.1.0; ; 2022-02-21 11:04:51 UTC; unix"
       }
     },
     "rematch": {
@@ -2919,6 +3453,34 @@
         "Repository": "RSPM",
         "Date/Publication": "2022-04-25 19:20:02 UTC",
         "Built": "R 4.1.0; ; 2022-04-26 10:49:03 UTC; unix"
+      }
+    },
+    "rpart": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "rpart",
+        "Priority": "recommended",
+        "Version": "4.1-15",
+        "Date": "2019-04-10",
+        "Authors@R": "c(person(\"Terry\", \"Therneau\", role = \"aut\",\n\t            email = \"therneau@mayo.edu\"),\n             person(\"Beth\", \"Atkinson\", role = c(\"aut\", \"cre\"),\n\t            email = \"atkinson@mayo.edu\"),\n             person(\"Brian\", \"Ripley\", role = \"trl\",\n                    email = \"ripley@stats.ox.ac.uk\",\n\t\t    comment = \"producer of the initial R port, maintainer 1999-2017\"))",
+        "Description": "Recursive partitioning for classification, \n  regression and survival trees.  An implementation of most of the \n  functionality of the 1984 book by Breiman, Friedman, Olshen and Stone.",
+        "Title": "Recursive Partitioning and Regression Trees",
+        "Depends": "R (>= 2.15.0), graphics, stats, grDevices",
+        "Suggests": "survival",
+        "License": "GPL-2 | GPL-3",
+        "LazyData": "yes",
+        "ByteCompile": "yes",
+        "NeedsCompilation": "yes",
+        "Author": "Terry Therneau [aut],\n  Beth Atkinson [aut, cre],\n  Brian Ripley [trl] (producer of the initial R port, maintainer\n    1999-2017)",
+        "Maintainer": "Beth Atkinson <atkinson@mayo.edu>",
+        "Repository": "RSPM",
+        "URL": "https://github.com/bethatkinson/rpart,\nhttps://cran.r-project.org/package=rpart",
+        "BugReports": "https://github.com/bethatkinson/rpart/issues",
+        "Packaged": "2019-04-11 15:59:38 UTC; atkinson",
+        "Date/Publication": "2019-04-12 14:32:39 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-05-19 00:32:07 UTC; unix"
       }
     },
     "rprojroot": {
@@ -3253,6 +3815,34 @@
         "Built": "R 4.1.0; ; 2021-05-18 23:24:50 UTC; unix"
       }
     },
+    "survival": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Title": "Survival Analysis",
+        "Priority": "recommended",
+        "Package": "survival",
+        "Version": "3.2-13",
+        "Date": "2021-08-23",
+        "Depends": "R (>= 3.5.0)",
+        "Imports": "graphics, Matrix, methods, splines, stats, utils",
+        "LazyData": "Yes",
+        "LazyDataCompression": "xz",
+        "ByteCompile": "Yes",
+        "Authors@R": "c(person(c(\"Terry\", \"M\"), \"Therneau\",\n                    email=\"therneau.terry@mayo.edu\",\n\t            role=c(\"aut\", \"cre\")),\n               person(\"Thomas\", \"Lumley\", role=c(\"ctb\", \"trl\"),\n\t       comment=\"original S->R port and R maintainer until 2009\"),\n\t       person(\"Atkinson\", \"Elizabeth\", role=\"ctb\"),\n\t       person(\"Crowson\", \"Cynthia\", role=\"ctb\"))",
+        "Description": "Contains the core survival analysis routines, including\n\t     definition of Surv objects, \n\t     Kaplan-Meier and Aalen-Johansen (multi-state) curves, Cox models,\n\t     and parametric accelerated failure time models.",
+        "License": "LGPL (>= 2)",
+        "URL": "https://github.com/therneau/survival",
+        "NeedsCompilation": "yes",
+        "Packaged": "2021-08-23 14:47:31 UTC; therneau",
+        "Author": "Terry M Therneau [aut, cre],\n  Thomas Lumley [ctb, trl] (original S->R port and R maintainer until\n    2009),\n  Atkinson Elizabeth [ctb],\n  Crowson Cynthia [ctb]",
+        "Maintainer": "Terry M Therneau <therneau.terry@mayo.edu>",
+        "Repository": "RSPM",
+        "Date/Publication": "2021-08-24 12:50:02 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; x86_64-pc-linux-gnu; 2021-08-25 10:47:13 UTC; unix"
+      }
+    },
     "svglite": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -3484,6 +4074,30 @@
         "Repository": "RSPM",
         "Date/Publication": "2021-04-15 13:20:02 UTC",
         "Built": "R 4.1.0; ; 2021-05-18 23:31:17 UTC; unix"
+      }
+    },
+    "timeDate": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "timeDate",
+        "Title": "Rmetrics - Chronological and Calendar Objects",
+        "Date": "2018-02-21",
+        "Version": "3043.102",
+        "Author": "Diethelm Wuertz [aut],\n\tTobias Setz [cre],\n\tYohan Chalabi [ctb],\n\tMartin Maechler [ctb],\n\tJoe W. Byers [ctb]",
+        "Maintainer": "Tobias Setz <tobias.setz@live.com>",
+        "Description": "The 'timeDate' class fulfils the conventions of the ISO 8601 \n\tstandard as well as of the ANSI C and POSIX standards. Beyond\n\tthese standards it provides the \"Financial Center\" concept\n\twhich allows to handle data records collected in different time \n\tzones and mix them up to have always the proper time stamps with \n\trespect to your personal financial center, or alternatively to the GMT\n\treference time. It can thus also handle time stamps from historical \n\tdata records from the same time zone, even if the financial \n\tcenters changed day light saving times at different calendar\n\tdates.",
+        "Depends": "R (>= 2.15.1), graphics, utils, stats, methods",
+        "Suggests": "date, RUnit",
+        "LazyData": "yes",
+        "License": "GPL (>= 2)",
+        "URL": "https://www.rmetrics.org",
+        "NeedsCompilation": "no",
+        "Packaged": "2018-02-21 13:20:37 UTC; Tobias Setz",
+        "Repository": "RSPM",
+        "Date/Publication": "2018-02-21 23:23:49 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.1.0; ; 2021-05-19 01:14:14 UTC; unix"
       }
     },
     "tinytex": {
@@ -3842,6 +4456,35 @@
         "Built": "R 4.1.0; ; 2021-05-18 23:23:30 UTC; unix"
       }
     },
+    "workflows": {
+      "Source": "CRAN",
+      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "description": {
+        "Package": "workflows",
+        "Title": "Modeling Workflows",
+        "Version": "0.2.6",
+        "Authors@R": "c(\n    person(\"Davis\", \"Vaughan\", , \"davis@rstudio.com\", role = c(\"aut\", \"cre\")),\n    person(\"RStudio\", role = c(\"cph\", \"fnd\"))\n  )",
+        "Description": "Managing both a 'parsnip' model and a preprocessor, such as a\n    model formula or recipe from 'recipes', can often be challenging. The\n    goal of 'workflows' is to streamline this process by bundling the\n    model alongside the preprocessor, all within the same object.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://github.com/tidymodels/workflows,\nhttps://workflows.tidymodels.org",
+        "BugReports": "https://github.com/tidymodels/workflows/issues",
+        "Depends": "R (>= 3.2)",
+        "Imports": "cli (>= 2.0.0), generics (>= 0.1.2), glue, hardhat (>= 0.2.0),\nlifecycle (>= 1.0.0), parsnip (>= 0.2.0), rlang (>= 1.0.1),\ntidyselect (>= 1.1.2), vctrs (>= 0.3.8)",
+        "Suggests": "butcher (>= 0.1.3), covr, dials (>= 0.1.0), knitr, magrittr,\nmodeldata (>= 0.0.2), recipes (>= 0.2.0), rmarkdown, testthat\n(>= 3.0.0)",
+        "VignetteBuilder": "knitr",
+        "Config/Needs/website": "dplyr, earth, ggplot2, mda, tidymodels/discrim,\ntidyr, tidyverse/tidytemplate, yardstick",
+        "Config/testthat/edition": "3",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.1.2",
+        "NeedsCompilation": "no",
+        "Packaged": "2022-03-18 13:09:13 UTC; davis",
+        "Author": "Davis Vaughan [aut, cre],\n  RStudio [cph, fnd]",
+        "Maintainer": "Davis Vaughan <davis@rstudio.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2022-03-18 14:00:02 UTC",
+        "Built": "R 4.1.0; ; 2022-03-21 10:48:10 UTC; unix"
+      }
+    },
     "xfun": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -4006,7 +4649,7 @@
   },
   "files": {
     "document.qmd": {
-      "checksum": "f04b8387c67077b47793a6978bd900d3"
+      "checksum": "a843d836c3fa67a492018bc82ff0b870"
     },
     "icon.drawio.png": {
       "checksum": "48c279cd6cbab0dfb95492dbb6dad50e"

@@ -116,6 +116,11 @@ test_data %>%
 ```{r include=FALSE}
 ## compute predictions for your evaluation data
 ## `handler_startup` is designed to get the R process ready to make predictions
+library(parsnip)
+library(ranger)
+library(recipes)
+library(workflows)
+
 suppressPackageStartupMessages(handler_startup(v))
 preds <- augment(v, test_data)
 
