@@ -58,12 +58,6 @@ This repository shows off a really exciting set of capabilities, combining open-
 -   Jobs don't depend on another. I've scheduled the jobs so that each will complete by the time another starts, but there are tools in R (like [drake](https://github.com/ropensci/drake)) that allow you to put the entire pipeline into code and make dependencies explicit.
 -   Pieces of content must be managed individually -- that includes uploading, permissions, environment variables, and tagging. It is possible to do something more robust via programmatic deployment using the RStudio Connect API, but generic git deployment doesn't support deploying all of the content in a git repo at once.
 
-## Workflow diagram
-
-The diagram below describes the bike predict data flow.
-
-![](./img/workflow.drawio.png)
-
 ## Individual Content
 
 | Content                                   | Description                                                                                                                                                                                                            | Code                                                                                                               | Content Deployed to Connect                                                                                                                                                                                                           |
@@ -74,3 +68,7 @@ The diagram below describes the bike predict data flow.
 | **Model** Step 2 - Model Metrics          | Use the API endpoint to test the model performance. Model performance metrics are written to table *bike_predict_metrics* in *Content DB*.                                                                             | [content/02-model/02-model-metrics/document.qmd](content/02-model/02-model-metrics/document.qmd)                   | [Quarto document](https://colorado.rstudio.com/rsc/bike-predict-r-model-metrics/), [Pin](https://colorado.rstudio.com/rsc/bike-predict-r-model-metrics-pin/)                                                                          |
 | **App** - Client App                      | Use the API endpoint to interactively server predictions to a shiny app.                                                                                                                                               | [content/03-app/01-client-app/app.R](content/03-app/01-client-app/app.R)                                           | [Shiny app](https://colorado.rstudio.com/rsc/bike-predict-r-client-app/)                                                                                                                                                              |
 | **App** - Content Dashboard               | A dashboard that contains links to all of the bike predict content.                                                                                                                                                    | [content/03-app/02-connect-widgets-app/document.qmd](content/03-app/02-connect-widgets-app/document.qmd)           | [Quarto document](https://colorado.rstudio.com/rsc/bike-predict-r-dashboard/)                                                                                                                                                         |
+
+## Contributing
+
+See a problem or want to contribute? Please refer to the [contributing page](./CONTRBUTING.md).
