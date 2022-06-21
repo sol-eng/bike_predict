@@ -56,7 +56,11 @@ bikeshare <- all_content %>%
 
 <br>
 
+## Background
+
 This project illustrates using RStudio Connect to deploy a data science project featuring:
+
+![](https://github.com/sol-eng/bike_predict/raw/main/img/arrows.drawio.png)
 
 ### Scheduled jobs
 
@@ -81,15 +85,15 @@ This project illustrates using RStudio Connect to deploy a data science project 
 
 - Encapsulate re-usable logic in an R package, and distribute with Package Manager (see <https://github.com/sol-eng/bikeHelpR>)
 
-![](https://github.com/sol-eng/bike_predict/raw/main/img/arrows.drawio.png)
+## Content
 
 Explore the deployed items below:
 
-## Scheduled Jobs
+### Scheduled Jobs
 
 ::: {.panel-tabset}
 
-### ETL
+#### ETL
 
 ```{r}
 bikeshare %>% 
@@ -99,7 +103,7 @@ bikeshare %>%
   rsc_card()
 ```
 
-### Modeling
+#### Modeling
 
 ```{r}
 bikeshare %>% 
@@ -111,7 +115,7 @@ bikeshare %>%
 
 :::
 
-## Pins
+### Pins
 
 ```{r}
 bikeshare %>%
@@ -119,7 +123,7 @@ bikeshare %>%
   rsc_table()
 ```
 
-## APIs
+### APIs
 
 ```{r}
 bikeshare %>%
@@ -128,7 +132,7 @@ bikeshare %>%
   rsc_card()
 ```
 
-## Apps
+### Apps
 
 ```{r}
 bikeshare %>%
