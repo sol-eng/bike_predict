@@ -85,13 +85,13 @@ The training data set for this model was was obtained from the [capital bikeshar
 
 The training data set for this model has the "prototype" or signature:
 
-```{r}
+```{r view_prototype}
 glimpse(v$ptype)
 ```
 
 Below is a summary of the data:
 
-```{r}
+```{r skim_train_data}
 train_data %>%
   select(-n_bikes) %>%
   skimr::skim()
@@ -101,7 +101,7 @@ train_data %>%
 
 The model was evaluated on data from `r test_start_date` to `r test_end_date`. Below is a summary of the data:
 
-```{r}
+```{r skim_test_data}
 test_data %>%
   select(-n_bikes) %>%
   skimr::skim()
@@ -113,7 +113,7 @@ test_data %>%
 
 ::: {.panel-tabset}
 
-```{r include=FALSE}
+```{r compute_preds, include=FALSE}
 ## compute predictions for your evaluation data
 ## `handler_startup` is designed to get the R process ready to make predictions
 suppressPackageStartupMessages(handler_startup(v))
@@ -154,7 +154,7 @@ if (pin_exists(board, pin_name)) {
 
 The latest evaluation metrics:
 
-```{r}
+```{r view_latest_metrics}
 # Explicitly define packages used for model metrics by vetiver so that Connect 
 # is able to redeploy.
 library(slider)
@@ -165,7 +165,7 @@ latest_metrics %>%
 
 ### By Prediction
 
-```{r}
+```{r preds_plot}
 preds %>%
   ggplot(aes(n_bikes, .pred)) +
   geom_abline(slope = 1, lty = 2, color = "gray60", size = 1.2) +
@@ -179,7 +179,7 @@ preds %>%
 
 ### By Location
 
-```{r}
+```{r preds_lat_lon_plot}
 preds %>%
   mutate(.resid = n_bikes - .pred) %>%
   ggplot(aes(lon, lat, color = .resid)) +
@@ -198,7 +198,7 @@ preds %>%
 
 ## All time Model Metrics
 
-```{r}
+```{r all_time_metrics_plot}
 all_time_metrics <- pin_read(board, pin_name)
 
 vetiver_plot_metrics(all_time_metrics) +
