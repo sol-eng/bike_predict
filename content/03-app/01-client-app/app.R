@@ -51,16 +51,22 @@ server <- function(input, output, session) {
     bike_station_info %>%
       leaflet() %>%
       addProviderTiles(providers$CartoDB.Positron) %>%
-      setView(lng = median(bike_station_info$lon), lat = median(bike_station_info$lat), zoom = 14) %>%
+      setView(
+        lng = median(bike_station_info$lon),
+        lat = median(bike_station_info$lat),
+        zoom = 14
+      ) %>%
       addAwesomeMarkers(
         lng = ~lon,
         lat = ~lat,
+        layerId = ~station_id,
         icon = awesomeIcons(
           "bicycle",
           library = "fa",
           iconColor = "white",
           markerColor = "red"
         ),
+
         label = ~paste0(name)
       )
   })
@@ -69,17 +75,11 @@ server <- function(input, output, session) {
   # Make predictions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   predictions_df <- reactive({
 
-    # Get the station clicked. Somtimes clicks and ids don't line up exactly, use min dist
     req(input$map_marker_click)
 
     selected_bike_station_info <-
       bike_station_info %>%
-      mutate(
-        lat = lat - input$map_marker_click$lat,
-        lon = lon - input$map_marker_click$lng,
-        dist = lat^2 + lon^2
-      ) %>%
-      filter(dist == min(dist)) %>%
+      filter(station_id == input$map_marker_click$id) %>%
       head(1)
 
     # Create a tibble that has one row for each hour in the day.
@@ -87,7 +87,7 @@ server <- function(input, output, session) {
       tibble(hour = c(0: 23)) %>%
       mutate(
         station_name = selected_bike_station_info$name,
-        id = selected_bike_station_info$station_id,
+        id = as.character(selected_bike_station_info$station_id),
         date = today(),
         month = month(today()),
         dow = wday(today(), label = TRUE, abbr = FALSE),
