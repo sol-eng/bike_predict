@@ -53,17 +53,31 @@ writeManifest(
 print("Complete 🎉")
 ```
 
-### 2.2 Model Metrics
+### 2.2 Model Card
 
 ```{r}
 writeManifest(
-  appDir = "content/02-model/02-model-metrics", 
+  appDir = "content/02-model/02-model-card", 
   appPrimaryDoc = "document.qmd",
   quarto = quarto_path()
 )
 
 print("Complete 🎉")
 ```
+
+### 2.3 Model Metrics
+
+```{r}
+writeManifest(
+  appDir = "content/02-model/03-model-metrics", 
+  appPrimaryDoc = "document.qmd",
+  quarto = quarto_path()
+)
+
+print("Complete 🎉")
+```
+
+
 
 ## 3 App
 

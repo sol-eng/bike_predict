@@ -1,0 +1,122 @@
+---
+title: "Model Step 3 - Model Metrics"
+date: "`r lubridate::date(lubridate::now(tzone = 'EST'))`"
+format:
+  html:
+    code-fold: true
+    code-tools:
+      source: true
+      toggle: true
+params:
+    name: sam.edwardes/bike_predict_model_r
+    version: NULL
+---
+
+## Background
+
+This documents monitors the model performance. It is refreshed on a daily basis. The following metrics are monitored:
+
+- Root Mean Squared Error (RMSE),
+- R Squared (RSQ), and
+- Mean Absolute Error (MAE).
+
+## Setup
+
+Load the required libraries and evaluation data. The table below is the first five rows of the evaluation data.
+
+```{r setup}
+#| collapse: true
+
+library(tidyverse)
+library(vetiver)
+library(pins)
+library(yardstick)
+library(glue)
+library(kableExtra)
+
+board <- pins::board_rsconnect()
+v <- vetiver_pin_read(board, params$name, version = params$version)
+v_meta <- pin_meta(board, params$name)
+
+con <- odbc::dbConnect(odbc::odbc(), "Content DB", timeout = 10)
+bike_model_data <- tbl(con, "bike_model_data")
+
+train_start_date <- lubridate::as_date(v$metadata$user$train_dates[1])
+train_end_date <- lubridate::as_date(v$metadata$user$train_dates[2])
+test_start_date <- lubridate::as_date(v$metadata$user$test_dates[1])
+test_end_date <- lubridate::as_date(v$metadata$user$test_dates[2])
+
+test_data <- bike_model_data %>%
+  filter(
+    date >= train_start_date,
+    date <= train_end_date
+  ) %>%
+  collect()
+  
+test_data %>%
+  head() %>%
+  kable() %>%
+  kable_material()
+```
+
+## Compute metrics
+
+Use vetiver to compute the latest evaluation metrics. The metrics are stored as a pin on RStudio Connect. The table below is the first 5 rows of the evaluation metrics
+
+```{r compute_metrics}
+#| collapse: true
+
+## compute predictions for your evaluation data
+## `handler_startup` is designed to get the R process ready to make predictions
+suppressPackageStartupMessages(handler_startup(v))
+
+# Specifically load the packages required by the model. Check 
+# `v$metadata$required_pkgs` to see the required pacakges. These packages must
+# be specicially defined so that RStudio Connect knows to install them when
+# deploying this document.
+library(parsnip)
+library(ranger)
+library(recipes)
+library(workflows)
+library(slider)
+
+preds <- augment(v, test_data)
+
+latest_metrics <- preds %>%
+  arrange(date) %>%
+  vetiver_compute_metrics(
+    date_var = date,
+    period = "day",
+    truth = n_bikes,
+    estimate = .pred
+  )
+
+pin_name <- "sam.edwardes/bike-predict-model-metrics"
+
+if (pin_exists(board, pin_name)) {
+  print("Pin already exists, updating existing pin...")
+  vetiver_pin_metrics(board, latest_metrics, pin_name, overwrite = TRUE)
+} else {
+  print("Creating metrics pin for the first time...")
+  pin_write(board, latest_metrics, pin_name)
+}
+
+all_time_metrics <- pin_read(board, pin_name)
+
+all_time_metrics %>%
+  head() %>%
+  kable() %>%
+  kable_material()
+```
+
+## Visualize metrics
+
+Use vetiver to visualize the all time model metrics.
+
+```{r plot_metrics}
+vetiver_plot_metrics(all_time_metrics) +
+  labs(
+    title = "Model Metrics",
+    size = "Number of\nObservations"
+  )
+```
