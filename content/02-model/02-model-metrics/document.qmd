@@ -1,23 +1,36 @@
 ---
-title: "Model Step 2 - Model Metrics"
+title: "Model - Model Metrics"
 date: "`r lubridate::date(lubridate::now(tzone = 'EST'))`"
-output: html_document
+format:
+  html:
+    code-fold: true
+    code-tools:
+      source: true
+      toggle: true
 params:
     name: sam.edwardes/bike_predict_model_r
     version: NULL
 ---
 
-```{r setup, include=FALSE}
+This documents monitors the model performance on a daily basis. Below is a summary of the key model metrics including:
+
+- Root Mean Squared Error (RMSE),
+- R Squared (RSQ), and
+- Mean Absolute Error (MAE).
+
+## Setup
+
+Load the required libraries and data.
+
+```{r setup}
+#| collapse: true
+
 library(tidyverse)
 library(vetiver)
 library(pins)
 library(yardstick)
 library(glue)
 
-knitr::opts_chunk$set(echo = FALSE)
-```
-
-```{r load_data}
 board <- pins::board_rsconnect()
 v <- vetiver_pin_read(board, params$name, version = params$version)
 v_meta <- pin_meta(board, params$name)
@@ -30,25 +43,22 @@ train_end_date <- lubridate::as_date(v$metadata$user$train_dates[2])
 test_start_date <- lubridate::as_date(v$metadata$user$test_dates[1])
 test_end_date <- lubridate::as_date(v$metadata$user$test_dates[2])
 
-data <- bike_model_data %>%
+test_data <- bike_model_data %>%
   filter(date >= train_start_date) %>%
   collect() %>%
-  mutate(
-    data_type = case_when(
-      date <= train_end_date ~ "train",
-      date <= test_end_date ~ "test",
-      TRUE ~ "latest"
-    )
+  filter(
+    date >= train_start_date,
+    date <= train_end_date
   )
-
-train_data <- data %>%
-  filter(data_type == "train")
-
-test_data <- data %>%
-  filter(data_type == "test")
 ```
 
-```{r compute_metrics, include=FALSE}
+## Compute metrics
+
+Use vetiver to compute the daily evaluation metrics.
+
+```{r compute_metrics}
+#| collapse: true
+
 ## compute predictions for your evaluation data
 ## `handler_startup` is designed to get the R process ready to make predictions
 suppressPackageStartupMessages(handler_startup(v))
@@ -85,11 +95,9 @@ if (pin_exists(board, pin_name)) {
 }
 ```
 
-This documents monitors the model performance on a daily basis. Below is a summary of the key model metrics including:
+## Visualize metrics
 
-- Root Mean Squared Error (RMSE),
-- R Squared (RSQ), and
-- Mean Absolute Error (MAE).
+Use vetiver to visualize the all time model metrics.
 
 ```{r all_time_metrics_plot}
 all_time_metrics <- pin_read(board, pin_name)
