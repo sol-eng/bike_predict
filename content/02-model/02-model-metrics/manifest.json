@@ -3333,36 +3333,6 @@
         "Built": "R 4.1.0; ; 2022-03-04 10:58:43 UTC; unix"
       }
     },
-    "repr": {
-      "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
-      "description": {
-        "Package": "repr",
-        "Title": "Serializable Representations",
-        "Version": "1.1.3",
-        "Authors@R": "c(\n    person('Philipp', 'Angerer', email = 'phil.angerer@gmail.com', role = c('aut', 'cre'), comment = c(ORCID = \"0000-0002-0369-2888\")),\n    person('Thomas', 'Kluyver', email = 'thomas@kluyver.me.uk', role = 'aut'),\n    person('Jan', 'Schulz', email = 'jasc@gmx.net', role = 'aut'),\n    person('abielr', role = 'ctb'),\n    person('Denilson', 'Figueiredo de Sa', role = 'ctb'),\n    person('Jim', 'Hester', role = 'ctb'),\n    person('karldw', role = 'ctb'),\n    person('Dave', 'Foster', role = 'ctb'),\n    person('Carson', 'Sievert', role = 'ctb')\n    )",
-        "Maintainer": "Philipp Angerer <phil.angerer@gmail.com>",
-        "Description": "String and binary representations of objects for several formats /\n    mime types.",
-        "URL": "https://github.com/IRkernel/repr/",
-        "BugReports": "https://github.com/IRkernel/repr/issues/",
-        "Depends": "R (>= 3.0.1)",
-        "Imports": "utils, grDevices, htmltools, jsonlite, pillar (>= 1.4.0),\nbase64enc",
-        "Suggests": "methods, highr, Cairo, stringr, testthat (>= 3.0.0), leaflet",
-        "Enhances": "data.table, tibble, htmlwidgets, vegalite, plotly, geojsonio",
-        "Config/testthat/edition": "3",
-        "License": "GPL-3",
-        "LazyData": "true",
-        "Encoding": "UTF-8",
-        "Collate": "'generics.r' 'options.r' 'package.r' 'repr_datatable.r'\n'repr_datetime.r' 'utils.r' 'repr_list.r' 'repr_vector.r'\n'repr_factor.r' 'repr_function.r'\n'repr_help_files_with_topic.r' 'repr_htmlwidget.r'\n'repr_matrix_df.r' 'repr_packageIQR.r' 'repr_plotly.r'\n'repr_recordedplot.r' 'repr_spatial.r' 'repr_ts.r'\n'repr_vega.r'",
-        "RoxygenNote": "7.1.1",
-        "NeedsCompilation": "no",
-        "Packaged": "2021-01-21 09:01:45 UTC; phil",
-        "Author": "Philipp Angerer [aut, cre] (<https://orcid.org/0000-0002-0369-2888>),\n  Thomas Kluyver [aut],\n  Jan Schulz [aut],\n  abielr [ctb],\n  Denilson Figueiredo de Sa [ctb],\n  Jim Hester [ctb],\n  karldw [ctb],\n  Dave Foster [ctb],\n  Carson Sievert [ctb]",
-        "Repository": "RSPM",
-        "Date/Publication": "2021-01-21 09:20:07 UTC",
-        "Built": "R 4.1.0; ; 2021-05-19 01:16:01 UTC; unix"
-      }
-    },
     "reprex": {
       "Source": "CRAN",
       "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
@@ -3676,35 +3646,6 @@
         "Repository": "RSPM",
         "Date/Publication": "2021-10-02 04:30:02 UTC",
         "Built": "R 4.1.0; ; 2021-10-04 10:58:22 UTC; unix"
-      }
-    },
-    "skimr": {
-      "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
-      "description": {
-        "Package": "skimr",
-        "Title": "Compact and Flexible Summaries of Data",
-        "Version": "2.1.3",
-        "Authors@R": "\n    c(person(given = \"Elin\",\n             family = \"Waring\",\n             role = c(\"cre\", \"aut\"),\n             email = \"elin.waring@gmail.com\"),\n      person(given = \"Michael\",\n             family = \"Quinn\",\n             role = \"aut\",\n             email = \"msquinn@google.com\"),\n      person(given = \"Amelia\",\n             family = \"McNamara\",\n             role = \"aut\",\n             email = \"amcnamara@smith.edu\"),\n      person(given = \"Eduardo\",\n             family = \"Arino de la Rubia\",\n             role = \"aut\",\n             email = \"earino@gmail.com\"),\n      person(given = \"Hao\",\n             family = \"Zhu\",\n             role = \"aut\",\n             email = \"haozhu233@gmail.com\"),\n      person(given = \"Julia\",\n             family = \"Lowndes\",\n             role = \"ctb\",\n             email = \"lowndes@nceas.ucsb.edu\"),\n      person(given = \"Shannon\",\n             family = \"Ellis\",\n             role = \"aut\",\n             email = \"sellis18@jhmi.edu\"),\n      person(given = \"Hope\",\n             family = \"McLeod\",\n             role = \"ctb\",\n             email = \"hmgit2@gmail.com\"),\n      person(given = \"Hadley\",\n             family = \"Wickham\",\n             role = \"ctb\",\n             email = \"hadley@rstudio.com\"),\n      person(given = \"Kirill\",\n             family = \"Müller\",\n             role = \"ctb\",\n             email = \"krlmlr+r@mailbox.org\"),\n      person(family = \"RStudio, Inc.\",\n             role = \"cph\",\n             comment = \"Spark functions\"),\n      person(given = \"Connor\",\n             family = \"Kirkpatrick\",\n             role = \"ctb\",\n             email = \"hello@connorkirkpatrick.com\"),\n      person(given = \"Scott\",\n             family = \"Brenstuhl\",\n             role = \"ctb\",\n             email = \"brenstsr@miamioh.edu\"),\n      person(given = \"Patrick\",\n             family = \"Schratz\",\n             role = \"ctb\",\n             email = \"patrick.schratz@gmail.com\"),\n      person(given = \"lbusett\",\n             role = \"ctb\",\n             email = \"lbusett@gmail.com\"),\n      person(given = \"Mikko\",\n             family = \"Korpela\",\n             role = \"ctb\",\n             email = \"mvkorpel@iki.fi\"),\n      person(given = \"Jennifer\",\n             family = \"Thompson\",\n             role = \"ctb\",\n             email = \"thompson.jennifer@gmail.com\"),\n      person(given = \"Harris\",\n             family = \"McGehee\",\n             role = \"ctb\",\n             email = \"mcgehee.harris@gmail.com\"),\n      person(given = \"Mark\",\n             family = \"Roepke\",\n             role = \"ctb\",\n             email = \"mroepke5@gmail.com\"),\n      person(given = \"Patrick\",\n             family = \"Kennedy\",\n             role = \"ctb\",\n             email = \"pkqstr@protonmail.com\"),\n      person(given = \"Daniel\",\n             family = \"Possenriede\",\n             role = \"ctb\",\n             email = \"possenriede@gmail.com\"),\n      person(given = \"David\",\n             family = \"Zimmermann\",\n             role = \"ctb\",\n             email = \"david_j_zimmermann@hotmail.com\"),\n      person(given = \"Kyle\", \n             family = \"Butts\",\n             role =\"ctb\",\n             email = \"buttskyle96@gmail.com\"),\n      person(given = \"Bastian\", \n             family = \"Torges\",\n             role =\"ctb\",\n             email = \"bastian.torges@gmail.com\"),\n      person(given = \"Rick\",\n             family = \"Saporta\",\n             role = \"ctb\",\n             email = \"Rick@TheFarmersDog.com\")\n             )",
-        "Description": "A simple to use summary function that can be used with pipes\n    and displays nicely in the console. The default summary statistics may\n    be modified by the user as can the default formatting.  Support for\n    data frames and vectors is included, and users can implement their own\n    skim methods for specific object types as described in a vignette.\n    Default summaries include support for inline spark graphs.\n    Instructions for managing these on specific operating systems are\n    given in the \"Using skimr\" vignette and the README.",
-        "License": "GPL-3",
-        "URL": "https://docs.ropensci.org/skimr/ (website),\nhttps://github.com/ropensci/skimr/",
-        "BugReports": "https://github.com/ropensci/skimr/issues",
-        "Depends": "R (>= 3.1.2)",
-        "Imports": "cli, crayon, dplyr (>= 0.8.0), knitr (>= 1.2), magrittr (>=\n1.5), purrr, repr, rlang (>= 0.3.1), stats, stringr (>= 1.1),\ntibble (>= 2.0.0), tidyr (>= 1.0), tidyselect (>= 1.0.0),\nvctrs, withr",
-        "Suggests": "covr, data.table, dtplyr, extrafont, lubridate, rmarkdown,\nsf, testthat (>= 2.0.0)",
-        "VignetteBuilder": "knitr",
-        "Encoding": "UTF-8",
-        "LazyData": "true",
-        "RoxygenNote": "7.1.1",
-        "Collate": "'deprecated.R' 'dplyr.R' 'stats.R' 'skim_with.R'\n'get_skimmers.R' 'reshape.R' 'sfl.R' 'skim.R' 'skim_obj.R'\n'skim_print.R' 'skimr-package.R' 'summary.R' 'utils.R'\n'vctrs.R'",
-        "NeedsCompilation": "no",
-        "Packaged": "2021-03-05 00:03:59 UTC; elinwaring",
-        "Author": "Elin Waring [cre, aut],\n  Michael Quinn [aut],\n  Amelia McNamara [aut],\n  Eduardo Arino de la Rubia [aut],\n  Hao Zhu [aut],\n  Julia Lowndes [ctb],\n  Shannon Ellis [aut],\n  Hope McLeod [ctb],\n  Hadley Wickham [ctb],\n  Kirill Müller [ctb],\n  RStudio, Inc. [cph] (Spark functions),\n  Connor Kirkpatrick [ctb],\n  Scott Brenstuhl [ctb],\n  Patrick Schratz [ctb],\n  lbusett [ctb],\n  Mikko Korpela [ctb],\n  Jennifer Thompson [ctb],\n  Harris McGehee [ctb],\n  Mark Roepke [ctb],\n  Patrick Kennedy [ctb],\n  Daniel Possenriede [ctb],\n  David Zimmermann [ctb],\n  Kyle Butts [ctb],\n  Bastian Torges [ctb],\n  Rick Saporta [ctb]",
-        "Maintainer": "Elin Waring <elin.waring@gmail.com>",
-        "Repository": "RSPM",
-        "Date/Publication": "2021-03-07 05:50:02 UTC",
-        "Built": "R 4.1.0; ; 2021-05-19 01:22:04 UTC; unix"
       }
     },
     "slider": {
@@ -4707,7 +4648,7 @@
   },
   "files": {
     "document.qmd": {
-      "checksum": "586127b4aaacc9daea0c13515b9c7cdf"
+      "checksum": "c3669d4d6028d2a227ba7bf9c85987b1"
     },
     "icon.drawio.png": {
       "checksum": "48c279cd6cbab0dfb95492dbb6dad50e"

@@ -1,52 +1,36 @@
 ---
-title: "Model - Model Card"
+title: "Model Step 2 - Model Card"
 date: "`r lubridate::date(lubridate::now(tzone = 'EST'))`"
-output: html_document
+format:
+  html:
+    code-fold: true
+    code-tools:
+      source: true
+      toggle: true
 params:
     name: sam.edwardes/bike_predict_model_r
     version: NULL
 ---
 
-```{r setup, include=FALSE}
+## Background
+
+A [model card](https://doi.org/10.1145/3287560.3287596) provides brief, transparent, responsible reporting for a trained machine learning model. Expand the code chunk below to inspect the code that loads the model, training data, and evaluation data.
+
+```{r setup}
+#| collapse: true
+
 library(tidyverse)
 library(vetiver)
 library(pins)
 library(yardstick)
 library(glue)
+library(kableExtra)
 
-knitr::opts_chunk$set(echo = FALSE)
 
 board <- pins::board_rsconnect()
 v <- vetiver_pin_read(board, params$name, version = params$version)
 v_meta <- pin_meta(board, params$name)
-```
 
-A [model card](https://doi.org/10.1145/3287560.3287596) provides brief, transparent, responsible reporting for a trained machine learning model.
-
-## Model details
-
-- Developed by Sam Edwardes (RStudio - Solutions Engineer)
-- `r cli::pluralize("{v$description} using {ncol(v$ptype)} feature{?s}")`
-- This model was developed to predict how many [capital bikeshare](https://capitalbikeshare.com) bikes will be available for a given station based on the time of day, and day of the week.
-- The data used to train the model was obtained from the [capital bikeshare API](https://ride.capitalbikeshare.com/system-data).
-- Version `r v$metadata$version` of this model was published at `r v_meta$created`
-- If you have questions about this model, please create an issue on our GitHub repo: <https://github.com/sol-eng/bike_predict/issues>.
-
-## Intended use
-
-- The primary intended use of this model is to demonstrate an end-to-end data science workflow using [RStudio Connect](https://www.rstudio.com/products/connect/).
-
-## Metrics
-
-- The metrics used to evaluate this model are:
-  - Root Mean Squared Error (RMSE),
-  - R Squared (RSQ), and
-  - Mean Absolute Error (MAE).
-- We chose these metrics because because they are the most common metrics for assessing the performance of regression models, and that they are well understood by the data science community.
-
-## Training data & evaluation data
-
-```{r load_data}
 con <- odbc::dbConnect(odbc::odbc(), "Content DB", timeout = 10)
 bike_model_data <- tbl(con, "bike_model_data")
 
@@ -74,6 +58,28 @@ test_data <- data %>%
   filter(data_type == "test")
 ```
 
+## Model details
+
+- Developed by Sam Edwardes (RStudio - Solutions Engineer)
+- `r cli::pluralize("{v$description} using {ncol(v$ptype)} feature{?s}")`
+- This model was developed to predict how many [capital bikeshare](https://capitalbikeshare.com) bikes will be available for a given station based on the time of day, and day of the week.
+- The data used to train the model was obtained from the [capital bikeshare API](https://ride.capitalbikeshare.com/system-data).
+- Version `r v$metadata$version` of this model was published at `r v_meta$created`
+- If you have questions about this model, please create an issue on our GitHub repo: <https://github.com/sol-eng/bike_predict/issues>.
+
+## Intended use
+
+- The primary intended use of this model is to demonstrate an end-to-end data science workflow using [RStudio Connect](https://www.rstudio.com/products/connect/).
+
+## Metrics
+
+- The metrics used to evaluate this model are:
+  - Root Mean Squared Error (RMSE),
+  - R Squared (RSQ), and
+  - Mean Absolute Error (MAE).
+- We chose these metrics because because they are the most common metrics for assessing the performance of regression models, and that they are well understood by the data science community.
+
+## Training data & evaluation data
 
 ::: {.panel-tabset}
 
@@ -116,9 +122,11 @@ test_data %>%
 
 ::: {.panel-tabset}
 
-```{r compute_preds, include=FALSE}
-## compute predictions for your evaluation data
-## `handler_startup` is designed to get the R process ready to make predictions
+```{r compute_predections}
+#| collapse: true
+
+# compute predictions for your evaluation data
+# `handler_startup` is designed to get the R process ready to make predictions
 suppressPackageStartupMessages(handler_startup(v))
 
 # Specifically load the packages required by the model. Check 
@@ -129,7 +137,6 @@ library(parsnip)
 library(ranger)
 library(recipes)
 library(workflows)
-
 
 preds <- augment(v, test_data)
 
@@ -148,12 +155,15 @@ latest_metrics <- preds %>%
 Overall model performance against the model evaluation data.
 
 ```{r view_latest_metrics}
+#| collapse: true
+
 # Explicitly define packages used for model metrics by vetiver so that Connect 
 # is able to redeploy.
 library(slider)
 
 latest_metrics %>%
-  kableExtra::kable()
+  kable() %>%
+  kable_material()
 ```
 
 ### Visualize model performance
@@ -167,7 +177,7 @@ preds %>%
   geom_jitter(alpha = 0.5, width = 0.4) +
   labs(
     title = "Model Performance by Prediction",
-    subtitle = glue("Using the evaluation data from ({test_start_date} to {test_end_date})"),
+    subtitle = glue("Using the evaluation data from {test_start_date} to {test_end_date}"),
     x = "Acutal Number of Bikes",
     y = "Predicted Number of Bikes"
   )
@@ -186,7 +196,7 @@ preds %>%
   coord_fixed() + 
   labs(
     title = "Model Performance by Location",
-    subtitle = glue("Using the evaluation data from ({test_start_date} to {test_end_date})"),
+    subtitle = glue("Using the evaluation data from {test_start_date} to {test_end_date}"),
     x = "Longitude",
     y = "Latitude",
     color = "Residual"
