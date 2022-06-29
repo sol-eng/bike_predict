@@ -138,16 +138,6 @@ latest_metrics <- preds %>%
     truth = n_bikes,
     estimate = .pred
   )
-
-pin_name <- "sam.edwardes/bike-predict-model-metrics"
-
-if (pin_exists(board, pin_name)) {
-  print("Pin already exists, updating existing pin...")
-  vetiver_pin_metrics(board, latest_metrics, pin_name, overwrite = TRUE)
-} else {
-  print("Creating metrics pin for the first time...")
-  pin_write(board, latest_metrics, pin_name)
-}
 ```
 
 ### Overall model performance
