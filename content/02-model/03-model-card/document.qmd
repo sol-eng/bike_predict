@@ -27,21 +27,21 @@ A [model card](https://doi.org/10.1145/3287560.3287596) provides brief, transpar
 
 - Developed by Sam Edwardes (RStudio - Solutions Engineer)
 - `r cli::pluralize("{v$description} using {ncol(v$ptype)} feature{?s}")`
-- This model was developed to predict how many [capital bikeshare](https://capitalbikeshare.com) bikes will be available for a given station based on the time of day, and day of the week
-- The data used to train the model was obtained from the [capital bikeshare API](https://ride.capitalbikeshare.com/system-data)
+- This model was developed to predict how many [capital bikeshare](https://capitalbikeshare.com) bikes will be available for a given station based on the time of day, and day of the week.
+- The data used to train the model was obtained from the [capital bikeshare API](https://ride.capitalbikeshare.com/system-data).
 - Version `r v$metadata$version` of this model was published at `r v_meta$created`
-- If you have questions about this model, please create an issue on our GitHub repo: <https://github.com/sol-eng/bike_predict/issues>
+- If you have questions about this model, please create an issue on our GitHub repo: <https://github.com/sol-eng/bike_predict/issues>.
 
 ## Intended use
 
-- The primary intended use of this model is to demonstrate an end-to-end data science workflow using [RStudio Connect](https://www.rstudio.com/products/connect/)
+- The primary intended use of this model is to demonstrate an end-to-end data science workflow using [RStudio Connect](https://www.rstudio.com/products/connect/).
 
 ## Metrics
 
 - The metrics used to evaluate this model are:
-  - Root Mean Squared Error (RMSE)
-  - R Squared (RSQ)
-  - Mean Absolute Error (MAE)
+  - Root Mean Squared Error (RMSE),
+  - R Squared (RSQ), and
+  - Mean Absolute Error (MAE).
 - We chose these metrics because because they are the most common metrics for assessing the performance of regression models, and that they are well understood by the data science community.
 
 ## Training data & evaluation data
@@ -201,9 +201,9 @@ preds %>%
 
 ## Caveats & recommendations
 
-This model does not guarantee that a bike will be available at a station
-- We recommend using this model for demonstration purposes only
-- To see the raw source code that produced this document visit <https://github.com/sol-eng/bike_predict/blob/main/content/02-model/02-model-metrics/document.qmd>
+- This model does not guarantee that a bike will be available at a station.
+- We recommend using this model for demonstration purposes only.
+- To see the raw source code that produced this document visit <https://github.com/sol-eng/bike_predict/blob/main/content/02-model/02-model-metrics/document.qmd>.
 
 
 
