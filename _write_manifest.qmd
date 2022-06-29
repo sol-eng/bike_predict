@@ -57,7 +57,7 @@ print("Complete 🎉")
 
 ```{r}
 writeManifest(
-  appDir = "content/02-model/03-model-card", 
+  appDir = "content/02-model/02-model-card", 
   appPrimaryDoc = "document.qmd",
   quarto = quarto_path()
 )
@@ -69,7 +69,7 @@ print("Complete 🎉")
 
 ```{r}
 writeManifest(
-  appDir = "content/02-model/02-model-metrics", 
+  appDir = "content/02-model/03-model-metrics", 
   appPrimaryDoc = "document.qmd",
   quarto = quarto_path()
 )
