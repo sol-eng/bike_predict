@@ -65,6 +65,18 @@ writeManifest(
 print("Complete 🎉")
 ```
 
+### 2.3 Model Card
+
+```{r}
+writeManifest(
+  appDir = "content/02-model/03-model-card", 
+  appPrimaryDoc = "document.qmd",
+  quarto = quarto_path()
+)
+
+print("Complete 🎉")
+```
+
 ## 3 App
 
 ### 3.1 Client App

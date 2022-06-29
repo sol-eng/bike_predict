@@ -1,0 +1,214 @@
+---
+title: "Model - Model Card"
+date: "`r lubridate::date(lubridate::now(tzone = 'EST'))`"
+output: html_document
+params:
+    name: sam.edwardes/bike_predict_model_r
+    version: NULL
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(vetiver)
+library(pins)
+library(yardstick)
+library(glue)
+
+knitr::opts_chunk$set(echo = FALSE)
+
+board <- pins::board_rsconnect()
+v <- vetiver_pin_read(board, params$name, version = params$version)
+v_meta <- pin_meta(board, params$name)
+```
+
+A [model card](https://doi.org/10.1145/3287560.3287596) provides brief, transparent, responsible reporting for a trained machine learning model.
+
+## Model details
+
+- Developed by Sam Edwardes (RStudio - Solutions Engineer)
+- `r cli::pluralize("{v$description} using {ncol(v$ptype)} feature{?s}")`
+- This model was developed to predict how many [capital bikeshare](https://capitalbikeshare.com) bikes will be available for a given station based on the time of day, and day of the week
+- The data used to train the model was obtained from the [capital bikeshare API](https://ride.capitalbikeshare.com/system-data)
+- Version `r v$metadata$version` of this model was published at `r v_meta$created`
+- If you have questions about this model, please create an issue on our GitHub repo: <https://github.com/sol-eng/bike_predict/issues>
+
+## Intended use
+
+- The primary intended use of this model is to demonstrate an end-to-end data science workflow using [RStudio Connect](https://www.rstudio.com/products/connect/)
+
+## Metrics
+
+- The metrics used to evaluate this model are:
+  - Root Mean Squared Error (RMSE)
+  - R Squared (RSW)
+  - Mean Absolute Error (MAE)
+- We chose these metrics because because they are the most common metrics for assessing the performance of regression models, and that they are well understood by the data science community.
+
+## Training data & evaluation data
+
+```{r load_data}
+con <- odbc::dbConnect(odbc::odbc(), "Content DB", timeout = 10)
+bike_model_data <- tbl(con, "bike_model_data")
+
+
+train_start_date <- lubridate::as_date(v$metadata$user$train_dates[1])
+train_end_date <- lubridate::as_date(v$metadata$user$train_dates[2])
+test_start_date <- lubridate::as_date(v$metadata$user$test_dates[1])
+test_end_date <- lubridate::as_date(v$metadata$user$test_dates[2])
+
+data <- bike_model_data %>%
+  filter(date >= train_start_date) %>%
+  collect() %>%
+  mutate(
+    data_type = case_when(
+      date <= train_end_date ~ "train",
+      date <= test_end_date ~ "test",
+      TRUE ~ "latest"
+    )
+  )
+
+train_data <- data %>%
+  filter(data_type == "train")
+
+test_data <- data %>%
+  filter(data_type == "test")
+```
+
+
+::: {.panel-tabset}
+
+### Overview
+
+The training data set for this model was was obtained from the [capital bikeshare API](https://ride.capitalbikeshare.com/system-data). The Model is retrained on a daily basis using refreshed data. The most recent model training used data from `r train_start_date` to `r train_end_date`.
+
+### Training data
+
+The training data set for this model has the "prototype" or signature:
+
+```{r view_prototype}
+glimpse(v$ptype)
+```
+
+Below is a summary of the data:
+
+```{r skim_train_data}
+train_data %>%
+  select(-n_bikes) %>%
+  skimr::skim()
+```
+
+### Evaluation data
+
+The model was evaluated on data from `r test_start_date` to `r test_end_date`. Below is a summary of the data:
+
+```{r skim_test_data}
+test_data %>%
+  select(-n_bikes) %>%
+  skimr::skim()
+```
+
+:::
+
+## Quantitative analyses 
+
+::: {.panel-tabset}
+
+```{r compute_preds, include=FALSE}
+## compute predictions for your evaluation data
+## `handler_startup` is designed to get the R process ready to make predictions
+suppressPackageStartupMessages(handler_startup(v))
+
+# Specifically load the packages required by the model. Check 
+# `v$metadata$required_pkgs` to see the required pacakges. These packages must
+# be specicially defined so that RStudio Connect knows to install them when
+# deploying this document.
+library(parsnip)
+library(ranger)
+library(recipes)
+library(workflows)
+
+
+preds <- augment(v, test_data)
+
+latest_metrics <- preds %>%
+  arrange(date) %>%
+  vetiver_compute_metrics(
+    date_var = date,
+    period = "day",
+    truth = n_bikes,
+    estimate = .pred
+  )
+
+pin_name <- "sam.edwardes/bike-predict-model-metrics"
+
+if (pin_exists(board, pin_name)) {
+  print("Pin already exists, updating existing pin...")
+  vetiver_pin_metrics(board, latest_metrics, pin_name, overwrite = TRUE)
+} else {
+  print("Creating metrics pin for the first time...")
+  pin_write(board, latest_metrics, pin_name)
+}
+```
+
+### Overall model performance
+
+Overall model performance against the model evaluation data.
+
+```{r view_latest_metrics}
+# Explicitly define packages used for model metrics by vetiver so that Connect 
+# is able to redeploy.
+library(slider)
+
+latest_metrics %>%
+  kableExtra::kable()
+```
+
+### Visualize model performance
+
+A comparison of the model prediction vs. the ground truth for the model evaluation data.
+
+```{r preds_plot}
+preds %>%
+  ggplot(aes(n_bikes, .pred)) +
+  geom_abline(slope = 1, lty = 2, color = "gray60", size = 1.2) +
+  geom_jitter(alpha = 0.5, width = 0.4) +
+  labs(
+    title = glue("Model Performance on Evaluation Data ({test_start_date} to {test_end_date})"),
+    x = "Acutal Number of Bikes",
+    y = "Predicted Number of Bikes"
+  )
+```
+
+### Performance by location
+
+A visual assessment of model performance by location.
+
+```{r preds_lat_lon_plot}
+preds %>%
+  mutate(.resid = n_bikes - .pred) %>%
+  ggplot(aes(lon, lat, color = .resid)) +
+  geom_point(alpha = 0.8) +
+  scale_color_gradient2() +
+  coord_fixed() + 
+  labs(
+    title = glue("Model Performance by Location on Evaluation Data ({test_start_date} to {test_end_date})"),
+    x = "Longitude",
+    y = "Latitude",
+    color = "Redisual"
+  )
+```
+
+:::
+
+## Ethical considerations
+
+- We considered the ethical impact the use of the model may have. We assessed that the overall risk an incorrect model prediction is relatively low.
+
+## Caveats & recommendations
+
+- This model does guarantee that a bike will be available at a station
+- We recommend using this model for demonstration purposes only
+- To see the raw source code that produced this document visit <https://github.com/sol-eng/bike_predict/blob/main/content/02-model/02-model-metrics/document.qmd>
+
+
+
