@@ -79,17 +79,20 @@ test_data <- data %>%
 
 ### Overview
 
-The training data set for this model was was obtained from the [capital bikeshare API](https://ride.capitalbikeshare.com/system-data). The Model is retrained on a daily basis using refreshed data. The most recent model training used data from `r train_start_date` to `r train_end_date`.
+The training data set for this model was was obtained from the [capital bikeshare API](https://ride.capitalbikeshare.com/system-data). The Model is retrained on a daily basis using refreshed data.
 
-### Training data
+- Training date range:  `r train_start_date` to `r train_end_date`.
+- Evaluation date range: `r test_start_date` to `r test_end_date`.
 
-The training data set for this model has the "prototype" or signature:
+The data set for this model has the "prototype" or signature:
 
 ```{r view_prototype}
 glimpse(v$ptype)
 ```
 
-Below is a summary of the data:
+### Training data
+
+Below is a summary of the training data:
 
 ```{r skim_train_data}
 train_data %>%
@@ -99,7 +102,7 @@ train_data %>%
 
 ### Evaluation data
 
-The model was evaluated on data from `r test_start_date` to `r test_end_date`. Below is a summary of the data:
+Below is a summary of the evaluation data:
 
 ```{r skim_test_data}
 test_data %>%
@@ -119,8 +122,8 @@ test_data %>%
 suppressPackageStartupMessages(handler_startup(v))
 
 # Specifically load the packages required by the model. Check 
-# `v$metadata$required_pkgs` to see the required pacakges. These packages must
-# be specicially defined so that RStudio Connect knows to install them when
+# `v$metadata$required_pkgs` to see the required packages. These packages must
+# be specifically defined so that RStudio Connect knows to install them when
 # deploying this document.
 library(parsnip)
 library(ranger)
