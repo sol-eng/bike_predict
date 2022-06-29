@@ -22,7 +22,6 @@ tags <- get_tags(client)$`Projects and Presentations`$`Bike Predict`
 repo_url <- "https://github.com/sol-eng/bike_predict"
 ```
 
-
 ## 1 ETL
 
 ### 1.1 Raw Data Refresh
@@ -114,7 +113,7 @@ set_image_path(content, "./img/icon-plumber.drawio.png")
 ### 2.2 Model Card
 
 ```{r}
-guid <- ""
+guid <- "db334c42-9c7c-4102-8127-71c2ea82fba6"
 content <- content_item(client, guid)
 
 # Configure content settings
@@ -129,7 +128,7 @@ set_image_path(content, "./content/02-model/02-model-card/icon.drawio.png")
 #### 2.3.1 Model Metrics Document
 
 ```{r}
-guid <- "35a5a9c3-f8b1-414a-91cb-bdb5ad402580"
+guid <- "e2c4d2ce-8ad7-4e10-9e57-4f9a07677141"
 content <- content_item(client, guid)
 
 # Configure content settings
@@ -151,8 +150,6 @@ set_vanity_url(content, "bike-predict-r-model-metrics-pin", force = TRUE)
 set_content_tags(content, tags$R$Model)
 set_image_path(content, "./img/icon-pins-model.drawio.png")
 ```
-
-
 
 ## 3 App
 

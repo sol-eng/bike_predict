@@ -108,7 +108,7 @@ bikeshare %>%
 ```{r}
 bikeshare %>% 
   by_tag("Model") %>%
-  filter(str_detect(title, "Step 1|Step 2")) %>%
+  filter(str_detect(title, "Step 1|Step 2|Step 3")) %>%
   arrange(title) %>%
   rsc_card()
 ```
