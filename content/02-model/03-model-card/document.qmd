@@ -40,7 +40,7 @@ A [model card](https://doi.org/10.1145/3287560.3287596) provides brief, transpar
 
 - The metrics used to evaluate this model are:
   - Root Mean Squared Error (RMSE)
-  - R Squared (RSW)
+  - R Squared (RSQ)
   - Mean Absolute Error (MAE)
 - We chose these metrics because because they are the most common metrics for assessing the performance of regression models, and that they are well understood by the data science community.
 
@@ -166,7 +166,8 @@ preds %>%
   geom_abline(slope = 1, lty = 2, color = "gray60", size = 1.2) +
   geom_jitter(alpha = 0.5, width = 0.4) +
   labs(
-    title = glue("Model Performance on Evaluation Data ({test_start_date} to {test_end_date})"),
+    title = "Model Performance by Prediction",
+    subtitle = glue("Using the evaluation data from ({test_start_date} to {test_end_date})"),
     x = "Acutal Number of Bikes",
     y = "Predicted Number of Bikes"
   )
@@ -184,10 +185,11 @@ preds %>%
   scale_color_gradient2() +
   coord_fixed() + 
   labs(
-    title = glue("Model Performance by Location on Evaluation Data ({test_start_date} to {test_end_date})"),
+    title = "Model Performance by Location",
+    subtitle = glue("Using the evaluation data from ({test_start_date} to {test_end_date})"),
     x = "Longitude",
     y = "Latitude",
-    color = "Redisual"
+    color = "Residual"
   )
 ```
 
@@ -195,11 +197,11 @@ preds %>%
 
 ## Ethical considerations
 
-- We considered the ethical impact the use of the model may have. We assessed that the overall risk an incorrect model prediction is relatively low.
+- We considered the ethical impact the use of the model may have. We assessed that the overall risk due to an incorrect model prediction is relatively low.
 
 ## Caveats & recommendations
 
-- This model does guarantee that a bike will be available at a station
+This model does not guarantee that a bike will be available at a station
 - We recommend using this model for demonstration purposes only
 - To see the raw source code that produced this document visit <https://github.com/sol-eng/bike_predict/blob/main/content/02-model/02-model-metrics/document.qmd>
 
