@@ -241,12 +241,20 @@ client <- connectapi::connect(
 )
 
 # Deploy the content.
-vetiver_deploy_rsconnect(
-  board = board,
-  name = pin_name,
-  version = NULL,
-  appTitle = app_title,
-)
+content <- 
+  client %>%
+  connectapi::deploy(
+    connectapi::bundle_dir("api"),
+    name = app_name,
+    title = app_title
+  )
+# Deploy the content.
+#vetiver_deploy_rsconnect(
+#  board = board,
+#  name = pin_name,
+#  version = NULL,
+#  appTitle = app_title,
+#)
 ```
 
 ```{r close_db_connection}
