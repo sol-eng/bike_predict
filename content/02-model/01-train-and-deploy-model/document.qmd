@@ -235,26 +235,28 @@ app_name <- "bike-predict-r-api"
 app_title <- "Bike Predict - Model - API"
 
 # Establish a connection to RStudio connect.
-client <- connectapi::connect(
-  server = Sys.getenv("CONNECT_SERVER"),
-  api_key = Sys.getenv("CONNECT_API_KEY")
-)
+#client <- connectapi::connect(
+#  server = Sys.getenv("CONNECT_SERVER"),
+#  api_key = Sys.getenv("CONNECT_API_KEY")
+#)
 
 # Deploy the content.
-content <- 
-  client %>%
-  connectapi::deploy(
-    connectapi::bundle_dir("api"),
-    name = app_name,
-    title = app_title
-  )
+#content <- 
+#  client %>%
+#  connectapi::deploy(
+#    connectapi::bundle_dir("api"),
+#    name = app_name,
+#    title = app_title
+#  )
 # Deploy the content.
-#vetiver_deploy_rsconnect(
-#  board = board,
-#  name = pin_name,
-#  version = NULL,
-#  appTitle = app_title,
-#)
+vetiver_deploy_rsconnect(
+  board = board,
+  name = pin_name,
+  version = NULL,
+  appTitle = app_title,
+  predict_args = list(debug = FALSE),
+  account = "sam.edwardes"
+)
 ```
 
 ```{r close_db_connection}
