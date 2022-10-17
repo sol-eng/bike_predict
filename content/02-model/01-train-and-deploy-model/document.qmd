@@ -19,6 +19,7 @@ library(recipes)
 library(parsnip)
 library(workflows)
 library(vetiver)
+library(rsconnect)
 
 # Internally developed packages
 library(bikeHelpR)
@@ -248,15 +249,32 @@ app_title <- "Bike Predict - Model - API"
 #    name = app_name,
 #    title = app_title
 #  )
-# Deploy the content.
+
+# Add server
+rsconnect::addServer(
+  url = "https://colorado.rstudio.com/rsc/__api__",
+  name = "colorado"
+)
+
+# Add account
+rsconnect::connectApiUser(
+  account = "sam.edwardes",
+  server = "colorado",
+  apiKey = Sys.getenv("CONNECT_API_KEY"),
+)
+
+# Deploy to Connect
 vetiver_deploy_rsconnect(
   board = board,
   name = pin_name,
   version = NULL,
-  appTitle = app_title,
+  launch.browser = FALSE,
+  appTitle = "Bike Predict - Model - API",
   predict_args = list(debug = FALSE),
-  account = "sam.edwardes"
+  account = "sam.edwardes",
+  server =  "colorado"
 )
+
 ```
 
 ```{r close_db_connection}
