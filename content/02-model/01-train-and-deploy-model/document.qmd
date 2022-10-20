@@ -191,7 +191,6 @@ board <- pins::board_rsconnect(
   key = Sys.getenv("CONNECT_API_KEY"),
   versioned = TRUE
 )
-
 # Write the model to the board.
 board %>%
  vetiver_pin_write(vetiver_model = v)
@@ -199,57 +198,9 @@ board %>%
 
 ### `plumber`
 
-Convert the model into a plumber API. The function `vetiver_write_plumber` will generate the plumber code for you and write it to *plumber.R*.
-
-```{r write_model_to_plumber}
-# Write the model to `api/plumber.R`.
-dir.create("api")
-vetiver_write_plumber(board, pin_name, file = "api/plumber.R")
-
-# Write a manifest.json file for the api
-rsconnect::writeManifest("api")
-```
-
-Here is what the plumber file looks like:
-
-```{r preview_plumber_file, results='asis', collapse=FALSE, echo=FALSE}
-plumber_file_txt <-
-  readLines("api/plumber.R") %>%
-  paste(collapse = "\n")
-
-cat(
-  paste(
-    "```r",
-    plumber_file_txt,
-    "```",
-    sep = "\n"
-  )
-)
-```
-
-### RStudio Connect
-
-Then, deploy the plumber API to RStudio Connect.
+Then, deploy the model as a plumber API to RStudio Connect.
 
 ```{r deploy_model_api_to_connect}
-app_name <- "bike-predict-r-api"
-app_title <- "Bike Predict - Model - API"
-
-# Establish a connection to RStudio connect.
-#client <- connectapi::connect(
-#  server = Sys.getenv("CONNECT_SERVER"),
-#  api_key = Sys.getenv("CONNECT_API_KEY")
-#)
-
-# Deploy the content.
-#content <- 
-#  client %>%
-#  connectapi::deploy(
-#    connectapi::bundle_dir("api"),
-#    name = app_name,
-#    title = app_title
-#  )
-
 # Add server
 rsconnect::addServer(
   url = "https://colorado.rstudio.com/rsc/__api__",
@@ -267,7 +218,7 @@ rsconnect::connectApiUser(
 vetiver_deploy_rsconnect(
   board = board,
   name = pin_name,
-  version = NULL,
+  appId = "12979",
   launch.browser = FALSE,
   appTitle = "Bike Predict - Model - API",
   predict_args = list(debug = FALSE),
