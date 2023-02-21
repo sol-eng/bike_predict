@@ -1,6 +1,6 @@
 # Bike Predict End-to-End Machine Learning Pipeline
 
-This repository contains an example of using [RStudio Connect](https://rstudio.com/products/connect/), [pins](https://github.com/rstudio/pins), and [vetiver](https://vetiver.tidymodels.org) to create an end-to-end machine learning pipeline.
+This repository contains an example of using [Posit Connect](https://rstudio.com/products/connect/), [pins](https://github.com/rstudio/pins), and [vetiver](https://vetiver.tidymodels.org) to create an end-to-end machine learning pipeline.
 
 ![](img/arrows.drawio.png)
 
@@ -16,11 +16,11 @@ People mean MANY different things by "productionize" a machine learning model. V
 
 This repository contains examples of all three of these patterns. The model metrics script outputs the test data, including predictions, to a database and outputs model performance metrics to a pin. It would be easy to make either of these the final consumable for another process, like the shiny client app. The shiny app in this repository uses a plumber API serving predictions.
 
-Another common problem in deploying the model is figuring out where the model lives. In this example, the model(s) is(are) pinned to RStudio Connect and are consumed by the other assets (test data script and plumber API) from the pin.
+Another common problem in deploying the model is figuring out where the model lives. In this example, the model(s) is(are) pinned to Posit Connect and are consumed by the other assets (test data script and plumber API) from the pin.
 
 For relatively advanced model deployments, users may be interested in horseracing different models, A/B testing one model from another, or monitoring model performance and drift over time. Once finished, the model performance dashboard will be a tool to compare different models and examine model performance over time.
 
-Another piece embedded in the background of deploying/productionizing a model is making the entire pipeline robust to (for example) someone accidentally pushing the deploy button when they shouldn't. A perfect solution to this is programmatic deployment. This entire repository is deployed from a GitHub repo, using the functionality in RStudio Connect. One cool problem this can solve is deploying dev versions of content, which can easily be accomplished using a long-running deployed dev branch. There's an example of this in the Dev Client App.
+Another piece embedded in the background of deploying/productionizing a model is making the entire pipeline robust to (for example) someone accidentally pushing the deploy button when they shouldn't. A perfect solution to this is programmatic deployment. This entire repository is deployed from a GitHub repo, using the functionality in Posit Connect. One cool problem this can solve is deploying dev versions of content, which can easily be accomplished using a long-running deployed dev branch. There's an example of this in the Dev Client App.
 
 Another piece of this is making the underlying R functions more robust. See the next point for more on that.
 
@@ -28,9 +28,9 @@ Another piece of this is making the underlying R functions more robust. See the 
 
 Most R users know that the correct solution is to put their R functions into a package if they are reused -- or even if they need to be well-documented and tested. This repository includes a package of helper functions that do various tasks.
 
-Many R users aren't sure how to deploy their package. Their packages work well locally, but everything breaks when they try to deploy. This is a great use case for RStudio Package Manager. RStudio Package Manager makes it easy to create a package that contains the code needed in an app, push that code up to git, and have it available via `install.packages` to a deployment environment (like RStudio Connect) that might need it.
+Many R users aren't sure how to deploy their package. Their packages work well locally, but everything breaks when they try to deploy. This is a great use case for Posit Package Manager. Posit Package Manager makes it easy to create a package that contains the code needed in an app, push that code up to git, and have it available via `install.packages` to a deployment environment (like Posit Connect) that might need it.
 
-For more details, see the [RStudio Package Manager](https://rstudio.com/products/package-manager/) page and <https://environments.rstudio.com>.
+For more details, see the [Posit Package Manager](https://rstudio.com/products/package-manager/) page and <https://environments.rstudio.com>.
 
 ### I have a bunch of CSV files I use in my shiny app
 
@@ -53,10 +53,10 @@ Scheduled R Markdown isn't *always* the best solution here (for example, robust 
 
 ## What doesn't it do
 
-This repository shows an exciting set of capabilities, combining open-source R and Python with RStudio's professional products. There are a few things it doesn't do (yet) -- but that I might add, depending on interest:
+This repository shows an exciting set of capabilities, combining open-source R and Python with Posit's professional products. There are a few things it doesn't do (yet) -- but that I might add, depending on interest:
 
 -   Jobs don't depend on another. I've scheduled the jobs so that each will complete by the time another starts, but there are tools in R (like [drake](https://github.com/ropensci/drake)) that allow you to put the entire pipeline into code and make dependencies explicit.
--   Pieces of content must be managed individually, including uploading, permissions, environment variables, and tagging. It is possible to do something more robust via programmatic deployment using the RStudio Connect API, but generic git deployment doesn't support deploying all of the content in a git repo at once.
+-   Pieces of content must be managed individually, including uploading, permissions, environment variables, and tagging. It is possible to do something more robust via programmatic deployment using the Posit Connect API, but generic git deployment doesn't support deploying all of the content in a git repo at once.
 
 ## Individual Content
 
