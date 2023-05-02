@@ -10,13 +10,13 @@
     "has_parameters": false
   },
   "quarto": {
-    "version": "0.9.80",
+    "version": "1.2.269",
     "engines": ["knitr"]
   },
   "packages": {
     "DBI": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -52,7 +52,7 @@
     },
     "Matrix": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -92,7 +92,7 @@
     },
     "R6": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -121,7 +121,7 @@
     },
     "Rcpp": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -151,7 +151,7 @@
     },
     "arrow": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -188,7 +188,7 @@
     },
     "askpass": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -220,7 +220,7 @@
     },
     "assertthat": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -248,7 +248,7 @@
     },
     "base64enc": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -311,7 +311,7 @@
     },
     "bit": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -343,7 +343,7 @@
     },
     "bit64": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -375,7 +375,7 @@
     },
     "blob": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -404,7 +404,7 @@
     },
     "bslib": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -437,7 +437,7 @@
     },
     "cli": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -469,7 +469,7 @@
     },
     "cpp11": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -501,7 +501,7 @@
     },
     "crayon": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -531,7 +531,7 @@
     },
     "curl": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -564,7 +564,7 @@
     },
     "data.table": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -596,7 +596,7 @@
     },
     "dbplyr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -631,7 +631,7 @@
     },
     "digest": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -661,7 +661,7 @@
     },
     "dplyr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -696,7 +696,7 @@
     },
     "ellipsis": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -726,7 +726,7 @@
     },
     "evaluate": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -757,7 +757,7 @@
     },
     "fansi": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -789,7 +789,7 @@
     },
     "fastmap": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -818,7 +818,7 @@
     },
     "filelock": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -846,7 +846,7 @@
     },
     "fs": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -881,7 +881,7 @@
     },
     "generics": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -912,7 +912,7 @@
     },
     "glue": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -946,7 +946,7 @@
     },
     "highr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -978,7 +978,7 @@
     },
     "hms": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1009,7 +1009,7 @@
     },
     "htmltools": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1042,7 +1042,7 @@
     },
     "httr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1073,7 +1073,7 @@
     },
     "httr2": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1106,7 +1106,7 @@
     },
     "jquerylib": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1134,7 +1134,7 @@
     },
     "jsonlite": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1164,7 +1164,7 @@
     },
     "knitr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1198,7 +1198,7 @@
     },
     "lattice": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1232,7 +1232,7 @@
     },
     "lifecycle": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1264,7 +1264,7 @@
     },
     "lubridate": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1301,7 +1301,7 @@
     },
     "magrittr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1334,7 +1334,7 @@
     },
     "mime": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1363,7 +1363,7 @@
     },
     "odbc": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1397,7 +1397,7 @@
     },
     "openssl": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1429,7 +1429,7 @@
     },
     "pROC": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1462,7 +1462,7 @@
     },
     "pillar": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1498,7 +1498,7 @@
     },
     "pins": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1531,7 +1531,7 @@
     },
     "pkgconfig": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1559,7 +1559,7 @@
     },
     "plyr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1591,7 +1591,7 @@
     },
     "purrr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1623,7 +1623,7 @@
     },
     "rappdirs": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1655,7 +1655,7 @@
     },
     "rlang": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1691,7 +1691,7 @@
     },
     "rmarkdown": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1725,7 +1725,7 @@
     },
     "sass": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1758,7 +1758,7 @@
     },
     "stringi": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1791,7 +1791,7 @@
     },
     "stringr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1823,7 +1823,7 @@
     },
     "sys": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1854,7 +1854,7 @@
     },
     "tibble": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1891,7 +1891,7 @@
     },
     "tidyr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1927,7 +1927,7 @@
     },
     "tidyselect": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1960,7 +1960,7 @@
     },
     "tinytex": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -1990,7 +1990,7 @@
     },
     "utf8": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -2020,7 +2020,7 @@
     },
     "vctrs": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -2055,7 +2055,7 @@
     },
     "whisker": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -2083,7 +2083,7 @@
     },
     "withr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -2115,7 +2115,7 @@
     },
     "xfun": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -2146,7 +2146,7 @@
     },
     "xgboost": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -2180,7 +2180,7 @@
     },
     "yaml": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -2208,7 +2208,7 @@
     },
     "yardstick": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,
@@ -2243,7 +2243,7 @@
     },
     "zip": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "GithubRepo": null,
       "GithubUsername": null,
       "GithubRef": null,

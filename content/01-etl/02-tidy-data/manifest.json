@@ -10,13 +10,13 @@
     "has_parameters": false
   },
   "quarto": {
-    "version": "0.9.80",
+    "version": "1.2.269",
     "engines": ["knitr"]
   },
   "packages": {
     "DBI": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "DBI",
         "Title": "R Database Interface",
@@ -48,7 +48,7 @@
     },
     "R6": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "R6",
         "Title": "Encapsulated Classes with Reference Semantics",
@@ -73,7 +73,7 @@
     },
     "Rcpp": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "Rcpp",
         "Title": "Seamless R and C++ Integration",
@@ -99,7 +99,7 @@
     },
     "assertthat": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "assertthat",
         "Title": "Easy Pre and Post Assertions",
@@ -123,7 +123,7 @@
     },
     "base64enc": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "base64enc",
         "Version": "0.1-3",
@@ -145,7 +145,7 @@
     },
     "bit": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "bit",
         "Type": "Package",
@@ -173,7 +173,7 @@
     },
     "bit64": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "bit64",
         "Type": "Package",
@@ -201,7 +201,7 @@
     },
     "blob": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "blob",
         "Title": "A Simple S3 Class for Representing Vectors of Binary Data\n('BLOBS')",
@@ -226,7 +226,7 @@
     },
     "bslib": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "bslib",
         "Title": "Custom 'Bootstrap' 'Sass' Themes for 'shiny' and 'rmarkdown'",
@@ -255,7 +255,7 @@
     },
     "cli": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "cli",
         "Title": "Helpers for Developing Command Line Interfaces",
@@ -283,7 +283,7 @@
     },
     "cpp11": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "cpp11",
         "Title": "A C++11 Interface for R's C Interface",
@@ -311,7 +311,7 @@
     },
     "crayon": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "crayon",
         "Title": "Colored Terminal Output",
@@ -337,7 +337,7 @@
     },
     "dbplyr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Type": "Package",
         "Package": "dbplyr",
@@ -368,7 +368,7 @@
     },
     "digest": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "digest",
         "Author": "Dirk Eddelbuettel <edd@debian.org> with contributions \n by Antoine Lucas, Jarek Tuszynski, Henrik Bengtsson, Simon Urbanek,\n Mario Frasca, Bryan Lewis, Murray Stokely, Hannes Muehleisen,\n Duncan Murdoch, Jim Hester, Wush Wu, Qiang Kou, Thierry Onkelinx, \n Michel Lang, Viliam Simko, Kurt Hornik, Radford Neal, Kendon Bell,\n Matthew de Queljoe, Ion Suruceanu, Bill Denney, Dirk Schumacher,\n and Winston Chang.",
@@ -394,7 +394,7 @@
     },
     "dplyr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Type": "Package",
         "Package": "dplyr",
@@ -425,7 +425,7 @@
     },
     "ellipsis": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "ellipsis",
         "Version": "0.3.2",
@@ -451,7 +451,7 @@
     },
     "evaluate": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "evaluate",
         "Type": "Package",
@@ -478,7 +478,7 @@
     },
     "fansi": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "fansi",
         "Title": "ANSI Control Sequence Aware String Functions",
@@ -506,7 +506,7 @@
     },
     "fastmap": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "fastmap",
         "Title": "Fast Data Structures",
@@ -531,7 +531,7 @@
     },
     "fs": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "fs",
         "Title": "Cross-Platform File System Operations Based on 'libuv'",
@@ -562,7 +562,7 @@
     },
     "generics": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "generics",
         "Title": "Common S3 Generics not Provided by Base R Methods Related to\nModel Fitting",
@@ -589,7 +589,7 @@
     },
     "glue": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "glue",
         "Title": "Interpreted String Literals",
@@ -619,7 +619,7 @@
     },
     "highr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "highr",
         "Type": "Package",
@@ -647,7 +647,7 @@
     },
     "hms": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "hms",
         "Title": "Pretty Time of Day",
@@ -674,7 +674,7 @@
     },
     "htmltools": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "htmltools",
         "Type": "Package",
@@ -703,7 +703,7 @@
     },
     "jquerylib": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "jquerylib",
         "Title": "Obtain 'jQuery' as an HTML Dependency Object",
@@ -727,7 +727,7 @@
     },
     "jsonlite": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "jsonlite",
         "Version": "1.8.0",
@@ -753,7 +753,7 @@
     },
     "knitr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "knitr",
         "Type": "Package",
@@ -783,7 +783,7 @@
     },
     "lifecycle": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "lifecycle",
         "Title": "Manage the Life Cycle of your Package Functions",
@@ -811,7 +811,7 @@
     },
     "lubridate": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Type": "Package",
         "Package": "lubridate",
@@ -844,7 +844,7 @@
     },
     "magrittr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Type": "Package",
         "Package": "magrittr",
@@ -873,7 +873,7 @@
     },
     "odbc": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "odbc",
         "Title": "Connect to ODBC Compatible Databases (using the DBI Interface)",
@@ -903,7 +903,7 @@
     },
     "pillar": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "pillar",
         "Title": "Coloured Formatting for Columns",
@@ -935,7 +935,7 @@
     },
     "pkgconfig": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "pkgconfig",
         "Title": "Private Configuration for 'R' Packages",
@@ -959,7 +959,7 @@
     },
     "purrr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "purrr",
         "Title": "Functional Programming Tools",
@@ -987,7 +987,7 @@
     },
     "rappdirs": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Type": "Package",
         "Package": "rappdirs",
@@ -1015,7 +1015,7 @@
     },
     "rlang": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "rlang",
         "Version": "1.0.2",
@@ -1047,7 +1047,7 @@
     },
     "rmarkdown": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Type": "Package",
         "Package": "rmarkdown",
@@ -1077,7 +1077,7 @@
     },
     "sass": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Type": "Package",
         "Package": "sass",
@@ -1106,7 +1106,7 @@
     },
     "stringi": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "stringi",
         "Version": "1.7.5",
@@ -1135,7 +1135,7 @@
     },
     "stringr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "stringr",
         "Title": "Simple, Consistent Wrappers for Common String Operations",
@@ -1163,7 +1163,7 @@
     },
     "tibble": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "tibble",
         "Title": "Simple Data Frames",
@@ -1196,7 +1196,7 @@
     },
     "tidyselect": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "tidyselect",
         "Title": "Select from a Set of Strings",
@@ -1225,7 +1225,7 @@
     },
     "tinytex": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "tinytex",
         "Type": "Package",
@@ -1251,7 +1251,7 @@
     },
     "utf8": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "utf8",
         "Title": "Unicode Text Processing",
@@ -1277,7 +1277,7 @@
     },
     "vctrs": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "vctrs",
         "Title": "Vector Helpers",
@@ -1308,7 +1308,7 @@
     },
     "withr": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "withr",
         "Title": "Run Code 'With' Temporarily Modified Global State",
@@ -1336,7 +1336,7 @@
     },
     "xfun": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "xfun",
         "Type": "Package",
@@ -1363,7 +1363,7 @@
     },
     "yaml": {
       "Source": "CRAN",
-      "Repository": "https://colorado.rstudio.com/rspm/cran/__linux__/bionic/latest",
+      "Repository": "https://colorado.posit.co/rspm/cran/__linux__/bionic/latest",
       "description": {
         "Package": "yaml",
         "Type": "Package",
