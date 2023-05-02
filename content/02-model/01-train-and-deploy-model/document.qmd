@@ -203,7 +203,7 @@ Then, deploy the model as a plumber API to RStudio Connect.
 ```{r deploy_model_api_to_connect}
 # Add server
 rsconnect::addServer(
-  url = "https://colorado.rstudio.com/rsc/__api__",
+  url = "https://colorado.posit.co/rsc/__api__",
   name = "colorado"
 )
 
