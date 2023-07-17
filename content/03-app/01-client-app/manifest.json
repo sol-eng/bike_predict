@@ -1,7 +1,7 @@
 {
   "version": 1,
   "locale": "en_US",
-  "platform": "4.1.2",
+  "platform": "4.1.3",
   "metadata": {
     "appmode": "shiny",
     "primary_rmd": null,
@@ -3109,7 +3109,10 @@
   },
   "files": {
     "app.R": {
-      "checksum": "984b829385e3bebb5b1e533dab5a8240"
+      "checksum": "e8be119f0e341b193774a21421e18f10"
+    },
+    "icon.drawio.png": {
+      "checksum": "69458aa51a311b12bd3be0894217ee72"
     }
   },
   "users": null

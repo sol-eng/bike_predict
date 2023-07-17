@@ -9,20 +9,6 @@ library(lubridate)
 
 
 # ////////////////////////////////////////////////////////////////////////////
-# Setup
-# ////////////////////////////////////////////////////////////////////////////
-board <- pins::board_rsconnect(
-  server = Sys.getenv("CONNECT_SERVER"),
-  key = Sys.getenv("CONNECT_API_KEY"),
-)
-
-bike_station_info <- pins::pin_read(
-  board,
-  "sam.edwardes/bike-predict-r-station-info-pin"
-)
-
-
-# ////////////////////////////////////////////////////////////////////////////
 # UI
 # ////////////////////////////////////////////////////////////////////////////
 ui <- dashboardPage(
@@ -45,6 +31,17 @@ ui <- dashboardPage(
 # Server
 # ////////////////////////////////////////////////////////////////////////////
 server <- function(input, output, session) {
+
+  board <- pins::board_rsconnect(
+    server = Sys.getenv("CONNECT_SERVER"),
+    key = Sys.getenv("CONNECT_API_KEY"),
+  )
+
+  bike_station_info <- pins::pin_read(
+    board,
+    "sam.edwardes/bike-predict-r-station-info-pin"
+  )
+
 
   # Draw station map ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   output$map <- renderLeaflet({
