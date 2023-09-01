@@ -6,6 +6,7 @@ library(vetiver)
 library(glue)
 library(leaflet)
 library(lubridate)
+library(gitlink)
 
 
 # ////////////////////////////////////////////////////////////////////////////
@@ -16,6 +17,12 @@ ui <- dashboardPage(
   dashboardHeader(title = "Capitol Bikeshare Availability"),
   dashboardSidebar(disable = TRUE),
   dashboardBody(
+    ribbon_css(
+      "https://github.com/sol-eng/bike_predict",
+      position = "right",
+      parent_css = list("z-index" = "1040", "pointer-events" = "none"),
+      "pointer-events" = "auto"
+      ),
     box(title = "Station Map",
         leafletOutput("map"),
         width = 12
