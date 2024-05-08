@@ -6,8 +6,8 @@ output: html_document
 
 This notebook trains a model to predict the number of bikes at a given bike docking station. The model is trained using the *bike_model_data* table from *Content DB*. The trained model is then:
 
-- pinned to RStudio Connect
-- deployed as a plumber API to Rstudio Connect using vetiver.
+- pinned to Posit Connect
+- deployed as a plumber API to Posit Connect using vetiver.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, collapse = TRUE) 
@@ -182,10 +182,10 @@ v
 
 ### `pins`
 
-Save the model as a *pin* to RStudio Connect:
+Save the model as a *pin* to Posit Connect:
 
 ```{r pin_model}
-# Use RStudio Connect as a board.
+# Use Posit Connect as a board.
 board <- pins::board_rsconnect(
   server = Sys.getenv("CONNECT_SERVER"),
   key = Sys.getenv("CONNECT_API_KEY"),
@@ -198,7 +198,7 @@ board %>%
 
 ### `plumber`
 
-Then, deploy the model as a plumber API to RStudio Connect.
+Then, deploy the model as a plumber API to Posit Connect.
 
 ```{r deploy_model_api_to_connect}
 # Add server

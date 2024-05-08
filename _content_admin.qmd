@@ -4,7 +4,7 @@ date: "`r Sys.time()`"
 output: html_document
 ---
 
-This purpose of this script is to programatically manage the deployed content on Rstudio Connect.
+This purpose of this script is to programatically manage the deployed content on Posit Connect.
 
 ```{r setup}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
@@ -12,7 +12,7 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(rsconnect)
 library(connectapi)
 
-# Establish a connection to RStudio connect.
+# Establish a connection to Posit connect.
 client <- connect(
   server = Sys.getenv("CONNECT_SERVER"),
   api_key = Sys.getenv("CONNECT_API_KEY")

@@ -2,8 +2,8 @@
 title: "Bike Predict - App - Connect Widgets"
 format:
   html:
-    pagetitle: "End-to-End Data Science with RStudio Connect: Bike Share"
-    description-meta: "ETL, model serving, and app deployment--powered by RStudio Connect."
+    pagetitle: "End-to-End Data Science with Posit Connect: Bike Share"
+    description-meta: "ETL, model serving, and app deployment--powered by Posit Connect."
     twitter-card: true
     image: https://github.com/sol-eng/bike_predict/raw/main/img/arrows.drawio.png
     image-alt: "Diagram of flow from scheduled jobs to apps"
@@ -35,7 +35,7 @@ format:
 <div class="jumbotron jumbotron-fluid">
 <div class="container">
 <h1 class="display-3 jumbotron-title" color="#f0f0f0">Bike Share</h1>
-<p class="lead jumbotron-title">End-to-End Data Science with RStudio Connect</p>
+<p class="lead jumbotron-title">End-to-End Data Science with Posit Connect</p>
 </div>
 </div>
 
@@ -58,7 +58,7 @@ bikeshare <- all_content %>%
 
 ## Background
 
-This project illustrates using RStudio Connect to deploy a data science project featuring:
+This project illustrates using Posit Connect to deploy a data science project featuring:
 
 ![](https://github.com/sol-eng/bike_predict/raw/main/img/arrows.drawio.png)
 

@@ -61,7 +61,7 @@ test_data %>%
 
 ## Compute metrics
 
-Use vetiver to compute the latest evaluation metrics. The metrics are stored as a pin on RStudio Connect. The table below is the first 5 rows of the evaluation metrics
+Use vetiver to compute the latest evaluation metrics. The metrics are stored as a pin on Posit Connect. The table below is the first 5 rows of the evaluation metrics
 
 ```{r compute_metrics}
 #| collapse: true
@@ -72,7 +72,7 @@ suppressPackageStartupMessages(handler_startup(v))
 
 # Specifically load the packages required by the model. Check 
 # `v$metadata$required_pkgs` to see the required pacakges. These packages must
-# be specicially defined so that RStudio Connect knows to install them when
+# be specicially defined so that Posit Connect knows to install them when
 # deploying this document.
 library(parsnip)
 library(ranger)

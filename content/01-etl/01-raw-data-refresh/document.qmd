@@ -4,7 +4,7 @@ date: "`r lubridate::now(tzone = 'EST')` EST"
 output: html_document
 ---
 
-This notebook uses the [bikeHelpR](https://packagemanager.rstudio.com/client/#/repos/1/packages/bikeHelpR) package to update a database with the latest bike share data. The package pulls data from <https://capitalbikeshare.com> which provides an API to access bike share data. The raw data is written to the *Content DB* database to the *bike_raw_data* table.
+This notebook uses the [bikeHelpR](https://packagemanager.posit.co/client/#/repos/1/packages/bikeHelpR) package to update a database with the latest bike share data. The package pulls data from <https://capitalbikeshare.com> which provides an API to access bike share data. The raw data is written to the *Content DB* database to the *bike_raw_data* table.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
