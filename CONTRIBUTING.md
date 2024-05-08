@@ -8,13 +8,13 @@ Please report any bugs using GitHub issues: <https://github.com/sol-eng/bike_pre
 
 Please report any suggestions or improvements to GitHub issues: <https://github.com/sol-eng/bike_predict/issues>
 
-## solutions.rstudio.com
+## solutions.posit.co
 
-For each change please review <https://solutions.rstudio.com/example/bike_predict/> to ensure that the information is still accurate. If necessary please also update the repo for solutions.rstudio.com (<https://github.com/rstudio/solutions.rstudio.com>).
+For each change please review <https://solutions.posit.co/example/bike_predict/> to ensure that the information is still accurate. If necessary please also update the repo for solutions.posit.co (<https://github.com/rstudio/solutions.posit.co>).
 
-## Deploying to RStudio Connect on colorado
+## Deploying to Posit Connect on colorado
 
-RStudio has deployed all of the content in this repo to our "Colorado" demo server. Click the link to see all of the deployed content: <https://colorado.rstudio.com/rsc/connect/#/content/listing?filter=min_role:viewer&filter=content_type:all&view_type=expanded&tags=111-tagtree:218>.
+Posit has deployed all of the content in this repo to our "Colorado" demo server. Click the link to see all of the deployed content: <https://colorado.posit.co/rsc/connect/#/content/listing?filter=min_role:viewer&filter=content_type:all&view_type=expanded&tags=111-tagtree:218>.
 
 ### Workflow diagram
 

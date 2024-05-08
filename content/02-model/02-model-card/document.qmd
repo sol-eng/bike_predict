@@ -60,7 +60,7 @@ test_data <- data %>%
 
 ## Model details
 
-- Developed by Sam Edwardes (RStudio - Solutions Engineer)
+- Developed by Sam Edwardes (Posit - Solutions Engineer)
 - `r cli::pluralize("{v$description} using {ncol(v$ptype)} feature{?s}")`
 - This model was developed to predict how many [capital bikeshare](https://capitalbikeshare.com) bikes will be available for a given station based on the time of day, and day of the week.
 - The data used to train the model was obtained from the [capital bikeshare API](https://ride.capitalbikeshare.com/system-data).
@@ -69,7 +69,7 @@ test_data <- data %>%
 
 ## Intended use
 
-- The primary intended use of this model is to demonstrate an end-to-end data science workflow using [RStudio Connect](https://www.rstudio.com/products/connect/).
+- The primary intended use of this model is to demonstrate an end-to-end data science workflow using [Posit Connect](https://posit.co/products/enterprise/connect/).
 
 ## Metrics
 
@@ -131,7 +131,7 @@ suppressPackageStartupMessages(handler_startup(v))
 
 # Specifically load the packages required by the model. Check 
 # `v$metadata$required_pkgs` to see the required packages. These packages must
-# be specifically defined so that RStudio Connect knows to install them when
+# be specifically defined so that Posit Connect knows to install them when
 # deploying this document.
 library(parsnip)
 library(ranger)
