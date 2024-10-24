@@ -36,13 +36,23 @@ library(ranger)
 Connect to the database:
 
 ```{r connect_to_db}
-con <- DBI::dbConnect(odbc::odbc(), "Content DB")
+con <- DBI::dbConnect(
+  odbc::odbc(),
+  Driver      = "postgresql",
+  Server      = Sys.getenv("DB_SERVER"),
+  Port        = "5432",
+  Database    = "soleng",
+  UID         = Sys.getenv("DB_USER"),
+  PWD         = Sys.getenv("DB_PASSWORD"),
+  BoolsAsChar = "",
+  timeout     = 10
+)
 ```
 
 Split the data into a train/test split:
 
 ```{r train_test_split_data}
-all_days <- tbl(con, "bike_model_data")
+all_days <- tbl(con, DBI::Id(schema="content", name="bike_model_data"))
 
 # Get a vector that contains all of the dates.
 dates <- all_days %>%

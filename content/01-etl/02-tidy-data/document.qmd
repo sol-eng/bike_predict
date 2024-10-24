@@ -19,12 +19,23 @@ library(lubridate)
 Connect to *Content DB* to get the *bike_raw_data* and *bike_station_info* table.
 
 ```{r, get_data_from_db}
-con <- odbc::dbConnect(odbc::odbc(), "Content DB", timeout = 10)
+con <- DBI::dbConnect(
+  odbc::odbc(),
+  Driver      = "postgresql",
+  Server      = Sys.getenv("DB_SERVER"),
+  Port        = "5432",
+  Database    = "soleng",
+  UID         = Sys.getenv("DB_USER"),
+  PWD         = Sys.getenv("DB_PASSWORD"),
+  BoolsAsChar = "",
+  timeout     = 10
+)
 
-bike_raw_data <- tbl(con, "bike_raw_data")
+bike_raw_data <- tbl(con, 
+                     DBI::Id(schema="content", name="bike_raw_data"))
 glimpse(bike_raw_data)
 
-bike_station_info <- tbl(con, "bike_station_info")
+bike_station_info <- tbl(con, DBI::Id(schema="content", name="bike_station_info"))
 glimpse(bike_station_info)
 ```
 
@@ -33,8 +44,8 @@ glimpse(bike_station_info)
 Apply the data tidying steps. All of the tidying steps are performed in SQL. The results are written back to *Content DB* to the *bike_model_data* table.
 
 ```{r clean_data}
-if (odbc::dbExistsTable(con, "bike_model_data")) {
-  odbc::dbRemoveTable(con, "bike_model_data")
+if (odbc::dbExistsTable(con, DBI::Id(schema="content", name="bike_model_data"))) {
+  odbc::dbRemoveTable(con, DBI::Id(schema="content", name="bike_model_data"))
 }
 
 # Build a SQL query to tidy the data.
@@ -54,13 +65,14 @@ query <- bike_raw_data %>%
         select(bike_station_info, id = station_id, lat, lon)
     ) %>%
     dbplyr::sql_render() %>%
-    stringr::str_replace("SELECT", "CREATE TABLE bike_model_data AS SELECT")
+    stringr::str_replace("SELECT", "CREATE TABLE content.bike_model_data AS SELECT")
 
 # Execute the SQL query.
 odbc::dbSendQuery(con, query)
 
 # Preview the table.
-tbl(con, "bike_model_data")
+tbl(con, DBI::Id(schema="content", name="bike_model_data"))
+
 ```
 
 ```{r close_connection}

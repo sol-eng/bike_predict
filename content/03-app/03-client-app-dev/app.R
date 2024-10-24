@@ -95,7 +95,7 @@ server <- function(input, output, session) {
         lon = selected_bike_station_info$lon
       )
 
-    url <- "https://colorado.posit.co/rsc/bike-predict-r-api/predict"
+    url <- "https://pub.current.posit.team/public/bike-predict-r-api/predict"
     endpoint <- vetiver_endpoint(url)
 
     predictions <-
