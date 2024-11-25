@@ -12,9 +12,9 @@ Please report any suggestions or improvements to GitHub issues: <https://github.
 
 For each change please review <https://solutions.posit.co/example/bike_predict/> to ensure that the information is still accurate. If necessary please also update the repo for solutions.posit.co (<https://github.com/rstudio/solutions.posit.co>).
 
-## Deploying to Posit Connect on colorado
+## Deploying to Posit Connect
 
-Posit has deployed all of the content in this repo to our "Colorado" demo server. Click the link to see all of the deployed content: <https://colorado.posit.co/rsc/connect/#/content/listing?filter=min_role:viewer&filter=content_type:all&view_type=expanded&tags=111-tagtree:218>.
+Posit has deployed all of the content in this repo to a demo server. Click the link to see all of the deployed content: <https://pub.current.posit.team/connect/#/content/listing?q=is:published+tag:%22Projects/Bikeshare+-+R%22>.
 
 ### Workflow diagram
 
