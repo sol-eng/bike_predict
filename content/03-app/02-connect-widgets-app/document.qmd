@@ -15,7 +15,7 @@ format:
 ```{css, echo=FALSE}
 .jumbotron {
   color: white;
-  background-image: url("https://source.unsplash.com/zbUH21c9ARk/1920x1080");
+  background-image: url("bikes.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
