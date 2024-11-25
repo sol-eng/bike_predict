@@ -15,7 +15,7 @@ format:
 ```{css, echo=FALSE}
 .jumbotron {
   color: white;
-  background-image: url("https://source.unsplash.com/zbUH21c9ARk/1920x1080");
+  background-image: url("bikes.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -50,8 +50,7 @@ library(stringr)
 client <- connect()
 all_content <- client %>% content()
 bikeshare <- all_content %>% 
-  by_tag("Bike Predict") %>%
-  by_tag("R")
+  by_tag("Bikeshare - R")
 ```
 
 <br>
@@ -97,8 +96,8 @@ Explore the deployed items below:
 
 ```{r}
 bikeshare %>% 
-  by_tag("ETL") %>%
-  filter(str_detect(title, "Step 1|Step 2")) %>%
+  filter(str_detect(title, "ETL")) %>%
+  filter(!content_category == "pin") %>%
   arrange(title) %>%
   rsc_card()
 ```
@@ -107,8 +106,8 @@ bikeshare %>%
 
 ```{r}
 bikeshare %>% 
-  by_tag("Model") %>%
-  filter(str_detect(title, "Step 1|Step 2|Step 3")) %>%
+  filter(str_detect(title, "Model")) %>%
+  filter(!content_category == "pin") %>%
   arrange(title) %>%
   rsc_card()
 ```
@@ -119,7 +118,7 @@ bikeshare %>%
 
 ```{r}
 bikeshare %>%
-  filter(str_detect(tolower(title), "pinned")) %>%
+  filter(content_category == "pin") %>%
   rsc_table()
 ```
 
@@ -127,7 +126,6 @@ bikeshare %>%
 
 ```{r}
 bikeshare %>%
-  by_tag("Model") %>%
   filter(str_detect(title, "API")) %>%
   rsc_card()
 ```
@@ -136,6 +134,6 @@ bikeshare %>%
 
 ```{r}
 bikeshare %>%
-  by_tag("App") %>%
+  filter(str_detect(title, "App")) %>%
   rsc_card()
 ```

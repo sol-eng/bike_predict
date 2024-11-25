@@ -39,14 +39,14 @@ ui <- dashboardPage(
 # ////////////////////////////////////////////////////////////////////////////
 server <- function(input, output, session) {
 
-  board <- pins::board_rsconnect(
+  board <- pins::board_connect(
     server = Sys.getenv("CONNECT_SERVER"),
     key = Sys.getenv("CONNECT_API_KEY"),
   )
 
   bike_station_info <- pins::pin_read(
     board,
-    "sam.edwardes/bike-predict-r-station-info-pin"
+    "katie.masiello@posit.co/bike-predict-r-station-info-pin"
   )
 
 
@@ -99,7 +99,7 @@ server <- function(input, output, session) {
         lon = selected_bike_station_info$lon
       )
 
-    url <- "https://colorado.posit.co/rsc/bike-predict-r-api/predict"
+    url <- "https://pub.current.posit.team/public/bike-predict-r-api/predict"
     endpoint <- vetiver_endpoint(url)
 
     predictions <-

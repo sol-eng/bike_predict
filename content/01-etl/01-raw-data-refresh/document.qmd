@@ -2,9 +2,11 @@
 title: "ETL Step 1 - Raw Data Refresh"
 date: "`r lubridate::now(tzone = 'EST')` EST"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
-This notebook uses the [bikeHelpR](https://packagemanager.posit.co/client/#/repos/1/packages/bikeHelpR) package to update a database with the latest bike share data. The package pulls data from <https://capitalbikeshare.com> which provides an API to access bike share data. The raw data is written to the *Content DB* database to the *bike_raw_data* table.
+This notebook uses the [bikeHelpR](https://pkg.current.posit.team/client/#/repos/internal-r/packages/bikeHelpR) package to update a database with the latest bike share data. The package pulls data from <https://capitalbikeshare.com> which provides an API to access bike share data. The raw data is written to the *Content DB* database to the *bike_raw_data* table.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
@@ -12,6 +14,7 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(dplyr)
 library(dbplyr)
 library(odbc)
+library(DBI)
 ```
 
 ## Get data from API
@@ -84,9 +87,23 @@ glimpse(station_info)
 Write the new data from the API to the database.
 
 ```{r write_to_db}
-con <- dbConnect(odbc(), "Content DB", timeout = 10)
-dbWriteTable(con, "bike_raw_data", station_status, append = TRUE)
-dbWriteTable(con, "bike_station_info", station_info, overwrite = TRUE)
+con <- dbConnect(
+  odbc::odbc(),
+  Driver      = "postgresql",
+  Server      = Sys.getenv("DB_SERVER"),
+  Port        = "5432",
+  Database    = "soleng",
+  UID         = Sys.getenv("DB_USER"),
+  PWD         = Sys.getenv("DB_PASSWORD"),
+  BoolsAsChar = "",
+  timeout     = 10
+)
+dbWriteTable(con, 
+             name = DBI::Id(schema="content", name="bike_raw_data"), 
+             station_status, append = TRUE)
+dbWriteTable(con, 
+             name = DBI::Id(schema="content", name="bike_station_info"), 
+             station_info, overwrite = TRUE)
 dbDisconnect(con)
 print("Raw data updated 🎉")
 ```
@@ -96,11 +113,7 @@ print("Raw data updated 🎉")
 Station info will also be written to a pin. This pin will be accessed by the shiny app so that it can easily get the bike station info without connecting to the database.
 
 ```{r pin_station_info}
-board <- pins::board_rsconnect(
-  server = Sys.getenv("CONNECT_SERVER"),
-  key = Sys.getenv("CONNECT_API_KEY"),
-  versioned = TRUE
-)
+board <- pins::board_connect()
 
 # Write the model to the board.
 pins::pin_write(
@@ -108,9 +121,12 @@ pins::pin_write(
   x = station_info,
   type = "csv",
   name = "bike-predict-r-station-info-pin",
-  title = "Bike Predict - ETL - Pinned Station Info",
+  title = "Bikeshare Prediction - ETL output - Pinned Station Info",
   description = "Bike station info from https://capitalbikeshare.com."
 )
+
+# prune to save only the last 10 versions
+pins::pin_versions_prune(board, "bike-predict-r-station-info-pin", 10)
 
 print("Pin 🎉")
 ```

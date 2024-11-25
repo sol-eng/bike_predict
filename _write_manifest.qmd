@@ -21,7 +21,7 @@ library(quarto)
 writeManifest(
   appDir = "content/01-etl/01-raw-data-refresh", 
   appPrimaryDoc = "document.qmd",
-  quarto = quarto_path()
+  quarto = TRUE
 )
 
 print("Complete 🎉")
@@ -33,7 +33,7 @@ print("Complete 🎉")
 writeManifest(
   appDir = "content/01-etl/02-tidy-data", 
   appPrimaryDoc = "document.qmd",
-  quarto = quarto_path()
+  quarto = TRUE
 )
 
 print("Complete 🎉")
@@ -47,7 +47,7 @@ print("Complete 🎉")
 writeManifest(
   appDir = "content/02-model/01-train-and-deploy-model", 
   appPrimaryDoc = "document.qmd",
-  quarto = quarto_path()
+  quarto = TRUE
 )
 
 print("Complete 🎉")
@@ -59,7 +59,7 @@ print("Complete 🎉")
 writeManifest(
   appDir = "content/02-model/02-model-card", 
   appPrimaryDoc = "document.qmd",
-  quarto = quarto_path()
+  quarto = TRUE
 )
 
 print("Complete 🎉")
@@ -71,7 +71,7 @@ print("Complete 🎉")
 writeManifest(
   appDir = "content/02-model/03-model-metrics", 
   appPrimaryDoc = "document.qmd",
-  quarto = quarto_path()
+  quarto = TRUE
 )
 
 print("Complete 🎉")
@@ -97,7 +97,7 @@ print("Complete 🎉")
 writeManifest(
   appDir = "content/03-app/02-connect-widgets-app", 
   appPrimaryDoc = "document.qmd",
-  quarto = quarto_path()
+  quarto = TRUE
 )
 
 print("Complete 🎉")

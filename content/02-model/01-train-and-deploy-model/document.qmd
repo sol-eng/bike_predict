@@ -19,6 +19,7 @@ library(recipes)
 library(parsnip)
 library(workflows)
 library(vetiver)
+library(plumber)
 library(rsconnect)
 
 # Internally developed packages
@@ -36,13 +37,23 @@ library(ranger)
 Connect to the database:
 
 ```{r connect_to_db}
-con <- DBI::dbConnect(odbc::odbc(), "Content DB")
+con <- DBI::dbConnect(
+  odbc::odbc(),
+  Driver      = "postgresql",
+  Server      = Sys.getenv("DB_SERVER"),
+  Port        = "5432",
+  Database    = "soleng",
+  UID         = Sys.getenv("DB_USER"),
+  PWD         = Sys.getenv("DB_PASSWORD"),
+  BoolsAsChar = "",
+  timeout     = 10
+)
 ```
 
 Split the data into a train/test split:
 
 ```{r train_test_split_data}
-all_days <- tbl(con, "bike_model_data")
+all_days <- tbl(con, DBI::Id(schema="content", name="bike_model_data"))
 
 # Get a vector that contains all of the dates.
 dates <- all_days %>%
@@ -68,13 +79,13 @@ train_data <- all_days %>%
   distinct() %>%
   collect()
 
+start = min(train_data$date)
+end = max(train_data$date)
+num_obs = scales::comma(nrow(train_data))
+
 print(glue::glue(
   "The model will be trained on data from {start} to {end} ",
-  "({num_obs} observations). ",
-  start = min(train_data$date),
-  end = max(train_data$date),
-  num_obs = scales::comma(nrow(train_data)),
-))
+  "({num_obs} observations). "))
 
 # Test data split.
 test_data <- all_days %>%
@@ -82,13 +93,13 @@ test_data <- all_days %>%
   distinct() %>%
   collect()
 
+start = min(test_data$date)
+end = max(test_data$date)
+num_obs = scales::comma(nrow(test_data))
+
 print(glue::glue(
   "The model will be tested on data from {start} to {end} ",
-  "({num_obs} observations). ",
-  start = min(test_data$date),
-  end = max(test_data$date),
-  num_obs = scales::comma(nrow(test_data)),
-))
+  "({num_obs} observations). "))
 ```
 
 ## Train the model
@@ -149,7 +160,7 @@ Create a `vetiver` model object.
 
 ```{r create_vetiver_model}
 model_name <- "bike_predict_model_r"
-pin_name <- glue("sam.edwardes/{model_name}")
+pin_name <- glue("katie.masiello@posit.co/{model_name}")
 
 # Get the train and test data ranges. This will be passed into the pin metadata
 # so that other scripts can access this information.
@@ -186,7 +197,7 @@ Save the model as a *pin* to Posit Connect:
 
 ```{r pin_model}
 # Use Posit Connect as a board.
-board <- pins::board_rsconnect(
+board <- pins::board_connect(
   server = Sys.getenv("CONNECT_SERVER"),
   key = Sys.getenv("CONNECT_API_KEY"),
   versioned = TRUE
@@ -203,14 +214,14 @@ Then, deploy the model as a plumber API to Posit Connect.
 ```{r deploy_model_api_to_connect}
 # Add server
 rsconnect::addServer(
-  url = "https://colorado.posit.co/rsc/__api__",
-  name = "colorado"
+  url = "https://pub.current.posit.team/__api__",
+  name = "pub.current"
 )
 
 # Add account
 rsconnect::connectApiUser(
-  account = "sam.edwardes",
-  server = "colorado",
+  account = "katie.masiello@posit.co",
+  server = "pub.current",
   apiKey = Sys.getenv("CONNECT_API_KEY"),
 )
 
@@ -218,12 +229,12 @@ rsconnect::connectApiUser(
 vetiver_deploy_rsconnect(
   board = board,
   name = pin_name,
-  appId = "11314",
+  appId = "442",
   launch.browser = FALSE,
-  appTitle = "Bike Predict - Model - API",
+  appTitle = "Bikeshare Prediction: 03b - Model - API",
   predict_args = list(debug = FALSE),
-  account = "sam.edwardes",
-  server =  "colorado"
+  account = "katie.masiello@posit.co",
+  server =  "pub.current"
 )
 
 ```

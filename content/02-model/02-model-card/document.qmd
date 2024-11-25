@@ -8,7 +8,7 @@ format:
       source: true
       toggle: true
 params:
-    name: sam.edwardes/bike_predict_model_r
+    name: katie.masiello@posit.co/bike_predict_model_r
     version: NULL
 ---
 
@@ -27,12 +27,22 @@ library(glue)
 library(kableExtra)
 
 
-board <- pins::board_rsconnect()
+board <- pins::board_connect()
 v <- vetiver_pin_read(board, params$name, version = params$version)
 v_meta <- pin_meta(board, params$name)
 
-con <- odbc::dbConnect(odbc::odbc(), "Content DB", timeout = 10)
-bike_model_data <- tbl(con, "bike_model_data")
+con <- DBI::dbConnect(
+  odbc::odbc(),
+  Driver      = "postgresql",
+  Server      = Sys.getenv("DB_SERVER"),
+  Port        = "5432",
+  Database    = "soleng",
+  UID         = Sys.getenv("DB_USER"),
+  PWD         = Sys.getenv("DB_PASSWORD"),
+  BoolsAsChar = "",
+  timeout     = 10
+)
+bike_model_data <- tbl(con, DBI::Id(schema="content", name="bike_model_data"))
 
 
 train_start_date <- lubridate::as_date(v$metadata$user$train_dates[1])
