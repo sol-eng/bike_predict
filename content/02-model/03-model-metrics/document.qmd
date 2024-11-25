@@ -8,7 +8,7 @@ format:
       source: true
       toggle: true
 params:
-    name: sam.edwardes/bike_predict_model_r
+    name: katie.masiello@posit.co/bike_predict_model_r
     version: NULL
 ---
 
@@ -34,7 +34,7 @@ library(yardstick)
 library(glue)
 library(kableExtra)
 
-board <- pins::board_rsconnect()
+board <- pins::board_connect()
 v <- vetiver_pin_read(board, params$name, version = params$version)
 v_meta <- pin_meta(board, params$name)
 
@@ -101,7 +101,7 @@ latest_metrics <- preds %>%
     estimate = .pred
   )
 
-pin_name <- "sam.edwardes/bike-predict-model-metrics"
+pin_name <- "katie.masiello@posit.co/bike-predict-model-metrics"
 
 if (pin_exists(board, pin_name)) {
   print("Pin already exists, updating existing pin...")
