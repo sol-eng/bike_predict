@@ -134,6 +134,6 @@ bikeshare %>%
 
 ```{r}
 bikeshare %>%
-  by_tag("App") %>%
+  filter(str_detect(title, "App")) %>%
   rsc_card()
 ```
