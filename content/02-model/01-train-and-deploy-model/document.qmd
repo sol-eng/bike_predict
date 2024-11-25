@@ -78,13 +78,13 @@ train_data <- all_days %>%
   distinct() %>%
   collect()
 
+start = min(train_data$date)
+end = max(train_data$date)
+num_obs = scales::comma(nrow(train_data))
+
 print(glue::glue(
   "The model will be trained on data from {start} to {end} ",
-  "({num_obs} observations). ",
-  start = min(train_data$date),
-  end = max(train_data$date),
-  num_obs = scales::comma(nrow(train_data)),
-))
+  "({num_obs} observations). "))
 
 # Test data split.
 test_data <- all_days %>%
@@ -92,13 +92,13 @@ test_data <- all_days %>%
   distinct() %>%
   collect()
 
+start = min(test_data$date)
+end = max(test_data$date)
+num_obs = scales::comma(nrow(test_data))
+
 print(glue::glue(
   "The model will be tested on data from {start} to {end} ",
-  "({num_obs} observations). ",
-  start = min(test_data$date),
-  end = max(test_data$date),
-  num_obs = scales::comma(nrow(test_data)),
-))
+  "({num_obs} observations). "))
 ```
 
 ## Train the model
