@@ -229,7 +229,7 @@ rsconnect::connectApiUser(
 vetiver_deploy_rsconnect(
   board = board,
   name = pin_name,
-  appId = "1104",
+  appId = "442",
   launch.browser = FALSE,
   appTitle = "Bikeshare Prediction: 03b - Model - API",
   predict_args = list(debug = FALSE),
