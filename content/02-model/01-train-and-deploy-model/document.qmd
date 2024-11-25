@@ -159,7 +159,7 @@ Create a `vetiver` model object.
 
 ```{r create_vetiver_model}
 model_name <- "bike_predict_model_r"
-pin_name <- glue("sam.edwardes/{model_name}")
+pin_name <- glue("katie.masiello@posit.co/{model_name}")
 
 # Get the train and test data ranges. This will be passed into the pin metadata
 # so that other scripts can access this information.
@@ -196,7 +196,7 @@ Save the model as a *pin* to Posit Connect:
 
 ```{r pin_model}
 # Use Posit Connect as a board.
-board <- pins::board_rsconnect(
+board <- pins::board_connect(
   server = Sys.getenv("CONNECT_SERVER"),
   key = Sys.getenv("CONNECT_API_KEY"),
   versioned = TRUE
@@ -213,14 +213,14 @@ Then, deploy the model as a plumber API to Posit Connect.
 ```{r deploy_model_api_to_connect}
 # Add server
 rsconnect::addServer(
-  url = "https://colorado.posit.co/rsc/__api__",
-  name = "colorado"
+  url = "https://pub.current.posit.team/__api__",
+  name = "pub.current"
 )
 
 # Add account
 rsconnect::connectApiUser(
-  account = "sam.edwardes",
-  server = "colorado",
+  account = "katie.masiello@posit.co",
+  server = "pub.current",
   apiKey = Sys.getenv("CONNECT_API_KEY"),
 )
 
@@ -228,12 +228,12 @@ rsconnect::connectApiUser(
 vetiver_deploy_rsconnect(
   board = board,
   name = pin_name,
-  appId = "11314",
+  appId = "1104",
   launch.browser = FALSE,
-  appTitle = "Bike Predict - Model - API",
+  appTitle = "Bikeshare Prediction: 03b - Model - API",
   predict_args = list(debug = FALSE),
-  account = "sam.edwardes",
-  server =  "colorado"
+  account = "katie.masiello@posit.co",
+  server =  "pub.current"
 )
 
 ```
