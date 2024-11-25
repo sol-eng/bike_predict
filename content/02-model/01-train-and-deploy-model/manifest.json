@@ -1,7 +1,7 @@
 {
   "version": 1,
   "locale": "en_US",
-  "platform": "4.4.1",
+  "platform": "4.4.0",
   "metadata": {
     "appmode": "quarto-static",
     "primary_rmd": "document.qmd",
@@ -52,8 +52,8 @@
       "description": {
         "Package": "KernSmooth",
         "Priority": "recommended",
-        "Version": "2.23-24",
-        "Date": "2024-05-16",
+        "Version": "2.23-22",
+        "Date": "2023-07-10",
         "Title": "Functions for Kernel Smoothing Supporting Wand & Jones (1995)",
         "Authors@R": "c(person(\"Matt\", \"Wand\", role = \"aut\",\n\t             email = \"Matt.Wand@uts.edu.au\"),\n\t     person(\"Cleve\", \"Moler\", role = \"ctb\",\n\t            comment = \"LINPACK routines in src/d*\"),\n             person(\"Brian\", \"Ripley\", role = c(\"trl\", \"cre\", \"ctb\"),\n                    email = \"ripley@stats.ox.ac.uk\",\n\t\t    comment = \"R port and updates\"))",
         "Note": "Maintainers are not available to give advice on using a package\nthey did not author.",
@@ -63,12 +63,12 @@
         "License": "Unlimited",
         "ByteCompile": "yes",
         "NeedsCompilation": "yes",
-        "Packaged": "2024-05-17 07:28:00 UTC; ripley",
+        "Packaged": "2023-07-10 11:00:31 UTC; ripley",
         "Author": "Matt Wand [aut],\n  Cleve Moler [ctb] (LINPACK routines in src/d*),\n  Brian Ripley [trl, cre, ctb] (R port and updates)",
         "Maintainer": "Brian Ripley <ripley@stats.ox.ac.uk>",
         "Repository": "CRAN",
-        "Date/Publication": "2024-05-17 09:28:22",
-        "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-08-22 01:57:32 UTC; unix"
+        "Date/Publication": "2023-07-10 14:38:27 UTC",
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-08-22 01:56:32 UTC; unix"
       }
     },
     "MASS": {
@@ -130,8 +130,8 @@
         "Author": "Douglas Bates [aut] (<https://orcid.org/0000-0001-8316-9503>),\n  Martin Maechler [aut, cre] (<https://orcid.org/0000-0002-8685-9910>),\n  Mikael Jagan [aut] (<https://orcid.org/0000-0002-3542-2938>),\n  Timothy A. Davis [ctb] (<https://orcid.org/0000-0001-7614-6899>,\n    SuiteSparse libraries, collaborators listed in\n    dir(system.file(\"doc\", \"SuiteSparse\", package=\"Matrix\"),\n    pattern=\"License\", full.names=TRUE, recursive=TRUE)),\n  George Karypis [ctb] (<https://orcid.org/0000-0003-2753-1437>, METIS\n    library, Copyright: Regents of the University of Minnesota),\n  Jason Riedy [ctb] (<https://orcid.org/0000-0002-4345-4200>, GNU\n    Octave's condest() and onenormest(), Copyright: Regents of the\n    University of California),\n  Jens Oehlschlägel [ctb] (initial nearPD()),\n  R Core Team [ctb] (base R's matrix implementation)",
         "Maintainer": "Martin Maechler <mmaechler+Matrix@gmail.com>",
         "Repository": "CRAN",
-        "Date/Publication": "2024-04-26 12:03:02 UTC",
-        "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-08-22 01:54:16 UTC; unix"
+        "Date/Publication": "2024-03-22 09:08:25 UTC",
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-08-22 01:53:13 UTC; unix"
       }
     },
     "PKI": {
@@ -657,7 +657,7 @@
         "Maintainer": "Brian Ripley <ripley@stats.ox.ac.uk>",
         "Repository": "CRAN",
         "Date/Publication": "2023-05-03 11:01:28 UTC",
-        "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-08-22 01:57:38 UTC; unix"
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-08-22 01:56:39 UTC; unix"
       }
     },
     "cli": {
@@ -781,7 +781,7 @@
         "Packaged": "2024-03-31 18:18:09 UTC; luke",
         "Repository": "CRAN",
         "Date/Publication": "2024-03-31 20:10:06 UTC",
-        "Built": "R 4.4.1; ; 2024-08-22 01:57:26 UTC; unix"
+        "Built": "R 4.4.0; ; 2024-08-22 01:56:26 UTC; unix"
       }
     },
     "colorspace": {
@@ -1649,6 +1649,43 @@
         "RemoteSha": "0.5.8.1"
       }
     },
+    "httpuv": {
+      "Source": "CRAN",
+      "Repository": "https://pkg.current.posit.team/cran/latest",
+      "description": {
+        "Type": "Package",
+        "Package": "httpuv",
+        "Title": "HTTP and WebSocket Server Library",
+        "Version": "1.6.15",
+        "Authors@R": "c(\n    person(\"Joe\", \"Cheng\", , \"joe@posit.co\", role = \"aut\"),\n    person(\"Winston\", \"Chang\", , \"winston@posit.co\", role = c(\"aut\", \"cre\")),\n    person(\"Posit, PBC\", \"fnd\", role = \"cph\"),\n    person(\"Hector\", \"Corrada Bravo\", role = \"ctb\"),\n    person(\"Jeroen\", \"Ooms\", role = \"ctb\"),\n    person(\"Andrzej\", \"Krzemienski\", role = \"cph\",\n           comment = \"optional.hpp\"),\n    person(\"libuv project contributors\", role = \"cph\",\n           comment = \"libuv library, see src/libuv/AUTHORS file\"),\n    person(\"Joyent, Inc. and other Node contributors\", role = \"cph\",\n           comment = \"libuv library, see src/libuv/AUTHORS file; and http-parser library, see src/http-parser/AUTHORS file\"),\n    person(\"Niels\", \"Provos\", role = \"cph\",\n           comment = \"libuv subcomponent: tree.h\"),\n    person(\"Internet Systems Consortium, Inc.\", role = \"cph\",\n           comment = \"libuv subcomponent: inet_pton and inet_ntop, contained in src/libuv/src/inet.c\"),\n    person(\"Alexander\", \"Chemeris\", role = \"cph\",\n           comment = \"libuv subcomponent: stdint-msvc2008.h (from msinttypes)\"),\n    person(\"Google, Inc.\", role = \"cph\",\n           comment = \"libuv subcomponent: pthread-fixes.c\"),\n    person(\"Sony Mobile Communcations AB\", role = \"cph\",\n           comment = \"libuv subcomponent: pthread-fixes.c\"),\n    person(\"Berkeley Software Design Inc.\", role = \"cph\",\n           comment = \"libuv subcomponent: android-ifaddrs.h, android-ifaddrs.c\"),\n    person(\"Kenneth\", \"MacKay\", role = \"cph\",\n           comment = \"libuv subcomponent: android-ifaddrs.h, android-ifaddrs.c\"),\n    person(\"Emergya (Cloud4all, FP7/2007-2013, grant agreement no 289016)\", role = \"cph\",\n           comment = \"libuv subcomponent: android-ifaddrs.h, android-ifaddrs.c\"),\n    person(\"Steve\", \"Reid\", role = \"aut\",\n           comment = \"SHA-1 implementation\"),\n    person(\"James\", \"Brown\", role = \"aut\",\n           comment = \"SHA-1 implementation\"),\n    person(\"Bob\", \"Trower\", role = \"aut\",\n           comment = \"base64 implementation\"),\n    person(\"Alexander\", \"Peslyak\", role = \"aut\",\n           comment = \"MD5 implementation\"),\n    person(\"Trantor Standard Systems\", role = \"cph\",\n           comment = \"base64 implementation\"),\n    person(\"Igor\", \"Sysoev\", role = \"cph\",\n           comment = \"http-parser\")\n  )",
+        "Description": "Provides low-level socket and protocol support for handling\n    HTTP and WebSocket requests directly from within R. It is primarily\n    intended as a building block for other packages, rather than making it\n    particularly easy to create complete web applications using httpuv\n    alone.  httpuv is built on top of the libuv and http-parser C\n    libraries, both of which were developed by Joyent, Inc. (See LICENSE\n    file for libuv and http-parser license information.)",
+        "License": "GPL (>= 2) | file LICENSE",
+        "URL": "https://github.com/rstudio/httpuv",
+        "BugReports": "https://github.com/rstudio/httpuv/issues",
+        "Depends": "R (>= 2.15.1)",
+        "Imports": "later (>= 0.8.0), promises, R6, Rcpp (>= 1.0.7), utils",
+        "Suggests": "callr, curl, testthat, websocket",
+        "LinkingTo": "later, Rcpp",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.3.1",
+        "SystemRequirements": "GNU make, zlib",
+        "Collate": "'RcppExports.R' 'httpuv.R' 'random_port.R' 'server.R'\n'staticServer.R' 'static_paths.R' 'utils.R'",
+        "NeedsCompilation": "yes",
+        "Packaged": "2024-03-25 21:06:08 UTC; cpsievert",
+        "Author": "Joe Cheng [aut],\n  Winston Chang [aut, cre],\n  Posit, PBC fnd [cph],\n  Hector Corrada Bravo [ctb],\n  Jeroen Ooms [ctb],\n  Andrzej Krzemienski [cph] (optional.hpp),\n  libuv project contributors [cph] (libuv library, see src/libuv/AUTHORS\n    file),\n  Joyent, Inc. and other Node contributors [cph] (libuv library, see\n    src/libuv/AUTHORS file; and http-parser library, see\n    src/http-parser/AUTHORS file),\n  Niels Provos [cph] (libuv subcomponent: tree.h),\n  Internet Systems Consortium, Inc. [cph] (libuv subcomponent: inet_pton\n    and inet_ntop, contained in src/libuv/src/inet.c),\n  Alexander Chemeris [cph] (libuv subcomponent: stdint-msvc2008.h (from\n    msinttypes)),\n  Google, Inc. [cph] (libuv subcomponent: pthread-fixes.c),\n  Sony Mobile Communcations AB [cph] (libuv subcomponent:\n    pthread-fixes.c),\n  Berkeley Software Design Inc. [cph] (libuv subcomponent:\n    android-ifaddrs.h, android-ifaddrs.c),\n  Kenneth MacKay [cph] (libuv subcomponent: android-ifaddrs.h,\n    android-ifaddrs.c),\n  Emergya (Cloud4all, FP7/2007-2013, grant agreement no 289016) [cph]\n    (libuv subcomponent: android-ifaddrs.h, android-ifaddrs.c),\n  Steve Reid [aut] (SHA-1 implementation),\n  James Brown [aut] (SHA-1 implementation),\n  Bob Trower [aut] (base64 implementation),\n  Alexander Peslyak [aut] (MD5 implementation),\n  Trantor Standard Systems [cph] (base64 implementation),\n  Igor Sysoev [cph] (http-parser)",
+        "Maintainer": "Winston Chang <winston@posit.co>",
+        "Repository": "RSPM",
+        "Date/Publication": "2024-03-26 05:50:06 UTC",
+        "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-10-24 01:03:25 UTC; unix",
+        "RemoteType": "standard",
+        "RemotePkgRef": "httpuv",
+        "RemoteRef": "httpuv",
+        "RemoteRepos": "https://pkg.current.posit.team/cran/latest",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "source",
+        "RemoteSha": "1.6.15"
+      }
+    },
     "httr": {
       "Source": "CRAN",
       "Repository": "https://pkg.current.posit.team/cran/latest",
@@ -1854,6 +1891,41 @@
         "Built": "R 4.4.0; ; 2024-04-25 19:43:43 UTC; unix"
       }
     },
+    "later": {
+      "Source": "CRAN",
+      "Repository": "https://pkg.current.posit.team/cran/latest",
+      "description": {
+        "Package": "later",
+        "Type": "Package",
+        "Title": "Utilities for Scheduling Functions to Execute Later with Event\nLoops",
+        "Version": "1.3.2",
+        "Authors@R": "c(\n    person(\"Winston\", \"Chang\", role = c(\"aut\", \"cre\"), email = \"winston@posit.co\"),\n    person(\"Joe\", \"Cheng\", role = c(\"aut\"), email = \"joe@posit.co\"),\n    person(family = \"Posit Software, PBC\", role = \"cph\"),\n    person(\"Marcus\", \"Geelnard\", role = c(\"ctb\", \"cph\"), comment = \"TinyCThread library, https://tinycthread.github.io/\"),\n    person(\"Evan\", \"Nemerson\", role = c(\"ctb\", \"cph\"), comment = \"TinyCThread library, https://tinycthread.github.io/\")\n    )",
+        "Description": "Executes arbitrary R or C functions some time after the current\n    time, after the R execution stack has emptied. The functions are scheduled\n    in an event loop.",
+        "URL": "https://r-lib.github.io/later/, https://github.com/r-lib/later",
+        "BugReports": "https://github.com/r-lib/later/issues",
+        "License": "MIT + file LICENSE",
+        "Imports": "Rcpp (>= 0.12.9), rlang",
+        "LinkingTo": "Rcpp",
+        "RoxygenNote": "7.2.3",
+        "Suggests": "knitr, rmarkdown, testthat (>= 2.1.0)",
+        "VignetteBuilder": "knitr",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "yes",
+        "Packaged": "2023-12-06 00:38:14 UTC; cpsievert",
+        "Author": "Winston Chang [aut, cre],\n  Joe Cheng [aut],\n  Posit Software, PBC [cph],\n  Marcus Geelnard [ctb, cph] (TinyCThread library,\n    https://tinycthread.github.io/),\n  Evan Nemerson [ctb, cph] (TinyCThread library,\n    https://tinycthread.github.io/)",
+        "Maintainer": "Winston Chang <winston@posit.co>",
+        "Repository": "RSPM",
+        "Date/Publication": "2023-12-06 09:10:05 UTC",
+        "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-10-24 01:02:59 UTC; unix",
+        "RemoteType": "standard",
+        "RemotePkgRef": "later",
+        "RemoteRef": "later",
+        "RemoteRepos": "https://pkg.current.posit.team/cran/latest",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "source",
+        "RemoteSha": "1.3.2"
+      }
+    },
     "lattice": {
       "Source": "CRAN",
       "Repository": "https://pkg.current.posit.team/cran/latest",
@@ -1880,7 +1952,7 @@
         "Maintainer": "Deepayan Sarkar <deepayan.sarkar@r-project.org>",
         "Repository": "CRAN",
         "Date/Publication": "2024-03-20 06:10:02 UTC",
-        "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-08-22 01:54:07 UTC; unix"
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-08-22 01:53:04 UTC; unix"
       }
     },
     "lava": {
@@ -2129,7 +2201,7 @@
         "Packaged": "2023-12-20 10:39:06 UTC; sw283",
         "Repository": "CRAN",
         "Date/Publication": "2023-12-21 00:30:02 UTC",
-        "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-08-22 01:57:44 UTC; unix"
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-08-22 01:56:45 UTC; unix"
       }
     },
     "mime": {
@@ -2268,7 +2340,7 @@
         "Maintainer": "Brian Ripley <ripley@stats.ox.ac.uk>",
         "Repository": "CRAN",
         "Date/Publication": "2023-05-03 11:01:30 UTC",
-        "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-08-22 01:57:40 UTC; unix"
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-08-22 01:56:41 UTC; unix"
       }
     },
     "numDeriv": {
@@ -2544,6 +2616,39 @@
         "RemoteSha": "2.0.3"
       }
     },
+    "plumber": {
+      "Source": "CRAN",
+      "Repository": "https://pkg.current.posit.team/cran/latest",
+      "description": {
+        "Encoding": "UTF-8",
+        "Package": "plumber",
+        "Type": "Package",
+        "Title": "An API Generator for R",
+        "Version": "1.2.2",
+        "Authors@R": "c(\n  person(\"Barret\", \"Schloerke\", role = c(\"cre\", \"aut\"), email = \"barret@posit.co\", comment = c(ORCID = \"0000-0001-9986-114X\")),\n  person(\"Jeff\", \"Allen\", role = c(\"aut\", \"ccp\"), email = \"cran@trestletech.com\"),\n  person(\"Bruno\", \"Tremblay\", role = \"ctb\", email = \"cran@neoxone.com\"),\n  person(\"Frans\", \"van Dunné\", role = \"ctb\", email = \"frans@ixpantia.com\"),\n  person(\"Sebastiaan\", \"Vandewoude\", role=\"ctb\", email = \"sebastiaanvandewoude@gmail.com\"),\n  person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\")))",
+        "License": "MIT + file LICENSE",
+        "BugReports": "https://github.com/rstudio/plumber/issues",
+        "URL": "https://www.rplumber.io, https://github.com/rstudio/plumber",
+        "Description": "Gives the ability to automatically generate and serve an HTTP API\n    from R functions using the annotations in the R documentation around your\n    functions.",
+        "Depends": "R (>= 3.0.0)",
+        "Imports": "R6 (>= 2.0.0), stringi (>= 0.3.0), jsonlite (>= 0.9.16),\nwebutils (>= 1.1), httpuv (>= 1.5.5), crayon, promises (>=\n1.1.0), sodium, swagger (>= 3.33.0), magrittr, mime, lifecycle\n(>= 0.2.0), ellipsis (>= 0.3.0), rlang",
+        "ByteCompile": "TRUE",
+        "Suggests": "testthat (>= 0.11.0), rmarkdown, base64enc, htmlwidgets,\nvisNetwork, later, readr, yaml, arrow, future, coro,\nrstudioapi, spelling, mockery (>= 0.4.2), geojsonsf, redoc,\nrapidoc, sf",
+        "RoxygenNote": "7.3.1",
+        "Collate": "'async.R' 'content-types.R' 'default-handlers.R' 'hookable.R'\n'shared-secret-filter.R' 'parser-cookie.R' 'parse-body.R'\n'parse-query.R' 'plumber.R' 'deprecated-R6.R' 'deprecated.R'\n'digital-ocean.R' 'find-port.R' 'globals.R' 'includes.R'\n'json.R' 'new-rstudio-project.R' 'openapi-spec.R'\n'openapi-types.R' 'options_plumber.R' 'paths.R' 'plumb-block.R'\n'plumb-globals.R' 'plumb.R' 'plumber-response.R'\n'plumber-static.R' 'plumber-step.R' 'pr.R' 'pr_set.R'\n'serializer.R' 'session-cookie.R' 'ui.R' 'utf8.R'\n'utils-pipe.R' 'utils.R' 'validate_api_spec.R' 'zzz.R'",
+        "RdMacros": "lifecycle",
+        "Language": "en-US",
+        "Config/Needs/check": "Cairo",
+        "Config/Needs/website": "tidyverse/tidytemplate",
+        "NeedsCompilation": "no",
+        "Packaged": "2024-03-24 02:40:15 UTC; barret",
+        "Author": "Barret Schloerke [cre, aut] (<https://orcid.org/0000-0001-9986-114X>),\n  Jeff Allen [aut, ccp],\n  Bruno Tremblay [ctb],\n  Frans van Dunné [ctb],\n  Sebastiaan Vandewoude [ctb],\n  Posit Software, PBC [cph, fnd]",
+        "Maintainer": "Barret Schloerke <barret@posit.co>",
+        "Repository": "RSPM",
+        "Date/Publication": "2024-03-26 00:00:06 UTC",
+        "Built": "R 4.4.0; ; 2024-04-25 00:01:54 UTC; unix"
+      }
+    },
     "prettyunits": {
       "Source": "CRAN",
       "Repository": "https://pkg.current.posit.team/cran/latest",
@@ -2653,6 +2758,43 @@
         "Date/Publication": "2023-08-10 22:50:02 UTC",
         "Encoding": "UTF-8",
         "Built": "R 4.4.0; ; 2024-04-25 19:46:27 UTC; unix"
+      }
+    },
+    "promises": {
+      "Source": "CRAN",
+      "Repository": "https://pkg.current.posit.team/cran/latest",
+      "description": {
+        "Type": "Package",
+        "Package": "promises",
+        "Title": "Abstractions for Promise-Based Asynchronous Programming",
+        "Version": "1.3.0",
+        "Authors@R": "c(\n    person(\"Joe\", \"Cheng\", , \"joe@posit.co\", role = c(\"aut\", \"cre\")),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n  )",
+        "Description": "Provides fundamental abstractions for doing asynchronous\n    programming in R using promises. Asynchronous programming is useful\n    for allowing a single R process to orchestrate multiple tasks in the\n    background while also attending to something else. Semantics are\n    similar to 'JavaScript' promises, but with a syntax that is idiomatic\n    R.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://rstudio.github.io/promises/,\nhttps://github.com/rstudio/promises",
+        "BugReports": "https://github.com/rstudio/promises/issues",
+        "Imports": "fastmap (>= 1.1.0), later, magrittr (>= 1.5), R6, Rcpp, rlang,\nstats",
+        "Suggests": "future (>= 1.21.0), knitr, purrr, rmarkdown, spelling,\ntestthat, vembedr",
+        "LinkingTo": "later, Rcpp",
+        "VignetteBuilder": "knitr",
+        "Config/Needs/website": "rsconnect",
+        "Encoding": "UTF-8",
+        "Language": "en-US",
+        "RoxygenNote": "7.3.1",
+        "NeedsCompilation": "yes",
+        "Packaged": "2024-04-04 20:02:05 UTC; jcheng",
+        "Author": "Joe Cheng [aut, cre],\n  Posit Software, PBC [cph, fnd]",
+        "Maintainer": "Joe Cheng <joe@posit.co>",
+        "Repository": "RSPM",
+        "Date/Publication": "2024-04-05 15:00:06 UTC",
+        "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-10-24 01:03:16 UTC; unix",
+        "RemoteType": "standard",
+        "RemotePkgRef": "promises",
+        "RemoteRef": "promises",
+        "RemoteRepos": "https://pkg.current.posit.team/cran/latest",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "source",
+        "RemoteSha": "1.3.0"
       }
     },
     "purrr": {
@@ -2975,7 +3117,7 @@
         "BugReports": "https://github.com/bethatkinson/rpart/issues",
         "Packaged": "2023-12-05 16:26:54 UTC; atkinson",
         "Date/Publication": "2023-12-05 22:10:02 UTC",
-        "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-08-22 01:57:34 UTC; unix"
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-08-22 01:56:35 UTC; unix"
       }
     },
     "rsconnect": {
@@ -3120,6 +3262,33 @@
         "Built": "R 4.4.0; ; 2024-04-25 19:46:07 UTC; unix"
       }
     },
+    "sodium": {
+      "Source": "CRAN",
+      "Repository": "https://pkg.current.posit.team/cran/latest",
+      "description": {
+        "Package": "sodium",
+        "Type": "Package",
+        "Title": "A Modern and Easy-to-Use Crypto Library",
+        "Version": "1.3.2",
+        "Authors@R": "person(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), email = \"jeroenooms@gmail.com\",\n    comment = c(ORCID = \"0000-0002-4035-0289\"))",
+        "Description": "Bindings to 'libsodium' <https://doc.libsodium.org/>: a modern, \n    easy-to-use software library for encryption, decryption, signatures, password\n    hashing and more. Sodium uses curve25519, a state-of-the-art Diffie-Hellman \n    function by Daniel Bernstein, which has become very popular after it was \n    discovered that the NSA had backdoored Dual EC DRBG.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://docs.ropensci.org/sodium/ https://github.com/r-lib/sodium",
+        "BugReports": "https://github.com/r-lib/sodium/issues",
+        "SystemRequirements": "libsodium (>= 1.0.3)",
+        "VignetteBuilder": "knitr",
+        "Suggests": "knitr, rmarkdown",
+        "RoxygenNote": "7.2.3",
+        "NeedsCompilation": "yes",
+        "Packaged": "2024-10-03 14:13:16 UTC; jeroen",
+        "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>)",
+        "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2024-10-04 11:20:02 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-05 04:12:30 UTC; unix"
+      }
+    },
     "stringi": {
       "Source": "CRAN",
       "Repository": "https://pkg.current.posit.team/cran/latest",
@@ -3219,6 +3388,31 @@
         "Date/Publication": "2024-06-05 16:30:02 UTC",
         "Encoding": "UTF-8",
         "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-06-06 04:14:23 UTC; unix"
+      }
+    },
+    "swagger": {
+      "Source": "CRAN",
+      "Repository": "https://pkg.current.posit.team/cran/latest",
+      "description": {
+        "Package": "swagger",
+        "Type": "Package",
+        "Title": "Dynamically Generates Documentation from a 'Swagger' Compliant\nAPI",
+        "Version": "5.17.14.1",
+        "Authors@R": "c(\n    person(\"Barret\", \"Schloerke\", role = \"aut\", email = \"barret@rstudio.com\", comment = c(ORCID = \"0000-0001-9986-114X\")),\n    person(\"Javier\", \"Luraschi\", role = \"aut\", email = \"javier@rstudio.com\"),\n    person(\"Bruno\", \"Tremblay\", role = c(\"cre\", \"ctb\"), email = \"cran@neoxone.com\"),\n    person(family = \"RStudio\", role = \"cph\"),\n    person(family = \"SmartBear Software\", role = c(\"aut\", \"cph\"))\n    )",
+        "Suggests": "jsonlite, plumber, testthat",
+        "Description": "A collection of 'HTML', 'JavaScript', and 'CSS' assets that\n  dynamically generate beautiful documentation from a 'Swagger' compliant API:\n  <https://swagger.io/specification/>.",
+        "License": "Apache License 2.0 | file LICENSE",
+        "Encoding": "UTF-8",
+        "URL": "https://rstudio.github.io/swagger/,\nhttps://github.com/rstudio/swagger",
+        "BugReports": "https://github.com/rstudio/swagger/issues",
+        "RoxygenNote": "7.3.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2024-06-28 16:48:07 UTC; tremb",
+        "Author": "Barret Schloerke [aut] (<https://orcid.org/0000-0001-9986-114X>),\n  Javier Luraschi [aut],\n  Bruno Tremblay [cre, ctb],\n  RStudio [cph],\n  SmartBear Software [aut, cph]",
+        "Maintainer": "Bruno Tremblay <cran@neoxone.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2024-06-28 17:10:02 UTC",
+        "Built": "R 4.4.0; ; 2024-06-29 04:21:21 UTC; unix"
       }
     },
     "sys": {
@@ -3616,6 +3810,33 @@
         "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-08-28 04:12:24 UTC; unix"
       }
     },
+    "webutils": {
+      "Source": "CRAN",
+      "Repository": "https://pkg.current.posit.team/cran/latest",
+      "description": {
+        "Package": "webutils",
+        "Type": "Package",
+        "Title": "Utility Functions for Developing Web Applications",
+        "Version": "1.2.2",
+        "Authors@R": "person(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), email = \"jeroenooms@gmail.com\",\n      comment = c(ORCID = \"0000-0002-4035-0289\"))",
+        "Description": "Parses http request data in application/json, multipart/form-data, \n    or application/x-www-form-urlencoded format. Includes example of hosting\n    and parsing html form data in R using either 'httpuv' or 'Rhttpd'.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://jeroen.r-universe.dev/webutils",
+        "BugReports": "https://github.com/jeroen/webutils/issues",
+        "Imports": "curl (>= 2.5), jsonlite",
+        "Suggests": "httpuv, testthat",
+        "RoxygenNote": "7.3.2.9000",
+        "Language": "en-US",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "yes",
+        "Packaged": "2024-10-03 14:13:23 UTC; jeroen",
+        "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>)",
+        "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2024-10-04 09:00:05 UTC",
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-05 04:12:27 UTC; unix"
+      }
+    },
     "whisker": {
       "Source": "CRAN",
       "Repository": "https://pkg.current.posit.team/cran/latest",
@@ -3836,7 +4057,7 @@
   },
   "files": {
     "document.qmd": {
-      "checksum": "534eb5144e7164285a743a3d6b9ad1e2"
+      "checksum": "9abe4139e90136e6b2c588764e0e5ab5"
     },
     "icon.drawio.png": {
       "checksum": "1a42e99a1797cdca5967f52a5332aafa"
