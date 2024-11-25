@@ -19,6 +19,7 @@ library(recipes)
 library(parsnip)
 library(workflows)
 library(vetiver)
+library(plumber)
 library(rsconnect)
 
 # Internally developed packages
