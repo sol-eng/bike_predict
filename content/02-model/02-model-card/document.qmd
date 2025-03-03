@@ -103,7 +103,7 @@ The training data set for this model was was obtained from the [capital bikeshar
 The data set for this model has the "prototype" or signature:
 
 ```{r view_prototype}
-glimpse(v$ptype)
+glimpse(v$prototype)
 ```
 
 ### Training data
