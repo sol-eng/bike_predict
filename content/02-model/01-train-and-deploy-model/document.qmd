@@ -67,8 +67,11 @@ dates <- all_days %>%
 n_days_test <- 2
 n_days_to_train <- 10
 
-train_end_date <- dates[n_days_test + 1]
-train_start_date <- train_end_date - n_days_to_train
+# TODO: FIX THIS. UPSTREAM DATA STOPPED PROVIDING HOURLY DATA. HAD TO PIN TO FIXED DATE RANGE FOR MODEL.
+train_end_date <- as.Date("2024-01-05")
+train_start_date <- as.Date("2023-12-10")
+# train_end_date <- dates[n_days_test + 1]
+# train_start_date <- train_end_date - n_days_to_train
 
 # Training data split.
 train_data <- all_days %>%
